@@ -16,7 +16,7 @@ use App\Municipality;
 */
 
 Route::get('/', function () {
-    return view('registration');
+    return view('users.list');
 });
 
 $router->resource('users','UserController');
@@ -44,3 +44,5 @@ else {
 
 return $listing;
 });
+
+Route::get('users-list', 'UserController@index');

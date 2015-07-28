@@ -1,6 +1,6 @@
 /**
 * Metis - Bootstrap-Admin-Template v2.3.2
-* Author : onokumus 
+* Author : onokumus
 * Copyright 2015
 * Licensed under MIT (https://github.com/onokumus/Bootstrap-Admin-Template/blob/master/LICENSE.md)
 */
@@ -2613,4 +2613,9 @@ body.error .logo h1 {
 .login .form-signin input.bottom {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.help-block {
+
+  color:red !important;
 }

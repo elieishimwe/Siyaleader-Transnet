@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\UserRequest;
 use App\Http\Controllers\Controller;
 use App\User;
 
@@ -27,7 +28,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::select(array('created_at','Fname','Sname','Cell1','Position'));
+        return \Datatables::of($users)->make(true);
     }
 
     /**
@@ -46,7 +48,7 @@ class UserController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request, User $user)
+    public function store(UserRequest $request, User $user)
     {
 
         $user->Fname        = $request['Fname'];
@@ -58,6 +60,7 @@ class UserController extends Controller
         $user->District     = $request['District'];
         $user->Municipality = $request['Municipality'];
         $user->Department   = $request['Department'];
+        $user->Status       = 'Active';
         $user->save();
 
     }
