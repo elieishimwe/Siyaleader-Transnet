@@ -39,6 +39,8 @@
                           <th>Surname</th>
                           <th>Cell Number</th>
                           <th>Position</th>
+                          <th>Port</th>
+                          <th>Precinct</th>
                         </tr>
                       </thead>
                     </table>
@@ -70,6 +72,8 @@
                 {data: 'Sname', name: 'Sname'},
                 {data: 'Cell1', name: 'Cell1'},
                 {data: 'Position', name: 'Position'},
+                {data: 'District', name: 'District'},
+                {data: 'Municipality', name: 'Municipality'},
                ],
 
             "aoColumnDefs": [
