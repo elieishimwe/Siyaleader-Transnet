@@ -49,9 +49,15 @@ class UserController extends Controller
     public function store(Request $request, User $user)
     {
 
-        $user->Fname     = $request['Fname'];
-        $user->Sname     = $request['Sname'];
-        $user->IDnumber  = $request['Sname'];
+        $user->Fname        = $request['Fname'];
+        $user->Sname        = $request['Sname'];
+        $user->Cell1        = $request['Cell1'];
+        $user->Email        = $request['Email'];
+        $user->Position     = $request['Position'];
+        $user->Province     = $request['Province'];
+        $user->District     = $request['District'];
+        $user->Municipality = $request['Municipality'];
+        $user->Department   = $request['Department'];
         $user->save();
 
     }

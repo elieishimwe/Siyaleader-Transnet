@@ -53,7 +53,7 @@
                     <div class="form-group">
                         {!! Form::label('Cell Number', 'Cell Number', array('class' => 'control-label col-lg-4')) !!}
                          <div class="col-lg-8">
-                         {!! Form::text('Cell Number',NULL,['class' => 'form-control','id' => 'Cell1']) !!}
+                         {!! Form::text('Cell1',NULL,['class' => 'form-control','id' => 'Cell1']) !!}
                           @if ($errors->has('Cell1')) <p class="help-block red">*{{ $errors->first('Cell1') }}</p> @endif
                         </div>
                       </div><!-- /.form-group -->
@@ -67,64 +67,46 @@
                     </div><!-- /.form-group -->
 
                     <div class="form-group">
-                        <label class="control-label col-lg-4">Workplace Position/Title</label>
-                        <div class="col-lg-8">
-                          <select class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                          </select>
-                        </div>
-                    </div>
-
-                      <div class="form-group">
-                            {!! Form::label('Workplace Position/Title', 'Workplace Position/Title', array('class' => 'control-label col-lg-4')) !!}
-                            <div class="col-lg-8">
-                                {!! Form::select('Position',$selectPositions,0,['class' => 'form-control' ,'id' => 'Position']) !!}
-                                  @if ($errors->has('Position')) <p class="help-block red">*{{ $errors->first('Position') }}</p> @endif
-                            </div>
-                        </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-lg-4">Province</label>
-                        <div class="col-lg-8">
-                          <select class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                          </select>
-                        </div>
+                          {!! Form::label('Workplace Position/Title', 'Workplace Position/Title', array('class' => 'control-label col-lg-4')) !!}
+                          <div class="col-lg-8">
+                              {!! Form::select('Position',$selectPositions,0,['class' => 'form-control' ,'id' => 'Position']) !!}
+                                @if ($errors->has('Position')) <p class="help-block red">*{{ $errors->first('Position') }}</p> @endif
+                          </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-lg-4">Business Unit</label>
-                        <div class="col-lg-8">
-                          <select class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                          </select>
-                        </div>
+                          {!! Form::label('Province', 'Province', array('class' => 'control-label col-lg-4')) !!}
+                          <div class="col-lg-8">
+                              {!! Form::select('Province',$selectProvinces,0,['class' => 'form-control' ,'id' => 'Province']) !!}
+                                @if ($errors->has('Province')) <p class="help-block red">*{{ $errors->first('Province') }}</p> @endif
+                          </div>
+                    </div>
+
+
+                    <div class="form-group">
+                          {!! Form::label('Precinct', 'Precinct', array('class' => 'control-label col-lg-4')) !!}
+                          <div class="col-lg-8">
+                              {!! Form::select('District',$selectDistricts,0,['class' => 'form-control' ,'id' => 'District']) !!}
+                                @if ($errors->has('district')) <p class="help-block red">*{{ $errors->first('district') }}</p> @endif
+                          </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-lg-4">Affiliation</label>
-                        <div class="col-lg-8">
-                          <select class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                          </select>
-                        </div>
+                          {!! Form::label('Municipality', 'Municipality', array('class' => 'control-label col-lg-4')) !!}
+                          <div class="col-lg-8">
+                              {!! Form::select('Municipality',$selectMunicipalities,0,['class' => 'form-control' ,'id' => 'Municipality']) !!}
+                                @if ($errors->has('Municipality')) <p class="help-block red">*{{ $errors->first('Municipality') }}</p> @endif
+                          </div>
                     </div>
+
+                    <div class="form-group">
+                          {!! Form::label('Business Unit', 'Business Unit', array('class' => 'control-label col-lg-4')) !!}
+                          <div class="col-lg-8">
+                              {!! Form::select('Department',$selectDepartments,0,['class' => 'form-control' ,'id' => 'department']) !!}
+                                @if ($errors->has('department')) <p class="help-block red">*{{ $errors->first('department') }}</p> @endif
+                          </div>
+                    </div>
+
 
                     <div class="modal-footer">
 

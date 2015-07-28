@@ -3,6 +3,10 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use App\Position;
+use App\Department;
+use App\Province;
+use App\District;
+use App\Municipality;
 
 class DatabaseSeeder extends Seeder
 {
@@ -74,6 +78,105 @@ class DatabaseSeeder extends Seeder
             Position::create($position);
         }
 
+
+    # =========================================================================
+    # DEPARTMENTS SEEDS
+    # =========================================================================
+
+
+        DB::table('departments')->delete();
+
+        $departments = [
+                ['name' => 'Bayhead Precinct', 'slug' => "Bayhead Precinct"] ,
+                ['name' => 'Container Precinct', 'slug' => "Container Precinct"] ,
+                ['name' => 'Continuous Improvement', 'slug' => "Continuous Improvement"] ,
+                ['name' => 'Corporate Affairs', 'slug' => "Corporate Affairs"] ,
+                ['name' => 'Customer Relations Management', 'slug' => "Customer Relations Management"] ,
+                ['name' => 'Finance', 'slug' => "Finance"] ,
+                ['name' => 'Harbour Master', 'slug' => "Harbour Master"] ,
+                ['name' => 'Human Resources', 'slug' => "Human Resources"] ,
+                ['name' => 'IMS/ICT', 'slug' => "IMS/ICT"] ,
+                ['name' => 'Island view Precinct', 'slug' => "Island view Precinct"] ,
+                ['name' => 'Legal & Compliance', 'slug' => "Legal & Compliance"] ,
+                ['name' => 'Marine Operations', 'slug' => "Marine Operations"] ,
+                ['name' => 'Maydon Wharf Precinct', 'slug' => "Maydon Wharf Precinct"] ,
+                ['name' => 'New Business Development', 'slug' => "New Business Development"] ,
+                ['name' => 'Planning & Development', 'slug' => "Planning & Development"] ,
+                ['name' => 'Point Precinct', 'slug' => "Point Precinct"] ,
+                ['name' => 'Port Engineer', 'slug' => "Port Engineer"] ,
+                ['name' => 'Port Management', 'slug' => "Port Management"] ,
+                ['name' => 'Procurement', 'slug' => "Procurement"] ,
+                ['name' => 'Real Estate', 'slug' => "Real Estate"] ,
+                ['name' => 'Security', 'slug' => "Security"] ,
+                ['name' => 'SHEQ & Fire', 'slug' => "SHEQ & Fire"] ,
+        ];
+
+        foreach ($departments as $department) {
+            Department::create($department);
+        }
+
+
+    # =========================================================================
+    # PROVINCES SEEDS
+    # =========================================================================
+
+
+        DB::table('provinces')->delete();
+
+        $provinces = [
+                ['name' => 'KZN', 'slug' => "KZN"] ,
+                ['name' => 'EC', 'slug' => "EC"] ,
+                ['name' => 'WC', 'slug' => "WC"] ,
+
+        ];
+
+        foreach ($provinces as $province) {
+            Province::create($province);
+        }
+
+
+
+
+# =========================================================================
+# DISTRICTS SEEDS
+# =========================================================================
+
+
+        DB::table('districts')->delete();
+
+        $districts = [
+                ['name' => 'Richards Bay', 'slug' => "Richards Bay", 'province' => 1] ,
+                ['name' => 'Durban', 'slug' => "Durban", 'province' => 1] ,
+                ['name' => 'East London', 'slug' => "East London", 'province' => 2] ,
+                ['name' => 'Ngqura', 'slug' => "Ngqura", 'province' => 2] ,
+                ['name' => 'Port Elizabeth', 'slug' => "Port Elizabeth", 'province' => 2],
+                ['name' => 'Mossel Bay', 'slug' => "Mossel Bay", 'province' => 2],
+                ['name' => 'Cape Town', 'slug' => "Cape Town", 'province' => 3],
+                ['name' => 'Saldanha ', 'slug' => "Saldanha ", 'province' => 3],
+        ];
+
+        foreach ($districts as $district) {
+            District::create($district);
+        }
+
+    # =========================================================================
+    # MUNICIPALITIES SEEDS
+    # =========================================================================
+
+
+        DB::table('municipalities')->delete();
+
+        $municipalites = [
+                ['name' => 'Point', 'slug' => "Point", 'district' => 2] ,
+                ['name' => 'Bayhead', 'slug' => "Bayhead", 'district' => 2] ,
+                ['name' => 'Containers', 'slug' => "Containers", 'district' => 2] ,
+                ['name' => 'Island view', 'slug' => "Island view", 'district' => 2] ,
+                ['name' => 'Maydon Wharf', 'slug' => "Maydon Wharf", 'district' => 2] ,
+        ];
+
+        foreach ($municipalites as $municipality) {
+            Municipality::create($municipality);
+        }
 
     }
 }

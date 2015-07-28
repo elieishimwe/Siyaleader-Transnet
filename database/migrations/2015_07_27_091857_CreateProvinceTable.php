@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDepartmentsTable extends Migration
+class CreateProvinceTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateDepartmentsTable extends Migration
      */
     public function up()
     {
-         Schema::create('departments',function($table){
+        Schema::create('provinces',function($table){
             $table->increments('id');
             $table->string('slug')->unique();
             $table->string('name');
@@ -28,6 +28,6 @@ class CreateDepartmentsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('departments');
+        Schema::drop('provinces');
     }
 }
