@@ -84,7 +84,7 @@
 
 
                     <div class="form-group">
-                          {!! Form::label('District', 'District', array('class' => 'control-label col-lg-4')) !!}
+                          {!! Form::label('Port', 'Port', array('class' => 'control-label col-lg-4')) !!}
                           <div class="col-lg-8">
                               {!! Form::select('District',$selectDistricts,0,['class' => 'form-control' ,'id' => 'District']) !!}
                                 @if ($errors->has('district')) <p class="help-block red">*{{ $errors->first('district') }}</p> @endif

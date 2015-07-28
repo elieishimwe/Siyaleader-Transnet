@@ -61,6 +61,7 @@ class UserController extends Controller
         $user->Municipality = $request['Municipality'];
         $user->Department   = $request['Department'];
         $user->Password     = uniqid();
+        $user->api_key      = uniqid();
         $user->Status       = 'Active';
         $user->save();
          \Session::flash('success', $request['Fname'].' '.$request['Sname'].' has been added successfully!');

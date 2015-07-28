@@ -66,7 +66,7 @@
                 <span class="icon-bar"></span>
               </button>
               <a href="index.html" class="navbar-brand">
-                <img src="" alt="">
+                <img src="assets/img/transnet.png" alt="">
               </a>
             </header>
             <div class="topnav">
@@ -76,7 +76,7 @@
 
               <!-- .nav -->
               <ul class="nav navbar-nav">
-                <li> <a href="/">Siyaleader Transnet</a>  </li>
+                <li> <a href="/"></a>  </li>
               </ul><!-- /.nav -->
             </div>
           </div><!-- /.container-fluid -->
@@ -99,8 +99,8 @@
           <li class="nav-header">Menu</li>
           <li class="nav-divider"></li>
           <li class="">
-            <a href="/">
-              <i class="fa fa-dashboard"></i><span class="link-title">&nbsp;Dashboard</span>
+            <a href="{{ url('/') }}">
+              <i class="fa fa-user"></i><span class="link-title">&nbsp;System Users</span>
             </a>
           </li>
         </ul><!-- /#menu -->
