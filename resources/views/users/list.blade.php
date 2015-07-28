@@ -14,6 +14,13 @@
                       <i class="fa fa-table"></i>
                     </div>
                     <h5>TRANSNET USERS</h5>
+                     <div class="toolbar">
+                      <div class="btn-group">
+                        <a href="add-user"  class="btn btn-default btn-sm">
+                          <i class="fa fa-plus"></i>
+                        </a>
+                      </div>
+                    </div>
                   </header>
                   <div id="collapse4" class="body">
                     <table id="usersTable" class="table table-bordered table-condensed table-hover table-striped">

@@ -46,3 +46,7 @@ return $listing;
 });
 
 Route::get('users-list', 'UserController@index');
+
+Route::get('add-user', function () {
+    return view('registration');
+});
