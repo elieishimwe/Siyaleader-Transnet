@@ -60,9 +60,25 @@ class UserController extends Controller
         $user->District     = $request['District'];
         $user->Municipality = $request['Municipality'];
         $user->Department   = $request['Department'];
+        $user->Password     = $request['Password'];
         $user->Status       = 'Active';
         $user->save();
          \Session::flash('success', $request['Fname'].' '.$request['Sname'].' has been added successfully!');
+
+
+        $data = array(
+            'name'     =>$user->Fname,
+            'username' =>$user->Cell1,
+            'password' =>$user->Password,
+        );
+
+        \Mail::send('emails.registrationConfirmation',$data, function($message) use ($user)
+        {
+            $message->from('info@siyaleader.co.za', 'Siyaleader');
+            $message->to($user->Email)->subject("User Registration Confirmation: " .$user->Fname);
+
+        });
+
         return redirect('/');
 
     }
