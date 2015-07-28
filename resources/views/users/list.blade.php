@@ -16,7 +16,9 @@
                     <h5>TRANSNET USERS</h5>
                      <div class="toolbar">
                       <div class="btn-group">
+
                         <a href="add-user"  class="btn btn-default btn-sm">
+                          Add User
                           <i class="fa fa-plus"></i>
                         </a>
                       </div>
