@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
             $selectPositions[0] = "Select one";
 
             foreach ($positions as $position) {
-               $selectPositions[$position->id] = $position->name;
+               $selectPositions[$position->slug] = $position->name;
             }
 
              \View::share('selectPositions',$selectPositions);
@@ -39,7 +39,7 @@ class AppServiceProvider extends ServiceProvider
             $selectDepartments[0] = "Select one";
 
             foreach ($departments as $department) {
-               $selectDepartments[$department->id] = $department->name;
+               $selectDepartments[$department->slug] = $department->name;
             }
 
              \View::share('selectDepartments',$selectDepartments);
@@ -53,7 +53,7 @@ class AppServiceProvider extends ServiceProvider
             $selectProvinces[0] = "Select one";
 
             foreach ($provinces as $Province) {
-               $selectProvinces[$Province->id] = $Province->name;
+               $selectProvinces[$Province->slug] = $Province->name;
             }
 
              \View::share('selectProvinces',$selectProvinces);
@@ -67,7 +67,7 @@ class AppServiceProvider extends ServiceProvider
             $selectDistricts[0] = "Select one";
 
             foreach ($districts as $district) {
-               $selectDistricts[$district->id] = $district->name;
+               $selectDistricts[$district->slug] = $district->name;
             }
 
              \View::share('selectDistricts',$selectDistricts);
@@ -80,7 +80,7 @@ class AppServiceProvider extends ServiceProvider
             $selectMunicipalities    = array();
             $selectMunicipalities[0] = "Select one";
             foreach ($municipalities as $municipality) {
-               $selectMunicipalities[$municipality->id] = $municipality->name;
+               $selectMunicipalities[$municipality->slug] = $municipality->name;
             }
 
              \View::share('selectMunicipalities',$selectMunicipalities);

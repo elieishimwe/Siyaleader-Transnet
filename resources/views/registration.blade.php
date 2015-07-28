@@ -84,7 +84,7 @@
 
 
                     <div class="form-group">
-                          {!! Form::label('Precinct', 'Precinct', array('class' => 'control-label col-lg-4')) !!}
+                          {!! Form::label('District', 'District', array('class' => 'control-label col-lg-4')) !!}
                           <div class="col-lg-8">
                               {!! Form::select('District',$selectDistricts,0,['class' => 'form-control' ,'id' => 'District']) !!}
                                 @if ($errors->has('district')) <p class="help-block red">*{{ $errors->first('district') }}</p> @endif
@@ -92,7 +92,7 @@
                     </div>
 
                     <div class="form-group">
-                          {!! Form::label('Municipality', 'Municipality', array('class' => 'control-label col-lg-4')) !!}
+                          {!! Form::label('Precinct', 'Precinct', array('class' => 'control-label col-lg-4')) !!}
                           <div class="col-lg-8">
                               {!! Form::select('Municipality',$selectMunicipalities,0,['class' => 'form-control' ,'id' => 'Municipality']) !!}
                                 @if ($errors->has('Municipality')) <p class="help-block red">*{{ $errors->first('Municipality') }}</p> @endif
@@ -114,7 +114,7 @@
 
                     </div>
 
-                    </form>
+
                     {!! Form::close() !!}
                   </div>
                 </div>
@@ -126,8 +126,43 @@
             </div><!-- /.row -->
 
         </div><!-- /.outer -->
+@endsection
 
+@section('footer')
+<script>
+   $(document).ready(function() {
 
+      $("#Province").change(function(){
 
+        $.get("{{ url('/api/dropdown/districts/province')}}",
+        { option: $(this).val()},
+        function(data) {
+        $('#District').empty();
+        $('#municipality').empty();
+        $('#District').removeAttr('disabled');
+        $('#District').append("<option value='0'>Select one</option>");
+        $('#Municipality').append("<option value='0'>Select one</option>");
+        $.each(data, function(key, element) {
+        $('#District').append("<option value="+ key +">" + element + "</option>");
+        });
+        });
 
+   })
+
+    $("#District").change(function(){
+        $.get("{{ url('/api/dropdown/municipalities/district')}}",
+        { option: $(this).val() },
+        function(data) {
+        $('#Municipality').empty();
+        $('#Municipality').removeAttr('disabled');
+        $('#Municipality').append("<option value='0'>Select one</option>");
+        $.each(data, function(key, element) {
+        $('#Municipality').append("<option value="+ key +">" + element + "</option>");
+        });
+        });
+    });
+
+  })
+
+</script>
 @endsection

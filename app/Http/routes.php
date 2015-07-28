@@ -1,5 +1,9 @@
 <?php
 
+use App\Province;
+use App\District;
+use App\Municipality;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -16,3 +20,27 @@ Route::get('/', function () {
 });
 
 $router->resource('users','UserController');
+
+
+Route::get('/api/dropdown/{to}/{from}', function($to,$from){
+$name      = Input::get('option');
+
+if ($from == 'province')
+{
+  $object = Province::where('slug','=',$name)->first();
+}
+if ($from == 'district')
+{
+  $object = District::where('slug','=',$name)->first();
+}
+
+if ($from == 'province')
+{
+  $listing = DB::table($to)->where($from,$object->id)->lists('name', 'slug');
+}
+else {
+  $listing = DB::table($to)->where($from,$object->id)->lists('name', 'slug');
+}
+
+return $listing;
+});

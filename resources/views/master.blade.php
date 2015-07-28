@@ -206,4 +206,6 @@
     <!-- Metis demo scripts -->
     <script src="assets/js/app.js"></script>
     <script src="assets/js/style-switcher.min.js"></script>
+
+    @yield('footer')
   </body>
