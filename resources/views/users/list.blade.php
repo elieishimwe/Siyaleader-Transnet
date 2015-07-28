@@ -33,6 +33,7 @@
                     <table id="usersTable" class="table table-bordered table-condensed table-hover table-striped">
                       <thead>
                         <tr>
+                          <th>Id</th>
                           <th>Created At</th>
                           <th>First Name</th>
                           <th>Surname</th>
@@ -63,6 +64,7 @@
                 "order" :[[0,"desc"]],
                 "ajax": "{!! url('/users-list/')!!}",
                  "columns": [
+                {data: 'ID', name: 'ID'},
                 {data: 'created_at', name: 'created_at'},
                 {data: 'Fname', name: 'Fname'},
                 {data: 'Sname', name: 'Sname'},
