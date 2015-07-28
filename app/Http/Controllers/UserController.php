@@ -63,6 +63,8 @@ class UserController extends Controller
         $user->Status       = 'Active';
         $user->save();
 
+        return redirect('/');
+
     }
 
     /**

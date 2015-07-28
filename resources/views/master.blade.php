@@ -66,7 +66,7 @@
                 <span class="icon-bar"></span>
               </button>
               <a href="index.html" class="navbar-brand">
-                <img src="assets/img/logo.png" alt="">
+                <img src="assets/img/transnet.png" alt="">
               </a>
             </header>
             <div class="topnav">
@@ -76,7 +76,7 @@
 
               <!-- .nav -->
               <ul class="nav navbar-nav">
-                <li> <a href="dashboard.html">Dashboard</a>  </li>
+                <li> <a href="/">Siyaleader</a>  </li>
               </ul><!-- /.nav -->
             </div>
           </div><!-- /.container-fluid -->
@@ -99,7 +99,7 @@
           <li class="nav-header">Menu</li>
           <li class="nav-divider"></li>
           <li class="">
-            <a href="dashboard.html">
+            <a href="/">
               <i class="fa fa-dashboard"></i><span class="link-title">&nbsp;Dashboard</span>
             </a>
           </li>
@@ -167,7 +167,7 @@
       </div><!-- /#right -->
     </div><!-- /#wrap -->
     <footer class="Footer bg-dark dker">
-      <p>2014 &copy; Ubulwembu Software Solutions</p>
+      <p>2015 &copy; Ubulwembu Software Solutions</p>
     </footer><!-- /#footer -->
 
     <!-- #helpModal -->
