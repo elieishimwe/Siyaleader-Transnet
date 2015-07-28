@@ -60,7 +60,7 @@ class UserController extends Controller
         $user->District     = $request['District'];
         $user->Municipality = $request['Municipality'];
         $user->Department   = $request['Department'];
-        $user->Password     = $request['Password'];
+        $user->Password     = uniqid();
         $user->Status       = 'Active';
         $user->save();
          \Session::flash('success', $request['Fname'].' '.$request['Sname'].' has been added successfully!');
