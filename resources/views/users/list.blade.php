@@ -8,6 +8,11 @@
             <!--Begin Datatables-->
             <div class="row">
               <div class="col-lg-12">
+                @if(Session::has('success'))
+                    <div class="status alert alert-danger">
+                        {{ Session::get('success') }}
+                    </div>
+                @endif
                 <div class="box">
                   <header>
                     <div class="icons">

@@ -66,7 +66,7 @@
                 <span class="icon-bar"></span>
               </button>
               <a href="index.html" class="navbar-brand">
-                <img src="assets/img/transnet.png" alt="">
+                <img src="" alt="">
               </a>
             </header>
             <div class="topnav">
@@ -76,7 +76,7 @@
 
               <!-- .nav -->
               <ul class="nav navbar-nav">
-                <li> <a href="/">Siyaleader</a>  </li>
+                <li> <a href="/">Siyaleader Transnet</a>  </li>
               </ul><!-- /.nav -->
             </div>
           </div><!-- /.container-fluid -->

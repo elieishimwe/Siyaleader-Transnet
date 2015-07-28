@@ -62,7 +62,7 @@ class UserController extends Controller
         $user->Department   = $request['Department'];
         $user->Status       = 'Active';
         $user->save();
-
+         \Session::flash('success', $request['Fname'].' '.$request['Sname'].' has been added successfully!');
         return redirect('/');
 
     }
