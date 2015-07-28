@@ -94,7 +94,7 @@
                     <div class="form-group">
                           {!! Form::label('Precinct', 'Precinct', array('class' => 'control-label col-lg-4')) !!}
                           <div class="col-lg-8">
-                              {!! Form::select('Municipality',$selectMunicipalities,0,['class' => 'form-control' ,'id' => 'Municipality']) !!}
+                              {!! Form::select('Municipality',$selectMunicipalities,0,['class' => 'form-control' ,'name' => 'Municipality[]','multiple' => 'multiple','id' => 'Municipality']) !!}
                                 @if ($errors->has('Municipality')) <p class="help-block red">*{{ $errors->first('Municipality') }}</p> @endif
                           </div>
                     </div>

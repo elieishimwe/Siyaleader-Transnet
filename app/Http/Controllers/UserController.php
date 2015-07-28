@@ -58,7 +58,7 @@ class UserController extends Controller
         $user->Position     = $request['Position'];
         $user->Province     = $request['Province'];
         $user->District     = $request['District'];
-        $user->Municipality = $request['Municipality'];
+        $user->Municipality = implode(",",$request['Municipality']);
         $user->Department   = $request['Department'];
         $user->Password     = uniqid();
         $user->api_key      = uniqid();

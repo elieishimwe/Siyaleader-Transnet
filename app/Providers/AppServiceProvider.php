@@ -78,7 +78,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $municipalities          = Municipality::all();
             $selectMunicipalities    = array();
-            $selectMunicipalities[0] = "Select one";
+            $selectMunicipalities[0] = "Select one or more";
             foreach ($municipalities as $municipality) {
                $selectMunicipalities[$municipality->slug] = $municipality->name;
             }
