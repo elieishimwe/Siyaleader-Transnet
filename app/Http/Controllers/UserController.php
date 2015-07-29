@@ -76,7 +76,7 @@ class UserController extends Controller
         \Mail::send('emails.registrationConfirmation',$data, function($message) use ($user)
         {
             $message->from('info@siyaleader.co.za', 'Siyaleader');
-            $message->to($user->Email)->subject("User Registration Confirmation: " .$user->Fname);
+            $message->to($user->Email)->subject("Siyaleader User Registration Confirmation: " .$user->Fname);
 
         });
 
