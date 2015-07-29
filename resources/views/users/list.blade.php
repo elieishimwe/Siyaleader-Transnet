@@ -30,8 +30,8 @@
                     </div>
                   </header>
                   <div id="collapse4" class="body">
-                    <div class='table-responsive'>
-                    <table id="usersTable" class="table table-bordered table-condensed table-hover table-striped">
+
+                    <table id="usersTable" class="table table-bordered table-condensed table-hover table-striped table-responsive">
                       <thead>
                         <tr>
                           <th>Id</th>
@@ -45,7 +45,7 @@
                         </tr>
                       </thead>
                     </table>
-                    </div>
+
                   </div>
                 </div>
               </div>
