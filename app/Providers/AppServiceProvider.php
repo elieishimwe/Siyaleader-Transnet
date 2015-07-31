@@ -8,6 +8,9 @@ use App\Department;
 use App\Province;
 use App\District;
 use App\Municipality;
+use App\Category;
+use App\SubCategory;
+use App\SubSubCategory;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -88,6 +91,44 @@ class AppServiceProvider extends ServiceProvider
         }
 
 
+        if (\Schema::hasTable('categories'))
+        {
+            $categories          = Category::all();
+            $selectCategories    = array();
+            $selectCategories[0] = "Select one or more";
+            foreach ($categories as $category) {
+               $selectCategories[$category->slug] = $category->name;
+            }
+
+             \View::share('selectCategories',$selectCategories);
+
+        }
+
+        if (\Schema::hasTable('sub-categories'))
+        {
+            $subCategories       = SubCategory::all();
+            $selectSubCategories    = array();
+            $selectSubCategories[0] = "Select one or more";
+            foreach ($subCategories as $subCategory) {
+               $selectSubCategories[$subCategory->slug] = $subCategory->name;
+            }
+
+             \View::share('selectSubCategories',$selectSubCategories);
+
+        }
+
+        if (\Schema::hasTable('sub-sub-categories'))
+        {
+            $subSubCategories       = SubSubCategory::all();
+            $selectSubSubCategories    = array();
+            $selectSubSubCategories[0] = "Select one or more";
+            foreach ($subSubCategories as $subSubCategory) {
+               $selectSubSubCategories[$subSubCategory->slug] = $subSubCategory->name;
+            }
+
+             \View::share('selectSubSubCategories',$selectSubSubCategories);
+
+        }
 
 
     }
