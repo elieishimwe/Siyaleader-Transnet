@@ -1,59 +1,46 @@
 @extends('master')
 
 @section('content')
+<!-- Breadcrumb -->
+<ol class="breadcrumb hidden-xs">
+    <li><a href="#">Administration</a></li>
+    <li><a href="#">Users</a></li>
+    <li class="active">Users Listing</li>
+</ol>
 
-  <div class="outer">
-          <div class="inner bg-light lter">
+<h4 class="page-title">USERS</h4>
+<!-- Alternative -->
+<div class="block-area" id="alternative-buttons">
+    <h3 class="block-title">Users Listing</h3>
+    <a href="{{ url('add-user') }}" class="btn btn-sm">
+       Add User
+    </a>
+</div>
 
-            <!--Begin Datatables-->
-            <div class="row">
-              <div class="col-lg-12">
-                @if(Session::has('success'))
-                    <div class="status alert alert-danger">
-                        {{ Session::get('success') }}
-                    </div>
-                @endif
-                <div class="box">
-                  <header>
-                    <div class="icons">
-                      <i class="fa fa-table"></i>
-                    </div>
-                    <h5>TRANSNET USERS</h5>
-                     <div class="toolbar">
-                      <div class="btn-group">
-
-                        <a href="add-user"  class="btn btn-default btn-sm">
-                          Add User
-                          <i class="fa fa-plus"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </header>
-                  <div id="collapse4" class="body">
-
-                    <table id="usersTable" class="table table-bordered table-condensed table-hover table-striped table-responsive">
-                      <thead>
-                        <tr>
-                          <th>Id</th>
-                          <th>Created At</th>
-                          <th>First Name</th>
-                          <th>Surname</th>
-                          <th>Cell Number</th>
-                          <th>Position</th>
-                          <th>Port</th>
-                          <th>Precinct</th>
-                        </tr>
-                      </thead>
-                    </table>
-
-                  </div>
-                </div>
-              </div>
-            </div><!-- /.row -->
-
-            <!--End Datatables-->
-          </div><!-- /.inner -->
-        </div><!-- /.outer -->
+<!-- Responsive Table -->
+<div class="block-area" id="responsiveTable">
+    @if(Session::has('success'))
+      <div class="status alert alert-danger">
+          {{ Session::get('success') }}
+      </div>
+    @endif
+    <div class="table-responsive overflow">
+        <table class="table tile table-striped" id="usersTable">
+            <thead>
+              <tr>
+                    <th>Id</th>
+                    <th>Created At</th>
+                    <th>First Name</th>
+                    <th>Surname</th>
+                    <th>Cell Number</th>
+                    <th>Position</th>
+                    <th>Port</th>
+                    <th>Precinct</th>
+              </tr>
+            </thead>
+        </table>
+    </div>
+</div>
 @endsection
 
 @section('footer')
@@ -61,7 +48,7 @@
  <script>
     $(document).ready(function() {
 
-  var oTable      = $('#usersTable').DataTable({
+  var oTable     = $('#usersTable').DataTable({
                 "processing": true,
                 "serverSide": true,
                 "dom": 'T<"clear">lfrtip',
