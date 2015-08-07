@@ -31,6 +31,7 @@
                     <th>Id</th>
                     <th>Created At</th>
                     <th>Name</th>
+                    <th>Actions</th>
               </tr>
             </thead>
         </table>
@@ -53,6 +54,7 @@
                 {data: 'id', name: 'id'},
                 {data: 'created_at', name: 'created_at'},
                 {data: 'name', name: 'name'},
+                {data: 'actions',  name: 'actions'},
                ],
 
             "aoColumnDefs": [

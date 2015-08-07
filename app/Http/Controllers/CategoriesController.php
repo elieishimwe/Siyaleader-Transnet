@@ -20,7 +20,11 @@ class CategoriesController extends Controller
     public function index()
     {
         $departments = Department::select(array('id','name','created_at'));
-        return \Datatables::of($departments)->make(true);
+
+
+        return \Datatables::of($departments)
+                            ->addColumn('actions','<button class="btn btn-xs btn-alt" type="button">1</button>')
+                            ->make(true);
     }
 
     /**

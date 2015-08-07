@@ -83,13 +83,14 @@
 
                 <!-- Side Menu -->
                 <ul class="list-unstyled side-menu">
-                    <li class="active">
+
+                    <li {{ (Request::is('home') ? "class=active" : '') }}>
                         <a class="sa-side-home" href="{{ url('home') }}">
                             <span class="menu-item">Dashboard</span>
                         </a>
                     </li>
 
-                    <li class="dropdown">
+                    <li {{ (Request::is('list-users') ? "class=active dropdown" : 'dropdown') }}>
 
                         <a class="sa-side-ui" href="">
                             <span class="menu-item">Administration</span>
