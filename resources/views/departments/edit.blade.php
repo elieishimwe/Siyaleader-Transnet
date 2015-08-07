@@ -4,13 +4,26 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Modal title</h4>
+                <h4 class="modal-title" id='depTitle'>Business Unit</h4>
             </div>
             <div class="modal-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales orci ante, sed ornare eros vestibulum ut. Ut accumsan vitae eros sit amet tristique. Nullam scelerisque nunc enim, non dignissim nibh faucibus ullamcorper. Fusce pulvinar libero vel ligula iaculis ullamcorper. Integer dapibus, mi ac tempor varius, purus nibh mattis erat, vitae porta nunc nisi non tellus. Vivamus mollis ante non massa egestas fringilla. Vestibulum egestas consectetur nunc at ultricies. Morbi quis consectetur nunc.</p>
+            {!! Form::open(['url' => 'users', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"registrationForm" ]) !!}
+            <div class="form-group">
+                {!! Form::label('Name', 'Name', array('class' => 'col-md-2 control-label')) !!}
+                <div class="col-md-10">
+                  {!! Form::text('name',NULL,['class' => 'form-control input-sm','id' => 'name']) !!}
+                  @if ($errors->has('name')) <p class="help-block red">*{{ $errors->first('name') }}</p> @endif
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button type="submit" id='submitMemberForm' class="btn btn-info btn-sm m-t-10">SUBMIT FORM</button>
+                </div>
+            </div>
+            {!! Form::close() !!}
+
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-sm">Save changes</button>
                 <button type="button" class="btn btn-sm" data-dismiss="modal">Close</button>
             </div>
         </div>

@@ -8,10 +8,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Department;
 
-class CategoriesController extends Controller
+class DepartmentController extends Controller
 {
-
-
     /**
      * Display a listing of the resource.
      *
@@ -19,10 +17,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $departments = Department::select(array('id','name','created_at'));
-        return \Datatables::of($departments)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchModal({{$id}});" data-target=".modalEditDepartment">Edit</a>')
-                            ->make(true);
+        //
     }
 
     /**
@@ -63,9 +58,11 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function edit($id)
+    public function edit($id,Department $department)
     {
-        //
+
+        $dept    = Department::where('id',$id)->first();
+        return [$dept];
     }
 
     /**

@@ -64,5 +64,6 @@ Route::controllers([
 Route::get('home', 'HomeController@index');
 Route::get('users-list', 'UserController@index');
 Route::get('departments-list', 'CategoriesController@index');
+Route::get('departments/{id}', 'DepartmentController@edit');
 
 

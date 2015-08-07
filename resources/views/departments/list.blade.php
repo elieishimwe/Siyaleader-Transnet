@@ -67,10 +67,8 @@
 
   });
 
-   function launchModal(id)
+   function launchModal(id,name)
     {
-
-      alert(id);
 
       $(".modal-body #rapID").val(id);
 
@@ -81,77 +79,23 @@
       .removeAttr('selected');
 
        $('#formErrorsRegistrationMember').val('1');
-       $(".modal-body #MMCELLMember").val(sender);
+       $(".modal-body #MMCELLMember").val(name);
        $('#formErrorsReport').val('0');
         var cell = $("#case_" + id ).data('mmcell');
         $.ajax({
         type    :"GET",
         dataType:"json",
-        url     :"{!! url('/members/"+ cell + "')!!}",
-        data    :{ option:cell },
+        url     :"{!! url('/departments/"+ id + "')!!}",
         success :function(data) {
 
             if(data[0] !== null)
             {
 
-               $("#bs-registration-modal-member #Fname").val(data[0].Fname);
-               $("#bs-registration-modal-member #Sname").val(data[0].Sname);
-               $("#bs-registration-modal-member #House").val(data[0].House);
-               $("#bs-registration-modal-member #Area").val(data[0].Area);
-               $("#bs-registration-modal-member #IDnumber").val(data[0].IDnumber);
-               $("#bs-registration-modal-member #Province").val(data[0].Province);
-               $("#bs-registration-modal-member #District").val(data[0].District);
-               $("#bs-registration-modal-member #Municipality").val(data[0].Municipality);
-               $("#bs-registration-modal-member #Ward").val(data[0].Ward);
-               $("#bs-registration-modal-member #Position").val(data[0].Position);
-               $("#bs-registration-modal-member #Department").val(data[0].Department);
-               $("#bs-registration-modal-member #Cell1").val(data[0].Cell1);
-               $("#bs-registration-modal-member #Cell1Make").val(data[0].Cell1Make);
-               $("#bs-registration-modal-member #Cell1Network").val(data[0].Cell1Network);
-               $("#bs-registration-modal-member #Cell1Type").val(data[0].Cell1Type);
-               $("#bs-registration-modal-member #Cell2").val(data[0].Cell2);
-               $("#bs-registration-modal-member #Cell2Make").val(data[0].Cell2Make);
-               $("#bs-registration-modal-member #Cell2Network").val(data[0].Cell2Network);
-               $("#bs-registration-modal-member #Cell2Type").val(data[0].Cell2Type);
-               $("#bs-registration-modal-member #Email").val(data[0].Email);
-               $("#bs-registration-modal-member #Cell2Network").val(data[0].Cell2Network);
-               $("#bs-registration-modal-member #SupName").val(data[0].SupName);
-               $("#bs-registration-modal-member #SupCell").val(data[0].SupCell);
-               $("#bs-registration-modal-member #CDWName").val(data[0].CDWName);
-               $("#bs-registration-modal-member #CDWCell").val(data[0].CDWCell);
-               $("#bs-registration-modal-member #CouncillorName").val(data[0].CouncillorName);
-               $("#bs-registration-modal-member #CouncillorCell").val(data[0].CouncillorCell);
+               $("#modalDepartment #name").val(data[0].name);
 
             }
             else {
-               $("#bs-registration-modal-member #Sname").val('');
-               $("#bs-registration-modal-member #Fname").val('');
-               $("#bs-registration-modal-member #House").val('');
-               $("#bs-registration-modal-member #Area").val('');
-               $("#bs-registration-modal-member #IDnumber").val('');
-               $("#bs-registration-modal-member #Province").val('');
-               $("#bs-registration-modal-member #District").val('');
-               $("#bs-registration-modal-member #Municipality").val('');
-               $("#bs-registration-modal-member #Ward").val('');
-               $("#bs-registration-modal-member #Position").val('');
-               $("#bs-registration-modal-member #Department").val('');
-               $("#bs-registration-modal-member #Cell1").val('');
-               $("#bs-registration-modal-member #Cell1Make").val('');
-               $("#bs-registration-modal-member #Cell1Network").val('');
-               $("#bs-registration-modal-member #Cell1Type").val('');
-               $("#bs-registration-modal-member #Cell2").val('');
-               $("#bs-registration-modal-member #Cell2Make").val('');
-               $("#bs-registration-modal-member #Cell2Network").val('');
-               $("#bs-registration-modal-member #Cell2Type").val('');
-               $("#bs-registration-modal-member #Email").val('');
-               $("#bs-registration-modal-member #Cell2Network").val('');
-               $("#bs-registration-modal-member #SupName").val('');
-               $("#bs-registration-modal-member #SupCell").val('');
-               $("#bs-registration-modal-member #CDWName").val('');
-               $("#bs-registration-modal-member #CDWCell").val('');
-               $("#bs-registration-modal-member #CouncillorName").val('');
-               $("#bs-registration-modal-member #CouncillorCell").val('');
-
+               $("#modalDepartment #name").val('');
             }
 
         }
