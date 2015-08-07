@@ -66,7 +66,9 @@
                             <li><a href="{{ url('/auth/logout') }}">Sign Out</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
                         </ul>
                         <h4 class="m-0"></h4>
-                        {{ Auth::user()->name }}  {{ Auth::user()->surname }}
+                         @if (Auth::user())
+                            {{ Auth::user()->name }}  {{ Auth::user()->surname }}
+                         @endif
                     </div>
 
                     <!-- Calendar -->
@@ -83,7 +85,9 @@
                             <span class="menu-item">Administration</span>
                         </a>
                         <ul class="list-unstyled menu-item">
+                         @if ( Auth::user()->role == 1)
                             <li><a href="{{ url('list-user') }}">Users</a></li>
+                         @endif
                         </ul>
                     </li>
 
