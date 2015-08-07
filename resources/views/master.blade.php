@@ -79,8 +79,14 @@
 
                 <!-- Side Menu -->
                 <ul class="list-unstyled side-menu">
+                    <li class="active">
+                        <a class="sa-side-home" href="{{ url('home') }}">
+                            <span class="menu-item">Dashboard</span>
+                        </a>
+                    </li>
 
                     <li class="dropdown">
+
                         <a class="sa-side-ui" href="">
                             <span class="menu-item">Administration</span>
                         </a>
