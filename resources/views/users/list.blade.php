@@ -33,9 +33,7 @@
                     <th>First Name</th>
                     <th>Surname</th>
                     <th>Cell Number</th>
-                    <th>Position</th>
-                    <th>Port</th>
-                    <th>Precinct</th>
+                    <th>Email</th>
               </tr>
             </thead>
         </table>
@@ -60,9 +58,8 @@
                 {data: 'name', name: 'name'},
                 {data: 'surname', name: 'surname'},
                 {data: 'cellphone', name: 'cellphone'},
-                {data: 'position', name: 'position'},
-                {data: 'district', name: 'district'},
-                {data: 'municipality', name: 'municipality'},
+                {data: 'email', name: 'email'},
+
                ],
 
             "aoColumnDefs": [

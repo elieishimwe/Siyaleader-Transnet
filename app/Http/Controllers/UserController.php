@@ -35,7 +35,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::select(array('id','created_at','name','surname','cellphone','position','district','municipality'));
+        $users = User::select(array('id','created_at','name','surname','cellphone','position','district','municipality','email'));
         return \Datatables::of($users)->make(true);
     }
 
