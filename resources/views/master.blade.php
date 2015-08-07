@@ -7,6 +7,7 @@
 
         <meta name="description" content="Siyaleader Ports Case Console Management">
         <meta name="keywords" content="Siyaleader, Ports, Trasnet,">
+        <link rel="icon" type="image/x-icon" sizes="16x16" href="/img/favicon.ico?v1">
 
         <title>Siyaleader Ports</title>
 
@@ -23,7 +24,7 @@
          <!-- Datatables stylesheet -->
         <link rel="stylesheet" href="//cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.css">
     </head>
-    <body id="skin-blur-violate">
+    <body id="skin-blur-sunset">
 
         <header id="header" class="media">
             <a href="" id="menu-toggle"></a>
@@ -85,7 +86,7 @@
                             <span class="menu-item">Administration</span>
                         </a>
                         <ul class="list-unstyled menu-item">
-                            <li><a href="{{ url('/') }}">Users</a></li>
+                            <li><a href="{{ url('list-user') }}">Users</a></li>
                         </ul>
                     </li>
 

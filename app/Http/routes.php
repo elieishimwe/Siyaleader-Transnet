@@ -15,7 +15,7 @@ use App\Municipality;
 |
 */
 
-Route::get('/', function () {
+Route::get('list-user', function () {
     return view('users.list');
 });
 
@@ -48,5 +48,18 @@ return $listing;
 Route::get('users-list', 'UserController@index');
 
 Route::get('add-user', function () {
-    return view('registration');
+    return view('users.registration');
 });
+
+Route::get('/', function () {
+    return view('auth.login');
+});
+
+Route::controllers([
+    'auth'     => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
+
+Route::get('home', 'HomeController@index');
+
+

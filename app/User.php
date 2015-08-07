@@ -17,14 +17,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var string
      */
-    protected $table = 'imb_oss_users';
+    protected $table = 'users';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['Fname', 'Sname'];
+    protected $fillable = ['email', 'name'];
 
     /**
      * The attributes excluded from the model's JSON form.

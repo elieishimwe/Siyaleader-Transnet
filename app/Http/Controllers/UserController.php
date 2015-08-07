@@ -8,6 +8,13 @@ use App\Http\Requests;
 use App\Http\Requests\UserRequest;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\OldUser;
+use App\Position;
+use App\Province;
+use App\District;
+use App\Municipality;
+use App\Department;
+
 
 class UserController extends Controller
 {
@@ -28,7 +35,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::select(array('ID','created_at','Fname','Sname','Cell1','Position','District','Municipality'));
+        $users = User::select(array('id','created_at','name','surname','cellphone','position','district','municipality'));
         return \Datatables::of($users)->make(true);
     }
 
@@ -48,39 +55,65 @@ class UserController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(UserRequest $request, User $user)
+    public function store(UserRequest $request, User $user,OldUser $oldUser)
     {
 
-        $user->Fname        = $request['Fname'];
-        $user->Sname        = $request['Sname'];
-        $user->Cell1        = $request['Cell1'];
-        $user->Email        = $request['Email'];
-        $user->Position     = $request['Position'];
-        $user->Province     = $request['Province'];
-        $user->District     = $request['District'];
-        $user->Municipality = implode(",",$request['Municipality']);
-        $user->Department   = $request['Department'];
-        $user->Password     = rand(1000,99999);
+        /*  New User Table */
+        $user->name         = $request['Fname'];
+        $user->surname      = $request['Sname'];
+        $user->cellphone    = $request['Cell1'];
+        $user->email        = $request['Email'];
+        $position           = Position::where('slug','=',$request['Position'])->first();
+        $user->position     = $position->id;
+        $province           = Province::where('slug','=',$request['Province'])->first();
+        $user->province     = $province->id;
+        $district           = District::where('slug','=',$request['District'])->first();
+        $user->district     = $district->id;
+        $municipalityIds    = array();
+        foreach ($request['Municipality'] as $municipalityName) {
+            $municipality      = Municipality::where('slug','=',$municipalityName)->first();
+            $municipalityIds[] = $municipality->id;
+        }
+        $user->municipality = implode(",",$municipalityIds);
+        $department         = Department::where('slug','=',$request['Department'])->first();
+        $user->department   = $department->id;
+        $user->password     = \Hash::make(rand(1000,99999));
         $user->api_key      = uniqid();
-        $user->Status       = 'Active';
+        $user->status       = 1;
+        $user->role         = 2;
         $user->save();
+
+        /*  Old User Table */
+        $oldUser->Fname        = $request['Fname'];
+        $oldUser->Sname        = $request['Sname'];
+        $oldUser->Cell1        = $request['Cell1'];
+        $oldUser->Email        = $request['Email'];
+        $oldUser->Position     = $request['Position'];
+        $oldUser->Province     = $request['Province'];
+        $oldUser->District     = $request['District'];
+        $oldUser->Municipality = implode(",",$request['Municipality']);
+        $oldUser->Department   = $request['Department'];
+        $oldUser->Password     = rand(1000,99999);
+        $oldUser->api_key      = uniqid();
+        $oldUser->Status       = 'Active';
+        $oldUser->save();
          \Session::flash('success', $request['Fname'].' '.$request['Sname'].' has been added successfully!');
 
 
         $data = array(
-            'name'     =>$user->Fname,
-            'username' =>$user->Cell1,
-            'password' =>$user->Password,
+            'name'     =>$user->name,
+            'username' =>$user->cellphone,
+            'password' =>$user->password,
         );
 
         \Mail::send('emails.registrationConfirmation',$data, function($message) use ($user)
         {
             $message->from('info@siyaleader.co.za', 'Siyaleader');
-            $message->to($user->Email)->subject("Siyaleader User Registration Confirmation: " .$user->Fname);
+            $message->to($user->email)->subject("Siyaleader User Registration Confirmation: " .$user->name);
 
         });
 
-        return redirect('/');
+        return redirect('list-user');
 
     }
 
