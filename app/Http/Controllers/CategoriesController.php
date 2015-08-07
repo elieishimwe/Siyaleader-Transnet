@@ -23,7 +23,7 @@ class CategoriesController extends Controller
 
 
         return \Datatables::of($departments)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchModall({{$id}});" data-target=".modalEditDepartment">1</a>')
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchModal({{$id}});" data-target=".modalEditDepartment">1</a>')
                             ->make(true);
     }
 

@@ -67,8 +67,10 @@
 
   });
 
-   function launchModal(id,sender)
+   function launchModal(id)
     {
+
+      alert(id);
 
       $(".modal-body #rapID").val(id);
 
