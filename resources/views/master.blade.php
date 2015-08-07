@@ -65,10 +65,14 @@
                         <ul class="dropdown-menu profile-menu">
                             <li><a href="{{ url('/auth/logout') }}">Sign Out</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
                         </ul>
-                        <h4 class="m-0"></h4>
-                         @if (Auth::user())
-                            {{ Auth::user()->name }}  {{ Auth::user()->surname }}
-                         @endif
+                        @if (Auth::user())
+                            <h4 class="m-0">
+                                {{ Auth::user()->name }}  {{ Auth::user()->surname }}
+                            </h4>
+                            {{ Auth::user()->username }}
+                        @endif
+
+
                     </div>
 
                     <!-- Calendar -->
