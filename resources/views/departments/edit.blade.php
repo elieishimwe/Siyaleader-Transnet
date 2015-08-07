@@ -15,17 +15,15 @@
                   @if ($errors->has('name')) <p class="help-block red">*{{ $errors->first('name') }}</p> @endif
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <button type="submit" id='submitMemberForm' class="btn btn-info btn-sm m-t-10">SUBMIT FORM</button>
-                </div>
-            </div>
-            {!! Form::close() !!}
+
 
             </div>
             <div class="modal-footer">
+                <button type="submit" id='submitMemberForm' type="button" class="btn btn-sm" data-dismiss="modal">Save Changes</button>
                 <button type="button" class="btn btn-sm" data-dismiss="modal">Close</button>
             </div>
+
+            {!! Form::close() !!}
         </div>
     </div>
 </div>
