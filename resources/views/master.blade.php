@@ -92,7 +92,8 @@
                         </a>
                         <ul class="list-unstyled menu-item">
                          @if ( Auth::user()->role == 1)
-                            <li><a href="{{ url('list-user') }}">Users</a></li>
+                            <li><a href="{{ url('list-users') }}">Users</a></li>
+                            <li><a href="{{ url('list-categories') }}">Categories</a></li>
                          @endif
                         </ul>
                     </li>

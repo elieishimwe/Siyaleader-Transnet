@@ -15,12 +15,15 @@ use App\Municipality;
 |
 */
 
-Route::get('list-user', function () {
+Route::get('list-users', function () {
     return view('users.list');
 });
 
-$router->resource('users','UserController');
+Route::get('list-categories', function () {
+    return view('departments.list');
+});
 
+$router->resource('users','UserController');
 
 Route::get('/api/dropdown/{to}/{from}', function($to,$from){
 $name      = Input::get('option');
@@ -45,8 +48,6 @@ else {
 return $listing;
 });
 
-Route::get('users-list', 'UserController@index');
-
 Route::get('add-user', function () {
     return view('users.registration');
 });
@@ -61,5 +62,7 @@ Route::controllers([
 ]);
 
 Route::get('home', 'HomeController@index');
+Route::get('users-list', 'UserController@index');
+Route::get('departments-list', 'CategoriesController@index');
 
 
