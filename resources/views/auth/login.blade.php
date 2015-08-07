@@ -4,9 +4,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
         <meta name="format-detection" content="telephone=no">
         <meta charset="UTF-8">
-
-        <meta name="description" content="Violate Responsive Admin Template">
-        <meta name="keywords" content="Super Admin, Admin, Template, Bootstrap">
+        <meta name="description" content="Siyaleader Ports Case Console Management">
+        <meta name="keywords" content="Siyaleader, Ports, Trasnet,">
+        <link rel="icon" type="image/x-icon" sizes="16x16" href="/img/favicon.ico?v1">
 
         <title>Siyaleader</title>
 
@@ -31,7 +31,7 @@
     @endif
         <section id="login">
             <header>
-                <h1>SIYALEADER V3.0</h1>
+                <h1></h1>
                 <p></p>
             </header>
 
@@ -52,7 +52,7 @@
                 <button class="btn btn-sm m-r-5" type="submit">Sign In</button>
 
                 <small>
-                    <a class="box-switcher" data-switch="box-register" href="">Don't have an Account?</a> or
+                    <!-- a class="box-switcher" data-switch="box-register" href="">Don't have an Account?</a> or -->
                     <a class="box-switcher" data-switch="box-reset" href="">Forgot Password?</a>
                 </small>
             </form>
@@ -75,7 +75,7 @@
             <!-- Forgot Password -->
             <form class="box animated tile" id="box-reset">
                 <h2 class="m-t-0 m-b-15">Reset Password</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu risus. Curabitur commodo lorem fringilla enim feugiat commodo sed ac lacus.</p>
+                <p></p>
                 <input type="email" class="login-control m-b-20" placeholder="Email Address">
 
                 <button class="btn btn-sm m-r-5">Reset Password</button>

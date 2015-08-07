@@ -62,6 +62,7 @@ class UserController extends Controller
         $user->name         = $request['Fname'];
         $user->surname      = $request['Sname'];
         $user->cellphone    = $request['Cell1'];
+        $user->username     = $request['Cell1'];
         $user->email        = $request['Email'];
         $position           = Position::where('slug','=',$request['Position'])->first();
         $user->position     = $position->id;
@@ -77,7 +78,8 @@ class UserController extends Controller
         $user->municipality = implode(",",$municipalityIds);
         $department         = Department::where('slug','=',$request['Department'])->first();
         $user->department   = $department->id;
-        $user->password     = \Hash::make(rand(1000,99999));
+        $password           = rand(1000,99999);
+        $user->password     = \Hash::make($password);
         $user->api_key      = uniqid();
         $user->status       = 1;
         $user->role         = 2;
@@ -93,7 +95,7 @@ class UserController extends Controller
         $oldUser->District     = $request['District'];
         $oldUser->Municipality = implode(",",$request['Municipality']);
         $oldUser->Department   = $request['Department'];
-        $oldUser->Password     = rand(1000,99999);
+        $oldUser->Password     = $password;
         $oldUser->api_key      = uniqid();
         $oldUser->Status       = 'Active';
         $oldUser->save();

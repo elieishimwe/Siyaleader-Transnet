@@ -21,6 +21,7 @@ class AddColumnsUsersTable extends Migration
             $table->integer('role');
             $table->string('cellphone')->unique();
             $table->integer('department');
+            $table->string('username');
             $table->integer('province');
             $table->integer('district');
             $table->integer('municipality');
@@ -46,6 +47,10 @@ class AddColumnsUsersTable extends Migration
             $table->dropColumn('role');
             $table->dropColumn('cellphone');
             $table->dropColumn('department');
+            $table->dropColumn('username');
+            $table->dropColumn('district');
+            $table->dropColumn('municipality');
+            $table->dropColumn('status');
             $table->dropColumn('province');
             $table->dropColumn('api_key');
 

@@ -28,7 +28,7 @@
 
         <header id="header" class="media">
             <a href="" id="menu-toggle"></a>
-            <a class="logo pull-left" href="index.html">SIYALEADER 3.0</a>
+            <a class="logo pull-left" href="index.html">SIYALEADER TRANSNET</a>
 
             <div class="media-body">
                 <div class="media" id="top-menu">
@@ -60,16 +60,13 @@
                     <!-- Profile Menu -->
                     <div class="text-center s-widget m-b-25 dropdown" id="profile-menu">
                         <a href="" data-toggle="dropdown">
-                            <img class="profile-pic animated" src="" alt="">
+                            <img class="profile-pic animated" src="img/dark.png" alt="">
                         </a>
                         <ul class="dropdown-menu profile-menu">
-                            <li><a href="">My Profile</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
-                            <li><a href="">Messages</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
-                            <li><a href="">Settings</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
-                            <li><a href="">Sign Out</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
+                            <li><a href="{{ url('/auth/logout') }}">Sign Out</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
                         </ul>
                         <h4 class="m-0"></h4>
-                        @
+                        {{ Auth::user()->name }}  {{ Auth::user()->surname }}
                     </div>
 
                     <!-- Calendar -->

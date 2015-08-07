@@ -55,14 +55,14 @@
                 "order" :[[0,"desc"]],
                 "ajax": "{!! url('/users-list/')!!}",
                  "columns": [
-                {data: 'ID', name: 'ID'},
+                {data: 'id', name: 'id'},
                 {data: 'created_at', name: 'created_at'},
-                {data: 'Fname', name: 'Fname'},
-                {data: 'Sname', name: 'Sname'},
-                {data: 'Cell1', name: 'Cell1'},
-                {data: 'Position', name: 'Position'},
-                {data: 'District', name: 'District'},
-                {data: 'Municipality', name: 'Municipality'},
+                {data: 'name', name: 'name'},
+                {data: 'surname', name: 'surname'},
+                {data: 'cellphone', name: 'cellphone'},
+                {data: 'position', name: 'position'},
+                {data: 'district', name: 'district'},
+                {data: 'municipality', name: 'municipality'},
                ],
 
             "aoColumnDefs": [
