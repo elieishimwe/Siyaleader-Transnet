@@ -34,6 +34,7 @@
                     <th>Surname</th>
                     <th>Cell Number</th>
                     <th>Email</th>
+                    <th>Password</th>
               </tr>
             </thead>
         </table>
@@ -59,6 +60,7 @@
                 {data: 'surname', name: 'surname'},
                 {data: 'cellphone', name: 'cellphone'},
                 {data: 'username', name: 'username'},
+                {data: 'Password', name: 'Password'},
 
                ],
 

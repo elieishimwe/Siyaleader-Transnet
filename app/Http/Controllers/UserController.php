@@ -35,7 +35,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::select(array('id','created_at','name','surname','cellphone','position','district','municipality','username'));
+        $users = OldUser::select(array('id','created_at','name','surname','cellphone','position','district','municipality','username','Password'));
         return \Datatables::of($users)->make(true);
     }
 
@@ -115,7 +115,7 @@ class UserController extends Controller
 
         });
 
-        return redirect('list-user');
+        return redirect('list-users');
 
     }
 
