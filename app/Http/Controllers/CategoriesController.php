@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Department;
+use App\Category;
 
 class CategoriesController extends Controller
 {
@@ -17,10 +17,10 @@ class CategoriesController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index($id)
     {
-        $departments = Department::select(array('id','name','created_at'));
-        return \Datatables::of($departments)
+        $categories = Category::select(array('id','name','created_at'))->where('department','=',$id);
+        return \Datatables::of($categories)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchModal({{$id}});" data-target=".modalEditDepartment">Edit</a>')
                             ->make(true);
     }

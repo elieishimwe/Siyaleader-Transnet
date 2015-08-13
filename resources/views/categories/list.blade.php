@@ -4,16 +4,16 @@
 <!-- Breadcrumb -->
 <ol class="breadcrumb hidden-xs">
     <li><a href="#">Administration</a></li>
-    <li><a href="#">Departments</a></li>
-    <li class="active">Departments Listing</li>
+    <li><a href="#">Categories</a></li>
+    <li class="active">Categories Listing</li>
 </ol>
 
-<h4 class="page-title">DEPARTMENTS</h4>
+<h4 class="page-title">CATEGORIES</h4>
 <!-- Alternative -->
 <div class="block-area" id="alternative-buttons">
-    <h3 class="block-title">Business Units Listing</h3>
+    <h3 class="block-title">Categories Listing</h3>
     <a href="{{ url('add-user') }}" class="btn btn-sm">
-       Add Business Unit
+       Add Category
     </a>
 </div>
 
@@ -25,7 +25,7 @@
       </div>
     @endif
     <div class="table-responsive overflow">
-        <table class="table tile table-striped" id="departmentsTable">
+        <table class="table tile table-striped" id="categoriesTable">
             <thead>
               <tr>
                     <th>Id</th>
@@ -37,7 +37,7 @@
         </table>
     </div>
 </div>
-@include('departments.edit')
+@include('categories.edit')
 @endsection
 
 @section('footer')
@@ -45,18 +45,18 @@
  <script>
   $(document).ready(function() {
 
-  var oTable     = $('#departmentsTable').DataTable({
+  var oTable     = $('#categoriesTable').DataTable({
                 "processing": true,
                 "serverSide": true,
                 "dom": 'T<"clear">lfrtip',
                 "order" :[[0,"desc"]],
-                "ajax": "{!! url('/departments-list/')!!}",
+                "ajax": "{!! url('/categories-list/')!!}",
                  "columns": [
                 {data: 'id', name: 'id'},
                 {data: 'created_at', name: 'created_at'},
                 {data: function(d)
                 {
-                 return "<a href='{!! url('list-categories/" + d.id + "') !!}' class='btn btn-sm'>" + d.name + "</a>";
+                 return "<a href='{!! url('list-categories') !!}' class='btn btn-sm'>"+d.name+"</a>";
 
                 },"name" : 'name'},
 

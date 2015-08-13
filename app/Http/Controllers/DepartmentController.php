@@ -17,7 +17,10 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        //
+        $departments = Department::select(array('id','name','created_at'));
+        return \Datatables::of($departments)
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchModal({{$id}});" data-target=".modalEditDepartment">Edit</a>')
+                            ->make(true);
     }
 
     /**

@@ -19,9 +19,35 @@ Route::get('list-users', function () {
     return view('users.list');
 });
 
-Route::get('list-categories', function () {
+
+/*
+|--------------------------------------------------------------------------
+| DEPARTMENTS ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get('list-departments', function () {
     return view('departments.list');
 });
+
+Route::get('departments-list', 'DepartmentController@index');
+Route::get('departments/{id}', 'DepartmentController@edit');
+
+/*
+|--------------------------------------------------------------------------
+| CATEGORIES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get('list-categories/{id}', function () {
+    return view('categories.list');
+});
+
+Route::get('categories-list/', 'CategoriesController@index');
+
+
 
 $router->resource('users','UserController');
 
@@ -63,7 +89,6 @@ Route::controllers([
 
 Route::get('home', 'HomeController@index');
 Route::get('users-list', 'UserController@index');
-Route::get('departments-list', 'CategoriesController@index');
-Route::get('departments/{id}', 'DepartmentController@edit');
+
 
 
