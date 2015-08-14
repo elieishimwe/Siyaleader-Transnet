@@ -5,25 +5,27 @@
 <!-- Breadcrumb -->
 <ol class="breadcrumb hidden-xs">
     <li><a href="#">Administration</a></li>
-    <li><a href="#">Categories</a></li>
+    <li><a href="{{ url('list-departments') }}">Departments</a></li>
+    <li><a href="{{ url('list-categories/$catObj->id') }}">{{ $deptName->name }}</a></li>
+    <li><a href="#">{{ $catObj->name }}</a></li>
     <li class="active">Categories Listing</li>
 </ol>
 
-<h4 class="page-title">CATEGORIES</h4>
+<h4 class="page-title">{{ $catObj->name }} CATEGORIES</h4>
 <!-- Alternative -->
 <div class="block-area" id="alternative-buttons">
-    <h3 class="block-title">Sub Categories Listing</h3>
-    <a href="{{ url('add-user') }}" class="btn btn-sm">
-       Add Sub Category
+    <h3 class="block-title">Categories Listing</h3>
+    <a class="btn btn-sm" data-toggle="modal" onClick="launchAddSubCategoryModal();" data-target=".modalAddSubCategory">
+      Add Category
     </a>
 </div>
-
 <!-- Responsive Table -->
 <div class="block-area" id="responsiveTable">
-    @if(Session::has('success'))
-      <div class="status alert alert-danger">
-          {{ Session::get('success') }}
-      </div>
+     @if(Session::has('success'))
+    <div class="alert alert-info alert-dismissable fade in">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        {{ Session::get('success') }}
+    </div>
     @endif
     <div class="table-responsive overflow">
         <table class="table tile table-striped" id="subCategoriesTable">
@@ -39,6 +41,7 @@
     </div>
 </div>
 @include('subcategories.edit')
+@include('subcategories.add')
 @endsection
 
 @section('footer')
@@ -46,7 +49,7 @@
  <script>
   $(document).ready(function() {
 
-  var category = {!! $category !!};
+  var category = {!! $catObj->id !!};
   var oTable     = $('#subCategoriesTable').DataTable({
                 "processing": true,
                 "serverSide": true,

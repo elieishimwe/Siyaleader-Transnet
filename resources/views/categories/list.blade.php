@@ -14,7 +14,7 @@
 <!-- Alternative -->
 <div class="block-area" id="alternative-buttons">
     <h3 class="block-title">Categories Listing</h3>
-    <a class="btn btn-sm" data-toggle="modal" onClick="launchAddCategoryModal();" data-target=".modalAddCategory">
+    <a class="btn btn-sm" data-toggle="modal" data-target=".modalAddCategory">
      Add Category
     </a>
 </div>

@@ -4,6 +4,7 @@ use App\Province;
 use App\District;
 use App\Municipality;
 use App\Department;
+use App\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,6 +68,14 @@ Route::get('categories-list/{id}', 'CategoriesController@index');
 Route::post('updateCategory', 'CategoriesController@update');
 Route::post('addCategory', 'CategoriesController@store');
 
+/*
+|--------------------------------------------------------------------------
+| END CATEGORIES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -74,15 +83,22 @@ Route::post('addCategory', 'CategoriesController@store');
 |--------------------------------------------------------------------------
 |
 */
-
 Route::get('list-sub-categories/{category}', function ($category) {
-    return view('subcategories.list',compact('category'));
+    $catObj   = Category::find($category);
+    $deptName = Department::find($catObj->department);
+    return view('subcategories.list',compact('catObj','deptName'));
 });
 
 Route::get('sub-categories-list/{id}', 'SubCategoriesController@index');
+Route::post('updateSubCategory', 'SubCategoriesController@update');
+Route::post('addSubCategory', 'SubCategoriesController@store');
 
-
-
+/*
+|--------------------------------------------------------------------------
+| END SUB-CATEGORIES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
 
 $router->resource('users','UserController');
 

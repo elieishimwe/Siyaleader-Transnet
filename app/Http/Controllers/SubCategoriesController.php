@@ -41,7 +41,14 @@ class SubCategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $Subcategory             = new SubCategory();
+         $Subcategory->name       = $request['name'];
+         $slug                    = preg_replace('/\s+/','-',$request['name']);
+         $Subcategory->slug       = $slug;
+         $Subcategory->category   = $request['catID'];
+         $Subcategory->save();
+        \Session::flash('success', $request['name'].' has been successfully added!');
+        return redirect()->back();
     }
 
     /**
