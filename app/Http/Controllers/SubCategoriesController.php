@@ -6,19 +6,19 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Department;
+use App\SubCategory;
 
-class DepartmentController extends Controller
+class SubCategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
-    public function index()
+    public function index($id)
     {
-        $departments = Department::select(array('id','name','created_at'));
-        return \Datatables::of($departments)
+        $subCategories = SubCategory::select(array('id','name','created_at'))->where('category','=',$id);
+        return \Datatables::of($subCategories)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchModal({{$id}});" data-target=".modalEditDepartment">Edit</a>')
                             ->make(true);
     }
@@ -61,11 +61,9 @@ class DepartmentController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function edit($id,Department $department)
+    public function edit($id)
     {
-
-        $dept    = Department::where('id',$id)->first();
-        return [$dept];
+        //
     }
 
     /**
@@ -75,14 +73,9 @@ class DepartmentController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-
-        $dept       = Department::where('id',$request['deptID'])->first();
-        $dept->name = $request['name'];
-        $dept->save();
-        \Session::flash('success', $request['name'].' has been successfully updated!');
-        return redirect()->back();
+        //
     }
 
     /**

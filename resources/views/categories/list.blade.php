@@ -1,6 +1,7 @@
 @extends('master')
 
 @section('content')
+
 <!-- Breadcrumb -->
 <ol class="breadcrumb hidden-xs">
     <li><a href="#">Administration</a></li>
@@ -45,18 +46,19 @@
  <script>
   $(document).ready(function() {
 
+  var department = {!! $department !!};
   var oTable     = $('#categoriesTable').DataTable({
                 "processing": true,
                 "serverSide": true,
                 "dom": 'T<"clear">lfrtip',
                 "order" :[[0,"desc"]],
-                "ajax": "{!! url('/categories-list/')!!}",
+                "ajax": "{!! url('/categories-list/" + department +"')!!}",
                  "columns": [
                 {data: 'id', name: 'id'},
                 {data: 'created_at', name: 'created_at'},
                 {data: function(d)
                 {
-                 return "<a href='{!! url('list-categories') !!}' class='btn btn-sm'>"+d.name+"</a>";
+                 return "<a href='{!! url('list-sub-categories/" + d.id + "') !!}' class='btn btn-sm'>"+d.name+"</a>";
 
                 },"name" : 'name'},
 

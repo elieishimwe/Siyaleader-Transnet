@@ -19,6 +19,7 @@ class CategoriesController extends Controller
      */
     public function index($id)
     {
+
         $categories = Category::select(array('id','name','created_at'))->where('department','=',$id);
         return \Datatables::of($categories)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchModal({{$id}});" data-target=".modalEditDepartment">Edit</a>')

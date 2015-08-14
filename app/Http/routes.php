@@ -33,6 +33,7 @@ Route::get('list-departments', function () {
 
 Route::get('departments-list', 'DepartmentController@index');
 Route::get('departments/{id}', 'DepartmentController@edit');
+Route::post('updateDepartment', 'DepartmentController@update');
 
 /*
 |--------------------------------------------------------------------------
@@ -41,11 +42,27 @@ Route::get('departments/{id}', 'DepartmentController@edit');
 |
 */
 
-Route::get('list-categories/{id}', function () {
-    return view('categories.list');
+Route::get('list-categories/{department}', function ($department) {
+    return view('categories.list',compact('department'));;
 });
 
-Route::get('categories-list/', 'CategoriesController@index');
+
+Route::get('categories-list/{id}', 'CategoriesController@index');
+
+
+/*
+|--------------------------------------------------------------------------
+| SUB-CATEGORIES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get('list-sub-categories/{category}', function ($category) {
+    return view('subcategories.list',compact('category'));
+});
+
+Route::get('sub-categories-list/{id}', 'SubCategoriesController@index');
+
 
 
 

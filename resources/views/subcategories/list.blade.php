@@ -1,32 +1,32 @@
 @extends('master')
 
 @section('content')
+
 <!-- Breadcrumb -->
 <ol class="breadcrumb hidden-xs">
     <li><a href="#">Administration</a></li>
-    <li><a href="#">Departments</a></li>
-    <li class="active">Departments Listing</li>
+    <li><a href="#">Categories</a></li>
+    <li class="active">Categories Listing</li>
 </ol>
 
-<h4 class="page-title">DEPARTMENTS</h4>
+<h4 class="page-title">CATEGORIES</h4>
 <!-- Alternative -->
 <div class="block-area" id="alternative-buttons">
-    <h3 class="block-title">Departments Listing</h3>
+    <h3 class="block-title">Sub Categories Listing</h3>
     <a href="{{ url('add-user') }}" class="btn btn-sm">
-       Add Department
+       Add Sub Category
     </a>
 </div>
 
 <!-- Responsive Table -->
 <div class="block-area" id="responsiveTable">
     @if(Session::has('success'))
-    <div class="alert alert-info alert-dismissable fade in">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        {{ Session::get('success') }}
-    </div>
+      <div class="status alert alert-danger">
+          {{ Session::get('success') }}
+      </div>
     @endif
     <div class="table-responsive overflow">
-        <table class="table tile table-striped" id="departmentsTable">
+        <table class="table tile table-striped" id="subCategoriesTable">
             <thead>
               <tr>
                     <th>Id</th>
@@ -38,7 +38,7 @@
         </table>
     </div>
 </div>
-@include('departments.edit')
+@include('subcategories.edit')
 @endsection
 
 @section('footer')
@@ -46,18 +46,19 @@
  <script>
   $(document).ready(function() {
 
-  var oTable     = $('#departmentsTable').DataTable({
+  var category = {!! $category !!};
+  var oTable     = $('#subCategoriesTable').DataTable({
                 "processing": true,
                 "serverSide": true,
                 "dom": 'T<"clear">lfrtip',
                 "order" :[[0,"desc"]],
-                "ajax": "{!! url('/departments-list/')!!}",
+                "ajax": "{!! url('/sub-categories-list/" + category +"')!!}",
                  "columns": [
                 {data: 'id', name: 'id'},
                 {data: 'created_at', name: 'created_at'},
                 {data: function(d)
                 {
-                 return "<a href='{!! url('list-categories/" + d.id + "') !!}' class='btn btn-sm'>" + d.name + "</a>";
+                 return "<a href='{!! url('list-sub-categories/" + d.id + "') !!}' class='btn btn-sm'>"+d.name+"</a>";
 
                 },"name" : 'name'},
 
@@ -73,10 +74,18 @@
 
   });
 
-   function launchModal(id)
+   function launchModal(id,name)
     {
 
-       $(".modal-body #deptID").val(id);
+      $(".modal-body #rapID").val(id);
+
+      $(':input','.form')
+      .not(':button, :submit, :reset, :hidden')
+      .val('')
+      .removeAttr('checked')
+      .removeAttr('selected');
+
+       $('#formErrorsRegistrationMember').val('1');
        $(".modal-body #MMCELLMember").val(name);
        $('#formErrorsReport').val('0');
         var cell = $("#case_" + id ).data('mmcell');
