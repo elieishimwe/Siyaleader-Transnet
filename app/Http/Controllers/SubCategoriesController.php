@@ -19,7 +19,7 @@ class SubCategoriesController extends Controller
     {
         $subCategories = SubCategory::select(array('id','name','created_at'))->where('category','=',$id);
         return \Datatables::of($subCategories)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchModal({{$id}});" data-target=".modalEditDepartment">Edit</a>')
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateSubCategoryModal({{$id}});" data-target=".modalEditSubCategory">Edit</a>')
                             ->make(true);
     }
 
@@ -70,7 +70,8 @@ class SubCategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $SubCat    = SubCategory::where('id',$id)->first();
+        return [$SubCat];
     }
 
     /**
@@ -80,9 +81,13 @@ class SubCategoriesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $subCategory       = SubCategory::where('id',$request['subCategoryID'])->first();
+        $subCategory->name = $request['name'];
+        $subCategory->save();
+        \Session::flash('success', $request['name'].' has been successfully updated!');
+        return redirect()->back();
     }
 
     /**

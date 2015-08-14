@@ -6,7 +6,7 @@
 <ol class="breadcrumb hidden-xs">
     <li><a href="#">Administration</a></li>
     <li><a href="{{ url('list-departments') }}">Departments</a></li>
-    <li><a href="{{ url('list-categories/$catObj->id') }}">{{ $deptName->name }}</a></li>
+    <li><a href="{{ url('list-categories/'.$catObj->department) }}">{{ $deptName->name }}</a></li>
     <li><a href="#">{{ $catObj->name }}</a></li>
     <li class="active">Categories Listing</li>
 </ol>
@@ -15,7 +15,7 @@
 <!-- Alternative -->
 <div class="block-area" id="alternative-buttons">
     <h3 class="block-title">Categories Listing</h3>
-    <a class="btn btn-sm" data-toggle="modal" onClick="launchAddSubCategoryModal();" data-target=".modalAddSubCategory">
+    <a class="btn btn-sm" data-toggle="modal"  data-target=".modalAddSubCategory">
       Add Category
     </a>
 </div>
@@ -28,7 +28,7 @@
     </div>
     @endif
     <div class="table-responsive overflow">
-        <table class="table tile table-striped" id="subCategoriesTable">
+        <table class="table tile table-striped" id="subSubCategoriesTable">
             <thead>
               <tr>
                     <th>Id</th>
@@ -50,7 +50,7 @@
   $(document).ready(function() {
 
   var category = {!! $catObj->id !!};
-  var oTable     = $('#subCategoriesTable').DataTable({
+  var oTable     = $('#subSubCategoriesTable').DataTable({
                 "processing": true,
                 "serverSide": true,
                 "dom": 'T<"clear">lfrtip',
@@ -61,7 +61,7 @@
                 {data: 'created_at', name: 'created_at'},
                 {data: function(d)
                 {
-                 return "<a href='{!! url('list-sub-categories/" + d.id + "') !!}' class='btn btn-sm'>"+d.name+"</a>";
+                 return "<a href='{!! url('list-sub-sub-categories/" + d.id + " class='btn btn-sm'>"+d.name+"</a>";
 
                 },"name" : 'name'},
 
@@ -77,24 +77,26 @@
 
   });
 
-   function launchUpdateSubCategoryModal(id)
+  function launchUpdateSubCategoryModal(id)
     {
 
-      $(".modal-body #subCategoryID").val(id);
-      $.ajax({
+      $(".modal-body #SubCategoryID").val(id);
+
+        var cell = $("#case_" + id ).data('mmcell');
+        $.ajax({
         type    :"GET",
         dataType:"json",
-        url     :"{!! url('/subcategories/"+ id + "')!!}",
+        url     :"{!! url('/sub-categories/"+ id + "')!!}",
         success :function(data) {
 
             if(data[0] !== null)
             {
 
-               $("#subCategoryForm #name").val(data[0].name);
+               $("#modalEditSubCategoryDepartment #name").val(data[0].name);
 
             }
             else {
-               $("#subCategoryForm #name").val('');
+               $("#modalEditSubCategoryDepartment #name").val('');
             }
 
         }

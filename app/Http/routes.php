@@ -89,6 +89,7 @@ Route::get('list-sub-categories/{category}', function ($category) {
     return view('subcategories.list',compact('catObj','deptName'));
 });
 
+Route::get('subcategories/{id}', 'SubCategoriesController@edit');
 Route::get('sub-categories-list/{id}', 'SubCategoriesController@index');
 Route::post('updateSubCategory', 'SubCategoriesController@update');
 Route::post('addSubCategory', 'SubCategoriesController@store');
@@ -96,6 +97,21 @@ Route::post('addSubCategory', 'SubCategoriesController@store');
 /*
 |--------------------------------------------------------------------------
 | END SUB-CATEGORIES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+/*
+|--------------------------------------------------------------------------
+| SUB-SUB-CATEGORIES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+
+/*
+|--------------------------------------------------------------------------
+| END SUB-SUB-CATEGORIES ROUTING
 |--------------------------------------------------------------------------
 |
 */
