@@ -19,7 +19,7 @@ class DepartmentController extends Controller
     {
         $departments = Department::select(array('id','name','created_at'));
         return \Datatables::of($departments)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchModal({{$id}});" data-target=".modalEditDepartment">Edit</a>')
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateDepartmentModal({{$id}});" data-target=".modalEditDepartment">Edit</a>')
                             ->make(true);
     }
 
@@ -41,7 +41,13 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $department       = new Department();
+        $department->name = $request['name'];
+        $slug             = preg_replace('/\s+/','-',$request['name']);
+        $department->slug = $slug;
+        $department->save();
+        \Session::flash('success', $request['name'].' has been successfully added!');
+        return redirect()->back();
     }
 
     /**

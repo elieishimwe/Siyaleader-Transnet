@@ -12,8 +12,8 @@
 <!-- Alternative -->
 <div class="block-area" id="alternative-buttons">
     <h3 class="block-title">Departments Listing</h3>
-    <a href="{{ url('add-user') }}" class="btn btn-sm">
-       Add Department
+    <a class="btn btn-sm" data-toggle="modal" onClick="launchAddDepartmentModal();" data-target=".modalAddDepartment">
+     Add Department
     </a>
 </div>
 
@@ -39,6 +39,7 @@
     </div>
 </div>
 @include('departments.edit')
+@include('departments.add')
 @endsection
 
 @section('footer')
@@ -73,14 +74,11 @@
 
   });
 
-   function launchModal(id)
+   function launchUpdateDepartmentModal(id)
     {
 
        $(".modal-body #deptID").val(id);
-       $(".modal-body #MMCELLMember").val(name);
-       $('#formErrorsReport').val('0');
-        var cell = $("#case_" + id ).data('mmcell');
-        $.ajax({
+       $.ajax({
         type    :"GET",
         dataType:"json",
         url     :"{!! url('/departments/"+ id + "')!!}",

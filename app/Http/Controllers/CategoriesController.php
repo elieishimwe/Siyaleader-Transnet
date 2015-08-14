@@ -22,7 +22,7 @@ class CategoriesController extends Controller
 
         $categories = Category::select(array('id','name','created_at'))->where('department','=',$id);
         return \Datatables::of($categories)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchModal({{$id}});" data-target=".modalEditDepartment">Edit</a>')
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateCategoryModal({{$id}});" data-target=".modalEditDepartment">Edit</a>')
                             ->make(true);
     }
 
@@ -44,7 +44,14 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $category             = new Category();
+         $category->name       = $request['name'];
+         $slug                 = preg_replace('/\s+/','-',$request['name']);
+         $category->slug       = $slug;
+         $category->department = $request['deptID'];
+         $category->save();
+        \Session::flash('success', $request['name'].' has been successfully added!');
+        return redirect()->back();
     }
 
     /**
@@ -66,7 +73,8 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cat    = Category::where('id',$id)->first();
+        return [$cat];
     }
 
     /**
@@ -76,9 +84,13 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $category       = Category::where('id',$request['categoryID'])->first();
+        $category->name = $request['name'];
+        $category->save();
+        \Session::flash('success', $request['name'].' has been successfully updated!');
+        return redirect()->back();
     }
 
     /**

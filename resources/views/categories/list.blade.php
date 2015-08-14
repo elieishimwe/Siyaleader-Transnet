@@ -5,25 +5,27 @@
 <!-- Breadcrumb -->
 <ol class="breadcrumb hidden-xs">
     <li><a href="#">Administration</a></li>
-    <li><a href="#">Categories</a></li>
+    <li><a href="{{ url('list-departments') }}">Departments</a></li>
+    <li><a href="#">{{ $deptObj->name }}</a></li>
     <li class="active">Categories Listing</li>
 </ol>
 
-<h4 class="page-title">CATEGORIES</h4>
+<h4 class="page-title">{{ $deptObj->name }} CATEGORIES</h4>
 <!-- Alternative -->
 <div class="block-area" id="alternative-buttons">
     <h3 class="block-title">Categories Listing</h3>
-    <a href="{{ url('add-user') }}" class="btn btn-sm">
-       Add Category
+    <a class="btn btn-sm" data-toggle="modal" onClick="launchAddCategoryModal();" data-target=".modalAddCategory">
+     Add Category
     </a>
 </div>
 
 <!-- Responsive Table -->
 <div class="block-area" id="responsiveTable">
     @if(Session::has('success'))
-      <div class="status alert alert-danger">
-          {{ Session::get('success') }}
-      </div>
+    <div class="alert alert-info alert-dismissable fade in">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        {{ Session::get('success') }}
+    </div>
     @endif
     <div class="table-responsive overflow">
         <table class="table tile table-striped" id="categoriesTable">
@@ -39,6 +41,7 @@
     </div>
 </div>
 @include('categories.edit')
+@include('categories.add')
 @endsection
 
 @section('footer')
@@ -46,7 +49,7 @@
  <script>
   $(document).ready(function() {
 
-  var department = {!! $department !!};
+  var department = {!! $deptObj->id !!};
   var oTable     = $('#categoriesTable').DataTable({
                 "processing": true,
                 "serverSide": true,
@@ -74,25 +77,16 @@
 
   });
 
-   function launchModal(id,name)
+   function launchUpdateCategoryModal(id)
     {
 
-      $(".modal-body #rapID").val(id);
+      $(".modal-body #categoryID").val(id);
 
-      $(':input','.form')
-      .not(':button, :submit, :reset, :hidden')
-      .val('')
-      .removeAttr('checked')
-      .removeAttr('selected');
-
-       $('#formErrorsRegistrationMember').val('1');
-       $(".modal-body #MMCELLMember").val(name);
-       $('#formErrorsReport').val('0');
         var cell = $("#case_" + id ).data('mmcell');
         $.ajax({
         type    :"GET",
         dataType:"json",
-        url     :"{!! url('/departments/"+ id + "')!!}",
+        url     :"{!! url('/categories/"+ id + "')!!}",
         success :function(data) {
 
             if(data[0] !== null)

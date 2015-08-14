@@ -3,6 +3,7 @@
 use App\Province;
 use App\District;
 use App\Municipality;
+use App\Department;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,19 @@ Route::get('list-departments', function () {
 
 Route::get('departments-list', 'DepartmentController@index');
 Route::get('departments/{id}', 'DepartmentController@edit');
+
 Route::post('updateDepartment', 'DepartmentController@update');
+Route::post('addDepartment', 'DepartmentController@store');
+
+
+/*
+|--------------------------------------------------------------------------
+| END DEPARTMENTS ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -43,11 +56,16 @@ Route::post('updateDepartment', 'DepartmentController@update');
 */
 
 Route::get('list-categories/{department}', function ($department) {
-    return view('categories.list',compact('department'));;
+
+    $deptObj = Department::find($department);
+    return view('categories.list',compact('deptObj'));
 });
 
-
+Route::get('categories/{id}', 'CategoriesController@edit');
 Route::get('categories-list/{id}', 'CategoriesController@index');
+
+Route::post('updateCategory', 'CategoriesController@update');
+Route::post('addCategory', 'CategoriesController@store');
 
 
 /*
