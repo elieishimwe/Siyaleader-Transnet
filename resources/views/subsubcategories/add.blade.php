@@ -1,5 +1,5 @@
 <!-- Modal Default -->
-<div class="modal fade modalAddSubCategory" id="modalAddSubCategory" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade modalAddSubSubCategory" id="modalAddSubSubCategory" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -7,8 +7,8 @@
                 <h4 class="modal-title" id='depTitle'>Category</h4>
             </div>
             <div class="modal-body">
-            {!! Form::open(['url' => 'addSubCategory', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"updateSubCategoryForm" ]) !!}
-             {!! Form::hidden('catID',$catObj->id) !!}
+            {!! Form::open(['url' => 'addSubSubCategory', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"updateSubSubCategoryForm" ]) !!}
+             {!! Form::hidden('subCatID',$subCatObj->id) !!}
             {!! Form::hidden('id',Auth::user()->id) !!}
             <div class="form-group">
                 {!! Form::label('Name', 'Name', array('class' => 'col-md-2 control-label')) !!}

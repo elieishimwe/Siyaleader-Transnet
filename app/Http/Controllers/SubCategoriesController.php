@@ -45,7 +45,7 @@ class SubCategoriesController extends Controller
          $Subcategory->name       = $request['name'];
          $slug                    = preg_replace('/\s+/','-',$request['name']);
          $Subcategory->slug       = $slug;
-         $Subcategory->category   = $request['catID'];
+         $Subcategory->category   = $request['subCatID'];
          $Subcategory->save();
         \Session::flash('success', $request['name'].' has been successfully added!');
         return redirect()->back();

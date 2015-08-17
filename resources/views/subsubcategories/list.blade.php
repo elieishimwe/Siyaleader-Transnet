@@ -16,7 +16,7 @@
 <!-- Alternative -->
 <div class="block-area" id="alternative-buttons">
     <h3 class="block-title">Categories Listing</h3>
-    <a class="btn btn-sm" data-toggle="modal" onClick="launchAddSubCategoryModal();" data-target=".modalAddSubCategory">
+    <a class="btn btn-sm" data-toggle="modal" data-target=".modalAddSubSubCategory">
       Add Category
     </a>
 </div>
@@ -41,6 +41,8 @@
         </table>
     </div>
 </div>
+@include('subsubcategories.edit')
+@include('subsubcategories.add')
 
 @endsection
 

@@ -17,7 +17,7 @@ class SubSubCategoriesController extends Controller
      */
     public function index($id)
     {
-        $subSubCategories  = SubSubCategory::select(array('id','name','created_at'))->where('sub-category','=',$id);
+        $subSubCategories  = SubSubCategory::select(array('id','name','created_at'))->where('sub_category','=',$id);
         return \Datatables::of($subSubCategories)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateSubCategoryModal({{$id}});" data-target=".modalEditSubCategory">Edit</a>')
                             ->make(true);
@@ -41,7 +41,14 @@ class SubSubCategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $SubSubCategory               = new SubSubCategory();
+        $SubSubCategory->name         = $request['name'];
+        $slug                         = preg_replace('/\s+/','-',$request['name']);
+        $SubSubCategory->slug         = $slug;
+        $SubSubCategory->sub_category = $request['subCatID'];
+        $SubSubCategory->save();
+        \Session::flash('success', $request['name'].' has been successfully added!');
+        return redirect()->back();
     }
 
     /**
