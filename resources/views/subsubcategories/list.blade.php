@@ -79,14 +79,13 @@
 
   });
 
-   function launchUpdateSubCategoryModal(id)
+   function launchUpdateSubSubCategoryModal(id)
     {
-
-      $(".modal-body #subCategoryID").val(id);
+      $(".modal-body #subsubCategoryID").val(id);
       $.ajax({
         type    :"GET",
         dataType:"json",
-        url     :"{!! url('/subcategories/"+ id + "')!!}",
+        url     :"{!! url('/subsubcategories/"+ id + "')!!}",
         success :function(data) {
 
             if(data[0] !== null)

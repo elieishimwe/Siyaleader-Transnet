@@ -117,7 +117,10 @@ Route::get('list-sub-sub-categories/{sub_category}', function ($sub_category) {
 });
 
 Route::get('sub-sub-categories-list/{id}', 'SubSubCategoriesController@index');
+Route::get('subsubcategories/{id}', 'SubSubCategoriesController@edit');
 Route::post('addSubSubCategory', 'SubSubCategoriesController@store');
+Route::post('updateSubSubCategory', 'SubSubCategoriesController@update');
+
 
 
 /*
