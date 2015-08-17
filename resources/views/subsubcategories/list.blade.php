@@ -6,8 +6,8 @@
 <ol class="breadcrumb hidden-xs">
     <li><a href="#">Administration</a></li>
     <li><a href="{{ url('list-departments') }}">Departments</a></li>
-    <li><a href="{{ url('list-categories/$catObj->id') }}">{{ $deptObj->name }}</a></li>
-    <li><a href="{{ url('list-sub-categories/$subCatObj->id') }}">{{ $catObj->name }}</a></li>
+    <li><a href="{{ url('list-categories/'.$deptObj->id.'') }}">{{ $deptObj->name }}</a></li>
+    <li><a href="{{ url('list-sub-categories/'.$subCatObj->id.'') }}">{{ $catObj->name }}</a></li>
     <li><a href="#">{{ $subCatObj->name }}</a></li>
     <li class="active">Categories Listing</li>
 </ol>
