@@ -6,16 +6,17 @@
 <ol class="breadcrumb hidden-xs">
     <li><a href="#">Administration</a></li>
     <li><a href="{{ url('list-departments') }}">Departments</a></li>
-    <li><a href="{{ url('list-categories/'.$catObj->department) }}">{{ $deptName->name }}</a></li>
-    <li><a href="#">{{ $catObj->name }}</a></li>
+    <li><a href="{{ url('list-categories/$catObj->id') }}">{{ $deptObj->name }}</a></li>
+    <li><a href="{{ url('list-sub-categories/$subCatObj->id') }}">{{ $catObj->name }}</a></li>
+    <li><a href="#">{{ $subCatObj->name }}</a></li>
     <li class="active">Categories Listing</li>
 </ol>
 
-<h4 class="page-title">{{ $catObj->name }} CATEGORIES</h4>
+<h4 class="page-title">{{ $subCatObj->name }} CATEGORIES</h4>
 <!-- Alternative -->
 <div class="block-area" id="alternative-buttons">
     <h3 class="block-title">Categories Listing</h3>
-    <a class="btn btn-sm" data-toggle="modal"  data-target=".modalAddSubCategory">
+    <a class="btn btn-sm" data-toggle="modal" onClick="launchAddSubCategoryModal();" data-target=".modalAddSubCategory">
       Add Category
     </a>
 </div>
@@ -28,7 +29,7 @@
     </div>
     @endif
     <div class="table-responsive overflow">
-        <table class="table tile table-striped" id="subSubCategoriesTable">
+        <table class="table tile table-striped" id="subsubCategoriesTable">
             <thead>
               <tr>
                     <th>Id</th>
@@ -40,8 +41,7 @@
         </table>
     </div>
 </div>
-@include('subcategories.edit')
-@include('subcategories.add')
+
 @endsection
 
 @section('footer')
@@ -49,19 +49,19 @@
  <script>
   $(document).ready(function() {
 
-  var category = {!! $catObj->id !!};
-  var oTable     = $('#subSubCategoriesTable').DataTable({
+  var sub_category = {!! $subCatObj->id !!};
+  var oTable     = $('#subsubCategoriesTable').DataTable({
                 "processing": true,
                 "serverSide": true,
                 "dom": 'T<"clear">lfrtip',
                 "order" :[[0,"desc"]],
-                "ajax": "{!! url('/sub-categories-list/" + category +"')!!}",
+                "ajax": "{!! url('/sub-sub-categories-list/" + sub_category +"')!!}",
                  "columns": [
                 {data: 'id', name: 'id'},
                 {data: 'created_at', name: 'created_at'},
                 {data: function(d)
                 {
-                 return "<a href='{!! url('list-sub-sub-categories/" + d.id + " class='btn btn-sm'>"+d.name+"</a>";
+                 return "<a href='{!! url('list-sub-categories/" + d.id + "') !!}' class='btn btn-sm'>"+d.name+"</a>";
 
                 },"name" : 'name'},
 
@@ -77,26 +77,24 @@
 
   });
 
-  function launchUpdateSubCategoryModal(id)
+   function launchUpdateSubCategoryModal(id)
     {
 
-      $(".modal-body #SubCategoryID").val(id);
-
-        var cell = $("#case_" + id ).data('mmcell');
-        $.ajax({
+      $(".modal-body #subCategoryID").val(id);
+      $.ajax({
         type    :"GET",
         dataType:"json",
-        url     :"{!! url('/sub-categories/"+ id + "')!!}",
+        url     :"{!! url('/subcategories/"+ id + "')!!}",
         success :function(data) {
 
             if(data[0] !== null)
             {
 
-               $("#modalEditSubCategoryDepartment #name").val(data[0].name);
+               $("#subCategoryForm #name").val(data[0].name);
 
             }
             else {
-               $("#modalEditSubCategoryDepartment #name").val('');
+               $("#subCategoryForm #name").val('');
             }
 
         }
