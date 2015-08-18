@@ -64,14 +64,13 @@ class CasesController extends Controller
      */
     public function edit($id)
     {
-        //$case    = CaseReport::where('id',$id)->first();
-        //return [$case];
 
         $case = \DB::table('cases')
             ->join('departments', 'cases.department', '=', 'departments.id')
             ->join('categories', 'cases.category', '=', 'categories.id')
             ->join('sub-categories', 'cases.sub_category', '=', 'sub-categories.id')
             ->join('sub-sub-categories', 'cases.sub_sub_category', '=', 'sub-sub-categories.id')
+            ->where('cases.id','=',$id)
             ->select(\DB::raw('cases.id, cases.description,cases.status,cases.img_url,departments.name as department,categories.name as category,`sub-categories`.name as sub_category,`sub-sub-categories`.name as sub_sub_category '))
             ->get();
         return $case;
