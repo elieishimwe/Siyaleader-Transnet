@@ -105,6 +105,13 @@
                $("#modalCase #id").val(data[0].id);
                $("#modalCase #description").val(data[0].description);
                $("#modalCase #category").val(data[0].category);
+               $("#modalCase #sub_category").val(data[0].sub_category);
+               $("#modalCase #sub_sub_category").val(data[0].sub_sub_category);
+               $("#modalCase #status").val(data[0].status);
+               $("#modalCase #department").val(data[0].department);
+               var ImgUrl = "http://www.siyaleader.co.za:8080/ecin2edin/console/app_backend/port_backend/public/"+data[0].img_url;
+               $("#modalCase #CaseImage").attr("src",ImgUrl);
+               $("#modalCase #CaseImage").attr("data-img",ImgUrl);
 
             }
             else {

@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id='depTitle'>Case Profile</h4>
+                <h4 class="modal-title" id='depTitle'>Referal</h4>
             </div>
             <div class="modal-body">
             {!! Form::open(['url' => 'updateCategory', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"registrationForm" ]) !!}
@@ -31,6 +31,8 @@
                   @if ($errors->has('category')) <p class="help-block red">*{{ $errors->first('category') }}</p> @endif
                 </div>
             </div>
+
+
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <button type="submit" id='submitUpdateCategorytForm' type="button" class="btn btn-sm">Save Changes</button>

@@ -155,6 +155,9 @@
         <!-- All JS functions -->
         <script src="{{ asset('/js/functions.js') }}"></script>
 
+         <!-- Media -->
+        <script src="{{ asset('/js/superbox.min.js') }}"></script> <!-- Photo Gallery -->
+
          <!-- Datatable -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.4/js/jquery.dataTables.min.js"></script>
         <script src="//cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.js"></script>
