@@ -56,6 +56,7 @@
 
 @include('cases.profile')
 @include('cases.refer')
+@include('addressbook.list')
 
 @endsection
 
@@ -122,31 +123,19 @@
     });
 
     }
-     function launchReferModal(id)
+    function launchReferModal()
     {
 
-      $(".modal-body #categoryID").val(id);
+      $('#modalCase').modal('toggle');
 
-        $.ajax({
-        type    :"GET",
-        dataType:"json",
-        url     :"{!! url('/case/"+ id + "')!!}",
-        success :function(data) {
 
-            if(data[0] !== null)
-            {
+    }
 
-               $("#modalCase #id").val(data[0].id);
-               $("#modalCase #description").val(data[0].description);
-               $("#modalCase #category").val(data[0].category);
+    function launchAddressBookModal()
+    {
 
-            }
-            else {
-               $("#modalCase #name").val('');
-            }
+      $('#modalReferCase').modal('toggle');
 
-        }
-    });
 
     }
 </script>

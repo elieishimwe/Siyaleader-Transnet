@@ -74,13 +74,11 @@
             </div>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-
+                    <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchReferModal();" data-target=".modalReferCase">Escalate Case</a>
                 </div>
-            </div>
-            </div>
+            </div>            </div>
             <div class="modal-footer">
 
-                <!-- <button type="button" class="btn btn-sm" data-dismiss="modal">Close</button> -->
             </div>
 
             {!! Form::close() !!}
