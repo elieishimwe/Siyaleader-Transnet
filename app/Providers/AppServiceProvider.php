@@ -11,6 +11,8 @@ use App\Municipality;
 use App\Category;
 use App\SubCategory;
 use App\SubSubCategory;
+use App\CaseReport;
+use App\User;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -119,7 +121,7 @@ class AppServiceProvider extends ServiceProvider
 
         if (\Schema::hasTable('sub-sub-categories'))
         {
-            $subSubCategories       = SubSubCategory::all();
+            $subSubCategories          = SubSubCategory::all();
             $selectSubSubCategories    = array();
             $selectSubSubCategories[0] = "Select one or more";
             foreach ($subSubCategories as $subSubCategory) {
@@ -129,6 +131,20 @@ class AppServiceProvider extends ServiceProvider
              \View::share('selectSubSubCategories',$selectSubSubCategories);
 
         }
+
+       /* if (\Auth::check())
+        {
+
+            $cases = CaseReport::where('user','=',\Auth::user()->id)->get();
+        }
+        else {
+
+            $cases = [];
+        }
+
+        dd(\Auth::user()->ID);
+        \View::share('numberCases',$cases);*/
+
 
 
     }
