@@ -54,6 +54,9 @@
     </div>
 </div>
 
+@include('cases.profile')
+@include('cases.refer')
+
 @endsection
 
 @section('footer')
@@ -85,26 +88,54 @@
 
   });
 
-   function launchUpdateCategoryModal(id)
+   function launchCaseModal(id)
     {
 
       $(".modal-body #categoryID").val(id);
 
-        var cell = $("#case_" + id ).data('mmcell');
         $.ajax({
         type    :"GET",
         dataType:"json",
-        url     :"{!! url('/categories/"+ id + "')!!}",
+        url     :"{!! url('/case/"+ id + "')!!}",
         success :function(data) {
 
             if(data[0] !== null)
             {
 
-               $("#modalDepartment #name").val(data[0].name);
+               $("#modalCase #id").val(data[0].id);
+               $("#modalCase #description").val(data[0].description);
+               $("#modalCase #category").val(data[0].category);
 
             }
             else {
-               $("#modalDepartment #name").val('');
+               $("#modalCase #name").val('');
+            }
+
+        }
+    });
+
+    }
+     function launchReferModal(id)
+    {
+
+      $(".modal-body #categoryID").val(id);
+
+        $.ajax({
+        type    :"GET",
+        dataType:"json",
+        url     :"{!! url('/case/"+ id + "')!!}",
+        success :function(data) {
+
+            if(data[0] !== null)
+            {
+
+               $("#modalCase #id").val(data[0].id);
+               $("#modalCase #description").val(data[0].description);
+               $("#modalCase #category").val(data[0].category);
+
+            }
+            else {
+               $("#modalCase #name").val('');
             }
 
         }

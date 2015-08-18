@@ -19,7 +19,8 @@ class CasesController extends Controller
     {
         $cases = CaseReport::select(array('id','created_at','description','status'))->where('user','=',$id);
         return \Datatables::of($cases)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateCategoryModal({{$id}});" data-target=".modalEditDepartment">Refer</a>')
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>
+                                                   <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchReferModal({{$id}});" data-target=".modalReferCase">Refer</a>')
                             ->make(true);
     }
 
@@ -63,7 +64,8 @@ class CasesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $case    = CaseReport::where('id',$id)->first();
+        return [$case];
     }
 
     /**
