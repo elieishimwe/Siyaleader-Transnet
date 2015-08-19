@@ -17,6 +17,13 @@
                 </div>
             </div>
 
+            <div class="form-group">
+                {!! Form::label('Message', 'Message', array('class' => 'col-md-2 control-label')) !!}
+                <div class="col-md-10">
+                    <textarea rows="5" id="sms" name="sms" class="sms form-control" maxlength="500"></textarea>
+                </div>
+            </div>
+
 
            <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">

@@ -68,6 +68,15 @@
 
   $("#my-text-input").tokenInput("getContacts");
 
+
+
+  $('#sms').maxlength({
+            alwaysShow: true,
+            threshold: 10,
+            warningClass: "label label-success",
+            limitReachedClass: "label label-danger"
+  });
+
   var user = {!! Auth::user()->id !!};
   var oTable     = $('#casesTable').DataTable({
                 "processing": true,

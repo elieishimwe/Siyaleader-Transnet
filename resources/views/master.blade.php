@@ -22,8 +22,11 @@
         <link href="{{ asset('/css/generics.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/token-input.css') }}" rel="stylesheet">
 
-         <!-- Datatables stylesheet -->
-        <link rel="stylesheet" href="//cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.css">
+        <!-- DataTables CSS -->
+        <link href="{{ asset('/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css') }}" rel="stylesheet">
+
+        <!-- DataTables Responsive CSS -->
+        <link href="{{ asset('/bower_components/datatables-responsive/css/dataTables.responsive.css') }}" rel="stylesheet">
     </head>
     <body id="skin-blur-sunset">
 
@@ -163,11 +166,17 @@
          <!-- Token Input -->
         <script src="{{ asset('/js/jquery.tokeninput.js') }}"></script> <!-- Token Input -->
 
-         <!-- Datatable -->
-        <script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.4/js/jquery.dataTables.min.js"></script>
-        <script src="//cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.18.4/js/jquery.tablesorter.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
+
+
+         <!-- DataTables JavaScript -->
+        <script src="{{ asset('/bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') }}"></script>
+
+
+
+        <!-- Jquery Bootstrap Maxlength -->
+        <script src="{{ asset('/bower_components/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
 
         @yield('footer')
     </body>
