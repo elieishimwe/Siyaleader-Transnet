@@ -90,16 +90,22 @@
             if(data[0] !== null)
             {
 
-               $("#subCategoryForm #name").val(data[0].name);
+               $("#modalEditSubCategory #name").val(data[0].name);
 
             }
             else {
-               $("#subCategoryForm #name").val('');
+               $("#modalEditSubCategory #name").val('');
             }
 
         }
     });
 
     }
+
+    @if (count($errors) > 0)
+
+      $('#modalAddSubCategory').modal('show');
+
+    @endif
 </script>
 @endsection

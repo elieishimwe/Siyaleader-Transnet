@@ -7,7 +7,7 @@
                 <h4 class="modal-title" id='depTitle'>Business Unit</h4>
             </div>
             <div class="modal-body">
-            {!! Form::open(['url' => 'updateSubCategory', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"subCategoryForm" ]) !!}
+            {!! Form::open(['url' => 'updateSubCategory', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"subCategoryUpdateForm" ]) !!}
             {!! Form::hidden('subCategoryID',NULL,['id' => 'subCategoryID']) !!}
             <div class="form-group">
                 {!! Form::label('Name', 'Name', array('class' => 'col-md-2 control-label')) !!}

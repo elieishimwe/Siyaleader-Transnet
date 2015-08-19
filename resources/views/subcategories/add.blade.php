@@ -7,8 +7,8 @@
                 <h4 class="modal-title" id='depTitle'>Category</h4>
             </div>
             <div class="modal-body">
-            {!! Form::open(['url' => 'addSubCategory', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"updateSubCategoryForm" ]) !!}
-             {!! Form::hidden('catID',$catObj->id) !!}
+            {!! Form::open(['url' => 'addSubCategory', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"AddSubCategoryForm" ]) !!}
+             {!! Form::hidden('subCatID',$catObj->id) !!}
             {!! Form::hidden('id',Auth::user()->id) !!}
             <div class="form-group">
                 {!! Form::label('Name', 'Name', array('class' => 'col-md-2 control-label')) !!}
