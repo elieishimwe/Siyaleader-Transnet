@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\SubSubCategoryRequest;
 use App\Http\Controllers\Controller;
 use App\SubSubCategory;
 
@@ -19,7 +20,7 @@ class SubSubCategoriesController extends Controller
     {
         $subSubCategories  = SubSubCategory::select(array('id','name','created_at'))->where('sub_category','=',$id);
         return \Datatables::of($subSubCategories)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateSubSubCategoryModal({{$id}});" data-target=".modalEditSubSubCategory">Edit</a>')
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateSubSubCategoryModal({{$id}});" data-target=".SubSubCategoryEditModal">Edit</a>')
                             ->make(true);
     }
 
@@ -39,7 +40,7 @@ class SubSubCategoriesController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(SubSubCategoryRequest $request)
     {
         $SubSubCategory               = new SubSubCategory();
         $SubSubCategory->name         = $request['name'];

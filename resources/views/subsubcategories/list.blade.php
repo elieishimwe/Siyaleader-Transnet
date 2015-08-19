@@ -91,16 +91,23 @@
             if(data[0] !== null)
             {
 
-               $("#subCategoryForm #name").val(data[0].name);
+               $("#SubSubCategoryEditModal #name").val(data[0].name);
 
             }
             else {
-               $("#subCategoryForm #name").val('');
+               $("#SubSubCategoryEditModal #name").val('');
             }
 
         }
     });
 
     }
+
+
+    @if (count($errors) > 0)
+
+      $('#modalAddSubSubCategory').modal('show');
+
+    @endif
 </script>
 @endsection
