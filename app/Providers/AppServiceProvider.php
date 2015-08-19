@@ -13,6 +13,8 @@ use App\SubCategory;
 use App\SubSubCategory;
 use App\CaseReport;
 use App\User;
+use App\Relationship;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -132,16 +134,16 @@ class AppServiceProvider extends ServiceProvider
 
         }
 
-         if (\Schema::hasTable('sub-sub-categories'))
+         if (\Schema::hasTable('relationships'))
         {
-            $subSubCategories          = SubSubCategory::all();
-            $selectSubSubCategories    = array();
-            $selectSubSubCategories[0] = "Select one or more";
-            foreach ($subSubCategories as $subSubCategory) {
-               $selectSubSubCategories[$subSubCategory->slug] = $subSubCategory->name;
+            $relationships          = Relationship::all();
+            $selectRelationships    = array();
+            $selectRelationships[0] = "Select one or more";
+            foreach ($relationships as $relationship) {
+               $selectRelationships[$relationship->id] = $relationship->name;
             }
 
-             \View::share('selectSubSubCategories',$selectSubSubCategories);
+             \View::share('selectRelationships',$selectRelationships);
 
         }
 

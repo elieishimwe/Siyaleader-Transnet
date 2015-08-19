@@ -5,24 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Requests\AddressBookRequest;
 use App\Http\Controllers\Controller;
-use App\addressbook;
 
-class AddressBookController extends Controller
+class RelationshipController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
-    public function index($id)
+    public function index()
     {
-        $addresses = addressbook::select(array('id','FirstName','Surname','cellphone','email'))->where('user','=',$id);
-        return \Datatables::of($addresses)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>'
-                                       )
-                            ->make(true);
+        //
     }
 
     /**
@@ -41,19 +35,9 @@ class AddressBookController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(AddressBookRequest $request)
+    public function store(Request $request)
     {
-         $addressbook            = new addressbook();
-         $addressbook->FirstName = $request['FirstName'];
-         $addressbook->Surname   = $request['Surname'];
-         $addressbook->email     = $request['email'];
-         $addressbook->cellphone = $request['cellphone'];
-         $addressbook->user      = $request['uid'];
-         $addressbook->active    = 1;
-         $addressbook->save();
-
-        \Session::flash('success', $request['FirstName'].' '.$request['Surname'].' has been successfully added!');
-        return redirect()->back();
+        //
     }
 
     /**

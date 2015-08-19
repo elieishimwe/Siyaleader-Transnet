@@ -161,6 +161,12 @@
 
 
     }
+
+  @if (count($errors) > 0)
+
+      $('#modalAddContactModal').modal('show');
+
+    @endif
 </script>
 @endsection
 

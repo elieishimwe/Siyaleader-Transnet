@@ -8,7 +8,7 @@
             </div>
             <div class="modal-body">
             {!! Form::open(['url' => 'addContact', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"addContactForm" ]) !!}
-            {!! Form::hidden('id',Auth::user()->id) !!}
+            {!! Form::hidden('uid',Auth::user()->id) !!}
             <div class="form-group">
                 {!! Form::label('First Name', 'First Name', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-10">
@@ -37,6 +37,16 @@
                   @if ($errors->has('cellphone')) <p class="help-block red">*{{ $errors->first('cellphone') }}</p> @endif
                 </div>
             </div>
+
+            <div class="form-group">
+                {!! Form::label('Relationship', 'Relationship', array('class' => 'col-md-2 control-label')) !!}
+                <div class="col-md-10">
+                  {!! Form::select('relationship',$selectRelationships,0,['class' => 'form-control input-sm' ,'id' => 'relationship']) !!}
+                  @if ($errors->has('relationship')) <p class="help-block red">*{{ $errors->first('relationship') }}</p> @endif
+              </div>
+            </div>
+
+
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <button type="submit" type="button" class="btn btn-sm">Save Changes</button>
