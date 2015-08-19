@@ -7,11 +7,10 @@
                 <h4 class="modal-title" id='depTitle'>Address Book</h4>
             </div>
             <div class="modal-body">
-                  <h4 class="page-title"></h4>
+
                   <!-- Alternative -->
                   <div class="block-area" id="alternative-buttons">
-                      <h3 class="block-title">Address Book</h3>
-                      <a class="btn btn-sm" data-toggle="modal" onClick="launchAddDepartmentModal();" data-target=".modalAddDepartment">
+                      <a class="btn btn-sm" data-toggle="modal" onClick="launchAddContactModal();" data-target=".modalAddContactModal">
                        Add Contact
                       </a>
                   </div>

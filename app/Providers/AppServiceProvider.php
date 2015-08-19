@@ -132,6 +132,19 @@ class AppServiceProvider extends ServiceProvider
 
         }
 
+         if (\Schema::hasTable('sub-sub-categories'))
+        {
+            $subSubCategories          = SubSubCategory::all();
+            $selectSubSubCategories    = array();
+            $selectSubSubCategories[0] = "Select one or more";
+            foreach ($subSubCategories as $subSubCategory) {
+               $selectSubSubCategories[$subSubCategory->slug] = $subSubCategory->name;
+            }
+
+             \View::share('selectSubSubCategories',$selectSubSubCategories);
+
+        }
+
        /* if (\Auth::check())
         {
 

@@ -57,6 +57,7 @@
 @include('cases.profile')
 @include('cases.refer')
 @include('addressbook.list')
+@include('addressbook.add')
 
 @endsection
 
