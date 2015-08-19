@@ -179,6 +179,7 @@ Route::post('updateSubSubCategory', 'SubSubCategoriesController@update');
 
 Route::get('cases-list/{id}', 'CasesController@index');
 Route::get('case/{id}', 'CasesController@edit');
+Route::post('escalateCase', 'CasesController@escalate');
 
 
 

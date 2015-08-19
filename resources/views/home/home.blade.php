@@ -66,7 +66,7 @@
  <script>
   $(document).ready(function() {
 
-  $("#my-text-input").tokenInput("getContacts");
+  $("#addresses").tokenInput("getContacts");
 
 
 

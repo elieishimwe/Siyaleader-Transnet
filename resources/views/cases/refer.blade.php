@@ -13,17 +13,22 @@
             <div class="form-group">
                 {!! Form::label('Email Addresses', 'Email Addresses', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-10">
-                  {!! Form::text('my-text-input',NULL,['class' => 'form-control input-sm','id' => 'my-text-input']) !!}
+                  {!! Form::text('addresses',NULL,['class' => 'form-control input-sm','id' => 'addresses']) !!}
                 </div>
             </div>
 
             <div class="form-group">
                 {!! Form::label('Message', 'Message', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-10">
-                    <textarea rows="5" id="sms" name="sms" class="sms form-control" maxlength="500"></textarea>
+                    <textarea rows="5" id="message" name="message" class="sms form-control" maxlength="500"></textarea>
                 </div>
             </div>
 
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button id='submitEscalateCaseForm' type="submit" class="btn btn-sm">Escalate</button>
+                </div>
+            </div>
 
            <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">

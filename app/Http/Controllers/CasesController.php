@@ -45,6 +45,40 @@ class CasesController extends Controller
         //
     }
 
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  Request  $request
+     * @return Response
+     */
+    public function escalate(Request $request)
+    {
+
+        $addresses = explode(',',$request['addresses']);
+
+
+        foreach ($addresses as $address) {
+
+            $data = array(
+
+                'message'  => $request['message']
+            );
+
+            \Mail::send('emails.caseEscalation',$data, function($message) use ($address)
+            {
+                $message->from('info@siyaleader.co.za', 'Siyaleader');
+                $message->to($address)->subject("Siyaleader Notification - Case escalated: " );
+
+            });
+
+        }
+
+        \Session::flash('success', $request['name'].' has been successfully added!');
+        return redirect()->back();
+
+    }
+
     /**
      * Display the specified resource.
      *
