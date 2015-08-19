@@ -188,6 +188,26 @@ Route::get('case/{id}', 'CasesController@edit');
 |
 */
 
+
+/*
+|--------------------------------------------------------------------------
+| ADDRESSBOOK ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+
+Route::get('addressbook-list/{id}', 'AddressBookController@index');
+
+
+
+/*
+|--------------------------------------------------------------------------
+| END ADDRESSBOOK ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
 $router->resource('users','UserController');
 
 Route::get('/api/dropdown/{to}/{from}', function($to,$from){

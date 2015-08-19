@@ -98,5 +98,13 @@
     });
 
     }
+
+    @if (count($errors) > 0)
+
+      $('#modalDepartment').modal('show');
+
+    @endif
+
+
 </script>
 @endsection

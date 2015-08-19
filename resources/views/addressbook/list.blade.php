@@ -10,7 +10,7 @@
                   <h4 class="page-title"></h4>
                   <!-- Alternative -->
                   <div class="block-area" id="alternative-buttons">
-                      <h3 class="block-title">Listing</h3>
+                      <h3 class="block-title">Address Book</h3>
                       <a class="btn btn-sm" data-toggle="modal" onClick="launchAddDepartmentModal();" data-target=".modalAddDepartment">
                        Add Contact
                       </a>
@@ -32,6 +32,7 @@
                                     <th>Surname</th>
                                     <th>Cellphone</th>
                                     <th>Email</th>
+                                    <th>Actions</th>
                               </tr>
                             </thead>
                         </table>
