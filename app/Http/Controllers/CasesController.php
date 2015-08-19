@@ -62,7 +62,7 @@ class CasesController extends Controller
 
             $data = array(
 
-                'message'  => $request['message']
+                'content'  => $request['message']
             );
 
             \Mail::send('emails.caseEscalation',$data, function($message) use ($address)
