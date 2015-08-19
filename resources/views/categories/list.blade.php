@@ -92,16 +92,22 @@
             if(data[0] !== null)
             {
 
-               $("#modalDepartment #name").val(data[0].name);
+               $("#modalEditCategory #name").val(data[0].name);
 
             }
             else {
-               $("#modalDepartment #name").val('');
+               $("#modalEditCategory #name").val('');
             }
 
         }
     });
 
     }
+
+    @if (count($errors) > 0)
+
+      $('#modalAddCategory').modal('show');
+
+    @endif
 </script>
 @endsection

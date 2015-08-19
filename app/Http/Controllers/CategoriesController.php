@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\CategoryRequest;
 use App\Http\Controllers\Controller;
 use App\Category;
 
@@ -22,7 +23,7 @@ class CategoriesController extends Controller
 
         $categories = Category::select(array('id','name','created_at'))->where('department','=',$id);
         return \Datatables::of($categories)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateCategoryModal({{$id}});" data-target=".modalEditDepartment">Edit</a>')
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateCategoryModal({{$id}});" data-target=".modalEditCategory">Edit</a>')
                             ->make(true);
     }
 
@@ -42,7 +43,7 @@ class CategoriesController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
          $category             = new Category();
          $category->name       = $request['name'];

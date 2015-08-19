@@ -1,5 +1,5 @@
 <!-- Modal Default -->
-<div class="modal fade modalEditDepartment" id="modalDepartment" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade modalEditCategory" id="modalEditCategory" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -7,7 +7,7 @@
                 <h4 class="modal-title" id='depTitle'>Business Unit</h4>
             </div>
             <div class="modal-body">
-            {!! Form::open(['url' => 'updateCategory', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"registrationForm" ]) !!}
+            {!! Form::open(['url' => 'updateCategory', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"updateCategoryForm" ]) !!}
             {!! Form::hidden('categoryID',NULL,['id' => 'categoryID']) !!}
             <div class="form-group">
                 {!! Form::label('Name', 'Name', array('class' => 'col-md-2 control-label')) !!}
