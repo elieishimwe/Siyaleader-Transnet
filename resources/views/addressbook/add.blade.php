@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Contact</h4>
+                <h4 class="modal-title">Add Contact</h4>
             </div>
             <div class="modal-body">
             {!! Form::open(['url' => 'addContact', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"addContactForm" ]) !!}
@@ -49,7 +49,7 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <button type="submit" type="button" class="btn btn-sm">Save Changes</button>
+                    <button type="#" id='submitAddContactForm' type="button" class="btn btn-sm">Save Changes</button>
                 </div>
             </div>
             </div>

@@ -20,6 +20,7 @@
         <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/icons.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/generics.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/token-input.css') }}" rel="stylesheet">
 
          <!-- Datatables stylesheet -->
         <link rel="stylesheet" href="//cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.css">
@@ -157,6 +158,10 @@
 
          <!-- Media -->
         <script src="{{ asset('/js/superbox.min.js') }}"></script> <!-- Photo Gallery -->
+
+
+         <!-- Token Input -->
+        <script src="{{ asset('/js/jquery.tokeninput.js') }}"></script> <!-- Token Input -->
 
          <!-- Datatable -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.4/js/jquery.dataTables.min.js"></script>

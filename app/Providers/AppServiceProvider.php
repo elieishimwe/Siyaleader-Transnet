@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Providers;
-
 use Illuminate\Support\ServiceProvider;
 use App\Position;
 use App\Department;
@@ -146,20 +145,6 @@ class AppServiceProvider extends ServiceProvider
              \View::share('selectRelationships',$selectRelationships);
 
         }
-
-       /* if (\Auth::check())
-        {
-
-            $cases = CaseReport::where('user','=',\Auth::user()->id)->get();
-        }
-        else {
-
-            $cases = [];
-        }
-
-        dd(\Auth::user()->ID);
-        \View::share('numberCases',$cases);*/
-
 
 
     }

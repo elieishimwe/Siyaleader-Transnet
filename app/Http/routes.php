@@ -6,6 +6,7 @@ use App\Municipality;
 use App\Department;
 use App\Category;
 use App\SubCategory;
+use App\CaseReport;
 
 /*
 |--------------------------------------------------------------------------
@@ -198,6 +199,7 @@ Route::get('case/{id}', 'CasesController@edit');
 
 Route::get('addressbook-list/{id}', 'AddressBookController@index');
 Route::post('addContact', 'AddressBookController@store');
+Route::get('getContacts', 'AddressBookController@show');
 
 /*
 |--------------------------------------------------------------------------
@@ -264,8 +266,4 @@ Route::controllers([
     'auth'     => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
 ]);
-
-
-
-
 

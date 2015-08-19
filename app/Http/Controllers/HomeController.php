@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\CaseReport;
 
 class HomeController extends Controller
 {
@@ -16,7 +17,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home.home');
+
+        $numberCases = CaseReport::where('user','=',\Auth::user()->id)->get();
+        return view('home.home',compact('numberCases'));
     }
 
     /**

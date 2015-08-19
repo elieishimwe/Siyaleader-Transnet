@@ -52,7 +52,7 @@ class AddressBookController extends Controller
          $addressbook->active    = 1;
          $addressbook->save();
 
-        \Session::flash('success', $request['FirstName'].' '.$request['Surname'].' has been successfully added!');
+        \Session::flash('successAddressBook', $request['FirstName'].' '.$request['Surname'].' has been successfully added!');
         return redirect()->back();
     }
 
@@ -62,9 +62,42 @@ class AddressBookController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+
+        $searchString = \Input::get('q');
+        $contacts     = \DB::table('addressbook')
+            ->where('user','=',\Auth::user()->id)
+            ->whereRaw("CONCAT(`FirstName`, ' ', `Surname`, ' ', `email`) LIKE '%{$searchString}%'")
+            ->select(\DB::raw('*'))
+            ->get();
+
+        $data = array();
+
+        if(count($contacts) > 0)
+        {
+
+           foreach ($contacts as $contact) {
+           $data[]= array("name"=>"{$contact->FirstName} {$contact->Surname} <{$contact->email}","id" =>"{$contact->email}");
+           }
+
+
+        }
+        else {
+
+            $contacts     = \DB::table('users')
+            ->whereRaw("CONCAT(`name`, ' ', `surname`, ' ', `email`) LIKE '%{$searchString}%'")
+            ->select(\DB::raw('*'))
+            ->get();
+
+           foreach ($contacts as $contact) {
+           $data[] = array("name"=>"{$contact->name} {$contact->surname} <{$contact->username}","id" =>"{$contact->username}");
+           }
+
+        }
+
+        return $data;
+
     }
 
     /**

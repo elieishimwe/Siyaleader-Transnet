@@ -1,6 +1,6 @@
 <!-- Modal Default -->
 <div class="modal fade modalAddressBook" id="modalAddressBook" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -17,10 +17,11 @@
 
                 <!-- Responsive Table -->
                 <div class="block-area" id="responsiveTable">
-                    @if(Session::has('success'))
-                    <div class="alert alert-info alert-dismissable fade in">
+                    @if(Session::has('successAddressBook'))
+                    <div class="alert alert-success alert-icon">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        {{ Session::get('success') }}
+                        {{ Session::get('successAddressBook') }}
+                        <i class="icon">&#61845;</i>
                     </div>
                     @endif
                     <div class="table-responsive overflow">

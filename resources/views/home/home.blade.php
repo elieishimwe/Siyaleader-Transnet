@@ -19,8 +19,8 @@
             <div class="tile quick-stats">
                 <div id="stats-line-2" class="pull-left"></div>
                 <div class="data">
-                    <h2 data-value="1">0</h2>
-                    <small>Cases Reported Today</small>
+                    <h2 data-value="{{ count($numberCases,0)}}">0</h2>
+                    <small>Cases Reported </small>
                 </div>
             </div>
         </div>
@@ -66,6 +66,8 @@
  <script>
   $(document).ready(function() {
 
+  $("#my-text-input").tokenInput("getContacts");
+
   var user = {!! Auth::user()->id !!};
   var oTable     = $('#casesTable').DataTable({
                 "processing": true,
@@ -110,7 +112,7 @@
 
          });
 
-  });
+   });
 
    function launchCaseModal(id)
     {
@@ -162,11 +164,19 @@
 
     }
 
+    function launchAddContactModal()
+    {
+
+      $('#modalAddressBook').modal('toggle');
+
+    }
+
   @if (count($errors) > 0)
 
       $('#modalAddContactModal').modal('show');
 
-    @endif
+  @endif
+
 </script>
 @endsection
 
