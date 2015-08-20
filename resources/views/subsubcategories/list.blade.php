@@ -122,31 +122,31 @@
                 if(data[0].firstResponder !== null)
                 {
                   $("#firstResponder").prev(".token-input-list").remove();
-                  $("#firstResponder").tokenInput("{!! url('getResponder') !!}",{tokenLimit:1,prePopulate:[{id: data[0].id, name: data[0].firstResponder}]});
+                  $("#firstResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1,prePopulate:[{id: data[0].id, name: data[0].firstResponder}]});
                 }
                 else {
 
-                  $("#firstResponder").tokenInput("{!! url('getResponder') !!}",{tokenLimit:1});
+                  $("#firstResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1});
                 }
 
                 if(data[0].secondResponder !== null)
                 {
                   $("#secondResponder").prev(".token-input-list").remove();
-                  $("#secondResponder").tokenInput("{!! url('getResponder') !!}",{tokenLimit:1,prePopulate:[{id: data[0].id, name: data[0].secondResponder}]});
+                  $("#secondResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1,prePopulate:[{id: data[0].id, name: data[0].secondResponder}]});
                 }
                 else {
 
 
-                  $("#secondResponder").tokenInput("{!! url('getResponder') !!}",{tokenLimit:1});
+                  $("#secondResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1});
                 }
 
                 if(data[0].thirdResponder !== null)
                 {
                   $("#thirdResponder").prev(".token-input-list").remove();
-                  $("#thirdResponder").tokenInput("{!! url('getResponder') !!}",{tokenLimit:1,prePopulate:[{id: data[0].id, name: data[0].thirdResponder}]});
+                  $("#thirdResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1,prePopulate:[{id: data[0].id, name: data[0].thirdResponder}]});
                 }
                 else {
-                  $("#thirdResponder").tokenInput("{!! url('getResponder') !!}",{tokenLimit:1});
+                  $("#thirdResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1});
                 }
 
               }
@@ -159,7 +159,7 @@
                   }
                   else
                   {
-                    $("#firstResponder").tokenInput("/getResponder",{tokenLimit:1});
+                    $("#firstResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1});
                   }
 
                   if($("#secondResponder").prev(".token-input-list").html())
@@ -168,7 +168,7 @@
                   }
                   else
                   {
-                    $("#secondResponder").tokenInput("/getResponder",{tokenLimit:1});
+                    $("#secondResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1});
                   }
 
                   if($("#thirdResponder").prev(".token-input-list").html())
@@ -177,7 +177,7 @@
                   }
                   else
                   {
-                    $("#thirdResponder").tokenInput("/getResponder",{tokenLimit:1});
+                    $("#thirdResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1});
                   }
 
 
