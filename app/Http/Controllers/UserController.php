@@ -58,7 +58,7 @@ class UserController extends Controller
         {
 
            foreach ($contacts as $contact) {
-           $data[]= array("name"=>"{$contact->name} {$contact->surname} <{$contact->username}","id" =>"{$contact->username}");
+           $data[]= array("name"=>"{$contact->name} {$contact->surname} <{$contact->username}","id" =>"{$contact->id}");
            }
 
 

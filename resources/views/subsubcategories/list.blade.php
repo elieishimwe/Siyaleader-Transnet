@@ -108,8 +108,9 @@
 
     }
 
-    function launchSubSubCatResponders()
+    function launchSubSubCatResponders(id)
     {
+      $(".modal-body #subsubCategoryID").val(id);
 
     }
 

@@ -231,6 +231,26 @@ Route::get('getContacts', 'AddressBookController@show');
 |
 */
 
+
+/*
+|--------------------------------------------------------------------------
+| RESPONDERS ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+  Route::post('addSubSubCategoryResponder', 'RespondersController@store');
+
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| END RESPONDERS ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
 $router->resource('users','UserController');
 
 Route::get('/api/dropdown/{to}/{from}', function($to,$from){

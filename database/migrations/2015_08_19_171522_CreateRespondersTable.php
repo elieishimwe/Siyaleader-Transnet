@@ -14,11 +14,13 @@ class CreateRespondersTable extends Migration
     {
         Schema::create('responders',function($table){
             $table->increments('id');
-            $table->integer('type');
             $table->integer('department');
             $table->integer('category');
             $table->integer('sub_category');
-            $table->integer('user');
+            $table->integer('sub_sub_category');
+            $table->integer('firstResponder');
+            $table->integer('secondResponder');
+            $table->integer('thirdResponder');
             $table->boolean('active')->default(1);
             $table->timestamps();
         });

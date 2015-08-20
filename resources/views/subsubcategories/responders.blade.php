@@ -4,11 +4,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id='depTitle'>Category</h4>
+                <h4 class="modal-title" id='depTitle'>Sub Sub Category Responders</h4>
             </div>
             <div class="modal-body">
             {!! Form::open(['url' => 'addSubSubCategoryResponder', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"SubSubCategoryResponderForm" ]) !!}
-             {!! Form::hidden('subCatID',$subCatObj->id) !!}
+            {!! Form::hidden('deptID',$deptObj->id) !!}
+            {!! Form::hidden('catID',$catObj->id) !!}
+            {!! Form::hidden('subCatID',$subCatObj->id) !!}
+            {!! Form::hidden('subsubCategoryID',NULL,['id' => 'subsubCategoryID']) !!}
             {!! Form::hidden('id',Auth::user()->id) !!}
 
             <div class="form-group">
