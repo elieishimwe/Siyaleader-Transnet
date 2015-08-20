@@ -7,7 +7,7 @@ class CaseResponder extends Eloquent
 
 
     protected $table    = 'responders';
-    protected $fillable = ['type','department','category','sub_category','user','active'];
+    protected $fillable = ['department','category','sub_category','sub_sub_category','firstResponder','secondResponder','thirdResponder','active'];
 
 
 
