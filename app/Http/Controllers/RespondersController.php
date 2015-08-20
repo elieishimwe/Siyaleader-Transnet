@@ -50,7 +50,7 @@ class RespondersController extends Controller
          $responder->active           = 1;
          $responder->save();
 
-        \Session::flash('success', $request['name'].' has been successfully added!');
+        \Session::flash('success','Responders have been successfully added!');
         return redirect()->back();
     }
 
