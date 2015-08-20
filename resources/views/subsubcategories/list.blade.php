@@ -43,6 +43,7 @@
 </div>
 @include('subsubcategories.edit')
 @include('subsubcategories.add')
+@include('subsubcategories.responders')
 
 @endsection
 
@@ -50,6 +51,10 @@
 
  <script>
   $(document).ready(function() {
+
+  $("#firstResponder").tokenInput("/getResponder",{tokenLimit:1});
+  $("#secondResponder").tokenInput("/getResponder",{tokenLimit:1});
+  $("#thirdResponder").tokenInput("/getResponder",{tokenLimit:1});
 
   var sub_category = {!! $subCatObj->id !!};
   var oTable     = $('#subsubCategoriesTable').DataTable({
@@ -100,6 +105,11 @@
 
         }
     });
+
+    }
+
+    function launchSubSubCatResponders()
+    {
 
     }
 

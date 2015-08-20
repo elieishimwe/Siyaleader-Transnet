@@ -44,9 +44,27 @@ class UserController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function responder()
     {
-        //
+        $searchString = \Input::get('q');
+        $contacts     = \DB::table('users')
+            ->whereRaw("CONCAT(`name`, ' ', `surname`, ' ', `username`) LIKE '%{$searchString}%'")
+            ->select(\DB::raw('*'))
+            ->get();
+
+        $data = array();
+
+        if(count($contacts) > 0)
+        {
+
+           foreach ($contacts as $contact) {
+           $data[]= array("name"=>"{$contact->name} {$contact->surname} <{$contact->username}","id" =>"{$contact->username}");
+           }
+
+
+        }
+
+        return $data;
     }
 
     /**

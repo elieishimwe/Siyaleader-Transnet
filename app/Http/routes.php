@@ -50,6 +50,7 @@ Route::get('list-users', function () {
 });
 
 Route::get('users-list', 'UserController@index');
+Route::get('getResponder', 'UserController@responder');
 
 
 /*
