@@ -116,13 +116,14 @@
       $.ajax({
           type    :"GET",
           dataType:"json",
-          url     :"{!! url('/getResponders/"+ id + "')!!}",
+          url     :"{!! url('/getsubSubResponders/"+ id + "')!!}",
           success :function(data) {
 
               if(data[0] !== null)
               {
                 if(data[0].firstResponder !== null)
                 {
+                  $("#firstResponder").prev(".token-input-list").remove();
                   $("#firstResponder").tokenInput("/getResponder",{tokenLimit:1,prePopulate:[{id: data[0].id, name: data[0].firstResponder}]});
                 }
                 else {
@@ -131,6 +132,7 @@
 
                 if(data[0].secondResponder !== null)
                 {
+                  $("#secondResponder").prev(".token-input-list").remove();
                   $("#secondResponder").tokenInput("/getResponder",{tokenLimit:1,prePopulate:[{id: data[0].id, name: data[0].secondResponder}]});
                 }
                 else {
@@ -139,6 +141,7 @@
 
                 if(data[0].thirdResponder !== null)
                 {
+                  $("#thirdResponder").prev(".token-input-list").remove();
                   $("#thirdResponder").tokenInput("/getResponder",{tokenLimit:1,prePopulate:[{id: data[0].id, name: data[0].thirdResponder}]});
                 }
                 else {

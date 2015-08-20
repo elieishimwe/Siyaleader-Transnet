@@ -39,19 +39,42 @@ class RespondersController extends Controller
     public function store(Request $request)
     {
 
-         $responder                   = new CaseResponder();
-         $responder->department       = $request['deptID'];
-         $responder->category         = $request['catID'];
-         $responder->sub_category     = $request['subCatID'];
-         $responder->sub_sub_category = $request['subsubCategoryID'];
-         $responder->firstResponder   = $request['firstResponder'];
-         $responder->secondResponder  = $request['secondResponder'];
-         $responder->thirdResponder   = $request['thirdResponder'];
-         $responder->active           = 1;
-         $responder->save();
+        $sub_sub_cat = $request['subsubCategoryID'];
+        $result = CaseResponder::where('sub_sub_category','=',$sub_sub_cat)->first();
+
+        if($result)
+        {
+            $result->firstResponder   = $request['firstResponder'];
+            $result->secondResponder  = $request['secondResponder'];
+            $result->thirdResponder   = $request['thirdResponder'];
+            $result->save();
+            \Session::flash('success','Responders have been successfully added!');
+            return redirect()->back();
+
+
+
+        }
+        else {
+
+            $responder                   = new CaseResponder();
+            $responder->department       = $request['deptID'];
+            $responder->category         = $request['catID'];
+            $responder->sub_category     = $request['subCatID'];
+            $responder->sub_sub_category = $request['subsubCategoryID'];
+            $responder->firstResponder   = $request['firstResponder'];
+            $responder->secondResponder  = $request['secondResponder'];
+            $responder->thirdResponder   = $request['thirdResponder'];
+            $responder->active           = 1;
+            $responder->save();
 
         \Session::flash('success','Responders have been successfully added!');
         return redirect()->back();
+
+
+
+
+        }
+
     }
 
     /**
@@ -71,7 +94,7 @@ class RespondersController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function responder($id)
+    public function subSubResponder($id)
     {
 
         $responders = \DB::table('responders')
