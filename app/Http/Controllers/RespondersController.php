@@ -71,9 +71,25 @@ class RespondersController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function edit($id)
+    public function responder($id)
     {
-        //
+
+        $responders = \DB::table('responders')
+            ->where('responders.sub_sub_category','=',$id)
+            ->select(\DB::raw(
+                                "
+
+                                responders.id as id,
+                                (select CONCAT(users.name, ' ',users.surname) from users where responders.firstResponder = users.id) as firstResponder,
+                                (select CONCAT(users.name, ' ',users.surname) from users where responders.secondResponder = users.id) as secondResponder,
+                                (select CONCAT(users.name, ' ',users.surname) from users where responders.thirdResponder = users.id) as thirdResponder
+
+                                "
+                            )
+
+                    )
+            ->first();
+        return [$responders];
     }
 
     /**

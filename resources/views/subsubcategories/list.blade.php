@@ -52,9 +52,7 @@
  <script>
   $(document).ready(function() {
 
-  $("#firstResponder").tokenInput("/getResponder",{tokenLimit:1});
-  $("#secondResponder").tokenInput("/getResponder",{tokenLimit:1});
-  $("#thirdResponder").tokenInput("/getResponder",{tokenLimit:1});
+
 
   var sub_category = {!! $subCatObj->id !!};
   var oTable     = $('#subsubCategoriesTable').DataTable({
@@ -110,10 +108,54 @@
 
     function launchSubSubCatResponders(id)
     {
+
+
+
       $(".modal-body #subsubCategoryID").val(id);
 
-    }
+      $.ajax({
+          type    :"GET",
+          dataType:"json",
+          url     :"{!! url('/getResponders/"+ id + "')!!}",
+          success :function(data) {
 
+              if(data[0] !== null)
+              {
+                if(data[0].firstResponder !== null)
+                {
+                  $("#firstResponder").tokenInput("/getResponder",{tokenLimit:1,prePopulate:[{id: data[0].id, name: data[0].firstResponder}]});
+                }
+                else {
+                  $("#firstResponder").tokenInput("/getResponder",{tokenLimit:1});
+                }
+
+                if(data[0].secondResponder !== null)
+                {
+                  $("#secondResponder").tokenInput("/getResponder",{tokenLimit:1,prePopulate:[{id: data[0].id, name: data[0].secondResponder}]});
+                }
+                else {
+                  $("#secondResponder").tokenInput("/getResponder",{tokenLimit:1});
+                }
+
+                if(data[0].thirdResponder !== null)
+                {
+                  $("#thirdResponder").tokenInput("/getResponder",{tokenLimit:1,prePopulate:[{id: data[0].id, name: data[0].thirdResponder}]});
+                }
+                else {
+                  $("#thirdResponder").tokenInput("/getResponder",{tokenLimit:1});
+                }
+
+              }
+              else {
+                  $("#firstResponder").tokenInput("clear");
+                  $("#secondResponder").tokenInput("clear");
+                  $("#thirdResponder").tokenInput("clear");
+              }
+
+          }
+      });
+
+    }
 
     @if (count($errors) > 0)
 
