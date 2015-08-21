@@ -1,7 +1,6 @@
 <div class="row">
     <div class="col-md-6">
-       <div class="tile">
-            <div class="p-6">
+
             <!-- Modal Default -->
             <div class="modal fade modalCase" id="modalCase" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
@@ -84,7 +83,7 @@
                             {!! Form::label('Image', 'Image', array('class' => 'col-md-2 control-label')) !!}
                             <div class="col-md-6">
                                 <div class="superbox-list">
-                                    <img src="#" data-img="#" alt="" class="superbox-img" id="CaseImage" width="50%">
+                                    <img src="#" data-img="#" alt="" class="superbox-img" id="CaseImage" width="65%">
                                 </div>
                             </div>
                         </div>
@@ -99,8 +98,6 @@
 
                         {!! Form::close() !!}
                     </div>
-                </div>
-            </div>
           </div>
       </div>
     </div>
