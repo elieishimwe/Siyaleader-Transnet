@@ -240,6 +240,8 @@ Route::get('getContacts', 'AddressBookController@show');
 */
   Route::get('getsubSubResponders/{id}', 'RespondersController@subSubResponder');
   Route::post('addSubSubCategoryResponder', 'RespondersController@store');
+  Route::get('getSubResponders/{id}', 'RespondersController@subResponder');
+  Route::post('addSubCategoryResponder', 'RespondersController@store');
 
 
 

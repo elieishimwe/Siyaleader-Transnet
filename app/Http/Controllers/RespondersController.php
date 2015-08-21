@@ -88,6 +88,27 @@ class RespondersController extends Controller
         //
     }
 
+    public function subResponder($id)
+    {
+
+        $responders = \DB::table('responders')
+            ->where('responders.sub_category','=',$id)
+            ->select(\DB::raw(
+                                "
+
+                                responders.id as id,
+                                (select CONCAT(users.name, ' ',users.surname) from users where responders.firstResponder = users.id) as firstResponder,
+                                (select CONCAT(users.name, ' ',users.surname) from users where responders.secondResponder = users.id) as secondResponder,
+                                (select CONCAT(users.name, ' ',users.surname) from users where responders.thirdResponder = users.id) as thirdResponder
+
+                                "
+                            )
+
+                    )
+            ->first();
+        return [$responders];
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

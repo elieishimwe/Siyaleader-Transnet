@@ -42,6 +42,7 @@
 </div>
 @include('subcategories.edit')
 @include('subcategories.add')
+@include('subcategories.responders')
 @endsection
 
 @section('footer')
@@ -99,6 +100,88 @@
 
         }
     });
+
+    }
+
+    function launchSubCatResponders(id)
+    {
+
+      $(".modal-body #subCatID").val(id);
+
+      $.ajax({
+          type    :"GET",
+          dataType:"json",
+          url     :"{!! url('/getSubResponders/"+ id + "')!!}",
+          success :function(data) {
+
+              if(data[0] !== null)
+              {
+                if(data[0].firstResponder !== null)
+                {
+                  $("#firstResponder").prev(".token-input-list").remove();
+                  $("#firstResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1,prePopulate:[{id: data[0].id, name: data[0].firstResponder}]});
+                }
+                else {
+
+                  $("#firstResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1});
+                }
+
+                if(data[0].secondResponder !== null)
+                {
+                  $("#secondResponder").prev(".token-input-list").remove();
+                  $("#secondResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1,prePopulate:[{id: data[0].id, name: data[0].secondResponder}]});
+                }
+                else {
+
+
+                  $("#secondResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1});
+                }
+
+                if(data[0].thirdResponder !== null)
+                {
+                  $("#thirdResponder").prev(".token-input-list").remove();
+                  $("#thirdResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1,prePopulate:[{id: data[0].id, name: data[0].thirdResponder}]});
+                }
+                else {
+                  $("#thirdResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1});
+                }
+
+              }
+              else {
+
+
+                  if($("#firstResponder").prev(".token-input-list").html())
+                  {
+                    $("#firstResponder").tokenInput("clear");
+                  }
+                  else
+                  {
+                    $("#firstResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1});
+                  }
+
+                  if($("#secondResponder").prev(".token-input-list").html())
+                  {
+                    $("#secondResponder").tokenInput("clear");
+                  }
+                  else
+                  {
+                    $("#secondResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1});
+                  }
+
+                  if($("#thirdResponder").prev(".token-input-list").html())
+                  {
+                    $("#thirdResponder").tokenInput("clear");
+                  }
+                  else
+                  {
+                    $("#thirdResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1});
+                  }
+
+
+              }
+
+          }
+      });
 
     }
 

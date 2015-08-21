@@ -20,7 +20,8 @@ class SubCategoriesController extends Controller
     {
         $subCategories = SubCategory::select(array('id','name','created_at'))->where('category','=',$id);
         return \Datatables::of($subCategories)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateSubCategoryModal({{$id}});" data-target=".modalEditSubCategory">Edit</a>')
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateSubCategoryModal({{$id}});" data-target=".modalEditSubCategory">Edit</a>
+                                                   <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchSubCatResponders({{$id}});" data-target=".modalSubResponder">Set Responders</a>')
                             ->make(true);
     }
 
