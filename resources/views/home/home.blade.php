@@ -123,26 +123,9 @@
 
    });
 
-  var oTableCaseNotes     = $('#caseNotesTable').DataTable({
-                  "processing": true,
-                  "serverSide": true,
-                  "dom": 'T<"clear">lfrtip',
-                  "order" :[[0,"desc"]],
-                  "ajax": "{!! url('/caseNotes-list/" + user +"')!!}",
-                   "columns": [
-                  {data: 'created_at', name: 'created_at'},
-                  {data: 'user', name: 'user'},
-                  {data: 'note', name: 'note'}
-                 ],
 
-              "aoColumnDefs": [
-                  { "bSearchable": false, "aTargets": [ 1] },
-                  { "bSortable": false, "aTargets": [ 1 ] }
-              ]
 
-           });
 
-     });
 
    function launchCaseModal(id)
     {
@@ -178,7 +161,27 @@
             }
 
         }
-    });
+    })
+
+
+      var oTableCaseNotes     = $('#caseNotesTable').DataTable({
+                  "processing": true,
+                  "serverSide": true,
+                  "dom": 'T<"clear">lfrtip',
+                  "order" :[[0,"desc"]],
+                  "ajax": "{!! url('/caseNotes-list/" + id +"')!!}",
+                   "columns": [
+                  {data: 'created_at', name: 'created_at'},
+                  {data: 'user', name: 'user'},
+                  {data: 'note', name: 'note'}
+                 ],
+
+              "aoColumnDefs": [
+                  { "bSearchable": false, "aTargets": [ 1] },
+                  { "bSortable": false, "aTargets": [ 1 ] }
+              ]
+
+           });
 
     }
     function launchReferModal()

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\CaseNote;
 
 class CaseNotesController extends Controller
 {
@@ -14,9 +15,13 @@ class CaseNotesController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        $caseNotes = CaseNote::select(array('id','caseId','user','note','active'))->where('caseId','=',$id);
+        return \Datatables::of($caseNotes)
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>'
+                                       )
+                            ->make(true);
     }
 
     /**

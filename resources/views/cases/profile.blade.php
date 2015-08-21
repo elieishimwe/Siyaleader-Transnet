@@ -98,10 +98,13 @@
                                       </div>
                                   </div>
                                   </div>
+                                   <hr class="whiter" />
                                   <div class="form-group">
                                       <div class="col-md-offset-2 col-md-6">
                                           <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchReferModal();" data-target=".modalReferCase">Escalate Case</a>
+                                          <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchReferModal();" data-target=".modalReferCase">Add Case Note</a>
                                       </div>
+
                                   </div>
                               {!! Form::close() !!}
 
