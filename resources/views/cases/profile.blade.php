@@ -1,87 +1,109 @@
-<!-- Modal Default -->
-<div class="modal fade modalCase" id="modalCase" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id='depTitle'>Case Profile</h4>
-            </div>
-            <div class="modal-body">
-            {!! Form::open(['url' => 'updateCategory', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"registrationForm" ]) !!}
-            {!! Form::hidden('caseID',NULL,['id' => 'caseID']) !!}
-            <div class="form-group">
-                {!! Form::label('Case Number', 'Case Number', array('class' => 'col-md-2 control-label')) !!}
-                <div class="col-md-10">
-                  {!! Form::text('id',NULL,['class' => 'form-control input-sm','id' => 'id']) !!}
-                  @if ($errors->has('id')) <p class="help-block red">*{{ $errors->first('id') }}</p> @endif
-                </div>
-            </div>
-            <div class="form-group">
-                {!! Form::label('Description', 'Description', array('class' => 'col-md-2 control-label')) !!}
-                <div class="col-md-10">
-                  {!! Form::text('description',NULL,['class' => 'form-control input-sm','id' => 'description']) !!}
-                  @if ($errors->has('description')) <p class="help-block red">*{{ $errors->first('description') }}</p> @endif
-                </div>
-            </div>
+<div class="row">
+    <div class="col-md-6">
+       <div class="tile">
+            <div class="p-6">
+            <!-- Modal Default -->
+            <div class="modal fade modalCase" id="modalCase" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id='depTitle'>Case Profile</h4>
+                        </div>
+                        <div class="modal-body">
+                        {!! Form::open(['url' => '#', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"registrationForm" ]) !!}
+                        {!! Form::hidden('caseID',NULL,['id' => 'caseID']) !!}
+                        <div class="form-group">
+                            {!! Form::label('Case Number', 'Case Number', array('class' => 'col-md-2 control-label')) !!}
+                            <div class="col-md-4">
+                              {!! Form::text('id',NULL,['class' => 'form-control input-sm','id' => 'id']) !!}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('Description', 'Description', array('class' => 'col-md-2 control-label')) !!}
+                            <div class="col-md-4">
+                              {!! Form::text('description',NULL,['class' => 'form-control input-sm','id' => 'description']) !!}
 
-            <div class="form-group">
-                {!! Form::label('Department', 'Department', array('class' => 'col-md-2 control-label')) !!}
-                <div class="col-md-10">
-                  {!! Form::text('department',NULL,['class' => 'form-control input-sm','id' => 'department']) !!}
-                  @if ($errors->has('department')) <p class="help-block red">*{{ $errors->first('department') }}</p> @endif
-                </div>
-            </div>
+                            </div>
+                        </div>
 
-             <div class="form-group">
-                {!! Form::label('Category', 'Category', array('class' => 'col-md-2 control-label')) !!}
-                <div class="col-md-10">
-                  {!! Form::text('category',NULL,['class' => 'form-control input-sm','id' => 'category']) !!}
-                  @if ($errors->has('category')) <p class="help-block red">*{{ $errors->first('category') }}</p> @endif
-                </div>
-            </div>
+                        <div class="form-group">
+                            {!! Form::label('Department', 'Department', array('class' => 'col-md-2 control-label')) !!}
+                            <div class="col-md-4">
+                              {!! Form::text('department',NULL,['class' => 'form-control input-sm','id' => 'department']) !!}
 
-            <div class="form-group">
-                {!! Form::label('Sub Category', 'Sub Category', array('class' => 'col-md-2 control-label')) !!}
-                <div class="col-md-10">
-                  {!! Form::text('sub_category',NULL,['class' => 'form-control input-sm','id' => 'sub_category']) !!}
-                  @if ($errors->has('sub_category')) <p class="help-block red">*{{ $errors->first('sub_category') }}</p> @endif
-                </div>
-            </div>
+                            </div>
+                        </div>
 
-             <div class="form-group">
-                {!! Form::label('Sub Sub Category', 'Sub Sub Category', array('class' => 'col-md-2 control-label')) !!}
-                <div class="col-md-10">
-                  {!! Form::text('sub_category',NULL,['class' => 'form-control input-sm','id' => 'sub_sub_category']) !!}
-                  @if ($errors->has('sub_sub_category')) <p class="help-block red">*{{ $errors->first('sub_sub_category') }}</p> @endif
-                </div>
-            </div>
-            <div class="form-group">
-                {!! Form::label('Status', 'Status', array('class' => 'col-md-2 control-label')) !!}
-                <div class="col-md-10">
-                  {!! Form::text('status',NULL,['class' => 'form-control input-sm','id' => 'status']) !!}
-                  @if ($errors->has('status')) <p class="help-block red">*{{ $errors->first('status') }}</p> @endif
-                </div>
-            </div>
-            <div class="form-group">
-            <div class="photo-gallery tile clearfix">
-                {!! Form::label('Image', 'Image', array('class' => 'col-md-2 control-label')) !!}
-                <div class="col-md-10">
-                    <div class="superbox-list">
-                        <img src="#" data-img="#" alt="" class="superbox-img" id="CaseImage" width="50%">
+                         <div class="form-group">
+                            {!! Form::label('Category', 'Category', array('class' => 'col-md-2 control-label')) !!}
+                            <div class="col-md-4">
+                              {!! Form::text('category',NULL,['class' => 'form-control input-sm','id' => 'category']) !!}
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('Sub Category', 'Sub Category', array('class' => 'col-md-2 control-label')) !!}
+                            <div class="col-md-4">
+                              {!! Form::text('sub_category',NULL,['class' => 'form-control input-sm','id' => 'sub_category']) !!}
+
+                            </div>
+                        </div>
+
+                         <div class="form-group">
+                            {!! Form::label('Sub Sub Category', 'Sub Sub Category', array('class' => 'col-md-2 control-label')) !!}
+                            <div class="col-md-4">
+                              {!! Form::text('sub_category',NULL,['class' => 'form-control input-sm','id' => 'sub_sub_category']) !!}
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('Status', 'Status', array('class' => 'col-md-2 control-label')) !!}
+                            <div class="col-md-4">
+                              {!! Form::text('status',NULL,['class' => 'form-control input-sm','id' => 'status']) !!}
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('Report Name', 'Report Name', array('class' => 'col-md-2 control-label')) !!}
+                            <div class="col-md-4">
+                              {!! Form::text('reporter',NULL,['class' => 'form-control input-sm','id' => 'reporter']) !!}
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('Report Cellphone', 'Report Cellphone', array('class' => 'col-md-2 control-label')) !!}
+                            <div class="col-md-4">
+                              {!! Form::text('reporterCell',NULL,['class' => 'form-control input-sm','id' => 'reporterCell']) !!}
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        <div class="photo-gallery tile clearfix">
+                            {!! Form::label('Image', 'Image', array('class' => 'col-md-2 control-label')) !!}
+                            <div class="col-md-6">
+                                <div class="superbox-list">
+                                    <img src="#" data-img="#" alt="" class="superbox-img" id="CaseImage" width="50%">
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-6">
+                                <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchReferModal();" data-target=".modalReferCase">Escalate Case</a>
+                            </div>
+                        </div>
+                      </div>
+
+
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchReferModal();" data-target=".modalReferCase">Escalate Case</a>
-                </div>
-            </div>            </div>
-            <div class="modal-footer">
-
-            </div>
-
-            {!! Form::close() !!}
-        </div>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-4">
     </div>
 </div>
