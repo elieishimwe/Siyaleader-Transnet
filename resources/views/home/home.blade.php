@@ -149,6 +149,7 @@
                $("#modalCase #CaseImage").attr("data-img",ImgUrl);
                $("#modalCase #reporter").val(data[0].reporter);
                $("#modalCase #reporterCell").val(data[0].reporterCell);
+               $("#modalCase #reporterPosition").val(data[0].reporterPosition);
 
             }
             else {
