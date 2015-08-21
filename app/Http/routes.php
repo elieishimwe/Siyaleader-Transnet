@@ -252,6 +252,22 @@ Route::get('getContacts', 'AddressBookController@show');
 |
 */
 
+
+/*
+|--------------------------------------------------------------------------
+| CASE NOTES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+  Route::get('caseNotes-list/{id}', 'CaseNotesController@index');
+
+/*
+|--------------------------------------------------------------------------
+| END CASE NOTES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
 $router->resource('users','UserController');
 
 Route::get('/api/dropdown/{to}/{from}', function($to,$from){
