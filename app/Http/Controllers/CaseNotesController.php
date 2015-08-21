@@ -17,7 +17,7 @@ class CaseNotesController extends Controller
      */
     public function index($id)
     {
-        $caseNotes = CaseNote::select(array('id','caseId','user','note','active'))->where('caseId','=',$id);
+        $caseNotes = CaseNote::select(array('id','caseId','user','note','active','created_at'))->where('caseId','=',$id);
         return \Datatables::of($caseNotes)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>'
                                        )
@@ -42,7 +42,13 @@ class CaseNotesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $caseNote         = new CaseNote();
+        $caseNote->note   = $request['caseNote'];
+        $caseNote->user   = $request['uid'];
+        $caseNote->caseId = $request['caseID'];
+        $caseNote->save();
+        \Session::flash('success', $request['name'].' has been successfully added!');
+        return redirect()->back();
     }
 
     /**

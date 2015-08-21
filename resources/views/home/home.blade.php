@@ -58,6 +58,7 @@
 @include('cases.refer')
 @include('addressbook.list')
 @include('addressbook.add')
+@include('casenotes.add')
 
 @endsection
 
@@ -70,7 +71,14 @@
 
 
 
-  $('#sms').maxlength({
+  $('#message').maxlength({
+            alwaysShow: true,
+            threshold: 10,
+            warningClass: "label label-success",
+            limitReachedClass: "label label-danger"
+  });
+
+  $('#caseNote').maxlength({
             alwaysShow: true,
             threshold: 10,
             warningClass: "label label-success",
@@ -131,6 +139,7 @@
     {
 
       $(".modal-body #categoryID").val(id);
+      $(".modal-body #caseID").val(id);
 
         $.ajax({
         type    :"GET",
@@ -204,6 +213,14 @@
     {
 
       $('#modalAddressBook').modal('toggle');
+
+    }
+
+    function launchCaseNotesModal(id)
+    {
+
+      $('#modalAddCaseNotesModal').modal('toggle');
+
 
     }
 

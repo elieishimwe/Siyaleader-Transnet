@@ -11,7 +11,7 @@
                         </div>
                         <div class="modal-body">
                             <div class="row">
-                              <div class="col-md-8">
+                              <div class="col-md-6">
                                 <div class="tile">
                                         <h2 class="tile-title">Case Details</h2>
                                         <div class="tile-config dropdown">
@@ -102,7 +102,7 @@
                                   <div class="form-group">
                                       <div class="col-md-offset-2 col-md-6">
                                           <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchReferModal();" data-target=".modalReferCase">Escalate Case</a>
-                                          <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchReferModal();" data-target=".modalReferCase">Add Case Note</a>
+                                          <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseNotesModal();" data-target=".modalAddCaseNotesModal">Add Case Note</a>
                                       </div>
 
                                   </div>
@@ -111,7 +111,7 @@
                             </div>
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-6">
 
                                  <!-- Start Tile Div -->
                                   <div class="tile">

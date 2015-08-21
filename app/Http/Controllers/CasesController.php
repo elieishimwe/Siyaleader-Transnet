@@ -42,7 +42,7 @@ class CasesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
 

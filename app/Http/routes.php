@@ -260,6 +260,7 @@ Route::get('getContacts', 'AddressBookController@show');
 |
 */
   Route::get('caseNotes-list/{id}', 'CaseNotesController@index');
+  Route::post('addCaseNote', 'CaseNotesController@store');
 
 /*
 |--------------------------------------------------------------------------
