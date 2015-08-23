@@ -18,6 +18,7 @@ class HomeController extends Controller
     public function index()
     {
 
+
         $numberCases = CaseReport::where('user','=',\Auth::user()->id)->get();
         return view('home.home',compact('numberCases'));
     }

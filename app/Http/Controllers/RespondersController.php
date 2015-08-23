@@ -36,7 +36,7 @@ class RespondersController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function storeSubSubResponder(Request $request)
     {
 
         $sub_sub_cat = $request['subsubCategoryID'];
@@ -61,6 +61,49 @@ class RespondersController extends Controller
             $responder->category         = $request['catID'];
             $responder->sub_category     = $request['subCatID'];
             $responder->sub_sub_category = $request['subsubCategoryID'];
+            $responder->firstResponder   = $request['firstResponder'];
+            $responder->secondResponder  = $request['secondResponder'];
+            $responder->thirdResponder   = $request['thirdResponder'];
+            $responder->active           = 1;
+            $responder->save();
+
+        \Session::flash('success','Responders have been successfully added!');
+        return redirect()->back();
+
+
+
+
+        }
+
+    }
+
+
+      public function storeSubResponder(Request $request)
+    {
+
+        $sub_cat = $request['subCatID'];
+        $result  = CaseResponder::where('sub_category','=',$sub_cat)
+                                ->where('sub_sub_category','=',0)
+                                ->first();
+
+        if($result)
+        {
+            $result->firstResponder   = $request['firstResponder'];
+            $result->secondResponder  = $request['secondResponder'];
+            $result->thirdResponder   = $request['thirdResponder'];
+            $result->save();
+            \Session::flash('success','Responders have been successfully added!');
+            return redirect()->back();
+
+
+
+        }
+        else {
+
+            $responder                   = new CaseResponder();
+            $responder->department       = $request['deptID'];
+            $responder->category         = $request['catID'];
+            $responder->sub_category     = $request['subCatID'];
             $responder->firstResponder   = $request['firstResponder'];
             $responder->secondResponder  = $request['secondResponder'];
             $responder->thirdResponder   = $request['thirdResponder'];
