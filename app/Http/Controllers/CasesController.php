@@ -26,6 +26,8 @@ class CasesController extends Controller
             $caseIds[] = $case->id;
         }
 
+        \Log::info("My cases ".$caseIds);
+
 
 
         $cases   = CaseReport::select(array('id','created_at','description','status'))->whereIn('id',$caseIds);
