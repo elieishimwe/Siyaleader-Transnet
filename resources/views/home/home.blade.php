@@ -129,7 +129,14 @@
 
          });
 
+     var oTableCaseNotes;
+
+
+
+
    });
+
+
 
 
 
@@ -173,7 +180,11 @@
     })
 
 
-      var oTableCaseNotes     = $('#caseNotesTable').DataTable({
+    if ( $.fn.dataTable.isDataTable( '#caseNotesTable' ) ) {
+      oTableCaseNotes.destroy();
+    }
+
+     oTableCaseNotes     = $('#caseNotesTable').DataTable({
                   "processing": true,
                   "serverSide": true,
                   "dom": 'T<"clear">lfrtip',
@@ -191,6 +202,7 @@
               ]
 
            });
+
 
     }
     function launchReferModal()
