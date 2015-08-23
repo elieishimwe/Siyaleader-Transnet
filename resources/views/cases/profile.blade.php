@@ -14,12 +14,7 @@
                               <div class="col-md-6">
                                 <div class="tile">
                                         <h2 class="tile-title">Case Details</h2>
-                                        <div class="tile-config dropdown">
-                                            <a data-toggle="dropdown" href="" class="tile-menu"></a>
-                                            <ul class="dropdown-menu pull-right text-right">
 
-                                            </ul>
-                                        </div>
                                   {!! Form::open(['url' => '#', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"registrationForm" ]) !!}
                                   {!! Form::hidden('caseID',NULL,['id' => 'caseID']) !!}
                                   <div class="form-group">
@@ -116,12 +111,6 @@
                                  <!-- Start Tile Div -->
                                   <div class="tile">
                                       <h2 class="tile-title">case activities</h2>
-                                      <div class="tile-config dropdown">
-                                          <a data-toggle="dropdown" href="" class="tile-menu"></a>
-                                          <ul class="dropdown-menu pull-right text-right">
-
-                                          </ul>
-                                      </div>
 
                                             <!-- Responsive Table -->
                                         <div class="block-area" id="responsiveTable">
