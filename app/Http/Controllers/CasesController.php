@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\CaseReport;
+use App\CaseOwner;
 
 class CasesController extends Controller
 {
@@ -17,7 +18,15 @@ class CasesController extends Controller
      */
     public function index($id)
     {
-        $cases = CaseReport::select(array('id','created_at','description','status'))->where('user','=',$id);
+
+        $myCases = CaseOwner::where('user','=',\Auth::user()->id)->get();
+        $caseIds = array();
+
+        foreach ($myCases as $case) {
+            $caseIds[] = $case->id;
+        }
+
+        $cases   = CaseReport::select(array('id','created_at','description','status'))->whereIn('id',$caseIds);
         return \Datatables::of($cases)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>'
                                        )
