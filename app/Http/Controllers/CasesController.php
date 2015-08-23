@@ -23,14 +23,10 @@ class CasesController extends Controller
         $caseIds = array();
 
         foreach ($myCases as $case) {
-            $caseIds[] = $case->id;
+            $caseIds[] = $case->caseId;
         }
 
         \Log::info("My cases ".implode(",",$caseIds));
-
-        dd($caseIds);
-
-
 
         $cases   = CaseReport::select(array('id','created_at','description','status'))->whereIn('id',$caseIds);
         return \Datatables::of($cases)
