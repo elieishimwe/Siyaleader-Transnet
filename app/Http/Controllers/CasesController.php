@@ -28,6 +28,8 @@ class CasesController extends Controller
 
         \Log::info("My cases ".implode(",",$caseIds));
 
+        dd($caseIds);
+
 
 
         $cases   = CaseReport::select(array('id','created_at','description','status'))->whereIn('id',$caseIds);
