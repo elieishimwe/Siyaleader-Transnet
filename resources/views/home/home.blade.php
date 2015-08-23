@@ -131,6 +131,14 @@
 
      var oTableCaseNotes;
 
+     $("#submitAddCaseNoteForm").on("click",function(){
+
+        alert("Hello Elias ,How are you");
+        $('#modalAddCaseNotesModal').modal('toggle');
+        $('#modalCase').modal('show');
+
+     })
+
 
 
 

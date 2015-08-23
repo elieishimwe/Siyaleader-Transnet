@@ -20,7 +20,7 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <button type="#" id='submitAddCaseNoteForm' type="button" class="btn btn-sm">Add Case Note</button>
+                    <a type="#" id='submitAddCaseNoteForm' class="btn btn-sm">Add Case Note</a>
                 </div>
             </div>
             </div>
