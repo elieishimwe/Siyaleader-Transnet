@@ -26,7 +26,7 @@ class CasesController extends Controller
             $caseIds[] = $case->id;
         }
 
-        \Log::info("My cases ".$caseIds);
+        \Log::info("My cases ".implode(",",$caseIds);
 
 
 
