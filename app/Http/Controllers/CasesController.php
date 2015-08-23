@@ -26,6 +26,8 @@ class CasesController extends Controller
             $caseIds[] = $case->id;
         }
 
+
+
         $cases   = CaseReport::select(array('id','created_at','description','status'))->whereIn('id',$caseIds);
         return \Datatables::of($cases)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>'
