@@ -56,7 +56,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td width="100%" style="font-family: helvetica, Arial, sans-serif; font-size: 18px; letter-spacing: 0px; text-align: center; color:#2E363F;">
-                                                        A new case has been added .
+                                                        A new case note has been added .
                                                     </td>
                                                 </tr>
                                                 <tr><!-- spacing bottom -->
