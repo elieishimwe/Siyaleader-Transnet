@@ -15,9 +15,16 @@ class RespondersController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        $caseResponders = \DB::table('caseOwners')->where('caseId','=',$id)
+                        ->join('users','users.id','=','caseOwners.user')
+                        ->select(array('users.name','users.surname','users.cellphone'));
+
+        return \Datatables::of($caseResponders)
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>'
+                                       )
+                            ->make(true);
     }
 
     /**

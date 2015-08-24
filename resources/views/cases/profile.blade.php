@@ -7,13 +7,13 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title" id='depTitle'>Case Profile</h4>
+                            <h4 class="modal-title" id='depTitle'>Case details</h4>
                         </div>
                         <div class="modal-body">
                             <div class="row">
                               <div class="col-md-6">
                                 <div class="tile">
-                                        <h2 class="tile-title">Case Details</h2>
+                                        <h2 class="tile-title">Case profile</h2>
 
                                   {!! Form::open(['url' => '#', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"registrationForm" ]) !!}
                                   {!! Form::hidden('caseID',NULL,['id' => 'caseID']) !!}
@@ -110,7 +110,7 @@
 
                                  <!-- Start Tile Div -->
                                   <div class="tile">
-                                      <h2 class="tile-title">case activities</h2>
+                                      <h2 class="tile-title">case notes</h2>
 
                                             <!-- Responsive Table -->
                                         <div class="block-area" id="responsiveTable">
@@ -125,7 +125,7 @@
                                                 <table class="table tile table-striped" id="caseNotesTable">
                                                     <thead>
                                                       <tr>
-                                                            <th>Created At</th>
+
                                                             <th>Author</th>
                                                             <th>Note</th>
                                                       </tr>
@@ -133,10 +133,44 @@
                                                 </table>
                                             </div>
                                         </div>
-                            </div><!-- End Tile Div -->
+                                </div><!-- End Tile Div -->
                           </div>
 
                       </div>
+
+                        <div class="row">
+                        <div class="col-md-6">
+
+                         <!-- Start Tile Div -->
+                                  <div class="tile">
+                            <h2 class="tile-title">RESPONDERS</h2>
+
+                                  <!-- Responsive Table -->
+                              <div class="block-area" id="responsiveTable">
+
+                                  @if(Session::has('successNotes'))
+                                  <div class="alert alert-info alert-dismissable fade in">
+                                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                      {{ Session::get('successNotes') }}
+                                  </div>
+                                  @endif
+                                  <div class="table-responsive overflow">
+                                      <table class="table tile table-striped" id="caseResponders">
+                                          <thead>
+                                            <tr>
+                                                  <th>Name</th>
+                                                  <th>Position</th>
+                                                  <th>Cellphone</th>
+                                            </tr>
+                                          </thead>
+                                      </table>
+                                  </div>
+                              </div>
+                        </div><!-- End Tile Div -->
+
+                        </div>
+                      </div>
+
                   </div>
                 </div>
             </div>

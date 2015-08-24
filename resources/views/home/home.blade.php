@@ -60,6 +60,7 @@
 @include('addressbook.add')
 @include('casenotes.add')
 
+
 @endsection
 
 @section('footer')
@@ -129,7 +130,7 @@
 
          });
 
-     var oTableCaseNotes;
+     var oTableCaseNotes,oTableCaseResponders;
 
 
 
@@ -210,6 +211,10 @@
       oTableCaseNotes.destroy();
     }
 
+    if ( $.fn.dataTable.isDataTable( '#caseResponders' ) ) {
+      oTableCaseResponders.destroy();
+    }
+
      oTableCaseNotes     = $('#caseNotesTable').DataTable({
                   "processing": true,
                   "serverSide": true,
@@ -221,6 +226,26 @@
                   {data: 'created_at', name: 'created_at'},
                   {data: 'user', name: 'user'},
                   {data: 'note', name: 'note'}
+                 ],
+
+              "aoColumnDefs": [
+                  { "bSearchable": false, "aTargets": [ 1] },
+                  { "bSortable": false, "aTargets": [ 1 ] }
+              ]
+
+           });
+
+     oTableCaseResponders     = $('#caseResponders').DataTable({
+                  "processing": true,
+                  "serverSide": true,
+                  "pageLength": 8,
+                  "dom": 'T<"clear">lfrtip',
+                  "order" :[[0,"desc"]],
+                  "ajax": "{!! url('/caseResponders-list/" + id +"')!!}",
+                   "columns": [
+
+                  {data: 'name', name: 'name'},
+                  {data: 'surname', name: 'surname'}
                  ],
 
               "aoColumnDefs": [

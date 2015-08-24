@@ -242,6 +242,7 @@ Route::get('getContacts', 'AddressBookController@show');
   Route::post('addSubSubCategoryResponder', 'RespondersController@storeSubSubResponder');
   Route::get('getSubResponders/{id}', 'RespondersController@subResponder');
   Route::post('addSubCategoryResponder', 'RespondersController@storeSubResponder');
+  Route::get('caseResponders-list/{id}', 'RespondersController@index');
 
 
 
