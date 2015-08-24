@@ -172,6 +172,8 @@
    function launchCaseModal(id)
     {
 
+      var oTableCaseNotes;
+
       $(".modal-body #categoryID").val(id);
       $(".modal-body #caseID").val(id);
 
