@@ -57,13 +57,17 @@ class CaseNotesController extends Controller
         $caseNote->save();
 
         $caseOwners = CaseOwner::where('caseId','=',$request['caseID'])->get();
+        $author     = User::find($request['uid']);
 
         foreach ($caseOwners as $caseOwner) {
 
             $user = User::find($caseOwner->user);
+
             $data = array(
-                            'name'   => $user->name,
-                            'caseID' => $request['caseID']
+                            'name'     => $user->name,
+                            'caseID'   => $request['caseID'],
+                            'caseNote' => $request['caseNote'],
+                            'author'   => $author->name .' '.$author->surname
                         );
 
             \Mail::send('casenotes.email',$data, function($message) use ($user)

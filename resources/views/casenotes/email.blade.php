@@ -40,7 +40,7 @@
                                                 </tr>
                                                 <tr><!-- title -->
                                                     <td width="100%" style="font-family: helvetica, Arial, sans-serif; font-size: 18px; letter-spacing: 0px; text-align: center; color:#F07057;">
-                                                        <strong>NEW CASE</strong> NOTE HASE BEEN ADDED!
+                                                        <strong>NEW CASE</strong> NOTE !
                                                     </td>
                                                 </tr>
                                                 <tr><!-- spacing bottom -->
@@ -73,6 +73,34 @@
                                                             {{ $caseID }}
                                                         </td>
                                                     </tr>
+                                                <tr>
+                                                    <td width="100%" height="15"></td>
+                                                </tr>
+
+                                                 <tr>
+                                                        <td width="100%" style="font-family:helvetica, Arial, sans-serif; font-size: 13px; text-align: left; color:#2E363F; line-height: 24px;">
+                                                            <strong>Case Note:</strong>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td width="100%" style="font-family:helvetica, Arial, sans-serif; font-size: 14px; text-align: left; color:#87919F; line-height: 24px;">
+                                                            {{ $caseNote }}
+                                                        </td>
+                                                    </tr>
+
+                                                  <tr>
+                                                        <td width="100%" style="font-family:helvetica, Arial, sans-serif; font-size: 13px; text-align: left; color:#2E363F; line-height: 24px;">
+                                                            <strong>Author:</strong>
+                                                        </td>
+                                                 </tr>
+
+                                                 <tr>
+                                                    <td width="100%" style="font-family:helvetica, Arial, sans-serif; font-size: 14px; text-align: left; color:#87919F; line-height: 24px;">
+                                                        {{ $author }}
+                                                    </td>
+                                                 </tr>
+
                                                 <tr>
                                                     <td width="100%" height="15"></td>
                                                 </tr>
