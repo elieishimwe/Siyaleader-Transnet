@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\CaseNote;
+use App\CaseOwner;
 use App\User;
 
 class CaseNotesController extends Controller
@@ -54,6 +55,26 @@ class CaseNotesController extends Controller
         $caseNote->user   = $request['uid'];
         $caseNote->caseId = $request['caseID'];
         $caseNote->save();
+
+        $caseOwners = CaseOwner::where('caseId','=',$request['caseID'])->get();
+
+        foreach ($caseOwners as $caseOwner) {
+
+            $user = User::find($caseOwner->user);
+            $data = array(
+                            'name'   => $user->name,
+                            'caseID' => $request['caseID']
+                        );
+
+            \Mail::send('casenotes.email',$data, function($message) use ($user)
+            {
+                $message->from('info@siyaleader.co.za', 'Siyaleader Port');
+                $message->to($user->username)->subject("Siyaleader Port ");
+
+            });
+
+        }
+
         return "ok";
     }
 

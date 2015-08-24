@@ -114,6 +114,7 @@
 
                                             <!-- Responsive Table -->
                                         <div class="block-area" id="responsiveTable">
+
                                             @if(Session::has('successNotes'))
                                             <div class="alert alert-info alert-dismissable fade in">
                                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
