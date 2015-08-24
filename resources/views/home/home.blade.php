@@ -172,8 +172,6 @@
    function launchCaseModal(id)
     {
 
-      var oTableCaseNotes;
-
       $(".modal-body #categoryID").val(id);
       $(".modal-body #caseID").val(id);
 
@@ -208,34 +206,42 @@
         }
     })
 
+          if ( $.fn.dataTable.isDataTable( '#caseNotesTable' ) ) {
+                    oTableCaseNotes.destroy();
+          }
 
-    if ( $.fn.dataTable.isDataTable( '#caseNotesTable' ) ) {
-      oTableCaseNotes.destroy();
-    }
+          else {
 
-    if ( $.fn.dataTable.isDataTable( '#caseResponders' ) ) {
+          oTableCaseNotes     = $('#caseNotesTable').DataTable({
+                        "processing": true,
+                        "serverSide": true,
+                        "pageLength": 8,
+                        "dom": 'T<"clear">lfrtip',
+                        "order" :[[0,"desc"]],
+                        "ajax": "{!! url('/caseNotes-list/" + id +"')!!}",
+                         "columns": [
+                        {data: 'created_at', name: 'created_at'},
+                        {data: 'user', name: 'user'},
+                        {data: 'note', name: 'note'}
+                       ],
+
+                    "aoColumnDefs": [
+                        { "bSearchable": false, "aTargets": [ 1] },
+                        { "bSortable": false, "aTargets": [ 1 ] }
+                    ]
+
+                 });
+
+              }
+
+
+
+
+   /* if ( $.fn.dataTable.isDataTable( '#caseResponders' ) ) {
       oTableCaseResponders.destroy();
     }
 
-     oTableCaseNotes     = $('#caseNotesTable').DataTable({
-                  "processing": true,
-                  "serverSide": true,
-                  "pageLength": 8,
-                  "dom": 'T<"clear">lfrtip',
-                  "order" :[[0,"desc"]],
-                  "ajax": "{!! url('/caseNotes-list/" + id +"')!!}",
-                   "columns": [
-                  {data: 'created_at', name: 'created_at'},
-                  {data: 'user', name: 'user'},
-                  {data: 'note', name: 'note'}
-                 ],
 
-              "aoColumnDefs": [
-                  { "bSearchable": false, "aTargets": [ 1] },
-                  { "bSortable": false, "aTargets": [ 1 ] }
-              ]
-
-           });
 
      oTableCaseResponders     = $('#caseResponders').DataTable({
                   "processing": true,
@@ -255,7 +261,7 @@
                   { "bSortable": false, "aTargets": [ 1 ] }
               ]
 
-           });
+           });*/
 
 
     }

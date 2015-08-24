@@ -125,7 +125,7 @@
                                                 <table class="table tile table-striped" id="caseNotesTable">
                                                     <thead>
                                                       <tr>
-
+                                                            <th>Created at</th>
                                                             <th>Author</th>
                                                             <th>Note</th>
                                                       </tr>

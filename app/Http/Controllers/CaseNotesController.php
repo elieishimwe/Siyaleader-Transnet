@@ -22,7 +22,7 @@ class CaseNotesController extends Controller
 
         $caseNotes = \DB::table('caseNotes')->where('caseId','=',$id)
                         ->join('users','users.id','=','caseNotes.user')
-                        ->select(array('caseNotes.id','caseNotes.caseId','users.name as user','caseNotes.note','caseNotes.active','caseNotes.created_at'));
+                        ->select(array('caseNotes.id','caseNotes.caseId','users.name as user','caseNotes.note as note','caseNotes.active','caseNotes.created_at as created_at'));
 
         return \Datatables::of($caseNotes)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>'
