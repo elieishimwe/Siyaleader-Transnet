@@ -210,7 +210,7 @@
                     oTableCaseNotes.destroy();
           }
 
-          else {
+
 
           oTableCaseNotes     = $('#caseNotesTable').DataTable({
                         "processing": true,
@@ -231,8 +231,6 @@
                     ]
 
                  });
-
-              }
 
 
 
