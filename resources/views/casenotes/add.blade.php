@@ -8,7 +8,8 @@
             </div>
             <div class="modal-body">
             {!! Form::open(['url' => 'addCaseNote', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"addCaseNoteForm" ]) !!}
-            {!! Form::hidden('uid',Auth::user()->id) !!}
+
+            {!! Form::hidden('uid',Auth::user()->id,['id' => 'uid']) !!}
             {!! Form::hidden('caseID',NULL,['id' => 'caseID']) !!}
 
             <div class="form-group">

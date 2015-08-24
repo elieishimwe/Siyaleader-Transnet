@@ -131,11 +131,29 @@
 
      var oTableCaseNotes;
 
+
+
      $("#submitAddCaseNoteForm").on("click",function(){
 
-        alert("Hello Elias ,How are you");
+
+        var caseId   = $("#modalAddCaseNotesModal #caseID").val();
+        var uid      = $("#modalAddCaseNotesModal #uid").val();
+        var token    = $('input[name="_token"]').val();
+        var caseNote = $("#modalAddCaseNotesModal #caseNote").val();
+        var formData = { caseID:caseId,caseNote:caseNote,uid:uid};
         $('#modalAddCaseNotesModal').modal('toggle');
-        $('#modalCase').modal('show');
+
+        $.ajax({
+        type    :"POST",
+        data    : formData,
+        headers : { 'X-CSRF-Token': token },
+        url     :"{!! url('/addCaseNote')!!}",
+        success : function(){
+          launchCaseModal(caseId);
+          $('#modalCase').modal('toggle');
+        }
+
+    })
 
      })
 
@@ -195,6 +213,7 @@
      oTableCaseNotes     = $('#caseNotesTable').DataTable({
                   "processing": true,
                   "serverSide": true,
+                  "pageLength": 8,
                   "dom": 'T<"clear">lfrtip',
                   "order" :[[0,"desc"]],
                   "ajax": "{!! url('/caseNotes-list/" + id +"')!!}",
@@ -239,7 +258,9 @@
     function launchCaseNotesModal(id)
     {
 
+      $('#modalCase').modal('hide');
       $('#modalAddCaseNotesModal').modal('toggle');
+
 
 
     }

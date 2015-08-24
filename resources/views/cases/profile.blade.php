@@ -97,7 +97,7 @@
                                   <div class="form-group">
                                       <div class="col-md-offset-2 col-md-6">
                                           <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchReferModal();" data-target=".modalReferCase">Escalate Case</a>
-                                          <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseNotesModal();" data-target=".modalAddCaseNotesModal">Add Case Note</a>
+                                          <a class="btn btn-xs btn-alt" onClick="launchCaseNotesModal();">Add Case Note</a>
                                       </div>
 
                                   </div>
@@ -114,10 +114,10 @@
 
                                             <!-- Responsive Table -->
                                         <div class="block-area" id="responsiveTable">
-                                            @if(Session::has('success'))
+                                            @if(Session::has('successNotes'))
                                             <div class="alert alert-info alert-dismissable fade in">
                                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                                {{ Session::get('success') }}
+                                                {{ Session::get('successNotes') }}
                                             </div>
                                             @endif
                                             <div class="table-responsive overflow">
