@@ -52,6 +52,19 @@ Route::get('list-users', function () {
 Route::get('users-list', 'UserController@index');
 Route::get('getResponder', 'UserController@responder');
 
+Route::get('add-user', function () {
+    return view('users.registration');
+});
+
+Route::get('/', function () {
+    return view('auth.login');
+});
+
+Route::controllers([
+    'auth'     => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
+
 
 /*
 |--------------------------------------------------------------------------
@@ -272,6 +285,37 @@ Route::get('getContacts', 'AddressBookController@show');
 |
 */
 
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| POSITIONS ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get('list-positions', function () {
+    return view('positions.list');
+});
+
+Route::get('positions-list', 'PositionsController@index');
+Route::get('positions/{id}', 'PositionsController@edit');
+
+Route::post('updatePosition', 'PositionsController@update');
+Route::post('addPosition', 'PositionsController@store');
+
+
+/*
+|--------------------------------------------------------------------------
+| END POSITIONS ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+
+
 $router->resource('users','UserController');
 
 Route::get('/api/dropdown/{to}/{from}', function($to,$from){
@@ -297,16 +341,4 @@ else {
 return $listing;
 });
 
-Route::get('add-user', function () {
-    return view('users.registration');
-});
-
-Route::get('/', function () {
-    return view('auth.login');
-});
-
-Route::controllers([
-    'auth'     => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController',
-]);
 

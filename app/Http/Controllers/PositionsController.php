@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Requests\DepartmentRequest;
 use App\Http\Controllers\Controller;
-use App\Department;
+use App\Position;
+use App\Http\Requests\PositionsRequest;
 
-class DepartmentController extends Controller
+class PositionsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +18,9 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $departments = Department::select(array('id','name','created_at'));
-        return \Datatables::of($departments)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdateDepartmentModal({{$id}});" data-target=".modalEditDepartment">Edit</a>')
+        $positions = Position::select(array('id','name','created_at'));
+        return \Datatables::of($positions)
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchUpdatePositionModal({{$id}});" data-target=".modalEditPosition">Edit</a>')
                             ->make(true);
     }
 
@@ -40,13 +40,13 @@ class DepartmentController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(DepartmentRequest $request)
+    public function store(PositionsRequest $request)
     {
-        $department       = new Department();
-        $department->name = $request['name'];
-        $slug             = preg_replace('/\s+/','-',$request['name']);
-        $department->slug = $slug;
-        $department->save();
+        $position       = new Position();
+        $position->name = $request['name'];
+        $slug           = preg_replace('/\s+/','-',$request['name']);
+        $position->slug = $slug;
+        $position->save();
         \Session::flash('success', $request['name'].' has been successfully added!');
         return redirect()->back();
     }
@@ -68,11 +68,10 @@ class DepartmentController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function edit($id,Department $department)
+    public function edit($id)
     {
-
-        $dept    = Department::where('id',$id)->first();
-        return [$dept];
+        $position    = Position::where('id',$id)->first();
+        return [$position];
     }
 
     /**
@@ -82,12 +81,11 @@ class DepartmentController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(DepartmentRequest $request)
+    public function update(PositionsRequest $request)
     {
-
-        $dept       = Department::where('id',$request['deptID'])->first();
-        $dept->name = $request['name'];
-        $dept->save();
+        $position       = Position::where('id',$request['positionID'])->first();
+        $position->name = $request['name'];
+        $position->save();
         \Session::flash('success', $request['name'].' has been successfully updated!');
         return redirect()->back();
     }

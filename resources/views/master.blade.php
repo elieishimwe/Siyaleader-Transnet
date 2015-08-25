@@ -103,6 +103,8 @@
                          @if ( Auth::user()->role == 1)
                             <li><a href="{{ url('list-users') }}">Users</a></li>
                             <li><a href="{{ url('list-departments') }}">Departments</a></li>
+                            <li><a href="{{ url('list-positions') }}">Positions</a></li>
+                            <li><a href="{{ url('list-relationships') }}">Relationships</a></li>
                          @endif
                         </ul>
                     </li>
