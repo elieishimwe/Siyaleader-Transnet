@@ -148,7 +148,7 @@
 
                          <!-- Start Tile Div -->
                           <div class="tile">
-                            <h2 class="tile-title">RESPONDERS</h2>
+                            <h2 class="tile-title">PEOPLE INVOLVED IN THE CASE</h2>
 
                                   <!-- Responsive Table -->
                               <div class="block-area" id="responsiveTable">
@@ -163,10 +163,12 @@
                                       <table class="table tile table-striped" id="caseResponders">
                                           <thead>
                                             <tr>
+                                                  <th>Type</th>
                                                   <th>Name</th>
                                                   <th>Surname</th>
                                                   <th>Position</th>
                                                   <th>Cellphone</th>
+
 
                                             </tr>
                                           </thead>

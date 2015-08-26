@@ -250,10 +250,40 @@
                   "ajax": "{!! url('/caseResponders-list/" + id +"')!!}",
                    "columns": [
 
+
+                  {data: function(d){
+
+                    if (d.type  == 1 )
+                    {
+                        return "First Responder";
+                    }
+
+                    if (d.type  == 0 )
+                    {
+                        return "Reporter";
+                    }
+
+                    if (d.type  == 2 )
+                    {
+                        return "Second Responder";
+                    }
+
+                    if (d.type  == 3 )
+                    {
+                        return "Third Responder";
+                    }
+
+
+
+                  },"name" : 'type'},
+
+
+
                   {data: 'name', name: 'name'},
                   {data: 'surname', name: 'surname'},
                   {data: 'position', name: 'position'},
                   {data: 'cellphone', name: 'cellphone'}
+
                  ],
 
               "aoColumnDefs": [
