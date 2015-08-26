@@ -246,7 +246,7 @@
                   "serverSide": true,
                   "pageLength": 8,
                   "dom": 'T<"clear">lfrtip',
-                  "order" :[[0,"desc"]],
+                  "order" :[[0,"asc"]],
                   "ajax": "{!! url('/caseResponders-list/" + id +"')!!}",
                    "columns": [
 
