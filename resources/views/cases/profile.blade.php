@@ -164,8 +164,9 @@
                                           <thead>
                                             <tr>
                                                   <th>Name</th>
-                                                  <th>Name</th>
+                                                  <th>Surname</th>
                                                   <th>Position</th>
+                                                  <th>Cellphone</th>
 
                                             </tr>
                                           </thead>

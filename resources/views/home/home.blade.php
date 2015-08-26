@@ -251,7 +251,9 @@
                    "columns": [
 
                   {data: 'name', name: 'name'},
-                  {data: 'surname', name: 'surname'}
+                  {data: 'surname', name: 'surname'},
+                  {data: 'position', name: 'position'},
+                  {data: 'cellphone', name: 'cellphone'}
                  ],
 
               "aoColumnDefs": [
