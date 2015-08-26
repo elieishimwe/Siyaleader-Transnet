@@ -147,7 +147,7 @@
                         <div class="col-md-6">
 
                          <!-- Start Tile Div -->
-                                  <div class="tile">
+                          <div class="tile">
                             <h2 class="tile-title">RESPONDERS</h2>
 
                                   <!-- Responsive Table -->
