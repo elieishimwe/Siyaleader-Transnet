@@ -17,7 +17,9 @@ class RespondersController extends Controller
      */
     public function index($id)
     {
-        $caseResponders = \DB::table('caseOwners')->where('caseId','=',$id)
+
+        $caseResponders = \DB::table('caseOwners')
+                        ->where('caseId','=',$id)
                         ->join('users','users.id','=','caseOwners.user')
                         ->select(array('users.name','users.surname','users.cellphone'));
 

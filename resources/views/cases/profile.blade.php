@@ -8,7 +8,18 @@
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                             <h4 class="modal-title" id='depTitle'>Case details</h4>
+
                         </div>
+                        <div class="row">
+                          <div class="col-md-6">
+
+                          </div>
+                           <div class="col-md-6">
+                            <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchReferModal();" data-target=".modalReferCase">Escalate Case</a>
+                            <a class="btn btn-xs btn-alt" onClick="launchCaseNotesModal();">Add Case Note</a>
+                          </div>
+                        </div>
+
                         <div class="modal-body">
                             <div class="row">
                               <div class="col-md-6">
@@ -93,14 +104,8 @@
                                       </div>
                                   </div>
                                   </div>
-                                   <hr class="whiter" />
-                                  <div class="form-group">
-                                      <div class="col-md-offset-2 col-md-6">
-                                          <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchReferModal();" data-target=".modalReferCase">Escalate Case</a>
-                                          <a class="btn btn-xs btn-alt" onClick="launchCaseNotesModal();">Add Case Note</a>
-                                      </div>
 
-                                  </div>
+
                               {!! Form::close() !!}
 
                             </div>
@@ -159,8 +164,9 @@
                                           <thead>
                                             <tr>
                                                   <th>Name</th>
+                                                  <th>Name</th>
                                                   <th>Position</th>
-                                                  <th>Cellphone</th>
+
                                             </tr>
                                           </thead>
                                       </table>

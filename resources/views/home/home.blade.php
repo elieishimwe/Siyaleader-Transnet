@@ -235,7 +235,7 @@
 
 
 
-   /* if ( $.fn.dataTable.isDataTable( '#caseResponders' ) ) {
+    if ( $.fn.dataTable.isDataTable( '#caseResponders' ) ) {
       oTableCaseResponders.destroy();
     }
 
@@ -259,7 +259,7 @@
                   { "bSortable": false, "aTargets": [ 1 ] }
               ]
 
-           });*/
+           });
 
 
     }
