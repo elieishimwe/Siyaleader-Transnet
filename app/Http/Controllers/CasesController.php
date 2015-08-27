@@ -38,12 +38,11 @@ class CasesController extends Controller
 
          \Log::info($caseIds);
 
-
-
         $cases = \DB::table('cases')
-            ->join('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
-            ->whereIn('cases.id',$caseIds)
-            ->select(\DB::raw("cases.id, cases.created_at,cases.description,cases.status,caseOwners.accept,caseOwners.type"));
+                ->leftJoin('orders', function($join) {
+                  $join->on('cases.id', '=', 'caseOwners.caseId') })
+                ->whereIn('cases.id',$caseIds)
+                ->select(\DB::raw("cases.id, cases.created_at,cases.description,cases.status,caseOwners.accept,caseOwners.type"));
         return \Datatables::of($cases)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>
 
