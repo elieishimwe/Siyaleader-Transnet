@@ -26,7 +26,7 @@ class CasesController extends Controller
                              ->get();
          $caseIds = array();
 
-         \Log::info($caseIds);
+
 
         foreach ($myCases as $case) {
             $caseIds[] = $case->caseId;
@@ -35,6 +35,8 @@ class CasesController extends Controller
         foreach ($otherCases as $caseOld) {
             $caseIds[] = $caseOld->id;
         }
+
+         \Log::info($caseIds);
 
 
 
