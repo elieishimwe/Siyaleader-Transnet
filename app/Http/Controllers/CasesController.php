@@ -19,7 +19,9 @@ class CasesController extends Controller
     public function index($id)
     {
 
-        $myCases = CaseOwner::where('user','=',\Auth::user()->id)->get();
+        $myCases = CaseOwner::where('user','=',\Auth::user()->id)
+                             ->where('type','<>',0)
+                             ->get();
 
         \Log::info(sizeof($myCases));
 
