@@ -29,7 +29,7 @@ class CasesController extends Controller
             $caseIds[] = $case->caseId;
         }
 
-        \Log::info($caseIds);
+        \Log::info(sizeof($caseIds));
 
         $cases = \DB::table('cases')
             ->join('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
