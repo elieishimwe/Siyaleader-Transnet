@@ -168,8 +168,7 @@
                                                   <th>Surname</th>
                                                   <th>Position</th>
                                                   <th>Cellphone</th>
-
-
+                                                  <th>Accepted</th>
                                             </tr>
                                           </thead>
                                       </table>

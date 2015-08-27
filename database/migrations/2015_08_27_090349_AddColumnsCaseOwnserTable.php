@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserSettingsTable extends Migration
+class AddColumnsCaseOwnserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,13 @@ class CreateUserSettingsTable extends Migration
      */
     public function up()
     {
-        //
+      Schema::table('caseOwners', function($table)
+        {
+
+            $table->integer('accept');
+
+
+        });
     }
 
     /**
@@ -22,6 +28,12 @@ class CreateUserSettingsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('caseOwners', function($table)
+        {
+
+            $table->dropColumn('accept');
+
+
+        });
     }
 }

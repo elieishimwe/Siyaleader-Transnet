@@ -20,9 +20,10 @@ class RespondersController extends Controller
 
         $caseResponders = \DB::table('caseOwners')
                         ->where('caseId','=',$id)
+                        ->where('type','>',0)
                         ->join('users','users.id','=','caseOwners.user')
                         ->join('positions','users.position','=','positions.id')
-                        ->select(array('users.name','users.surname','users.cellphone','positions.name as position','caseOwners.type'));
+                        ->select(array('users.name','users.surname','users.cellphone','positions.name as position','caseOwners.type','caseOwners.accept'));
 
         return \Datatables::of($caseResponders)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="#" data-target=".modalCase">View</a>'

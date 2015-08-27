@@ -282,7 +282,21 @@
                   {data: 'name', name: 'name'},
                   {data: 'surname', name: 'surname'},
                   {data: 'position', name: 'position'},
-                  {data: 'cellphone', name: 'cellphone'}
+                  {data: 'cellphone', name: 'cellphone'},
+
+                  {data: function(d){
+
+                    if (d.accept  == 1 )
+                    {
+                        return "yes";
+                    }
+                    else {
+
+                        return "no";
+                    }
+
+                  },"name" : 'accept'}
+
 
                  ],
 

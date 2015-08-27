@@ -26,11 +26,10 @@ class CasesController extends Controller
             $caseIds[] = $case->caseId;
         }
 
-        \Log::info("My cases ".implode(",",$caseIds));
-
         $cases   = CaseReport::select(array('id','created_at','description','status'))->whereIn('id',$caseIds);
         return \Datatables::of($cases)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>'
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>
+                                                   <a class="btn btn-xs btn-alt" href="{{ url("acceptCase/$id") }}">Accept</a>'
                                        )
                             ->make(true);
     }
@@ -40,9 +39,15 @@ class CasesController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function acceptCase($id)
     {
-        //
+         $caseOwnerObj = CaseOwner::where("caseId",'=',$id)
+                                   ->where("user",'=',\Auth::user()->id)
+                                   ->first();
+         $caseOwnerObj->accept = 1;
+         $caseOwnerObj->save();
+         return redirect()->back();
+
     }
 
     /**
