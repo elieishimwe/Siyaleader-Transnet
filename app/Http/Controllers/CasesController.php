@@ -43,6 +43,7 @@ class CasesController extends Controller
     {
          $caseOwnerObj = CaseOwner::where("caseId",'=',$id)
                                    ->where("user",'=',\Auth::user()->id)
+                                   ->where("type",'<>',0)
                                    ->first();
          $caseOwnerObj->accept = 1;
          $caseOwnerObj->save();
