@@ -52,9 +52,17 @@ class CasesController extends Controller
                                    ->where("user",'=',\Auth::user()->id)
                                    ->where("type",'<>',0)
                                    ->first();
-         $caseOwnerObj->accept = 1;
-         $caseOwnerObj->save();
-         return redirect()->back();
+
+        \Log::info(sizeof($caseOwnerObj));
+
+        if (sizeof($caseOwnerObj) > 0)
+        {
+            $caseOwnerObj->accept = 1;
+            $caseOwnerObj->save();
+            return redirect()->back();
+
+        }
+
 
     }
 
