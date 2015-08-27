@@ -19,9 +19,17 @@ class HomeController extends Controller
     public function index()
     {
 
+        if (\Auth::check())
+        {
+            $numberCases = CaseReport::where('user','=',\Auth::user()->id)->get();
+            return view('home.home',compact('numberCases'));
 
-        $numberCases = CaseReport::where('user','=',\Auth::user()->id)->get();
-        return view('home.home',compact('numberCases'));
+        }
+        else {
+
+            \Auth::logout();
+        }
+
     }
 
     /**
