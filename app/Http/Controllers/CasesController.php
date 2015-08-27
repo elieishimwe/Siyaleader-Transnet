@@ -35,7 +35,6 @@ class CasesController extends Controller
             ->join('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
             ->whereIn('cases.id',$caseIds)
             ->where('caseOwners.user','=',\Auth::user()->id)
-            ->where('caseOwners.type','<>',0)
             ->select(\DB::raw("cases.id, cases.created_at,cases.description,cases.status,caseOwners.accept,caseOwners.type"));
         return \Datatables::of($cases)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>
