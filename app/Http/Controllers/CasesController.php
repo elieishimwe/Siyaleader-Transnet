@@ -24,7 +24,9 @@ class CasesController extends Controller
 
         $otherCases = CaseReport::where('user','=',\Auth::user()->id)
                              ->get();
+         $caseIds = array();
 
+         \Log::info($caseIds);
 
         foreach ($myCases as $case) {
             $caseIds[] = $case->caseId;
@@ -33,6 +35,8 @@ class CasesController extends Controller
         foreach ($otherCases as $caseOld) {
             $caseIds[] = $caseOld->id;
         }
+
+
 
         $cases = \DB::table('cases')
             ->join('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
