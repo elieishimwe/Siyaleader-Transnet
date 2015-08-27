@@ -22,9 +22,12 @@ class CasesController extends Controller
         $myCases = CaseOwner::where('user','=',\Auth::user()->id)->get();
         $caseIds = array();
 
+
         foreach ($myCases as $case) {
             $caseIds[] = $case->caseId;
         }
+
+        \Log::info($caseIds);
 
         $cases = \DB::table('cases')
             ->join('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
