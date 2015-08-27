@@ -26,10 +26,17 @@ class CasesController extends Controller
             $caseIds[] = $case->caseId;
         }
 
-        $cases   = CaseReport::select(array('id','created_at','description','status'))->whereIn('id',$caseIds);
+        $cases = \DB::table('cases')
+            ->join('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
+            ->whereIn('cases.id',$caseIds)
+            ->select(\DB::raw("cases.id, cases.created_at,cases.description,cases.status,caseOwners.accept"));
         return \Datatables::of($cases)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>
-                                                   <a class="btn btn-xs btn-alt" href="{{ url("acceptCase/$id") }}">Accept</a>'
+
+                                                     @if($accept == 0)
+                                                        <a class="btn btn-xs btn-alt" href="{{ url("acceptCase/$id") }}">Accept</a>
+                                                     @endif
+                                                   '
                                        )
                             ->make(true);
     }
