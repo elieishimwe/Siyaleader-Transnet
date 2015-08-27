@@ -20,6 +20,9 @@ class CasesController extends Controller
     {
 
         $myCases = CaseOwner::where('user','=',\Auth::user()->id)->get();
+
+        \Log::info(sizeof($myCases));
+
         $caseIds = array();
 
 
