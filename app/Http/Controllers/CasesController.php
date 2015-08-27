@@ -31,7 +31,7 @@ class CasesController extends Controller
         }
 
         foreach ($otherCases as $caseOld) {
-            $caseIds[] = $case->id;
+            $caseIds[] = $caseOld->id;
         }
 
         $cases = \DB::table('cases')
