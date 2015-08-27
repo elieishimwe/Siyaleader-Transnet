@@ -19,17 +19,20 @@ class CasesController extends Controller
     public function index($id)
     {
 
-        $myCases = CaseOwner::where('user','=',\Auth::user()->id)
+        $myCases    = CaseOwner::where('user','=',\Auth::user()->id)
                              ->get();
 
-        $caseIds = array();
+        $otherCases = CaseReport::where('user','=',\Auth::user()->id)
+                             ->get();
 
 
         foreach ($myCases as $case) {
             $caseIds[] = $case->caseId;
         }
 
-        \Log::info(sizeof($caseIds));
+        foreach ($otherCases as $caseOld) {
+            $caseIds[] = $case->caseId;
+        }
 
         $cases = \DB::table('cases')
             ->join('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
