@@ -66,6 +66,7 @@ class AddressBookController extends Controller
     {
 
         $searchString = \Input::get('q');
+
         $contacts     = \DB::table('addressbook')
             ->where('user','=',\Auth::user()->id)
             ->whereRaw("CONCAT(`FirstName`, ' ', `Surname`, ' ', `email`) LIKE '%{$searchString}%'")
@@ -86,12 +87,13 @@ class AddressBookController extends Controller
         else {
 
             $contacts     = \DB::table('users')
-            ->whereRaw("CONCAT(`name`, ' ', `surname`, ' ', `email`) LIKE '%{$searchString}%'")
-            ->select(\DB::raw('*'))
+            ->join('positions','users.position','=','positions.id')
+            ->whereRaw("CONCAT(`users`.`name`, ' ', `users`.`surname`, ' ', `users`.`email`,`positions`.`name`) LIKE '%{$searchString}%'")
+            ->select(array('users.name as name','users.surname as surname','users.username as username','users.cellphone as cellphone','positions.name as position'))
             ->get();
 
            foreach ($contacts as $contact) {
-           $data[] = array("name"=>"{$contact->name} {$contact->surname} <{$contact->username}","id" =>"{$contact->username}");
+           $data[] = array("name"=>"{$contact->name} {$contact->surname} <{$contact->username} < {$contact->position}","id" =>"{$contact->username}");
            }
 
         }
