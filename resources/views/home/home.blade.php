@@ -173,7 +173,30 @@
         launchCaseModal(caseId);
         $('#modalCase').modal('toggle');
 
-      })
+      });
+
+      $("#closeCaseNote").on("click",function(){
+
+        $('#modalAddCaseNotesModal').modal('toggle');
+        var caseId       = $("#modalReferCase #caseID").val();
+        launchCaseModal(caseId);
+        $('#modalCase').modal('toggle');
+
+      });
+
+      $("#closeListContactModal").on("click",function(){
+
+        $('#modalAddressBook').modal('toggle');
+        $('#modalReferCase').modal('show');
+
+      });
+
+      $("#closeAddContactModal").on("click",function(){
+
+        $('#modalAddContactModal').modal('toggle');
+        $('#modalAddressBook').modal('show');
+
+      });
 
 
 
