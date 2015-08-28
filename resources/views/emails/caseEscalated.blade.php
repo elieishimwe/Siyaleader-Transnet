@@ -92,7 +92,7 @@
                                                 </tr>
                                                    <tr>
                                                         <td width="100%" style="font-family:helvetica, Arial, sans-serif; font-size: 13px; text-align: left; color:#2E363F; line-height: 24px;">
-                                                            {{ $caseDesc }}
+                                                            {{ $content }}
                                                         </td>
                                                     </tr>
 
