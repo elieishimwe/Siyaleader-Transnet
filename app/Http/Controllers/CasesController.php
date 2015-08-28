@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\CaseReport;
 use App\CaseOwner;
 use App\User;
+use App\addressbook;
 
 class CasesController extends Controller
 {
@@ -126,13 +127,22 @@ class CasesController extends Controller
 
         foreach ($addresses as $address) {
 
-            $data = array(
+            $user = User::where('username','=',$address)->first();
 
+            if(sizeof($user) <= 0 )
+            {
+                 $userAddressbook = addressbook::where('email','=',$address)->first();
+            }
+
+            $name = (sizeof($user) <= 0)? $userAddressbook->FirstName:$user->name;
+
+            $data = array(
+                'name'    => $name,
                 'caseID'  => $request['caseID'],
                 'content' => $request['message']
             );
 
-            \Mail::send('emails.caseEscalation',$data, function($message) use ($address)
+            \Mail::send('emails.caseEscalated',$data, function($message) use ($address)
             {
                 $message->from('info@siyaleader.co.za', 'Siyaleader');
                 $message->to($address)->subject("Siyaleader Notification - Case escalated: " );
