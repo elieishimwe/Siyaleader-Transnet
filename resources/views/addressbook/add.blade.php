@@ -6,9 +6,10 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title">Add Contact</h4>
             </div>
+
             <div class="modal-body">
             {!! Form::open(['url' => 'addContact', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"addContactForm" ]) !!}
-            {!! Form::hidden('uid',Auth::user()->id) !!}
+            {!! Form::hidden('uid',Auth::user()->id,['id' => 'uid']) !!}
             <div class="form-group">
                 {!! Form::label('First Name', 'First Name', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-10">
@@ -49,7 +50,7 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <button type="#" id='submitAddContactForm' type="button" class="btn btn-sm">Save Changes</button>
+                    <a type="#" id='submitAddContactForm' class="btn btn-sm">Add Contact</a>
                 </div>
             </div>
             </div>

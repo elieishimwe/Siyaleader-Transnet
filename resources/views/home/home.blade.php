@@ -109,28 +109,9 @@
          });
 
 
-     var oTableAddressBook     = $('#addressBookTable').DataTable({
-                "processing": true,
-                "serverSide": true,
-                "dom": 'T<"clear">lfrtip',
-                "order" :[[0,"desc"]],
-                "ajax": "{!! url('/addressbook-list/" + user +"')!!}",
-                 "columns": [
-                {data: 'FirstName', name: 'FirstName'},
-                {data: 'Surname', name: 'Surname'},
-                {data: 'cellphone', name: 'cellphone'},
-                {data: 'email', name: 'email'},
-                {data: 'actions',  name: 'actions'},
-               ],
 
-            "aoColumnDefs": [
-                { "bSearchable": false, "aTargets": [ 1] },
-                { "bSortable": false, "aTargets": [ 1 ] }
-            ]
 
-         });
-
-     var oTableCaseNotes,oTableCaseResponders;
+     var oTableCaseNotes,oTableCaseResponders,oTableAddressBook;
 
 
 
@@ -156,7 +137,35 @@
 
     })
 
-     })
+     });
+
+      $("#submitAddContactForm").on("click",function(){
+
+
+        var FirstName = $("#modalAddContactModal #FirstName").val();
+        var Surname   = $("#modalAddContactModal #Surname").val();
+        var email     = $("#modalAddContactModal #email").val();
+        var cellphone = $("#modalAddContactModal #cellphone").val();
+        var uid       = $("#modalAddContactModal #uid").val();
+        var token     = $('input[name="_token"]').val();
+        var formData  = { FirstName:FirstName,Surname:Surname,email:email,cellphone:cellphone,uid:uid};
+
+        $('#modalAddContactModal').modal('toggle');
+
+        $.ajax({
+        type    :"POST",
+        data    : formData,
+        headers : { 'X-CSRF-Token': token },
+        url     :"{!! url('/addContact')!!}",
+        success : function(){
+           launchAddressBookModal();
+          $('#modalAddressBook').modal('toggle');
+        }
+
+    })
+
+     });
+
 
 
 
@@ -321,6 +330,32 @@
     {
 
       $('#modalReferCase').modal('toggle');
+       if ( $.fn.dataTable.isDataTable( '#addressBookTable' ) ) {
+                    oTableAddressBook.destroy();
+        }
+
+
+      var user = {!! Auth::user()->id !!};
+      oTableAddressBook     = $('#addressBookTable').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "dom": 'T<"clear">lfrtip',
+            "order" :[[0,"desc"]],
+            "ajax": "{!! url('/addressbook-list/" + user +"')!!}",
+             "columns": [
+            {data: 'FirstName', name: 'FirstName'},
+            {data: 'Surname', name: 'Surname'},
+            {data: 'cellphone', name: 'cellphone'},
+            {data: 'email', name: 'email'},
+            {data: 'actions',  name: 'actions'},
+           ],
+
+        "aoColumnDefs": [
+            { "bSearchable": false, "aTargets": [ 1] },
+            { "bSortable": false, "aTargets": [ 1 ] }
+        ]
+
+     });
 
 
     }

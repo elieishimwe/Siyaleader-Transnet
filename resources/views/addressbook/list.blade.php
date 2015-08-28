@@ -6,15 +6,15 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title" id='depTitle'>Address Book</h4>
             </div>
+            <div class="row">
+              <div class="col-md-6">
+
+              </div>
+               <div class="col-md-6">
+                 <a class="btn btn-sm" data-toggle="modal" onClick="launchAddContactModal();" data-target=".modalAddContactModal">Add Contact</a>
+              </div>
+            </div>
             <div class="modal-body">
-
-                  <!-- Alternative -->
-                  <div class="block-area" id="alternative-buttons">
-                      <a class="btn btn-sm" data-toggle="modal" onClick="launchAddContactModal();" data-target=".modalAddContactModal">
-                       Add Contact
-                      </a>
-                  </div>
-
                 <!-- Responsive Table -->
                 <div class="block-area" id="responsiveTable">
                     @if(Session::has('successAddressBook'))

@@ -20,7 +20,7 @@ class AddressBookController extends Controller
     {
         $addresses = addressbook::select(array('id','FirstName','Surname','cellphone','email'))->where('user','=',$id);
         return \Datatables::of($addresses)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>'
+                            ->addColumn('actions',''
                                        )
                             ->make(true);
     }
