@@ -159,12 +159,21 @@
         url     :"{!! url('/addContact')!!}",
         success : function(){
            launchAddressBookModal();
-          $('#modalAddressBook').modal('toggle');
+           $('#modalAddressBook').modal('toggle');
         }
 
     })
 
      });
+
+      $("#closeReferCase").on("click",function(){
+
+        $('#modalReferCase').modal('toggle');
+        var caseId       = $("#modalReferCase #caseID").val();
+        launchCaseModal(caseId);
+        $('#modalCase').modal('toggle');
+
+      })
 
 
 
