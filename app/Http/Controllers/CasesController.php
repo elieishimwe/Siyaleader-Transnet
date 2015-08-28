@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\CaseReport;
 use App\CaseOwner;
+use App\User;
 
 class CasesController extends Controller
 {
@@ -99,14 +100,36 @@ class CasesController extends Controller
     public function escalate(Request $request)
     {
 
-        $addresses = explode(',',$request['addresses']);
+        $addresses     = explode(',',$request['addresses']);
+        $caseOwners    = CaseOwner::where('caseId','=',$request['caseID'])->get();
+
+        foreach ($caseOwners as $caseOwner) {
+
+            $user =  User::find($caseOwner->user);
+            $data = array(
+
+                'name'    => $user->firstname,
+                'caseID'  => $request['caseID'],
+                'content' => $request['message']
+            );
+
+
+            \Mail::send('emails.caseEscalation',$data, function($message) use ($user)
+            {
+                $message->from('info@siyaleader.co.za', 'Siyaleader');
+                $message->to($user->username)->subject("Siyaleader Notification - Case escalated: " );
+
+            });
+
+        }
 
 
         foreach ($addresses as $address) {
 
             $data = array(
 
-                'content'  => $request['message']
+                'caseID'  => $request['caseID'],
+                'content' => $request['message']
             );
 
             \Mail::send('emails.caseEscalation',$data, function($message) use ($address)
