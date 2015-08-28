@@ -109,7 +109,7 @@ class CasesController extends Controller
             $user =  User::find($caseOwner->user);
             $data = array(
 
-                'name'    => $user->firstname,
+                'name'    => $user->name,
                 'caseID'  => $request['caseID'],
                 'content' => $request['message']
             );
