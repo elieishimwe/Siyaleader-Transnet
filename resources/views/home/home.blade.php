@@ -183,7 +183,7 @@
         headers : { 'X-CSRF-Token': token },
         url     :"{!! url('/escalateCase')!!}",
         success : function(){
-          launchCaseModal(caseId);
+          launchCaseModal(caseID);
           $('#modalCase').modal('toggle');
         }
 
