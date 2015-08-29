@@ -35,7 +35,7 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <button id='submitEscalateCaseForm' type="submit" class="btn btn-sm">Escalate</button>
+                   <a type="#" id='submitEscalateCaseForm' class="btn btn-sm">Escalate</a>
                 </div>
             </div>
 

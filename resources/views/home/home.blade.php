@@ -166,6 +166,31 @@
 
      });
 
+
+     $("#submitEscalateCaseForm").on("click",function(){
+
+        var addresses = $("#modalReferCase #addresses").val();
+        var message   = $("#modalReferCase #message").val();
+        var caseID    = $("#modalReferCase #caseID").val();
+        var token     = $('input[name="_token"]').val();
+        var formData  = { addresses:addresses,message:message,caseID:caseID};
+
+        $('#modalReferCase').modal('toggle');
+
+        $.ajax({
+        type    :"POST",
+        data    : formData,
+        headers : { 'X-CSRF-Token': token },
+        url     :"{!! url('/escalateCase')!!}",
+        success : function(){
+          launchCaseModal(caseId);
+          $('#modalCase').modal('toggle');
+        }
+
+    })
+
+     });
+
       $("#closeReferCase").on("click",function(){
 
         $('#modalReferCase').modal('toggle');

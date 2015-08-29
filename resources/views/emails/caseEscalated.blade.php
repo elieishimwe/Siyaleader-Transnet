@@ -56,7 +56,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td width="100%" style="font-family: helvetica, Arial, sans-serif; font-size: 18px; letter-spacing: 0px; text-align: center; color:#2E363F;">
-                                                        A new case has been escalted to you please login to accept the case
+                                                        A new case has been escalated to you please login to accept the case
                                                     </td>
                                                 </tr>
                                                 <tr><!-- spacing bottom -->
