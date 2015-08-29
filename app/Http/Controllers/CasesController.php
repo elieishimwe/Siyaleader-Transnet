@@ -11,6 +11,7 @@ use App\CaseOwner;
 use App\User;
 use App\addressbook;
 use App\CaseEscalator;
+use App\CaseActivity;
 
 class CasesController extends Controller
 {
@@ -135,7 +136,8 @@ class CasesController extends Controller
                  $userAddressbook = addressbook::where('email','=',$address)->first();
             }
 
-            $name        = (sizeof($user) <= 0)? $userAddressbook->FirstName:$user->name;
+            $name    = (sizeof($user) <= 0)? $userAddressbook->FirstName:$user->name;
+            $surname = (sizeof($user) <= 0)? $userAddressbook->Surnname:$user->surname;
             $to          = (sizeof($user) <= 0)? $userAddressbook->user:$user->id;
             $type        = (sizeof($user) <= 0)? 1:0;
             $addressbook = (sizeof($user) <= 0)? 1:0;
@@ -145,6 +147,14 @@ class CasesController extends Controller
                 'caseID'  => $request['caseID'],
                 'content' => $request['message']
             );
+
+
+            $caseActivity              = New CaseActivity();
+            $caseActivity->caseId      = $request['caseID'];
+            $caseActivity->user        = $request['uid'];
+            $caseActivity->addressbook = 0;
+            $caseActivity->note        = "Case Escalated to ".$name ." ".$surname."by".\Auth::user()->id;
+            $caseActivity->save();
 
 
             \Mail::send('emails.caseEscalated',$data, function($message) use ($address)

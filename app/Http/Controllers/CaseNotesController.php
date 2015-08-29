@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\CaseNote;
 use App\CaseOwner;
+use App\CaseActivity;
 use App\User;
 
 class CaseNotesController extends Controller
@@ -50,14 +51,23 @@ class CaseNotesController extends Controller
     {
 
 
+        $caseOwners = CaseOwner::where('caseId','=',$request['caseID'])->get();
+        $author     = User::find($request['uid']);
+
         $caseNote         = new CaseNote();
         $caseNote->note   = $request['caseNote'];
         $caseNote->user   = $request['uid'];
         $caseNote->caseId = $request['caseID'];
         $caseNote->save();
 
-        $caseOwners = CaseOwner::where('caseId','=',$request['caseID'])->get();
-        $author     = User::find($request['uid']);
+        $caseActivity              = New CaseActivity();
+        $caseActivity->caseId      = $request['caseID'];
+        $caseActivity->user        = $request['uid'];
+        $caseActivity->addressbook = 0;
+        $caseActivity->note        = "New Case Noted Added by ".$author->name ." "$author->surname;
+        $caseActivity->save();
+
+
 
         foreach ($caseOwners as $caseOwner) {
 
