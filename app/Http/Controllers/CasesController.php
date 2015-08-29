@@ -136,8 +136,8 @@ class CasesController extends Controller
                  $userAddressbook = addressbook::where('email','=',$address)->first();
             }
 
-            $name    = (sizeof($user) <= 0)? $userAddressbook->FirstName:$user->name;
-            $surname = (sizeof($user) <= 0)? $userAddressbook->Surnname:$user->surname;
+            $name        = (sizeof($user) <= 0)? $userAddressbook->FirstName:$user->name;
+            $surname     = (sizeof($user) <= 0)? $userAddressbook->Surnname:$user->surname;
             $to          = (sizeof($user) <= 0)? $userAddressbook->user:$user->id;
             $type        = (sizeof($user) <= 0)? 1:0;
             $addressbook = (sizeof($user) <= 0)? 1:0;
@@ -153,7 +153,7 @@ class CasesController extends Controller
             $caseActivity->caseId      = $request['caseID'];
             $caseActivity->user        = $to;
             $caseActivity->addressbook = $addressbook;
-            $caseActivity->note        = "Case Escalated to ".$name ." ".$surname."by ".\Auth::user()->name.' '.\Auth::user()->surname;
+            $caseActivity->note        = "Case Escalated to ".$name ." ".$surname." by ".\Auth::user()->name.' '.\Auth::user()->surname;
             $caseActivity->save();
 
 
