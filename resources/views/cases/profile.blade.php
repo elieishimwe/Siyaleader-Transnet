@@ -13,10 +13,10 @@
                         <div class="row">
                           <div class="col-md-6">
 
-                                @if(Session::has('successCaseReferal'))
+                                @if(Session::has('successCaseRefera'))
                                 <div class="alert alert-info alert-dismissable fade in">
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                    {{ Session::get('successCaseReferal') }}
+                                    {{ Session::get('successCaseRefera') }}
                                 </div>
                                 @endif
 
@@ -160,10 +160,10 @@
                                   <!-- Responsive Table -->
                               <div class="block-area" id="responsiveTable">
 
-                                  @if(Session::has('successNotes'))
+                                  @if(Session::has('successReferral'))
                                   <div class="alert alert-info alert-dismissable fade in">
                                       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                      {{ Session::get('successNotes') }}
+                                      {{ Session::get('successReferral') }}
                                   </div>
                                   @endif
                                   <div class="table-responsive overflow">

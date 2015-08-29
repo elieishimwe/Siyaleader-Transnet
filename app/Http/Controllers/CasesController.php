@@ -171,7 +171,7 @@ class CasesController extends Controller
 
         }
 
-        \Session::flash('successCaseReferal', $request['caseID'].' has been successfully escalated!');
+        \Session::flash('successReferral', $request['caseID'].' has been successfully escalated!');
         return redirect()->back();
 
     }
