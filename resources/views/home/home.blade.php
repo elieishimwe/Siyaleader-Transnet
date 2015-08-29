@@ -111,7 +111,7 @@
 
 
 
-     var oTableCaseNotes,oTableCaseResponders,oTableAddressBook;
+     var oTableCaseNotes,oTableCaseResponders,oTableAddressBook,oTableCaseActivities;
 
 
 
@@ -300,12 +300,12 @@
 
 
           if ( $.fn.dataTable.isDataTable( '#caseActivities' ) ) {
-                    oTableCaseNotes.destroy();
+                    oTableCaseActivities.destroy();
           }
 
 
 
-          oTableCaseNotes     = $('#caseActivities').DataTable({
+          oTableCaseActivities     = $('#caseActivities').DataTable({
                         "processing": true,
                         "serverSide": true,
                         "pageLength": 8,
