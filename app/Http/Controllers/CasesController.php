@@ -151,9 +151,9 @@ class CasesController extends Controller
 
             $caseActivity              = New CaseActivity();
             $caseActivity->caseId      = $request['caseID'];
-            $caseActivity->user        = $request['uid'];
-            $caseActivity->addressbook = 0;
-            $caseActivity->note        = "Case Escalated to ".$name ." ".$surname."by".\Auth::user()->id;
+            $caseActivity->user        = $to;
+            $caseActivity->addressbook = $addressbook;
+            $caseActivity->note        = "Case Escalated to ".$name ." ".$surname."by ".\Auth::user()->name.' '.\Auth::user()->surname;
             $caseActivity->save();
 
 
