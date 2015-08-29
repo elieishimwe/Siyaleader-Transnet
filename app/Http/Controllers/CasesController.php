@@ -135,9 +135,10 @@ class CasesController extends Controller
                  $userAddressbook = addressbook::where('email','=',$address)->first();
             }
 
-            $name = (sizeof($user) <= 0)? $userAddressbook->FirstName:$user->name;
-            $to   = (sizeof($user) <= 0)? $userAddressbook->user:$user->id;
-            $type = (sizeof($user) <= 0)? 1:0;
+            $name        = (sizeof($user) <= 0)? $userAddressbook->FirstName:$user->name;
+            $to          = (sizeof($user) <= 0)? $userAddressbook->user:$user->id;
+            $type        = (sizeof($user) <= 0)? 1:0;
+            $addressbook = (sizeof($user) <= 0)? 1:0;
 
             $data = array(
                 'name'    => $name,
@@ -161,9 +162,16 @@ class CasesController extends Controller
             $caseEscalationObj->message = $request['message'];
             $caseEscalationObj->save();
 
+            $caseOwnerObj              = New CaseOwner();
+            $caseOwnerObj->caseId      = $request['caseID'];
+            $caseOwnerObj->user        = $to;
+            $caseOwnerObj->type        = 4 ;
+            $caseOwnerObj->addressbook = $addressbook;
+            $caseOwnerObj->save();
+
         }
 
-        \Session::flash('success', $request['name'].' has been successfully added!');
+        \Session::flash('successCaseReferal', $request['caseID'].' has been successfully escalated!');
         return redirect()->back();
 
     }

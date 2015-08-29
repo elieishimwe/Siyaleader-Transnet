@@ -13,6 +13,13 @@
                         <div class="row">
                           <div class="col-md-6">
 
+                                @if(Session::has('successCaseReferal'))
+                                <div class="alert alert-info alert-dismissable fade in">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    {{ Session::get('successCaseReferal') }}
+                                </div>
+                                @endif
+
                           </div>
                            <div class="col-md-6">
                             <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchReferModal();" data-target=".modalReferCase">Escalate Case</a>

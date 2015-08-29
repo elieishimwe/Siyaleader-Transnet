@@ -339,6 +339,11 @@
                         return "Third Responder";
                     }
 
+                    if (d.type  == 4  )
+                    {
+                        return "Escalation";
+                    }
+
 
 
                   },"name" : 'type'},
