@@ -64,7 +64,7 @@ class CaseNotesController extends Controller
         $caseActivity->caseId      = $request['caseID'];
         $caseActivity->user        = $request['uid'];
         $caseActivity->addressbook = 0;
-        $caseActivity->note        = "New Case Noted Added by ".$author->name ." "$author->surname;
+        $caseActivity->note        = "New Case Noted Added by ".$author->name ." ".$author->surname;
         $caseActivity->save();
 
 

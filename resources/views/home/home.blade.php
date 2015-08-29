@@ -299,6 +299,32 @@
                  });
 
 
+          if ( $.fn.dataTable.isDataTable( '#caseActivities' ) ) {
+                    oTableCaseNotes.destroy();
+          }
+
+
+
+          oTableCaseNotes     = $('#caseActivities').DataTable({
+                        "processing": true,
+                        "serverSide": true,
+                        "pageLength": 8,
+                        "dom": 'T<"clear">lfrtip',
+                        "order" :[[0,"desc"]],
+                        "ajax": "{!! url('/caseActivities-list/" + id +"')!!}",
+                         "columns": [
+                        {data: 'created_at', name: 'created_at'},
+                        {data: 'note', name: 'note'}
+                       ],
+
+                    "aoColumnDefs": [
+                        { "bSearchable": false, "aTargets": [ 1] },
+                        { "bSortable": false, "aTargets": [ 1 ] }
+                    ]
+
+                 });
+
+
 
 
     if ( $.fn.dataTable.isDataTable( '#caseResponders' ) ) {

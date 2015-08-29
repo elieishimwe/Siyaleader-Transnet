@@ -184,6 +184,35 @@
                         </div><!-- End Tile Div -->
 
                         </div>
+                         <div class="col-md-6">
+
+                         <!-- Start Tile Div -->
+                          <div class="tile">
+                            <h2 class="tile-title">Case Activities</h2>
+
+                                  <!-- Responsive Table -->
+                              <div class="block-area" id="responsiveTable">
+
+                                  @if(Session::has('successReferral'))
+                                  <div class="alert alert-info alert-dismissable fade in">
+                                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                      {{ Session::get('successReferral') }}
+                                  </div>
+                                  @endif
+                                  <div class="table-responsive overflow">
+                                      <table class="table tile table-striped" id="caseActivities">
+                                          <thead>
+                                            <tr>
+                                                  <th>Created At</th>
+                                                  <th>activity</th>
+                                            </tr>
+                                          </thead>
+                                      </table>
+                                  </div>
+                              </div>
+                        </div><!-- End Tile Div -->
+
+                        </div>
                       </div>
 
                   </div>
