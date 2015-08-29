@@ -10,6 +10,7 @@ use App\CaseReport;
 use App\CaseOwner;
 use App\User;
 use App\addressbook;
+use App\CaseEscalator;
 
 class CasesController extends Controller
 {
@@ -135,6 +136,8 @@ class CasesController extends Controller
             }
 
             $name = (sizeof($user) <= 0)? $userAddressbook->FirstName:$user->name;
+            $to   = (sizeof($user) <= 0)? $userAddressbook->user:$user->id;
+            $type = (sizeof($user) <= 0)? 1:0;
 
             $data = array(
                 'name'    => $name,
@@ -142,12 +145,21 @@ class CasesController extends Controller
                 'content' => $request['message']
             );
 
+
             \Mail::send('emails.caseEscalated',$data, function($message) use ($address)
             {
                 $message->from('info@siyaleader.co.za', 'Siyaleader');
                 $message->to($address)->subject("Siyaleader Notification - Case escalated: " );
 
             });
+
+            $caseEscalationObj          = New CaseEscalator();
+            $caseEscalationObj->caseId  = $request['caseID'];
+            $caseEscalationObj->from    = \Auth::user()->id;
+            $caseEscalationObj->to      = $to;
+            $caseEscalationObj->type    = $type;
+            $caseEscalationObj->message = $request['message'];
+            $caseEscalationObj->save();
 
         }
 
