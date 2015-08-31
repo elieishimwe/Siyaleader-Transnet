@@ -31,6 +31,7 @@
 
          <!-- Map -->
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwXS96_uM6y-6ZJZhSJGE87pO-qxpDp-Q&libraries=geometry"></script>
+        <script src="{{ asset('/js/jquery.min.js') }}"></script> <!-- jQuery Library -->
         <script type="text/javascript" src="{{ asset('/incl/markerclusterer.js') }}"></script>
         <script type="text/javascript" src="{{ asset('/incl/siyaleader_ports_vars.js') }}"></script>
         <script type="text/javascript" src="{{ asset('/incl/siyaleader_ports_functions.js') }}"></script>
@@ -135,7 +136,7 @@
         <!-- Javascript Libraries -->
         <!-- jQuery -->
 
-        <script src="{{ asset('/js/jquery.min.js') }}"></script> <!-- jQuery Library -->
+
         <script src="{{ asset('/js/jquery-ui.min.js') }}"></script> <!-- jQuery UI -->
         <script src="{{ asset('/js/jquery.easing.1.3.js') }}"></script> <!-- jQuery Easing - Requirred for Lightbox + Pie Charts-->
 
