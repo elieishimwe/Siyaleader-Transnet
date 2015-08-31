@@ -181,6 +181,9 @@
         <!-- Jquery Bootstrap Maxlength -->
         <script src="{{ asset('/bower_components/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
 
+        <!-- Map -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwXS96_uM6y-6ZJZhSJGE87pO-qxpDp-Q&libraries=geometry"></script>
+
         @yield('footer')
     </body>
 </html>
