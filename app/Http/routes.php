@@ -58,7 +58,7 @@ Route::get('add-user', function () {
 });
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('map');
 });
 
 Route::controllers([
@@ -163,8 +163,6 @@ Route::post('addSubCategory', 'SubCategoriesController@store');
 */
 
 Route::get('list-sub-sub-categories/{sub_category}', function ($sub_category) {
-
-    dd("elie");
     $subCatObj = SubCategory::find($sub_category);
     $catObj    = Category::find($subCatObj->category);
     $deptObj   = Department::find($catObj->department);
