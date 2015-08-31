@@ -128,14 +128,14 @@ class UserController extends Controller
 
         $data = array(
             'name'     =>$user->name,
-            'username' =>$user->cellphone,
+            'username' =>$user->username,
             'password' =>$user->password,
         );
 
         \Mail::send('emails.registrationConfirmation',$data, function($message) use ($user)
         {
             $message->from('info@siyaleader.co.za', 'Siyaleader');
-            $message->to($user->email)->subject("Siyaleader User Registration Confirmation: " .$user->name);
+            $message->to($user->username)->subject("Siyaleader User Registration Confirmation: " .$user->name);
 
         });
 
