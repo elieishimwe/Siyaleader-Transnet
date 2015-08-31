@@ -159,7 +159,7 @@ class UserController extends Controller
         $data = array(
             'name'     =>$user->name,
             'username' =>$user->email,
-            'password' =>$password->password
+            'password' =>$password->Password
         );
 
         \Mail::send('emails.registrationConfirmation',$data, function($message) use ($user)
