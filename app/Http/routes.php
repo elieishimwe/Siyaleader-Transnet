@@ -368,10 +368,6 @@ Route::post('addPosition', 'PositionsController@store');
 
 
 
-
-
-
-
 $router->resource('users','UserController');
 
 Route::get('/api/dropdown/{to}/{from}', function($to,$from){
