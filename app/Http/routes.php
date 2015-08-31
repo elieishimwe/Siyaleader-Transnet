@@ -58,7 +58,7 @@ Route::get('add-user', function () {
 });
 
 Route::get('/', function () {
-    return view('map.map');
+    return view('auth.login');
 });
 
 Route::controllers([
