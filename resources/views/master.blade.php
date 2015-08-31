@@ -99,8 +99,14 @@
                 <!-- Side Menu -->
                 <ul class="list-unstyled side-menu">
 
+                    <li {{ (Request::is('map') ? "class=active" : '') }}>
+                        <a class="sa-side-home" href="{{ url('map') }}">
+                            <span class="menu-item">Map</span>
+                        </a>
+                    </li>
+
                     <li {{ (Request::is('home') ? "class=active" : '') }}>
-                        <a class="sa-side-home" href="{{ url('home') }}">
+                        <a class="sa-side-folder" href="{{ url('home') }}">
                             <span class="menu-item">Dashboard</span>
                         </a>
                     </li>
