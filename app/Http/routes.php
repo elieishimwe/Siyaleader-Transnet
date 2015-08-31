@@ -334,6 +334,24 @@ Route::post('addPosition', 'PositionsController@store');
 
 
 
+/*
+|--------------------------------------------------------------------------
+| PASSWORD ACTIVITIES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+  Route::get('resend_password/{id}', 'UserController@resendPassword');
+
+/*
+|--------------------------------------------------------------------------
+| END PASSWORD ACTIVITIES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+
+
+
 $router->resource('users','UserController');
 
 Route::get('/api/dropdown/{to}/{from}', function($to,$from){

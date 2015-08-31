@@ -54,13 +54,13 @@
                 "order" :[[0,"desc"]],
                 "ajax": "{!! url('/users-list/')!!}",
                  "columns": [
-                {data: 'ID', name: 'ID'},
+                {data: 'id', name: 'id'},
                 {data: 'created_at', name: 'created_at'},
-                {data: 'Fname', name: 'Fname'},
-                {data: 'Sname', name: 'Sname'},
-                {data: 'Cell1', name: 'Cell1'},
-                {data: 'Email', name: 'Email'},
-                {data: 'Password', name: 'Password'},
+                {data: 'name', name: 'name'},
+                {data: 'surname', name: 'surname'},
+                {data: 'email', name: 'email'},
+                {data: 'username', name: 'username'},
+                {data: 'actions',  name: 'actions'}
 
                ],
 

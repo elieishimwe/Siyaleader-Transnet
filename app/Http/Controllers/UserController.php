@@ -35,8 +35,14 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = OldUser::select(array('ID','created_at','Fname','Sname','Cell1','Position','District','Municipality','Email','Password'));
-        return \Datatables::of($users)->make(true);
+        $users = User::select(array('id','created_at','name','surname','email','username'));
+
+        return \Datatables::of($users)
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" href="{{ url("resend_password/$id") }}" >Resend password</a>
+
+
+                                        '
+                                )->make(true);
     }
 
     /**
@@ -143,9 +149,23 @@ class UserController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function resendPassword($id)
     {
-        //
+
+        $user = User::find($id);
+
+        $data = array(
+            'name'     =>$user->name,
+            'username' =>$user->cellphone,
+            'password' =>$user->password
+        );
+
+        \Mail::send('emails.registrationConfirmation',$data, function($message) use ($user)
+        {
+            $message->from('info@siyaleader.co.za', 'Siyaleader');
+            $message->to($user->email)->subject("Siyaleader User Registration Confirmation: " .$user->name);
+
+        });
     }
 
     /**
