@@ -152,12 +152,14 @@ class UserController extends Controller
     public function resendPassword($id)
     {
 
-        $user = User::find($id);
+        $user     = User::find($id);
+        $password = OldUser::where('Cell1','=',$user->email)->first();
+
 
         $data = array(
             'name'     =>$user->name,
             'username' =>$user->email,
-            'password' =>$user->password
+            'password' =>$password->password
         );
 
         \Mail::send('emails.registrationConfirmation',$data, function($message) use ($user)
@@ -166,6 +168,10 @@ class UserController extends Controller
             $message->to($user->username)->subject("Siyaleader User Registration Confirmation: " .$user->name);
 
         });
+
+        \Session::flash('Password has been resent successfully!');
+
+        return redirect('list-users');
     }
 
     /**
