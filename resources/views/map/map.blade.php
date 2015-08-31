@@ -3,6 +3,16 @@
 
 @section('content')
 
+<!-- Breadcrumb -->
+<ol class="breadcrumb hidden-xs">
+    <li><a href="#">Administration</a></li>
+    <li class="active">Map</li>
+</ol>
+
+<h4 class="page-title">Map</h4>
+
+<div class="block-area">
+
 
 <body bgcolor="#1c1c1c" onload="resetControllers();captureIframe=document.getElementById('newCaseCapture');iframeDoc=captureIframe.contentDocument || captureIframe.contentWindow.document;" TEXT="#C0C0C0" LINK="#ffffff" VLINK="#ffffff" ALINK="#ffffff" style="margin:0;overflow:hidden;margin-bottom:0;margin-left:0;margin-right:0;margin-top:0">
 
@@ -1108,6 +1118,8 @@ function createZoneArray ()
 
 
 </body>
+
+</div>
 
 @endsection
 
