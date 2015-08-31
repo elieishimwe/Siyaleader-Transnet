@@ -64,19 +64,21 @@ class CasesController extends Controller
      */
     public function acceptCase($id)
     {
+
          $caseOwnerObj = CaseOwner::where("caseId",'=',$id)
                                    ->where("user",'=',\Auth::user()->id)
                                    ->where("type",'<>',0)
                                    ->first();
 
-        \Log::info(sizeof($caseOwnerObj));
 
         if (sizeof($caseOwnerObj) > 0)
         {
             $caseOwnerObj->accept = 1;
             $caseOwnerObj->save();
-            return redirect()->back();
 
+            \Session::flash('successReferral', 'Thanks for accepting Case Number:'.$id);
+
+            return "ok";
         }
 
 

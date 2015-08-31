@@ -6,6 +6,7 @@ use App\Municipality;
 use App\Department;
 use App\Category;
 use App\SubCategory;
+use App\SubSubCategory;
 use App\CaseReport;
 
 /*
@@ -162,6 +163,8 @@ Route::post('addSubCategory', 'SubCategoriesController@store');
 */
 
 Route::get('list-sub-sub-categories/{sub_category}', function ($sub_category) {
+
+    dd("elie");
     $subCatObj = SubCategory::find($sub_category);
     $catObj    = Category::find($subCatObj->category);
     $deptObj   = Department::find($catObj->department);
@@ -348,6 +351,25 @@ Route::post('addPosition', 'PositionsController@store');
 |--------------------------------------------------------------------------
 |
 */
+
+
+/*
+|--------------------------------------------------------------------------
+| MAP ACTIVITIES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+  Route::get('map', 'MapController@index');
+
+/*
+|--------------------------------------------------------------------------
+| END MAP ACTIVITIES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+
+
 
 
 

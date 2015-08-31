@@ -105,6 +105,7 @@
                             <li><a href="{{ url('list-departments') }}">Departments</a></li>
                             <li><a href="{{ url('list-positions') }}">Positions</a></li>
                             <li><a href="{{ url('list-relationships') }}">Relationships</a></li>
+                             <li><a href="{{ url('map') }}">map</a></li>
                          @endif
                         </ul>
                     </li>

@@ -134,8 +134,7 @@
           launchCaseModal(caseId);
           $('#modalCase').modal('toggle');
         }
-
-    })
+       })
 
      });
 
@@ -462,6 +461,22 @@
       $('#modalAddCaseNotesModal').modal('toggle');
 
 
+
+    }
+
+    function acceptCase()
+    {
+
+      var id = $(".modal-body #caseID").val();
+
+      $.ajax({
+        type    :"GET",
+        url     :"{!! url('/acceptCase/" + id +"')!!}",
+        success : function(){
+          launchCaseModal(id);
+          $('#modalCase').modal('show');
+        }
+       })
 
     }
 
