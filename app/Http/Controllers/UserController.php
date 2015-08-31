@@ -169,7 +169,7 @@ class UserController extends Controller
 
         });
 
-        \Session::flash('Password has been resent successfully!');
+        \Session::flash('success','Password has been resent successfully!');
 
         return redirect('list-users');
     }
