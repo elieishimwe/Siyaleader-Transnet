@@ -107,7 +107,7 @@
 
                     <li {{ (Request::is('home') ? "class=active" : '') }}>
                         <a class="sa-side-folder" href="{{ url('home') }}">
-                            <span class="menu-item">Dashboard</span>
+                            <span class="menu-item">My Cases</span>
                         </a>
                     </li>
 
