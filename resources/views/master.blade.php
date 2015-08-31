@@ -43,7 +43,9 @@
 
         <header id="header" class="media">
             <a href="" id="menu-toggle"></a>
-            <a class="logo pull-left" href="index.html">SIYALEADER TRANSNET</a>
+            <a class="logo pull-left" href="index.html">
+                <img scr="{{ asset('/images/transnet_1.png') }}"/>
+            </a>
 
             <div class="media-body">
                 <div class="media" id="top-menu">
