@@ -5,6 +5,7 @@
 
 @include('cases.profile')
 @include('cases.refer')
+@include('cases.add')
 @include('addressbook.list')
 @include('addressbook.add')
 @include('casenotes.add')
@@ -82,7 +83,8 @@
                         <a href="#" onclick="switchMarkerLegend();this.blur()"><i class="fa fa-map-marker fa-fw" style="color:#ffffff" title="Toggle Marker Legend" onmouseover="updateToolTip('Toggle marker legend')" onmouseout="document.all.toolTip.innerHTML= ''"></i></a>
                     </td>
                     <td bgcolor="#1c1c1c" valign=middle align=right width=25 style="min-width:25px">
-                        <a href="#" id="newCaseIcon" onclick="document.getElementById('RUS').innerHTML = 'ARE YOU SURE?';switchNewCaseMarker('icon',this.id);this.blur()"><i id="addCase" class="fa fa-plus-square-o fa-lg fa-fw" style="color:#ffffff" title="Add a new case ..." onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></i></a>
+                        <a href="#" id="newCaseIcon" onclick="launchAddCaseModal()"><i id="addCase" class="fa fa-plus-square-o fa-lg fa-fw" style="color:#ffffff" title="Add a new case ..." onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></i></a>
+                        <!-- <a href="#" id="newCaseIcon" onclick="document.getElementById('RUS').innerHTML = 'ARE YOU SURE?';switchNewCaseMarker('icon',this.id);this.blur()"><i id="addCase" class="fa fa-plus-square-o fa-lg fa-fw" style="color:#ffffff" title="Add a new case ..." onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></i></a> -->
                     </td>
                     <td bgcolor="#1c1c1c" valign=middle align=right><font style="font: 10pt 'arial'; color:#FFFFFF;"><span id="toolTip"></span></font>&nbsp;</td>
                     </tr>
@@ -104,6 +106,11 @@ document.write("<div id='mapcontainer' style='height:100%;width:100%'>");
 function launchMod()
 {
     $('#modalCase').modal('show');
+}
+
+function launchAddCaseModal()
+{
+    $('#modalAddCaseModal').modal('show');
 }
 @include('functions.caseModal')
 
@@ -299,7 +306,7 @@ echo 'var image = "markers/' .$imageName. '";';
                     boxContent += "<td align='center' valign='bottom'><a href='#' onclick='alert(\"Work in progress ... Watch this space ...\")'><img src='images/icon_trash.png' title='Remove Case' onmouseout='updateToolTip(\"\")'></a></td>";
                     boxContent += "<td align='center' valign='bottom'><a href='#' onclick='alert(\"Work in progress ... Watch this space ...\")'><img src='images/icon_join.png' title='Combine Duplicate Case'  onmouseout='updateToolTip(\"\")'></a></td>";
                     boxContent += "<td align='center' valign='bottom'><a href='#' onclick='alert(\"Work in progress ... Watch this space ...\")'><img src='images/icon_weather.png' title='Weather Conditions'  onmouseout='updateToolTip(\"\")'></a></td>";
-                    boxContent += "<td align='center' valign='bottom'><a href='#' data-toggle='modal' data-target='.modalCase' onClick='launchMod();launchCaseModal(<?php echo $ID; ?>);'><img src='images/icon_refer.png' title='Case Profile' onmouseout='updateToolTip(\"\")'></a></td>";
+                    boxContent += "<td align='center' valign='bottom'><a href='#' onClick='launchMod();launchCaseModal(<?php echo $ID; ?>);'><img src='images/icon_refer.png' title='Case Profile' onmouseout='updateToolTip(\"\")'></a></td>";
                     boxContent += "<td align='center' valign='bottom'><a href='#' onclick='showPhoto(\"<?php echo $PhotoURL; ?>\",\"" + infoBoxBorder +"\");killMenu();killLayerMenu()'><img id='photoIcon' src='images/icon_photo.png' title='View Photo' onmouseout='updateToolTip(\"\")'></a></td>";
                     boxContent += "</table>";
 
