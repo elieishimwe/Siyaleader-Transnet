@@ -22,6 +22,10 @@
         <link href="{{ asset('/css/generics.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/token-input.css') }}" rel="stylesheet">
 
+        <link href="{{ asset('/incl/animate.css') }}" rel="stylesheet">
+        <link href="{{ asset('/incl/siyaleader_ports.css') }}" rel="stylesheet">
+
+
         <!-- DataTables CSS -->
         <link href="{{ asset('/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css') }}" rel="stylesheet">
 

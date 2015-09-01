@@ -148,6 +148,8 @@ function switchPhoto (photo,ibBorder)
 
 function showPhoto (photo,ibBorder)
 	{
+
+
 		if(photo != "")
 				{
 					photoPath = photo;

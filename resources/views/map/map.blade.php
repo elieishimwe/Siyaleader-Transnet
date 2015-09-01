@@ -1094,7 +1094,7 @@ function createZoneArray ()
     <table id="photoContainer" border=0 cellpadding=0 cellspacing=0 style="margin-top:0px;margin-bottom:0px;border-collapse:collapse;border-style:solid;border-top:0px solid #1C1C1C;border-left:0px solid #1C1C1C;border-bottom:0px solid #1C1C1C;border-right:0px solid #1C1C1C">
         <tr>
             <td id="photoTD">
-                <IMG id="thePhoto" SRC="images/no_photo.png" style="width:600;border-collapse:collapse;border-style:solid;border-top:1px solid #ffffff;border-left:1px solid #ffffff;border-bottom:1px solid #ffffff;border-right:1px solid #ffffff;border-radius: 0px;">
+                <img id="thePhoto" SRC="images/no_photo.png" style="width:600;border-collapse:collapse;border-style:solid;border-top:1px solid #ffffff;border-left:1px solid #ffffff;border-bottom:1px solid #ffffff;border-right:1px solid #ffffff;border-radius: 0px;"/>
             </td>
         </tr><tr>
             <td id="photoToolbarTD">
