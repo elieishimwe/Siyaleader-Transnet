@@ -3,6 +3,8 @@
 
 @section('content')
 
+
+
 <!-- Breadcrumb -->
 <ol class="breadcrumb hidden-xs">
     <li><a href="#">Administration</a></li>
@@ -50,23 +52,23 @@
                         <table border=0 cellpadding=0 cellspacing=0>
                             <td align=left>
                                 <table cellpadding=1 cellspacing=0 border=1 style="border-collapse:collapse;border:1px solid #FFFFFF">
-                                    <td style="background:#e0e1e0" title="Toggle Port Ops Centre Markers"><INPUT ID="poCheckBox" TYPE="checkbox" checked onclick="switchMarkers('po');" title="Toggle port ops centre" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                    <td style="background:#999999" title="Toggle Property Markers"><INPUT ID="prCheckBox" TYPE="checkbox" checked onclick="switchMarkers('pr');" title="Toggle property" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                    <td style="background:#000000" title="Toggle Traffic Management  Markers"><INPUT ID="trCheckBox" TYPE="checkbox" checked onclick="switchMarkers('tr');" title="Toggle traffic management" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                    <td style="background:#ff0000" title="Toggle Safety / Risk / Fire Management  Markers"><INPUT ID="srCheckBox" TYPE="checkbox" checked onclick="switchMarkers('sr');" title="Toggle safety / risk / fire" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                    <td style="background:#fe940a" title="Toggle Maintenance Mechanical Markers"><INPUT ID="maCheckBox" TYPE="checkbox" checked onclick="switchMarkers('ma');" title="Toggle mech. maintenance" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                    <td style="background:#ffff00" title="Toggle Civil Maintanence Markers"><INPUT ID="mcCheckBox" TYPE="checkbox" checked onclick="switchMarkers('mc');" title="Toggle civil maintenance" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                    <td style="background:#00cc00" title="Toggle Housekeeping Markers"><INPUT ID="hkCheckBox" TYPE="checkbox" checked onclick="switchMarkers('hk');" title="Toggle housekeeping" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                    <td style="background:#009000" title="Toggle Environment Markers"><INPUT ID="enCheckBox" TYPE="checkbox" checked onclick="switchMarkers('en');" title="Toggle environment" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                    <td style="background:#0df1ff" title="Toggle Health Markers"><INPUT ID="heCheckBox" TYPE="checkbox" checked onclick="switchMarkers('he');" title="Toggle health" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                    <td style="background:#333dc7" title="Toggle Marine Maintanence Markers"><INPUT ID="mmCheckBox" TYPE="checkbox" checked onclick="switchMarkers('mm');" title="Toggle marine maintenance" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                    <td style="background:#ff33a6" title="Toggle Electrical Maintanence Markers"><INPUT ID="meCheckBox" TYPE="checkbox" checked onclick="switchMarkers('me');" title="Toggle elec. maintenance" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                    <td style="background:#8a1ec7" title="Toggle Security Markers"><INPUT ID="seCheckBox" TYPE="checkbox" checked onclick="switchMarkers('se');" title="Toggle security" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
+                                    <td style="background:#e0e1e0" title="Toggle Port Ops Centre Markers"><input id="poCheckBox" type="checkbox" checked onclick="switchMarkers('po');" title="Toggle port ops centre" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
+                                    <td style="background:#999999" title="Toggle Property Markers"><input id="prCheckBox" type="checkbox" checked onclick="switchMarkers('pr');" title="Toggle property" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
+                                    <td style="background:#000000" title="Toggle Traffic Management  Markers"><input id="trCheckBox" type="checkbox" checked onclick="switchMarkers('tr');" title="Toggle traffic management" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
+                                    <td style="background:#ff0000" title="Toggle Safety / Risk / Fire Management  Markers"><input id="srCheckBox" type="checkbox" checked onclick="switchMarkers('sr');" title="Toggle safety / risk / fire" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
+                                    <td style="background:#fe940a" title="Toggle Maintenance Mechanical Markers"><input id="maCheckBox" type="checkbox" checked onclick="switchMarkers('ma');" title="Toggle mech. maintenance" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
+                                    <td style="background:#ffff00" title="Toggle Civil Maintanence Markers"><input id="mcCheckBox" type="checkbox" checked onclick="switchMarkers('mc');" title="Toggle civil maintenance" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
+                                    <td style="background:#00cc00" title="Toggle Housekeeping Markers"><input id="hkCheckBox" type="checkbox" checked onclick="switchMarkers('hk');" title="Toggle housekeeping" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
+                                    <td style="background:#009000" title="Toggle Environment Markers"><input id="enCheckBox" type="checkbox" checked onclick="switchMarkers('en');" title="Toggle environment" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
+                                    <td style="background:#0df1ff" title="Toggle Health Markers"><input id="heCheckBox" type="checkbox" checked onclick="switchMarkers('he');" title="Toggle health" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
+                                    <td style="background:#333dc7" title="Toggle Marine Maintanence Markers"><input id="mmCheckBox" type="checkbox" checked onclick="switchMarkers('mm');" title="Toggle marine maintenance" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
+                                    <td style="background:#ff33a6" title="Toggle Electrical Maintanence Markers"><input id="meCheckBox" type="checkbox" checked onclick="switchMarkers('me');" title="Toggle elec. maintenance" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
+                                    <td style="background:#8a1ec7" title="Toggle Security Markers"><input id="seCheckBox" type="checkbox" checked onclick="switchMarkers('se');" title="Toggle security" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
                                 </table>
                             </td>
                             <td align=right width=30 style="min-width:30px">
                                 <table cellpadding=1 cellspacing=0 border=1 style="border-collapse:collapse;border:1px solid #ffffff;">
-                                    <td style="background:url('images/toggle_all.png')" align=center title="Toggle All Markers"><INPUT ID="toggleCheckBox" TYPE="checkbox" checked onclick="toggleAllMarkers();" title="Toggle all markers" onmouseover="updateToolTip('Toggle All Markers')" onmouseout="document.all.toolTip.innerHTML= ''"></td>
+                                    <td style="background:url('images/toggle_all.png')" align=center title="Toggle All Markers"><input ID="toggleCheckBox" TYPE="checkbox" checked onclick="toggleAllMarkers();" title="Toggle all markers" onmouseover="updateToolTip('Toggle All Markers')" onmouseout="document.all.toolTip.innerHTML= ''"></td>
                                 </table>
                             </td>
                         </table>
@@ -92,6 +94,8 @@ var mapWindowHeight = window.innerHeight - 31;
 document.write("<tr height=" + mapWindowHeight + ">");
 document.write("<td height=" + mapWindowHeight + ">");
 document.write("<div id='mapcontainer' style='height:100%;width:100%'>");
+
+@include('functions.caseModal')
 
 function initialize()
     {
@@ -254,6 +258,8 @@ echo 'var image = "markers/' .$imageName. '";';
                     var co_ords_<?php echo $ID; ?> = new google.maps.LatLng(<?php echo $GPS; ?>);
                     co_ords.push(co_ords_<?php echo $ID; ?>);
 
+
+
                     var boxContent = "<div style='width:250px;height:200px;overflow-y:auto;overflow-x:hidden'>";
 
                     boxContent += "<table border=0 style='color:#ffd40e;width:235px' cellpadding=2 cellspacing=0>";
@@ -280,12 +286,12 @@ echo 'var image = "markers/' .$imageName. '";';
                     boxContent += "</div>";
 
                     boxContent += "<table width=100% height=50 border=0 cellpadding=0 cellspacing=0><tr>";
-                    boxContent += "<td align='center' valign='bottom'><a href='#' onclick='alert(\"Work in progress ... Watch this space ...\")'><img src='images/icon_trash.png' title='Remove Case' onmouseover='updateToolTip(\"Request for this case to be removed ...\")' onmouseout='updateToolTip(\"\")'></a></td>";
-                    boxContent += "<td align='center' valign='bottom'><a href='#' onclick='alert(\"Work in progress ... Watch this space ...\")'><img src='images/icon_join.png' title='Combine Duplicate Case' onmouseover='updateToolTip(\"Combine this duplicated case with another ...\")' onmouseout='updateToolTip(\"\")'></a></td>";
-                    boxContent += "<td align='center' valign='bottom'><a href='#' onclick='alert(\"Work in progress ... Watch this space ...\")'><img src='images/icon_weather.png' title='Weather Conditions' onmouseover='updateToolTip(\"View weather conditions for this case ...\")' onmouseout='updateToolTip(\"\")'></a></td>";
-                    boxContent += "<td align='center' valign='bottom'><a href='#' onclick='alert(\"Work in progress ... Watch this space ...\")'><img src='images/icon_refer.png' title='Refer Case' onmouseover='updateToolTip(\"Refer this case to someone ...\")' onmouseout='updateToolTip(\"\")'></a></td>";
-                    boxContent += "<td align='center' valign='bottom'><a href='#' onclick='showPhoto(\"<?php echo $PhotoURL; ?>\",\"" + infoBoxBorder +"\");killMenu();killLayerMenu()'><img id='photoIcon' src='images/icon_photo.png' title='View Photo' onmouseover='updateToolTip(\"View this case photo ...\")' onmouseout='updateToolTip(\"\")'></a></td>";
-                    boxContent += "<td align='center' valign='bottom'><a href='#' onclick='killMenu();killLayerMenu();document.all.cmcFrame.src=\"http://www.siyaleader.co.za:8080/siyaleader-dbnports/live/CaseRequest/index.php?type=app&caller=&case=<?php echo $ID; ?>&user=13&action=api&apiKey=52bd43d37ed62eb4c226e31841bc03dc\";showCMC()'><img src='images/icon_interact.png' title='Case Interaction' onmouseover='updateToolTip(\"Open this case in the Case Management Console ...\")' onmouseout='updateToolTip(\"\")'></a></td>";
+                    boxContent += "<td align='center' valign='bottom'><a href='#' onclick='alert(\"Work in progress ... Watch this space ...\")'><img src='images/icon_trash.png' title='Remove Case' onmouseout='updateToolTip(\"\")'></a></td>";
+                    boxContent += "<td align='center' valign='bottom'><a href='#' onclick='alert(\"Work in progress ... Watch this space ...\")'><img src='images/icon_join.png' title='Combine Duplicate Case'  onmouseout='updateToolTip(\"\")'></a></td>";
+                    boxContent += "<td align='center' valign='bottom'><a href='#' onclick='alert(\"Work in progress ... Watch this space ...\")'><img src='images/icon_weather.png' title='Weather Conditions'  onmouseout='updateToolTip(\"\")'></a></td>";
+                    boxContent += "<td align='center' valign='bottom'><a href='#' onClick='launchCaseModal(<?php echo $ID; ?>);'><img src='images/icon_refer.png' title='Refer Case' onmouseout='updateToolTip(\"\")'></a></td>";
+                    boxContent += "<td align='center' valign='bottom'><a href='#' onclick='showPhoto(\"<?php echo $PhotoURL; ?>\",\"" + infoBoxBorder +"\");killMenu();killLayerMenu()'><img id='photoIcon' src='images/icon_photo.png' title='View Photo' onmouseout='updateToolTip(\"\")'></a></td>";
+                    boxContent += "<td align='center' valign='bottom'><a href='#' onclick='killMenu();killLayerMenu();document.all.cmcFrame.src=\"http://www.siyaleader.co.za:8080/siyaleader-dbnports/live/CaseRequest/index.php?type=app&caller=&case=<?php echo $ID; ?>&user=13&action=api&apiKey=52bd43d37ed62eb4c226e31841bc03dc\";showCMC()'><img src='images/icon_interact.png' title='Case Interaction'  onmouseout='updateToolTip(\"\")'></a></td>";
                     boxContent += "</table>";
 
                     var boxText = document.createElement("div");
@@ -521,6 +527,8 @@ function createZoneArray ()
                     selectZoneArray = 0;
                 }
         }
+
+
 
 // end of zoneMaker Module
 
