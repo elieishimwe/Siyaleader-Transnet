@@ -201,13 +201,13 @@ foreach ($cases as $case) {
         \Log::info($noteResult);
         \Log::info(sizeof($noteResult));
 
-        //$noteUserObj = User::find($noteResult->user);
     }
 
 
     if(sizeof($noteResult) > 0)
     {
 
+        $noteUserObj = User::find($noteResult->user);
         $AuthDate = $noteResult->created_at;
         $Author   = $noteUserObj->name .' '.$noteUserObj->surname;
         $Note     = $noteResult->note;
