@@ -192,12 +192,13 @@ foreach ($cases as $case) {
     $Priority     = $case->priority;
     $Description  = $case->description;
 
-    $noteResult   = CaseNote::where('caseId','=',$case->id)
+    if($case->id)
+    {
+        $noteResult   = CaseNote::where('caseId','=',$case->id)
                     ->first();
 
-    $noteUserObj = User::find($noteResult->user);
-
-
+        $noteUserObj = User::find($noteResult->user);
+    }
 
 
     if(sizeof($noteResult) > 0)
