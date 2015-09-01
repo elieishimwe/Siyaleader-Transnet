@@ -161,6 +161,7 @@ use App\CaseReport;
 use App\CaseNote;
 use App\Category;
 use App\Ship;
+use App\Position;
 
 
 $cases = CaseReport::whereNotNull('gps_lat')
@@ -178,6 +179,7 @@ foreach ($cases as $case) {
     $GPS          = $case->gps_lat .''.$case->gps_lng;
     $Province     = 'KZN';
     $Port         = 'Maydon Warf';
+    $Precinct     = $case->department;
     $Submitted    = $case->created_at;
     $Status       = $case->status;
     $catObjCat    = Category::find($case->category);
@@ -191,15 +193,14 @@ foreach ($cases as $case) {
     $Description  = $case->description;
 
     $noteResult   = CaseNote::where('caseId','=',$case->id)
-                    ->take(1)
-                    ->get();
+                    ->first();
 
     $noteUserObj = User::find($noteResult->user);
 
 
 
 
-    if(sizeof($noteResult > 0))
+    if(sizeof($noteResult) > 0)
     {
 
         $AuthDate = $noteResult->created_at;

@@ -7,8 +7,10 @@ class Ship extends Eloquent
 {
 
 
-    protected $table    = 'ships';
-    protected $fillable = ['shipName','shipGPS','shipHeading','shipImg_url','active'];
+   protected $table    = 'ships';
+   protected $fillable = ['shipName','shipGPS','shipHeading','shipImg_url','active'];
+
 
 
 }
+
