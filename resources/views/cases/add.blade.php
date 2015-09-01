@@ -25,18 +25,53 @@
                 </div>
             </div>
 
+           <div class="form-group">
+              {!! Form::label('Precinct', 'Precinct', array('class' => 'col-md-2 control-label')) !!}
+              <div class="col-md-6">
+                {!! Form::select('precinct',$selectMunicipalities,0,['class' => 'form-control input-sm' ,'id' => 'precinct']) !!}
+                @if ($errors->has('precinct')) <p class="help-block red">*{{ $errors->first('precinct') }}</p> @endif
+              </div>
+           </div>
+
+            <div class="form-group">
+              {!! Form::label('Category', 'Category', array('class' => 'col-md-2 control-label')) !!}
+              <div class="col-md-6">
+                {!! Form::select('Category',$selectCategories,0,['class' => 'form-control input-sm' ,'id' => 'Category']) !!}
+                @if ($errors->has('Category')) <p class="help-block red">*{{ $errors->first('Category') }}</p> @endif
+              </div>
+           </div>
+
+            <div class="form-group">
+              {!! Form::label('Sub Category', 'Sub Category', array('class' => 'col-md-2 control-label')) !!}
+              <div class="col-md-6">
+                {!! Form::select('SubCategory',$selectSubCategories,0,['class' => 'form-control input-sm' ,'id' => 'SubCategory']) !!}
+                @if ($errors->has('SubCategory')) <p class="help-block red">*{{ $errors->first('SubCategory') }}</p> @endif
+              </div>
+           </div>
+
+           <div class="form-group">
+              {!! Form::label('Sub Sub Category', 'Sub SUb Category', array('class' => 'col-md-2 control-label')) !!}
+              <div class="col-md-6">
+                {!! Form::select('SubSubCategory',$selectSubSubCategories,0,['class' => 'form-control input-sm' ,'id' => 'SubSubCategory']) !!}
+                @if ($errors->has('SubSubCategory')) <p class="help-block red">*{{ $errors->first('SubSubCategory') }}</p> @endif
+              </div>
+           </div>
+
+
+
+
 
 
             <div class="form-group">
-                {!! Form::label('Message', 'Message', array('class' => 'col-md-2 control-label')) !!}
+                {!! Form::label('Description', 'Description', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-8">
-                    <textarea rows="5" id="message" name="message" class="form-control" maxlength="500"></textarea>
+                    <textarea rows="5" id="description" name="description" class="form-control" maxlength="500"></textarea>
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                   <a type="#" id='submitEscalateCaseForm' class="btn btn-sm">Escalate</a>
+                   <a type="#" id='submitEscalateCaseForm' class="btn btn-sm">Add Case</a>
                 </div>
             </div>
 
