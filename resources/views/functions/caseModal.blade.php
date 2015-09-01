@@ -165,7 +165,7 @@
    function launchCaseModal(id)
     {
 
-      $('#modalCase').modal('show');
+
       $(".modal-body #categoryID").val(id);
       $(".modal-body #caseID").val(id);
 
@@ -330,12 +330,12 @@
                   { "bSortable": false, "aTargets": [ 1 ] }
               ]
 
-           });
+    });
 
 
     }
 
-        function launchReferModal()
+    function launchReferModal()
     {
 
       $('#modalCase').modal('toggle');
