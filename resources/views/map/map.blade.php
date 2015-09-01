@@ -411,7 +411,7 @@ foreach ($ships as $ship) {
     $shipGPS     = $ship->shipGPS;
     $shipHeading = $ship->shipHeading;
 
- }
+
 
 ?>
 
@@ -506,7 +506,7 @@ var shipInfoBoxOptions = {
     google.maps.event.addListener(shipMarker_<?php echo $shipID; ?>, 'click', function() {      sib_<?php echo $ID; ?>.open(map, shipMarker_<?php echo $ID; ?>);  });
 
 <?php
-}
+ }
 ?>
 
 
