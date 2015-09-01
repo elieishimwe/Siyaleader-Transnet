@@ -14,7 +14,7 @@ $(document).ready(function(){
 			});
 		}});
 	});
-	
+
 	$("#prob_subcategory").change(function(){
 	$.ajax({ dataType: "json",url:"ajax/getCategories.php?Action=getSubSubCats&subCategory=" +$(this).val()+ "", success: function(result){
 		$('#prob_sub_sub_category').empty();
@@ -58,7 +58,7 @@ function setSeverity (val)
 	document.getElementById('severitySpan2').style.fontSize = '20px';
 	document.getElementById('severitySpan3').style.fontSize = '20px';
 	document.getElementById('severitySpan4').style.fontSize = '20px';
-	if(val) 
+	if(val)
 			{
 				eval("document.getElementById('severitySpan" + val + "').style.fontSize = '24px'");
 				document.getElementById('severity').value = val;
@@ -96,14 +96,14 @@ function switchMarkerLegend ()
 function showMarkerLegend ()
 	{
 		document.all.markerLegend.style.transform = "translatey(-510px)";
-		markerLegendStatus = 1; 
+		markerLegendStatus = 1;
 		document.all.weatherSticker.style.display = "none";
 	}
 
 function hideMarkerLegend ()
 	{
 		document.all.markerLegend.style.transform = "rotate(360deg)";
-		markerLegendStatus = 0;  
+		markerLegendStatus = 0;
 		document.all.weatherSticker.style.display = "block";
 	}
 
@@ -122,7 +122,7 @@ function hideWeather ()
 function showCMC ()
 	{
 		document.all.cmcFrame.style.transform = "translate(0px,1100px)";
-		cmcFrameDown = 1; 
+		cmcFrameDown = 1;
 		document.all.closeXB.src = "images/closexb.png";
 		setTimeout("document.all.closeFrameX.style.display = 'flex'",2000);
 	}
@@ -132,7 +132,7 @@ function hideCMC ()
 		document.all.closeXB.src = "images/closexb_off.png";
 		document.all.closeFrameX.style.display = "none";
 		document.all.cmcFrame.style.transform = "translate(0px,-1100px";
-		cmcFrameDown = 0;  
+		cmcFrameDown = 0;
 	}
 
 function switchPhoto (photo,ibBorder)
@@ -150,7 +150,7 @@ function showPhoto (photo,ibBorder)
 	{
 		if(photo != "")
 				{
-					photoPath = "../../../../ecin2edin/console/app_backend/port_backend/public/" + photo;
+					photoPath = photo;
 				}
 		else	{
 					photoPath = "images/no_photo.png";
@@ -160,7 +160,7 @@ function showPhoto (photo,ibBorder)
 //		document.all.thePhoto.style = "border-left:1px solid " + ibBorder + "";
 //		document.all.thePhoto.style = "border-bottom:1px solid " + ibBorder + "";
 		document.all.thePhoto.style.borderColor = ibBorder;
-				
+
 		if(document.all.thePhoto.offsetWidth > 600)
 			{
 				document.all.thePhoto.style.width = "600px";
@@ -172,9 +172,9 @@ function showPhoto (photo,ibBorder)
 //							document.all.casePhoto.style.height = "450px";
 			}
 
-		
+
 		document.all.casePhoto.style.transform = "translate(0px,695px)";
-		photoFrameDown = 1; 
+		photoFrameDown = 1;
 	}
 
 function hidePhoto (photo)
@@ -186,8 +186,8 @@ function hidePhoto (photo)
 		else	{
 					document.all.casePhoto.style.transform = "rotate(270deg)";
 				}
-		
-		photoFrameDown = 0;  
+
+		photoFrameDown = 0;
 	}
 
 function rotatePhoto ()
@@ -198,16 +198,16 @@ function rotatePhoto ()
 			document.all.thePhoto.style.width = "450px";
 			var newWidth = document.all.thePhoto.offsetHeight;
 			var newHeight = document.all.thePhoto.offsetWidth;
-			
-			
+
+
 //	alert("width: " + newWidth + " height: " + newHeight);
-			
+
 			var photoLeft = Math.round((newHeight - document.all.thePhoto.offsetHeight) / 2) + "px";
 			document.all.thePhoto.style.transform = "rotate(90deg) translate(0px, " + photoLeft + ")";
-			photoRotation = "90deg";	
+			photoRotation = "90deg";
 			document.all.photoToolbar.style.width = newWidth + "px";
 			document.all.photoTD.style.width = newWidth + "px";
-			document.all.photoToolbarTD.style.width = newWidth + "px";				
+			document.all.photoToolbarTD.style.width = newWidth + "px";
 			document.all.photoTD.style.height = newHeight + "px";
 			document.all.photoContainer.style.width = Math.round(newWidth + 6) + "px";
 //		alert(document.getElementById("photoContainer").style.width);
@@ -342,7 +342,7 @@ function switchToPort (vars)
 		eval("map.setZoom(" + zoom + ")");
 	}
 
-function checkInput(ob) 
+function checkInput(ob)
 	{
 		var invalidChars = /[^0-9]/gi
 		if(invalidChars.test(ob.value))
@@ -579,11 +579,11 @@ function switchNewCaseMarker (source,element)
 					var markDP = markerNew.getPosition().toString();
 					markDP = markDP.replace('(','');
 					markDP = markDP.replace(')','');
-					
+
 					iframeDoc.getElementById('GPS').value = markDP;
-					
-					google.maps.event.addListener(markerNew, 'drag', function() 
-						{ 
+
+					google.maps.event.addListener(markerNew, 'drag', function()
+						{
 							markDP = markerNew.getPosition().toString();
 							markDP = markDP.replace('(','');
 							markDP = markDP.replace(')','');
@@ -625,7 +625,7 @@ function submitCaptureForm (map_center, map_zoom)
 
 function captureSuccess (newCaseId,newMarkerImage,newMarkerCoords,infoBoxBorder,imageCategory,boxContent)
 	{
-		
+
 	//	alert(newCaseId + "," + newMarkerImage + "," + newMarkerCoords + "," + infoBoxBorder + "\n\n" +boxContent);
 		var image = newMarkerImage;
 		eval("var co_ords_" + newCaseId + " = new google.maps.LatLng(" + newMarkerCoords + ")");
@@ -655,7 +655,7 @@ function captureSuccess (newCaseId,newMarkerImage,newMarkerCoords,infoBoxBorder,
 				eval("var ib_" + newCaseId + " = new InfoBox(infoBoxOptions)");
 
 				eval("infoBoxArray.push(ib_" + newCaseId + ")");
-		
+
 		eval("marker_" + newCaseId + " = new google.maps.Marker({ position: co_ords_" + newCaseId + ", map: map, icon: image, title:'Case Number: " + newCaseId + "',draggable:true })");
 
 		markerNew.setMap(null);
@@ -678,7 +678,7 @@ function askConfirm (element,source)
 		element = "" + element + "";
 		source = "" + source + "";
 		document.getElementById('ruSure').style.zIndex = "12";
-		var theElement = document.getElementById(element); 
+		var theElement = document.getElementById(element);
 		var position = getPosition(theElement);
 		document.getElementById('RUS').innerHTML = 'ARE YOU SURE?';
 		document.getElementById('ruSure').className='animated bounceIn';
@@ -718,7 +718,7 @@ function ruSure (val)
 					// setTimeout("switchNewCaseMarker()",850);
 					setTimeout("document.getElementById('ruSure').style.zIndex = '10'", 1000);
 					document.getElementById('submitButton').disabled = false;
-					
+
 					markerNew.setMap(null);
 					iframeDoc.getElementById('captureForm').reset();
 					iframeDoc.getElementById('captureContainer').style="display:block;overflow-y:auto;overflow-x:hidden;border-collapse:collapse;border:1px solid #FFFFFF";
@@ -744,7 +744,7 @@ function setCaptureBorder (col)
 	//	if(col == '#ff0000') eval("document.getElementById('captureContainer').style='display:block;width:485px;height:490px;overflow-y:auto;overflow-x:hidden;border-collapse:collapse;border:2px solid " + col +"'");
 	}
 
-function allowDrop(ev) 
+function allowDrop(ev)
 	{
     	ev.preventDefault();
 	}
@@ -754,7 +754,7 @@ function drag(ev)
     	ev.dataTransfer.setData("text", ev.target.id);
 	}
 
-function drop(ev) 
+function drop(ev)
 	{
 		ev.preventDefault();
 		var data = ev.dataTransfer.getData("text");

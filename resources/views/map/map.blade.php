@@ -249,10 +249,6 @@ $imageName = "" .$imageCategory. "" .$imageStatus. "";
 echo 'var image = "markers/' .$imageName. '";';
 
 
-
-
-}
-
 ?>
 
                     var co_ords_<?php echo $ID; ?> = new google.maps.LatLng(<?php echo $GPS; ?>);
@@ -330,6 +326,8 @@ echo 'var image = "markers/' .$imageName. '";';
 
 
 <?php
+
+}
 
 $ships = Ship::all();
 
