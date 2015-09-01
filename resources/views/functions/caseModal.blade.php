@@ -1,3 +1,167 @@
+
+
+  $(document).ready(function() {
+
+  $("#addresses").tokenInput("getContacts");
+
+
+
+  $('#message').maxlength({
+            alwaysShow: true,
+            threshold: 10,
+            warningClass: "label label-success",
+            limitReachedClass: "label label-danger"
+  });
+
+  $('#caseNote').maxlength({
+            alwaysShow: true,
+            threshold: 10,
+            warningClass: "label label-success",
+            limitReachedClass: "label label-danger"
+  });
+
+  var user = {!! Auth::user()->id !!};
+  var oTable     = $('#casesTable').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "dom": 'T<"clear">lfrtip',
+                "order" :[[0,"desc"]],
+                "ajax": "{!! url('/cases-list/" + user +"')!!}",
+                 "columns": [
+                {data: 'id', name: 'id'},
+                {data: 'created_at', name: 'created_at'},
+                {data: 'description', name: 'description'},
+                {data: 'status', name: 'status'},
+                {data: 'actions',  name: 'actions'},
+               ],
+
+            "aoColumnDefs": [
+                { "bSearchable": false, "aTargets": [ 1] },
+                { "bSortable": false, "aTargets": [ 1 ] }
+            ]
+
+         });
+
+
+
+
+     var oTableCaseNotes,oTableCaseResponders,oTableAddressBook,oTableCaseActivities;
+
+
+
+     $("#submitAddCaseNoteForm").on("click",function(){
+
+
+        var caseId   = $("#modalAddCaseNotesModal #caseID").val();
+        var uid      = $("#modalAddCaseNotesModal #uid").val();
+        var token    = $('input[name="_token"]').val();
+        var caseNote = $("#modalAddCaseNotesModal #caseNote").val();
+        var formData = { caseID:caseId,caseNote:caseNote,uid:uid};
+        $('#modalAddCaseNotesModal').modal('toggle');
+
+        $.ajax({
+        type    :"POST",
+        data    : formData,
+        headers : { 'X-CSRF-Token': token },
+        url     :"{!! url('/addCaseNote')!!}",
+        success : function(){
+          launchCaseModal(caseId);
+          $('#modalCase').modal('toggle');
+        }
+       })
+
+     });
+
+      $("#submitAddContactForm").on("click",function(){
+
+
+        var FirstName = $("#modalAddContactModal #FirstName").val();
+        var Surname   = $("#modalAddContactModal #Surname").val();
+        var email     = $("#modalAddContactModal #email").val();
+        var cellphone = $("#modalAddContactModal #cellphone").val();
+        var uid       = $("#modalAddContactModal #uid").val();
+        var token     = $('input[name="_token"]').val();
+        var formData  = { FirstName:FirstName,Surname:Surname,email:email,cellphone:cellphone,uid:uid};
+
+        $('#modalAddContactModal').modal('toggle');
+
+        $.ajax({
+        type    :"POST",
+        data    : formData,
+        headers : { 'X-CSRF-Token': token },
+        url     :"{!! url('/addContact')!!}",
+        success : function(){
+           launchAddressBookModal();
+           $('#modalAddressBook').modal('toggle');
+        }
+
+    })
+
+     });
+
+
+     $("#submitEscalateCaseForm").on("click",function(){
+
+        var addresses = $("#modalReferCase #addresses").val();
+        var message   = $("#modalReferCase #message").val();
+        var caseID    = $("#modalReferCase #caseID").val();
+        var token     = $('input[name="_token"]').val();
+        var formData  = { addresses:addresses,message:message,caseID:caseID};
+
+        $('#modalReferCase').modal('toggle');
+
+        $.ajax({
+        type    :"POST",
+        data    : formData,
+        headers : { 'X-CSRF-Token': token },
+        url     :"{!! url('/escalateCase')!!}",
+        success : function(){
+          launchCaseModal(caseID);
+          $('#modalCase').modal('toggle');
+        }
+
+    })
+
+     });
+
+      $("#closeReferCase").on("click",function(){
+
+        $('#modalReferCase').modal('toggle');
+        var caseId       = $("#modalReferCase #caseID").val();
+        launchCaseModal(caseId);
+        $('#modalCase').modal('toggle');
+
+      });
+
+      $("#closeCaseNote").on("click",function(){
+
+        $('#modalAddCaseNotesModal').modal('toggle');
+        var caseId       = $("#modalReferCase #caseID").val();
+        launchCaseModal(caseId);
+        $('#modalCase').modal('toggle');
+
+      });
+
+      $("#closeListContactModal").on("click",function(){
+
+        $('#modalAddressBook').modal('toggle');
+        $('#modalReferCase').modal('show');
+
+      });
+
+      $("#closeAddContactModal").on("click",function(){
+
+        $('#modalAddContactModal').modal('toggle');
+        $('#modalAddressBook').modal('show');
+
+      });
+
+
+
+
+
+   });
+
    function launchCaseModal(id)
     {
 
@@ -245,3 +409,5 @@
        })
 
     }
+
+
