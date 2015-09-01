@@ -186,7 +186,7 @@ foreach ($cases as $case) {
     $Status       = $case->status;
     $catObjCat    = Category::find($case->category);
     $Category     = $catObjCat->name;
-    $PhotoURL     = $case->img_url;
+    $PhotoURL     = "http://www.siyaleader.co.za:8080/ecin2edin/console/app_backend/port_backend/public/".$case->img_url;
     $LastActivity = $case->updated_at;
     $Reporter     = $user->name .' '.$user->surname;
     $Position     = $position->name;
