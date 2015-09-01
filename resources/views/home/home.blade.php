@@ -5,10 +5,10 @@
 <!-- Breadcrumb -->
 <ol class="breadcrumb hidden-xs">
     <li><a href="#">Home</a></li>
-    <li class="active">Dashboard</li>
+    <li class="active">Console</li>
 </ol>
 
-<h4 class="page-title">DASHBOARD</h4>
+<h4 class="page-title">Console</h4>
 
 
 

@@ -155,11 +155,103 @@ function initialize()
         var oms = new OverlappingMarkerSpiderfier(map, { markersWontMove: true, keepSpiderfied:true, circleSpiralSwitchover:20 });
 
 <?php
-    $connectionID = mysqli_connect('localhost', 'www', '', 'siyaleader_dbnports_live') or die ("Unable to connect to database.");
-    $sql = "select * from siyaleader_dbnports_live.ccg_rap where GPS != '' order by ID asc";
-    $result = mysqli_query($connectionID, $sql) or die ("Couldn't query ccg_rap DB ... ...");
 
-    while($row = mysqli_fetch_row($result))
+use App\User;
+use App\CaseReport;
+use App\CaseNote;
+use App\Category;
+use App\Ship;
+
+
+$cases = CaseReport::whereNotNull('gps_lat')
+                    ->whereNotNull('gps_lng')
+                    ->get();
+
+
+
+foreach ($cases as $case) {
+
+
+    $user         = User::find($case->user);
+    $position     = Position::find($user->position);
+    $ID           = $case->id;
+    $GPS          = $case->gps_lat .''.$case->gps_lng;
+    $Province     = 'KZN';
+    $Port         = 'Maydon Warf';
+    $Submitted    = $case->created_at;
+    $Status       = $case->status;
+    $catObjCat    = Category::find($case->category);
+    $Category     = $catObjCat->name;
+    $PhotoURL     = $case->img_url;
+    $LastActivity = $case->updated_at;
+    $Reporter     = $user->name .' '.$user->surname;
+    $Position     = $position->name;
+    $Mobile       = $user->email;
+    $Priority     = $case->priority;
+    $Description  = $case->description;
+
+    $noteResult   = CaseNote::where('caseId','=',$case->id)
+                    ->take(1)
+                    ->get();
+
+    $noteUserObj = User::find($noteResult->user);
+
+
+
+
+    if(sizeof($noteResult > 0))
+    {
+
+        $AuthDate = $noteResult->created_at;
+        $Author   = $noteUserObj->name .' '.$noteUserObj->surname;
+        $Note     = $noteResult->note;
+
+    }
+    else {
+
+        $AuthDate = "";
+        $Author   = "";
+        $Note     = "";
+
+    }
+
+if($Status == "Pending")  {  $catStatus = "Pen";  $imageStatus = "_pen.png";  }
+if($Status == "Allocated")  {  $catStatus = "All";  $imageStatus = "_all.png";  }
+if($Status == "Referred")  {  $catStatus = "Ref";  $imageStatus = "_ref.png";  }
+if($Status == "Actioned")  {  $catStatus = "Act";  $imageStatus = "_act.png";  }
+if($Status == "Closure Requested")  {  $catStatus = "Clo";  $imageStatus = "_clo.png";  }
+if($Status == "RESOLVED")  {  $catStatus = "Res";  $imageStatus = "_res.png";  }
+
+if($Category == "Maintenance (Civil)")  {  $imageCategory = "mc";   echo "var infoBoxBorder = '#ffff00';";   }
+if($Category == "Maintenance (Electrical)")  {  $imageCategory = "me";   echo "var infoBoxBorder = '#ff33a6';";  }
+if($Category == "Maintenance (Mechanical)")  {  $imageCategory = "ma";   echo "var infoBoxBorder = '#fe940b';";  }
+if($Category == "Maintenance (Marine)")  {  $imageCategory = "mm";   echo "var infoBoxBorder = '#333dc7';";  }
+if($Category == "House Keeping")  {  $imageCategory = "hk";   echo "var infoBoxBorder = '#00ee00';";  }
+if($Category == "Traffic Management")  {  $imageCategory = "tr";   echo "var infoBoxBorder = '#0a0c28';";  }
+
+if($Category == "Environment")  {  $imageCategory = "en";   echo "var infoBoxBorder = '#009000';";  }
+if($Category == "Health")  {  $imageCategory = "he";   echo "var infoBoxBorder = '#0df1ff';";  }
+if($Category == "Port Operations Centre")  {  $imageCategory = "po";   echo "var infoBoxBorder = '#e1e1e1';";  }
+if($Category == "Property")  {  $imageCategory = "pr";   echo "var infoBoxBorder = '#999999';";  }
+if($Category == "Safety-Risk-Fire")  {  $imageCategory = "sr";   echo "var infoBoxBorder = '#ff0000';";  }
+if($Category == "Security")  {  $imageCategory = "se";   echo "var infoBoxBorder = '#8a1ec7';";  }
+
+$imageName = "" .$imageCategory. "" .$imageStatus. "";
+
+echo 'var image = "markers/' .$imageName. '";';
+
+
+
+
+}
+
+
+
+  /*  $connectionID = mysqli_connect('localhost', 'www', '', 'siyaleader_dbnports_live') or die ("Unable to connect to database.");
+    $sql = "select * from siyaleader_dbnports_live.ccg_rap where GPS != '' order by ID asc";
+    $result = mysqli_query($connectionID, $sql) or die ("Couldn't query ccg_rap DB ... ...");*/
+
+  /*  while($row = mysqli_fetch_row($result))
             {
                 $ID = $row[0];
                 $GPS = $row[32];
@@ -214,7 +306,7 @@ function initialize()
 
                     $imageName = "" .$imageCategory. "" .$imageStatus. "";
 
-                    echo 'var image = "markers/' .$imageName. '";';
+                    echo 'var image = "markers/' .$imageName. '";';*/
 
 
 ?>
@@ -294,13 +386,13 @@ function initialize()
 
 
 <?php
-            }
+
 ?>
 
 
 <?php
 
-$shipsSql = "select * from siyaleader_dbnports_live.ships_information";
+/*$shipsSql = "select * from siyaleader_dbnports_live.ships_information";
 $shipsResult = mysqli_query($connectionID, $shipsSql) or die ("Couldn't query ships information table ... ...");
 
 while($row = mysqli_fetch_row($shipsResult))
@@ -308,7 +400,19 @@ while($row = mysqli_fetch_row($shipsResult))
     $shipID = $ID = $row[0];
     $shipName = $row[1];
     $shipGPS =$row[2];
-    $shipHeading = $row[3];
+    $shipHeading = $row[3];*/
+
+$ships = Ship::all();
+
+foreach ($ships as $ship) {
+
+    $ID          = $ship->id;
+    $shipName    = $ship->shipName;
+    $shipGPS     = $ship->shipGPS;
+    $shipHeading = $ship->shipHeading;
+
+ }
+
 ?>
 
 var shipID = "<?php echo $ID; ?>";

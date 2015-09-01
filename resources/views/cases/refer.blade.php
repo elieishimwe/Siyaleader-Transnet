@@ -20,7 +20,7 @@
             {!! Form::hidden('caseID',NULL,['id' => 'caseID']) !!}
 
             <div class="form-group">
-                {!! Form::label('Email Addresses', 'Email Addresses', array('class' => 'col-md-2 control-label')) !!}
+                {!! Form::label('Search Box', 'Search Box', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-6">
                   {!! Form::text('addresses',NULL,['class' => 'form-control input-sm','id' => 'addresses']) !!}
                 </div>
