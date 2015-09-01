@@ -176,7 +176,7 @@ foreach ($cases as $case) {
     $user         = User::find($case->user);
     $position     = Position::find($user->position);
     $ID           = $case->id;
-    $GPS          = $case->gps_lat .''.$case->gps_lng;
+    $GPS          = $case->gps_lat .','. $case->gps_lng;
     $Province     = 'KZN';
     $Port         = 'Maydon Warf';
     $Precinct     = $case->department;
