@@ -1,6 +1,7 @@
    function launchCaseModal(id)
     {
 
+      $('#modalCase').modal('show');
       $(".modal-body #categoryID").val(id);
       $(".modal-body #caseID").val(id);
 
@@ -167,5 +168,80 @@
 
            });
 
+
+    }
+
+        function launchReferModal()
+    {
+
+      $('#modalCase').modal('toggle');
+
+
+    }
+
+    function launchAddressBookModal()
+    {
+
+      $('#modalReferCase').modal('toggle');
+       if ( $.fn.dataTable.isDataTable( '#addressBookTable' ) ) {
+                    oTableAddressBook.destroy();
+        }
+
+
+      var user = {!! Auth::user()->id !!};
+      oTableAddressBook     = $('#addressBookTable').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "dom": 'T<"clear">lfrtip',
+            "order" :[[0,"desc"]],
+            "ajax": "{!! url('/addressbook-list/" + user +"')!!}",
+             "columns": [
+            {data: 'FirstName', name: 'FirstName'},
+            {data: 'Surname', name: 'Surname'},
+            {data: 'cellphone', name: 'cellphone'},
+            {data: 'email', name: 'email'},
+            {data: 'actions',  name: 'actions'},
+           ],
+
+        "aoColumnDefs": [
+            { "bSearchable": false, "aTargets": [ 1] },
+            { "bSortable": false, "aTargets": [ 1 ] }
+        ]
+
+     });
+
+
+    }
+
+    function launchAddContactModal()
+    {
+
+      $('#modalAddressBook').modal('toggle');
+
+    }
+
+    function launchCaseNotesModal(id)
+    {
+
+      $('#modalCase').modal('hide');
+      $('#modalAddCaseNotesModal').modal('toggle');
+
+
+
+    }
+
+    function acceptCase()
+    {
+
+      var id = $(".modal-body #caseID").val();
+
+      $.ajax({
+        type    :"GET",
+        url     :"{!! url('/acceptCase/" + id +"')!!}",
+        success : function(){
+          launchCaseModal(id);
+          $('#modalCase').modal('show');
+        }
+       })
 
     }

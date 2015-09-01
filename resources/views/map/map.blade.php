@@ -3,6 +3,11 @@
 
 @section('content')
 
+@include('cases.profile')
+@include('cases.refer')
+@include('addressbook.list')
+@include('addressbook.add')
+@include('casenotes.add')
 
 
 <!-- Breadcrumb -->
@@ -289,7 +294,7 @@ echo 'var image = "markers/' .$imageName. '";';
                     boxContent += "<td align='center' valign='bottom'><a href='#' onclick='alert(\"Work in progress ... Watch this space ...\")'><img src='images/icon_trash.png' title='Remove Case' onmouseout='updateToolTip(\"\")'></a></td>";
                     boxContent += "<td align='center' valign='bottom'><a href='#' onclick='alert(\"Work in progress ... Watch this space ...\")'><img src='images/icon_join.png' title='Combine Duplicate Case'  onmouseout='updateToolTip(\"\")'></a></td>";
                     boxContent += "<td align='center' valign='bottom'><a href='#' onclick='alert(\"Work in progress ... Watch this space ...\")'><img src='images/icon_weather.png' title='Weather Conditions'  onmouseout='updateToolTip(\"\")'></a></td>";
-                    boxContent += "<td align='center' valign='bottom'><a href='#' onClick='launchCaseModal(<?php echo $ID; ?>);'><img src='images/icon_refer.png' title='Refer Case' onmouseout='updateToolTip(\"\")'></a></td>";
+                    boxContent += "<td align='center' valign='bottom'><a href='#' data-toggle='modal' data-target='.modalCase' onClick='launchCaseModal(<?php echo $ID; ?>);'><img src='images/icon_refer.png' title='Refer Case' onmouseout='updateToolTip(\"\")'></a></td>";
                     boxContent += "<td align='center' valign='bottom'><a href='#' onclick='showPhoto(\"<?php echo $PhotoURL; ?>\",\"" + infoBoxBorder +"\");killMenu();killLayerMenu()'><img id='photoIcon' src='images/icon_photo.png' title='View Photo' onmouseout='updateToolTip(\"\")'></a></td>";
                     boxContent += "<td align='center' valign='bottom'><a href='#' onclick='killMenu();killLayerMenu();document.all.cmcFrame.src=\"http://www.siyaleader.co.za:8080/siyaleader-dbnports/live/CaseRequest/index.php?type=app&caller=&case=<?php echo $ID; ?>&user=13&action=api&apiKey=52bd43d37ed62eb4c226e31841bc03dc\";showCMC()'><img src='images/icon_interact.png' title='Case Interaction'  onmouseout='updateToolTip(\"\")'></a></td>";
                     boxContent += "</table>";
