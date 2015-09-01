@@ -195,10 +195,13 @@ foreach ($cases as $case) {
     if($case->id)
     {
         \Log::info($case->id);
-        /*$noteResult   = CaseNote::where('caseId','=',$case->id)
+        $noteResult   = CaseNote::where('caseId','=',$case->id)
                     ->first();
 
-        $noteUserObj = User::find($noteResult->user);*/
+        \Log::info($noteResult);
+        \Log::info(sizeof($noteResult));
+
+        //$noteUserObj = User::find($noteResult->user);
     }
 
 
