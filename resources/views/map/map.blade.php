@@ -1178,8 +1178,28 @@ function createZoneArray ()
 
 </div>
 
-@endsection
+
 
 @section('footer')
+<script>
+   $(document).ready(function() {
+
+      $("#Category").change(function(){
+
+        $.get("{{ url('/api/dropdown/districts/province')}}",
+        { option: $(this).val()},
+        function(data) {
+        $('#District').empty();
+        $('#municipality').empty();
+        $('#District').removeAttr('disabled');
+        $('#District').append("<option value='0'>Select one</option>");
+        $('#Municipality').append("<option value='0'>Select one</option>");
+        $.each(data, function(key, element) {
+        $('#District').append("<option value="+ key +">" + element + "</option>");
+        });
+        });
+
+   })
+</script>
 
 @endsection
