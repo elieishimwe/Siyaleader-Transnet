@@ -13,6 +13,9 @@ use App\addressbook;
 use App\CaseEscalator;
 use App\CaseActivity;
 use App\Department;
+use App\Category;
+use App\SubCategory;
+use App\SubSubCategory;
 
 class CasesController extends Controller
 {
@@ -94,15 +97,39 @@ class CasesController extends Controller
     public function captureCase(Request $request)
     {
 
-       $reporter = $request['caseReporter'];
+        $reporter    = $request['caseReporter'];
+        $userObj     = User::where('username','=',$reporter)->first();
+
+        if(sizeof($userObj) <= 0 )
+        {
+            $userAddressbookObj = addressbook::where('email','=',$reporter)->first();
+        }
+
+        $user        = (sizeof($userObj) <= 0)? $userAddressbookObj->id:$userObj->id;
+        $addressbook = (sizeof($userObj) <= 0)? 1:0;
+
+
 
        $caseDescription   = $request['caseDescription'];
-       $departmentObj = Department::where('slug','=',$request['municipality'])->first();
+       dd($request['caseMunicipality']);
+       $departmentObj     = Department::where('slug','=',$request['caseMunicipality'])->first();
+       $categoryObj       = Category::where('slug','=',$request['caseCategory'])->first();
+       $subCategoryObj    = SubCategory::where('slug','=',$request['caseSubCategory'])->first();
+       $subSubCategoryObj = SubSubCategory::where('slug','=',$request['caseSubSubCategory'])->first();
+       $gps               = explode(",",$request['GPS']);
 
-
-
-
-       $caseObj = new CaseReport();
+       $caseObj                   = new CaseReport();
+       $caseObj->description      = $caseDescription;
+       $caseObj->user             = $user;
+       $caseObj->addressbook      = $addressbook;
+       $caseObj->department       = $departmentObj->id;
+       $caseObj->category         = $categoryObj->id;
+       $caseObj->sub_category     = $subCategoryObj->id;
+       $caseObj->sub_sub_category = $subSubCategoryObj->id;
+       $caseObj->gps_lat          = $gps[0];
+       $caseObj->gps_lng          = $gps[1];
+       $caseObj->status           = "pending";
+       $caseObj->save();
 
     }
 
@@ -150,8 +177,8 @@ class CasesController extends Controller
             }
 
             $name        = (sizeof($user) <= 0)? $userAddressbook->FirstName:$user->name;
-            $surname     = (sizeof($user) <= 0)? $userAddressbook->Surnname:$user->surname;
-            $to          = (sizeof($user) <= 0)? $userAddressbook->user:$user->id;
+            $surname     = (sizeof($user) <= 0)? $userAddressbook->Surname:$user->surname;
+            $to          = (sizeof($user) <= 0)? $userAddressbook->id:$user->id;
             $type        = (sizeof($user) <= 0)? 1:0;
             $addressbook = (sizeof($user) <= 0)? 1:0;
 

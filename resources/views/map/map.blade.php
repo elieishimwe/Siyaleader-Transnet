@@ -5,8 +5,6 @@
 
 @include('cases.profile')
 @include('cases.refer')
-@include('addressbook.list')
-@include('addressbook.add')
 @include('addressbook.global')
 @include('addressbook.globalAdd')
 @include('casenotes.add')
@@ -1104,7 +1102,7 @@ function createZoneArray ()
 
                             <tr style="font: 11pt 'Arial';color:#ffffff">
                                 <td valign=middle>
-                                    {!! Form::select('municipality',$selectMunicipalities,0,['class' => 'formField','id' => 'municipality']) !!}
+                                    {!! Form::select('caseMunicipality',$selectMunicipalities,0,['class' => 'formField','id' => 'caseMunicipality']) !!}
                                 </td>
                             </tr>
 

@@ -608,7 +608,7 @@ function submitCaptureForm (map_center, map_zoom)
 
 		var GPS                = $("#captureForm #GPS").val();
 		var caseReporter       = $("#captureForm #caseReporter").val();
-		var municipality       = $("#captureForm #municipality").val();
+		var caseMunicipality   = $("#captureForm #caseMunicipality").val();
 		var caseCategory       = $("#captureForm #caseCategory").val();
 		var caseSubCategory    = $("#captureForm #caseSubCategory").val();
 		var caseSubSubCategory = $("#captureForm #caseSubSubCategory").val();
@@ -618,7 +618,7 @@ function submitCaptureForm (map_center, map_zoom)
         var formData = {
 							caseDescription:caseDescription,
 							GPS:GPS,
-							municipality:caseSubSubCategory,
+							caseMunicipality:caseMunicipality,
 							caseCategory:caseCategory,
 							caseReporter:caseReporter,
 							caseSubCategory:caseSubCategory,
