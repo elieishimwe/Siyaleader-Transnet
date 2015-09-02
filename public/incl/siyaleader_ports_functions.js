@@ -606,6 +606,8 @@ function switchNewCaseMarker (source,element)
 function submitCaptureForm (map_center, map_zoom)
 {
 
+
+
 		var GPS                = $("#captureForm #GPS").val();
 		var caseReporter       = $("#captureForm #caseReporter").val();
 		var caseMunicipality   = $("#captureForm #caseMunicipality").val();
@@ -642,7 +644,7 @@ function submitCaptureForm (map_center, map_zoom)
 				alert("WARNING ...\n\nPlease complete all the fields in the form ...");
 				return;
 			}
-		document.getElementById('captureForm').submit();
+		//document.getElementById('captureForm').submit();
 		document.getElementById('caseCapture').className = "animated zoomOutLeft";
 		newCaseMarkerStatus = 0;
 		document.getElementById('addCase').src ="images/add_case.png";

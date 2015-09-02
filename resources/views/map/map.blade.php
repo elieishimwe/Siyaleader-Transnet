@@ -1159,7 +1159,7 @@ function createZoneArray ()
             </td>
             <td align=right>
 
-                  <input id="submitButton" style="font-size:12pt;width:90px;height:25px;border:0;background:#ffffff;color:#ff0000" type="button" onclick="submitCaptureForm(map.getCenter(),map.getZoom());this.blur()">
+                  <a id="submitButton" class="btn btn-sm" onclick="submitCaptureForm(map.getCenter(),map.getZoom());this.blur()"></a>
             </td>
         </tr>
     </table>
