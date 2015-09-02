@@ -394,3 +394,5 @@ return $listing;
 });
 
 
+Route::post('addCaseForm', 'CasesController@captureCase');
+

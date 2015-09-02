@@ -5,7 +5,6 @@
 
 @include('cases.profile')
 @include('cases.refer')
-@include('cases.add')
 @include('addressbook.list')
 @include('addressbook.add')
 @include('casenotes.add')
@@ -83,8 +82,8 @@
                         <a href="#" onclick="switchMarkerLegend();this.blur()"><i class="fa fa-map-marker fa-fw" style="color:#ffffff" title="Toggle Marker Legend" onmouseover="updateToolTip('Toggle marker legend')" onmouseout="document.all.toolTip.innerHTML= ''"></i></a>
                     </td>
                     <td bgcolor="#1c1c1c" valign=middle align=right width=25 style="min-width:25px">
-                        <a href="#" id="newCaseIcon" onclick="launchAddCaseModal()"><i id="addCase" class="fa fa-plus-square-o fa-lg fa-fw" style="color:#ffffff" title="Add a new case ..." onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></i></a>
-                        <!-- <a href="#" id="newCaseIcon" onclick="document.getElementById('RUS').innerHTML = 'ARE YOU SURE?';switchNewCaseMarker('icon',this.id);this.blur()"><i id="addCase" class="fa fa-plus-square-o fa-lg fa-fw" style="color:#ffffff" title="Add a new case ..." onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></i></a> -->
+
+                        <a href="#" id="newCaseIcon" onclick="document.getElementById('RUS').innerHTML = 'ARE YOU SURE?';switchNewCaseMarker('icon',this.id);this.blur()"><i id="addCase" class="fa fa-plus-square-o fa-lg fa-fw" style="color:#ffffff" title="Add a new case ..." onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></i></a>
                     </td>
                     <td bgcolor="#1c1c1c" valign=middle align=right><font style="font: 10pt 'arial'; color:#FFFFFF;"><span id="toolTip"></span></font>&nbsp;</td>
                     </tr>
@@ -1077,19 +1076,96 @@ function createZoneArray ()
     <table border=0 cellpadding=0 cellspacing=0>
         <tr>
             <td colspan=2>
-                <IFRAME id="newCaseCapture" SRC="case_capture.php" MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=auto HSPACE=0 VSPACE=0 NORESIZE frameborder=0 style="border-radius:3px;width:338px;height:420px"></IFRAME>
+
+               {!! Form::open(['url' => 'addCaseForm', 'method' => 'post', 'style' => 'margin:0px;padding:0px;', 'id'=>'captureForm' ]) !!}
+
+
+                        <table id="captureContainer" border=0 cellpadding=4 cellspacing=0 style="font: 11pt 'Arial';color:#ffffff;border-collapse:collapse;border:1px solid #ffffff">
+                            <tr>
+                                <td valign=top align=center nowrap style="font: 11pt 'Arial';color:#FFFFFF">
+                                    GPS COORDINATES<BR>
+                                    <!--   <input class="GPSField" type="text" id="GPS" name="GPS" title="GPS Coordinates" onfocus="this.blur()"> -->
+                                    {!! Form::text('GPS',NULL,['class' => 'GPSField','id' => 'GPS']) !!}
+                                </td>
+                            </tr>
+
+                            <tr style="font: 11pt 'Arial';color:#ffffff">
+
+                                    <td valign=middle>
+                                        <input type=text class="formField" id="ccg_nam" name="ccg_nam" style="text-align:center" placeholder="Reporter's First Name" onchange="this.value = this.value.toTitleCase()">
+                                    </td>
+                            </tr>
+
+                            <tr style="font: 11pt 'Arial';color:#ffffff">
+
+                                <td valign=middle>
+                                    <input type=text class="formField" id="ccg_sur" name="ccg_sur" style="text-align:center" placeholder="Reporter's Surname" onchange="this.value = this.value.toTitleCase()">
+                                </td>
+                            </tr>
+
+                            <tr style="font: 11pt 'Arial';color:#ffffff">
+
+                                <td valign=middle>
+                                    <input type=text class="formField" id="ccg_mob" name="ccg_mob" style="text-align:center" placeholder="Reporter's Contact Number" onkeyup="checkInput(this)">
+                                </td>
+                            </tr>
+
+                            <tr style="font: 11pt 'Arial';color:#ffffff">
+
+                                <td valign=middle>
+                                    <select class="formField" id="prob_category" name="prob_category">
+                                        <option id="#ffffff" value=""> Please select ...
+
+                                    </select>
+                                </td>
+                            </tr><tr style="font: 11pt 'Arial';color:#ffffff">
+
+                                <td valign=middle>
+                                    <select class="formField" id="prob_subcategory" name="prob_subcategory">
+                                    </select>
+                                </td>
+                            </tr><tr style="font: 11pt 'Arial';color:#ffffff">
+
+                                <td valign=middle>
+                                    <select class="formField" id="prob_sub_sub_category" name="prob_sub_sub_category">
+                                    </select>
+                                </td>
+                            </tr><tr style="font: 11pt 'Arial';color:#ffffff">
+                                <td valign=middle>
+                                    <textarea name="prob_exp" class="formField" wrap="physical" style="resize:none;height:100px;text-align:left" placeholder="Case details ..." onchange="this.value=toSentenceCase(this.value)"></textarea>
+                                </td>
+                            </tr><tr style="font: 11pt 'Arial';color:#ffffff">
+                                <td valign=middle>
+                                    Critical Emergency: &nbsp;<a href="#" onclick="switchPriority();this.blur()"><span id="prioritySpan" style="font-size:22px">&#9744;</span></a>
+                                    &nbsp;
+                                    <span id="severitySpan" style="display:none">
+                                    <a href="#" onclick="setSeverity('4');this.blur()"><span id="severitySpan4" style="font-size:20px;color:#00FF00">&#9315;</span></a>
+                                    <a href="#" onclick="setSeverity('3');this.blur()"><span id="severitySpan3" style="font-size:20px;color:#FFFF00">&#9314;</span></a>
+                                    <a href="#" onclick="setSeverity('2');this.blur()"><span id="severitySpan2" style="font-size:20px;color:#ff7800">&#9313;</span></a>
+                                    <a href="#" onclick="setSeverity('1');this.blur()"><span id="severitySpan1" style="font-size:20px;color:#FF0000">&#9312;</span></a>
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <input type=hidden name="prob_priority" id="prob_priority" value="Urgent">
+                        <input type=hidden name="severity" id="severity" value="5">
+
             </td>
         </tr><tr>
             <td align=left>
                 <input id="askConfirmButton" style="font-size:12pt;width:90px;height:25px;border:0;background:#ffffff;color:#ff0000" type="button" value="Cancel" onclick="askConfirm(this.id);this.blur()">
             </td>
             <td align=right>
-                <input id="submitButton" style="font-size:12pt;width:90px;height:25px;border:0;background:#ffffff" type="button" value="Submit" onclick="submitCaptureForm(map.getCenter(),map.getZoom());this.blur()">
+               <!--  <input id="submitButton" style="font-size:12pt;width:90px;height:25px;border:0;background:#ffffff" type="button" value="Submit" onclick="submitCaptureForm(map.getCenter(),map.getZoom());this.blur()"> -->
+                  <input id="submitButton" style="font-size:12pt;width:90px;height:25px;border:0;background:#ffffff;color:#ff0000" type="button" onclick="submitCaptureForm(map.getCenter(),map.getZoom());this.blur()">
             </td>
         </tr>
     </table>
+     </form>
 
 </div>
+
 
 <div id="caseCaptureSuccess" class="animated zoomInLeft" style="opacity:0.9;padding:6px;border-radius:3px;position:absolute;right:230px;top:31px;background:#1c1c1c;align:center;z-index:11;display:none;box-shadow:4px 4px 4px #000000">
     <table border=0 cellpadding=6 cellspacing=0 style="font: 12pt 'Arial';color: #ffffff;border-collapse:collapse;border:1px solid #ffffff;width:200px">
@@ -1177,7 +1253,7 @@ function createZoneArray ()
 </body>
 
 </div>
-
+@endsection
 
 
 @section('footer')

@@ -90,9 +90,9 @@ class CasesController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function captureCase(Request $request)
     {
-
+        return view('cases.add');
     }
 
 

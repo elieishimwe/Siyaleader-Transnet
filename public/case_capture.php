@@ -50,7 +50,7 @@ return match.charAt(0).toUpperCase() + match.substr(1);
 });
 };
 
-function checkInput(ob) 
+function checkInput(ob)
 			{
 							var invalidChars = /[^0-9]/gi
 								 if(invalidChars.test(ob.value))
@@ -63,7 +63,7 @@ function toSentenceCase (val)
 		{
 					str = val;
 					temp_arr = str.split('.');
-					for (i = 0; i < temp_arr.length; i++) 
+					for (i = 0; i < temp_arr.length; i++)
 							{
 									temp_arr[i]=temp_arr[i].trim()
 									temp_arr[i] = temp_arr[i].charAt(0).toUpperCase() + temp_arr[i].substr(1).toLowerCase();
@@ -73,7 +73,7 @@ function toSentenceCase (val)
 		}
 
 
-		
+
 </script>
 </head>
 
@@ -110,7 +110,7 @@ function toSentenceCase (val)
 			<td valign=middle>
 				<select class="formField" id="prob_mun" name="prob_mun">
 					<option id="#ffffff" value=""> Please select ...
-<?php 
+<?php
 					$precSql = "select id, name from siyaleader_dbnports_live.municipalities order by name asc";
 					$precResult = mysqli_query($connectionID, $precSql) or die ("Couldn't query precinct/municipalities DB ... ...");
 					while($row = mysqli_fetch_row($precResult))
@@ -125,7 +125,7 @@ function toSentenceCase (val)
 			<td valign=middle>
 				<select class="formField" id="prob_category" name="prob_category">
 					<option id="#ffffff" value=""> Please select ...
-<?php 
+<?php
 					$catSql = "select * from siyaleader_dbnports_live.categories order by name asc";
 					$catResult = mysqli_query($connectionID, $catSql) or die ("Couldn't query categories DB ... ...");
 					while($row = mysqli_fetch_row($catResult))
@@ -172,11 +172,11 @@ function toSentenceCase (val)
 </body>
 </html>
 
-<?php 
+<?php
 }
 ?>
 
-<?php 
+<?php
 
 if($ACTION == "SUBMITCASE")
 {
@@ -265,7 +265,7 @@ boxContent += "</tr></table>";
 
 
 
-<?php 
+<?php
 }
 ?>
 
