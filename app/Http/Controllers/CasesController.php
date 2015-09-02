@@ -256,7 +256,7 @@ class CasesController extends Controller
             ->join('departments', 'cases.department', '=', 'departments.id')
             ->join('categories', 'cases.category', '=', 'categories.id')
             ->join('sub-categories', 'cases.sub_category', '=', 'sub-categories.id')
-            ->join('users', 'cases.user', '=', 'users.id')
+            ->join('users', 'cases.reporter', '=', 'users.id')
             ->where('cases.id','=',$id)
             ->select(\DB::raw("cases.id, cases.description,cases.status,cases.img_url,CONCAT(users.`name`, ' ', users.`surname`) as reporter,users.email as reporterCell,departments.name as department,categories.name as category,`sub-categories`.name as sub_category,`cases`.sub_sub_category as sub_sub_category "))
             ->get();
