@@ -636,14 +636,13 @@ function submitCaptureForm (map_center, map_zoom)
        });
 
 		capture_map_center = map_center;
-		capture_map_zoom = map_zoom;
+		capture_map_zoom   = map_zoom;
 		if(document.getElementById('caseReporter').value == "" || document.getElementById('caseMunicipality').value == "" || document.getElementById('caseCategory').value == "" || document.getElementById('caseSubCategory').value == "" || document.getElementById('caseSubSubCategory').value == "" || document.getElementById('caseDescription').value == "")
 			{
 				alert("WARNING ...\n\nPlease complete all the fields in the form ...");
 				return;
 			}
 		document.getElementById('captureForm').submit();
-
 		document.getElementById('caseCapture').className = "animated zoomOutLeft";
 		newCaseMarkerStatus = 0;
 		document.getElementById('addCase').src ="images/add_case.png";
@@ -659,7 +658,7 @@ function submitCaptureForm (map_center, map_zoom)
 function captureSuccess (newCaseId,newMarkerImage,newMarkerCoords,infoBoxBorder,imageCategory,boxContent)
 	{
 
-	//	alert(newCaseId + "," + newMarkerImage + "," + newMarkerCoords + "," + infoBoxBorder + "\n\n" +boxContent);
+	    alert(newCaseId + "," + newMarkerImage + "," + newMarkerCoords + "," + infoBoxBorder + "\n\n" +boxContent);
 		var image = newMarkerImage;
 		eval("var co_ords_" + newCaseId + " = new google.maps.LatLng(" + newMarkerCoords + ")");
 
