@@ -119,6 +119,7 @@ class CasesController extends Controller
        $caseObj                   = new CaseReport();
        $caseObj->description      = $caseDescription;
        $caseObj->user             = \Auth::user()->id;
+       $caseObj->reporter         = $user;
        $caseObj->addressbook      = $addressbook;
        $caseObj->precinct         = $precinctObj->id;
        $caseObj->category         = $categoryObj->id;
