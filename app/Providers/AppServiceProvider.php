@@ -84,7 +84,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $municipalities          = Municipality::all();
             $selectMunicipalities    = array();
-            $selectMunicipalities[0] = "Select one or more";
+            $selectMunicipalities[0] = "Select Precinct";
             foreach ($municipalities as $municipality) {
                $selectMunicipalities[$municipality->slug] = $municipality->name;
             }
@@ -98,7 +98,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $categories          = Category::all();
             $selectCategories    = array();
-            $selectCategories[0] = "Select one or more";
+            $selectCategories[0] = "Select Category";
             foreach ($categories as $category) {
                $selectCategories[$category->slug] = $category->name;
             }
@@ -111,7 +111,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $subCategories       = SubCategory::all();
             $selectSubCategories    = array();
-            $selectSubCategories[0] = "Select one or more";
+            $selectSubCategories[0] = "Select Sub Category";
             foreach ($subCategories as $subCategory) {
                $selectSubCategories[$subCategory->slug] = $subCategory->name;
             }
@@ -124,7 +124,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $subSubCategories          = SubSubCategory::all();
             $selectSubSubCategories    = array();
-            $selectSubSubCategories[0] = "Select one or more";
+            $selectSubSubCategories[0] = "Select Sub Sub Category";
             foreach ($subSubCategories as $subSubCategory) {
                $selectSubSubCategories[$subSubCategory->slug] = $subSubCategory->name;
             }
@@ -137,7 +137,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $relationships          = Relationship::all();
             $selectRelationships    = array();
-            $selectRelationships[0] = "Select one or more";
+            $selectRelationships[0] = "Select one";
             foreach ($relationships as $relationship) {
                $selectRelationships[$relationship->id] = $relationship->name;
             }

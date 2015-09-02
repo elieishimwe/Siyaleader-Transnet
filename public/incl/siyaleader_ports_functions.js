@@ -3,7 +3,8 @@
 
 
 $(document).ready(function(){
-	$("#prob_category").change(function(){
+
+	/*$("#category").change(function(){
 	setCaptureBorder(document.getElementById('prob_category').options[document.getElementById('prob_category').selectedIndex].id);
 	$.ajax({ dataType: "json",url:"ajax/getCategories.php?Action=getSubCats&Category=" +$(this).val()+ "", success: function(result){
 		$('#prob_subcategory').empty();
@@ -23,7 +24,7 @@ $(document).ready(function(){
 			$('#prob_sub_sub_category').append("<option value="+ element +">" + element + "</option><BR>");
 			});
 		}});
-	});
+	});*/
 });
 
 
@@ -603,19 +604,25 @@ function switchNewCaseMarker (source,element)
 	}
 
 function submitCaptureForm (map_center, map_zoom)
-	{
+{
+
+		var GPS   = $("#captureForm #GPS").val();
+		var token = $('input[name="_token"]').val();
 
 
-	/*	$.ajax({
+
+        var caseNote = $("#modalAddCaseNotesModal #caseNote").val();*/
+        var formData = { GPS:GPS};
+
+		$.ajax({
         type    :"POST",
         data    : formData,
         headers : { 'X-CSRF-Token': token },
-        url     :"{!! url('/addCaseNote')!!}",
+        url     :"{!! url('/addCaseForm')!!}",
         success : function(){
-          launchCaseModal(caseId);
-          $('#modalCase').modal('toggle');
+
         }
-       });*/
+       });
 
 		capture_map_center = map_center;
 		capture_map_zoom = map_zoom;

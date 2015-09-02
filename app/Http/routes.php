@@ -196,6 +196,8 @@ Route::get('cases-list/{id}', 'CasesController@index');
 Route::get('case/{id}', 'CasesController@edit');
 Route::post('escalateCase', 'CasesController@escalate');
 Route::get('acceptCase/{id}', 'CasesController@acceptCase');
+Route::post('addCaseForm', 'CasesController@captureCase');
+
 
 
 
@@ -393,6 +395,37 @@ else {
 return $listing;
 });
 
+Route::get('/api/dropdownCategory/{to}/{from}', function($to,$from){
 
-Route::post('addCaseForm', 'CasesController@captureCase');
+$name      = Input::get('option');
+
+if ($from == 'category')
+{
+  $object = Category::where('slug','=',$name)->first();
+}
+else{
+
+ $object = SubCategory::where('slug','=',$name)->first();
+
+}
+
+if ($from == 'category')
+{
+  $listing = DB::table('sub-categories')
+              ->where('category','=',$object->id)
+              ->lists('name', 'slug');
+
+}
+else {
+
+ $listing = DB::table('sub-sub-categories')
+              ->where('sub_category','=',$object->id)
+              ->lists('name', 'slug');
+}
+
+return $listing;
+});
+
+
+
 

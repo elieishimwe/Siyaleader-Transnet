@@ -92,7 +92,7 @@ class CasesController extends Controller
      */
     public function captureCase(Request $request)
     {
-        return view('cases.add');
+       dd($request);
     }
 
 

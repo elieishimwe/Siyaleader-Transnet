@@ -21,7 +21,7 @@
 <div class="block-area">
 
 
-<body bgcolor="#1c1c1c" onload="resetControllers();captureIframe=document.getElementById('newCaseCapture');iframeDoc=captureIframe.contentDocument || captureIframe.contentWindow.document;" TEXT="#C0C0C0" LINK="#ffffff" VLINK="#ffffff" ALINK="#ffffff" style="margin:0;overflow:hidden;margin-bottom:0;margin-left:0;margin-right:0;margin-top:0">
+<body bgcolor="#1c1c1c" onload="resetControllers()" TEXT="#C0C0C0" LINK="#ffffff" VLINK="#ffffff" ALINK="#ffffff" style="margin:0;overflow:hidden;margin-bottom:0;margin-left:0;margin-right:0;margin-top:0">
 
 <table cellpadding=0 cellspacing=0 style="width:100%;height:100%;border-collapse: collapse; border: 0px solid #1c1c1c">
 
@@ -1084,8 +1084,8 @@ function createZoneArray ()
                             <tr>
                                 <td valign=top align=center nowrap style="font: 11pt 'Arial';color:#FFFFFF">
                                     GPS COORDINATES<BR>
-                                    <!--   <input class="GPSField" type="text" id="GPS" name="GPS" title="GPS Coordinates" onfocus="this.blur()"> -->
-                                    {!! Form::text('GPS',NULL,['class' => 'GPSField','id' => 'GPS']) !!}
+
+                                    {!! Form::text('GPS',NULL,['class' => 'GPSField','id' => 'GPS','title' =>'GPS Coordinates','onfocus' => 'this.blur()']) !!}
                                 </td>
                             </tr>
 
@@ -1111,30 +1111,40 @@ function createZoneArray ()
                             </tr>
 
                             <tr style="font: 11pt 'Arial';color:#ffffff">
+                                <td valign=middle>
+                                    {!! Form::select('municipality',$selectMunicipalities,0,['class' => 'formField','id' => 'municipality']) !!}
+                                </td>
+                            </tr>
+
+                            <tr style="font: 11pt 'Arial';color:#ffffff">
 
                                 <td valign=middle>
-                                    <select class="formField" id="prob_category" name="prob_category">
-                                        <option id="#ffffff" value=""> Please select ...
-
-                                    </select>
+                                    {!! Form::select('caseCategory',$selectCategories,0,['class' => 'formField','id' => 'caseCategory']) !!}
                                 </td>
-                            </tr><tr style="font: 11pt 'Arial';color:#ffffff">
+                            </tr>
 
-                                <td valign=middle>
-                                    <select class="formField" id="prob_subcategory" name="prob_subcategory">
-                                    </select>
-                                </td>
-                            </tr><tr style="font: 11pt 'Arial';color:#ffffff">
+                             <tr style="font: 11pt 'Arial';color:#ffffff">
 
                                 <td valign=middle>
-                                    <select class="formField" id="prob_sub_sub_category" name="prob_sub_sub_category">
-                                    </select>
+                                    {!! Form::select('caseSubCategory',$selectSubCategories,0,['class' => 'formField','id' => 'caseSubCategory']) !!}
                                 </td>
-                            </tr><tr style="font: 11pt 'Arial';color:#ffffff">
+                            </tr>
+
+                            <tr style="font: 11pt 'Arial';color:#ffffff">
+
+                                <td valign=middle>
+                                    {!! Form::select('caseSubSubCategory',$selectSubSubCategories,0,['class' => 'formField','id' => 'caseSubSubCategory']) !!}
+                                </td>
+                            </tr>
+
+
+                            <tr style="font: 11pt 'Arial';color:#ffffff">
                                 <td valign=middle>
                                     <textarea name="prob_exp" class="formField" wrap="physical" style="resize:none;height:100px;text-align:left" placeholder="Case details ..." onchange="this.value=toSentenceCase(this.value)"></textarea>
                                 </td>
-                            </tr><tr style="font: 11pt 'Arial';color:#ffffff">
+                            </tr>
+
+                            <tr style="font: 11pt 'Arial';color:#ffffff">
                                 <td valign=middle>
                                     Critical Emergency: &nbsp;<a href="#" onclick="switchPriority();this.blur()"><span id="prioritySpan" style="font-size:22px">&#9744;</span></a>
                                     &nbsp;
@@ -1162,7 +1172,7 @@ function createZoneArray ()
             </td>
         </tr>
     </table>
-     </form>
+    {!! Form::close() !!}
 
 </div>
 
@@ -1260,20 +1270,40 @@ function createZoneArray ()
 <script>
    $(document).ready(function() {
 
-      $("#Category").change(function(){
+    $("#caseCategory").on("change",function(){
 
-        $.get("{{ url('/api/dropdown/districts/province')}}",
+
+        $.get("{{ url('/api/dropdownCategory/sub-category/category')}}",
         { option: $(this).val()},
         function(data) {
-        $('#District').empty();
-        $('#municipality').empty();
-        $('#District').removeAttr('disabled');
-        $('#District').append("<option value='0'>Select one</option>");
-        $('#Municipality').append("<option value='0'>Select one</option>");
+        $('#caseSubCategory').empty();
+        $('#caseSubSubCategory').empty();
+        /* $('#District').removeAttr('disabled');*/
+        $('#caseSubCategory').append("<option value='0'>Select Sub Category</option>");
+        $('#caseSubSubCategory').append("<option value='0'>Select Sub Sub Category</option>");
+
         $.each(data, function(key, element) {
-        $('#District').append("<option value="+ key +">" + element + "</option>");
+        $('#caseSubCategory').append("<option value="+ key +">" + element + "</option>");
         });
         });
+
+    });
+
+     $("#caseSubCategory").on("change",function(){
+
+        $.get("{{ url('/api/dropdownCategory/sub-sub-category/sub-category')}}",
+        { option: $(this).val()},
+        function(data) {
+        $('#caseSubSubCategory').empty();
+        /* $('#District').removeAttr('disabled');*/
+        $('#caseSubSubCategory').append("<option value='0'>Select Sub Category</option>");
+        $.each(data, function(key, element) {
+        $('#caseSubSubCategory').append("<option value="+ key +">" + element + "</option>");
+        });
+        });
+
+    });
+
 
    })
 </script>
