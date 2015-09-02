@@ -1158,7 +1158,7 @@ function createZoneArray ()
                 <input id="askConfirmButton" style="font-size:12pt;width:90px;height:25px;border:0;background:#ffffff;color:#ff0000" type="button" value="Cancel" onclick="askConfirm(this.id);this.blur()">
             </td>
             <td align=right>
-               <!--  <input id="submitButton" style="font-size:12pt;width:90px;height:25px;border:0;background:#ffffff" type="button" value="Submit" onclick="submitCaptureForm(map.getCenter(),map.getZoom());this.blur()"> -->
+
                   <input id="submitButton" style="font-size:12pt;width:90px;height:25px;border:0;background:#ffffff;color:#ff0000" type="button" onclick="submitCaptureForm(map.getCenter(),map.getZoom());this.blur()">
             </td>
         </tr>

@@ -129,6 +129,8 @@ class CasesController extends Controller
        $caseObj->status           = "Pending";
        $caseObj->save();
 
+       return redirect()->back();
+
     }
 
 
