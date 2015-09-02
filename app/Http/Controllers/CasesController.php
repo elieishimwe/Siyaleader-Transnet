@@ -13,6 +13,7 @@ use App\addressbook;
 use App\CaseEscalator;
 use App\CaseActivity;
 use App\Department;
+use App\Municipality;
 use App\Category;
 use App\SubCategory;
 use App\SubSubCategory;
@@ -111,8 +112,7 @@ class CasesController extends Controller
 
 
        $caseDescription   = $request['caseDescription'];
-       dd($request['caseMunicipality']);
-       $departmentObj     = Department::where('slug','=',$request['caseMunicipality'])->first();
+       $departmentObj     = Municipality::where('slug','=',$request['caseMunicipality'])->first();
        $categoryObj       = Category::where('slug','=',$request['caseCategory'])->first();
        $subCategoryObj    = SubCategory::where('slug','=',$request['caseSubCategory'])->first();
        $subSubCategoryObj = SubSubCategory::where('slug','=',$request['caseSubSubCategory'])->first();
