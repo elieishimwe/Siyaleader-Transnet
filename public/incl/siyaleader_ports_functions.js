@@ -637,7 +637,7 @@ function submitCaptureForm (map_center, map_zoom)
 
 		capture_map_center = map_center;
 		capture_map_zoom = map_zoom;
-		if(document.getElementById('caseReporter').value == "" || document.getElementById('caseMunicipality').value == "" || iframeDoc.getElementById('ccg_mob').value == "" || iframeDoc.getElementById('prob_mun').value == "" || iframeDoc.getElementById('prob_category').value == "" || iframeDoc.getElementById('prob_subcategory').value == "")
+		if(document.getElementById('caseReporter').value == "" || document.getElementById('caseMunicipality').value == "" || document.getElementById('caseCategory').value == "" || document.getElementById('caseSubCategory').value == "" || document.getElementById('caseSubSubCategory').value == "" || document.getElementById('caseDescription').value == "")
 			{
 				alert("WARNING ...\n\nPlease complete all the fields in the form ...");
 				return;

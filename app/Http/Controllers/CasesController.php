@@ -109,10 +109,8 @@ class CasesController extends Controller
         $user        = (sizeof($userObj) <= 0)? $userAddressbookObj->id:$userObj->id;
         $addressbook = (sizeof($userObj) <= 0)? 1:0;
 
-
-
        $caseDescription   = $request['caseDescription'];
-       $departmentObj     = Municipality::where('slug','=',$request['caseMunicipality'])->first();
+       $precinctObj       = Municipality::where('slug','=',$request['caseMunicipality'])->first();
        $categoryObj       = Category::where('slug','=',$request['caseCategory'])->first();
        $subCategoryObj    = SubCategory::where('slug','=',$request['caseSubCategory'])->first();
        $subSubCategoryObj = SubSubCategory::where('slug','=',$request['caseSubSubCategory'])->first();
@@ -122,13 +120,13 @@ class CasesController extends Controller
        $caseObj->description      = $caseDescription;
        $caseObj->user             = $user;
        $caseObj->addressbook      = $addressbook;
-       $caseObj->department       = $departmentObj->id;
+       $caseObj->precinct         = $precinctObj->id;
        $caseObj->category         = $categoryObj->id;
        $caseObj->sub_category     = $subCategoryObj->id;
        $caseObj->sub_sub_category = $subSubCategoryObj->id;
        $caseObj->gps_lat          = $gps[0];
        $caseObj->gps_lng          = $gps[1];
-       $caseObj->status           = "pending";
+       $caseObj->status           = "Pending";
        $caseObj->save();
 
     }
