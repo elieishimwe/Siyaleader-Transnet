@@ -654,6 +654,7 @@ function submitCaptureForm (map_center, map_zoom)
 		document.getElementById('caseCaptureSuccess').className = "animated zoomInLeft";
 		document.getElementById('ruSure').style.display = "none";
 		document.getElementById('ruSure').className="animated bounceIn";
+		location.reload();
 
 	}
 
