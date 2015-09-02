@@ -17,6 +17,7 @@ class AddColumnsCaseTable extends Migration
 
             $table->integer('addressbook');
             $table->integer('precinct');
+            $table->integer('reporter');
 
 
         });
@@ -34,6 +35,7 @@ class AddColumnsCaseTable extends Migration
 
             $table->dropColumn('addressbook');
             $table->dropColumn('precinct');
+            $table->dropColumn('reporter');
 
 
         });
