@@ -183,6 +183,7 @@ use App\Category;
 use App\Ship;
 use App\Position;
 use App\Department;
+use App\Municipality;
 
 
 $cases = CaseReport::whereNotNull('gps_lat')
@@ -200,8 +201,8 @@ foreach ($cases as $case) {
     $GPS          = $case->gps_lat .','. $case->gps_lng;
     $Province     = 'KZN';
     $Port         = 'Maydon Warf';
-    $department   = Department::find($case->department);
-    $Precinct     = $department->name;
+    $precinctObj  = Municipality::find($case->precinct);
+    $Precinct     = $precinctObj->name;
     $Submitted    = $case->created_at;
     $Status       = $case->status;
     $catObjCat    = Category::find($case->category);
