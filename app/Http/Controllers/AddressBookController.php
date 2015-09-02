@@ -18,7 +18,7 @@ class AddressBookController extends Controller
      */
     public function index($id)
     {
-        $addresses = addressbook::select(array('id','FirstName','Surname','cellphone','email'))->where('user','=',$id);
+        $addresses = addressbook::select(array('id','FirstName','Surname','cellphone','email','created_at'))->where('user','=',$id);
         return \Datatables::of($addresses)
                             ->addColumn('actions',''
                                        )

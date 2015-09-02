@@ -12,6 +12,7 @@ use App\User;
 use App\addressbook;
 use App\CaseEscalator;
 use App\CaseActivity;
+use App\Department;
 
 class CasesController extends Controller
 {
@@ -92,7 +93,17 @@ class CasesController extends Controller
      */
     public function captureCase(Request $request)
     {
-       dd($request);
+
+       $reporter = $request['caseReporter'];
+
+       $caseDescription   = $request['caseDescription'];
+       $departmentObj = Department::where('slug','=',$request['municipality'])->first();
+
+
+
+
+       $caseObj = new CaseReport();
+
     }
 
 

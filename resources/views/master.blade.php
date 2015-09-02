@@ -54,6 +54,16 @@
             <div class="media-body">
                 <div class="media" id="top-menu">
 
+                    <div class="pull-left tm-icon">
+
+                        <a data-drawer="notifications" class="drawer-toggle" href="" data-toggle="modal" onClick="launchAddress();" data-target=".modalAddress">
+                            <i class="fa fa-book fa-3x"></i>
+                            <i class="n-count animated">9</i>
+
+                        </a>
+                    </div>
+
+
                     <div id="time" class="pull-right">
                         <span id="hours"></span>
                         :
@@ -138,7 +148,7 @@
 
             <!-- Content -->
             <section id="content" class="container">
-
+                @include('addressbook.list')
                 @yield('content')
 
 

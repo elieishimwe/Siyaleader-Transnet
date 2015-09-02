@@ -606,19 +606,30 @@ function switchNewCaseMarker (source,element)
 function submitCaptureForm (map_center, map_zoom)
 {
 
-		var GPS   = $("#captureForm #GPS").val();
-		var token = $('input[name="_token"]').val();
+		var GPS                = $("#captureForm #GPS").val();
+		var caseReporter       = $("#captureForm #caseReporter").val();
+		var municipality       = $("#captureForm #municipality").val();
+		var caseCategory       = $("#captureForm #caseCategory").val();
+		var caseSubCategory    = $("#captureForm #caseSubCategory").val();
+		var caseSubSubCategory = $("#captureForm #caseSubSubCategory").val();
+		var caseDescription    = $("#captureForm #caseDescription").val();
+		var token              = $('input[name="_token"]').val();
 
-
-
-        var caseNote = $("#modalAddCaseNotesModal #caseNote").val();*/
-        var formData = { GPS:GPS};
+        var formData = {
+							caseDescription:caseDescription,
+							GPS:GPS,
+							municipality:caseSubSubCategory,
+							caseCategory:caseCategory,
+							caseReporter:caseReporter,
+							caseSubCategory:caseSubCategory,
+							caseSubSubCategory:caseSubSubCategory
+        			   };
 
 		$.ajax({
         type    :"POST",
         data    : formData,
         headers : { 'X-CSRF-Token': token },
-        url     :"{!! url('/addCaseForm')!!}",
+        url     :"addCaseForm",
         success : function(){
 
         }

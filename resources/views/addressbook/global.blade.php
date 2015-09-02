@@ -1,9 +1,9 @@
 <!-- Modal Default -->
-<div class="modal fade modalAddressBook" id="modalAddressBook" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade modalAddress" id="modalAddress" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" id ="closeListContactModal" aria-hidden="true">&times;</button>
+                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title" id='depTitle'>Address Book</h4>
             </div>
             <div class="row">
@@ -11,7 +11,7 @@
 
               </div>
                <div class="col-md-6">
-                 <a class="btn btn-sm" data-toggle="modal" onClick="launchAddContactModal();" data-target=".modalAddContactModal">Add Contact</a>
+                 <a class="btn btn-sm" data-toggle="modal" onClick="launchAddContact();" data-target=".modalAddContact">Add Contact</a>
               </div>
             </div>
             <div class="modal-body">
@@ -25,7 +25,7 @@
                     </div>
                     @endif
                     <div class="table-responsive overflow">
-                        <table class="table tile table-striped" id="addressBookTable">
+                        <table class="table tile table-striped" id="addressBook">
                             <thead>
                               <tr>
                                     <th>Created At</th>

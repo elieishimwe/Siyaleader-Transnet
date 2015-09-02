@@ -7,6 +7,8 @@
 @include('cases.refer')
 @include('addressbook.list')
 @include('addressbook.add')
+@include('addressbook.global')
+@include('addressbook.globalAdd')
 @include('casenotes.add')
 
 
@@ -1089,26 +1091,16 @@ function createZoneArray ()
                                 </td>
                             </tr>
 
+
+
                             <tr style="font: 11pt 'Arial';color:#ffffff">
 
                                     <td valign=middle>
-                                        <input type=text class="formField" id="ccg_nam" name="ccg_nam" style="text-align:center" placeholder="Reporter's First Name" onchange="this.value = this.value.toTitleCase()">
+                                        {!! Form::text('caseReporter',NULL,['class' => 'formField','id' => 'caseReporter']) !!}
+
                                     </td>
                             </tr>
 
-                            <tr style="font: 11pt 'Arial';color:#ffffff">
-
-                                <td valign=middle>
-                                    <input type=text class="formField" id="ccg_sur" name="ccg_sur" style="text-align:center" placeholder="Reporter's Surname" onchange="this.value = this.value.toTitleCase()">
-                                </td>
-                            </tr>
-
-                            <tr style="font: 11pt 'Arial';color:#ffffff">
-
-                                <td valign=middle>
-                                    <input type=text class="formField" id="ccg_mob" name="ccg_mob" style="text-align:center" placeholder="Reporter's Contact Number" onkeyup="checkInput(this)">
-                                </td>
-                            </tr>
 
                             <tr style="font: 11pt 'Arial';color:#ffffff">
                                 <td valign=middle>
@@ -1140,7 +1132,7 @@ function createZoneArray ()
 
                             <tr style="font: 11pt 'Arial';color:#ffffff">
                                 <td valign=middle>
-                                    <textarea name="prob_exp" class="formField" wrap="physical" style="resize:none;height:100px;text-align:left" placeholder="Case details ..." onchange="this.value=toSentenceCase(this.value)"></textarea>
+                                    <textarea name="caseDescription"  id="caseDescription" class="formField" wrap="physical" style="resize:none;height:100px;text-align:left" placeholder="Case details ..." onchange="this.value=toSentenceCase(this.value)"></textarea>
                                 </td>
                             </tr>
 
@@ -1270,8 +1262,10 @@ function createZoneArray ()
 <script>
    $(document).ready(function() {
 
-    $("#caseCategory").on("change",function(){
 
+    $("#caseReporter").tokenInput("getContacts",{tokenLimit:1});
+
+    $("#caseCategory").on("change",function(){
 
         $.get("{{ url('/api/dropdownCategory/sub-category/category')}}",
         { option: $(this).val()},

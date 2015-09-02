@@ -45,7 +45,7 @@
 
 
 
-     var oTableCaseNotes,oTableCaseResponders,oTableAddressBook,oTableCaseActivities;
+     var oTableCaseNotes,oTableCaseResponders,oTableAddressBook,oTableCaseActivities,oTableAddress;
 
 
 
@@ -93,6 +93,34 @@
         success : function(){
            launchAddressBookModal();
            $('#modalAddressBook').modal('toggle');
+        }
+
+    })
+
+     });
+
+
+    $("#submitAddContact").on("click",function(){
+
+
+        var FirstName = $("#modalAddContact #FirstName").val();
+        var Surname   = $("#modalAddContact #Surname").val();
+        var email     = $("#modalAddContact #email").val();
+        var cellphone = $("#modalAddContact #cellphone").val();
+        var uid       = $("#modalAddContact #uid").val();
+        var token     = $('input[name="_token"]').val();
+        var formData  = { FirstName:FirstName,Surname:Surname,email:email,cellphone:cellphone,uid:uid};
+
+        $('#modalAddContact').modal('toggle');
+
+        $.ajax({
+        type    :"POST",
+        data    : formData,
+        headers : { 'X-CSRF-Token': token },
+        url     :"{!! url('/addContact')!!}",
+        success : function(){
+           launchAddress();
+           $('#modalAddress').modal('toggle');
         }
 
     })
@@ -153,6 +181,13 @@
 
         $('#modalAddContactModal').modal('toggle');
         $('#modalAddressBook').modal('show');
+
+      });
+
+      $("#closeAddContact").on("click",function(){
+
+        $('#modalAddContact').modal('toggle');
+        $('#modalAddress').modal('show');
 
       });
 
@@ -360,6 +395,7 @@
             "order" :[[0,"desc"]],
             "ajax": "{!! url('/addressbook-list/" + user +"')!!}",
              "columns": [
+            {data: 'created_at', name: 'created_at'},
             {data: 'FirstName', name: 'FirstName'},
             {data: 'Surname', name: 'Surname'},
             {data: 'cellphone', name: 'cellphone'},
@@ -377,10 +413,53 @@
 
     }
 
+     function launchAddress()
+    {
+
+
+       if ( $.fn.dataTable.isDataTable( '#addressBook' ) ) {
+                    oTableAddress.destroy();
+        }
+
+
+      var user = {!! Auth::user()->id !!};
+      oTableAddress     = $('#addressBook').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "dom": 'T<"clear">lfrtip',
+            "order" :[[0,"desc"]],
+            "ajax": "{!! url('/addressbook-list/" + user +"')!!}",
+             "columns": [
+            {data: 'created_at', name: 'created_at'},
+            {data: 'FirstName', name: 'FirstName'},
+            {data: 'Surname', name: 'Surname'},
+            {data: 'cellphone', name: 'cellphone'},
+            {data: 'email', name: 'email'},
+            {data: 'actions',  name: 'actions'},
+           ],
+
+        "aoColumnDefs": [
+            { "bSearchable": false, "aTargets": [ 1] },
+            { "bSortable": false, "aTargets": [ 1 ] }
+        ]
+
+     });
+
+
+    }
+
+
     function launchAddContactModal()
     {
 
       $('#modalAddressBook').modal('toggle');
+
+    }
+
+    function launchAddContact()
+    {
+
+      $('#modalAddress').modal('toggle');
 
     }
 
