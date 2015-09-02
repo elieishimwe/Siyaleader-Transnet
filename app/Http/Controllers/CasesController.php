@@ -109,11 +109,23 @@ class CasesController extends Controller
         $user        = (sizeof($userObj) <= 0)? $userAddressbookObj->id:$userObj->id;
         $addressbook = (sizeof($userObj) <= 0)? 1:0;
 
+
        $caseDescription   = $request['caseDescription'];
        $precinctObj       = Municipality::where('slug','=',$request['caseMunicipality'])->first();
        $categoryObj       = Category::where('slug','=',$request['caseCategory'])->first();
        $subCategoryObj    = SubCategory::where('slug','=',$request['caseSubCategory'])->first();
-       $subSubCategoryObj = SubSubCategory::where('slug','=',$request['caseSubSubCategory'])->first();
+
+        if($request['caseSubSubCategory'])
+        {
+            $subSubCategoryObj = SubSubCategory::where('slug','=',$request['caseSubSubCategory'])->first();
+            $subSubCategory    = $subSubCategoryObj->id;
+        }
+        else{
+
+            $subSubCategory    = 0;
+        }
+
+
        $gps               = explode(",",$request['GPS']);
 
        $caseObj                   = new CaseReport();
@@ -124,11 +136,111 @@ class CasesController extends Controller
        $caseObj->precinct         = $precinctObj->id;
        $caseObj->category         = $categoryObj->id;
        $caseObj->sub_category     = $subCategoryObj->id;
-       $caseObj->sub_sub_category = $subSubCategoryObj->id;
+       $caseObj->sub_sub_category = $subSubCategory;
        $caseObj->gps_lat          = $gps[0];
        $caseObj->gps_lng          = $gps[1];
        $caseObj->status           = "Pending";
        $caseObj->save();
+
+  /*  \Mail::send('emails.sms',$data, function($message) use ($user)
+    {
+        $message->from('info@siyaleader.co.za', 'Siyaleader Port');
+        $message->to($user->Email)->subject("Siyaleader Port ");
+
+    });
+  */
+
+
+
+if ($subSubCategory > 0)
+{
+     $subSubCatResponders = CaseResponder::where('sub_sub_category','=',$subSubCategory)->first();
+
+    \Log::info("subSubCatResponders".sizeof($subSubCatResponders));
+
+if (sizeof($subSubCatResponders) > 0)
+{
+
+    if($subSubCatResponders->firstResponder)
+    {
+        $firstResponderUser = UserNew::find($subSubCatResponders->firstResponder);
+        $caseOwner         = new CaseOwner();
+        $caseOwner->user   = $subSubCatResponders->firstResponder ;
+        $caseOwner->caseId = $case->id;
+        $caseOwner->type   = 1;
+        $caseOwner->active = 1;
+        $caseOwner->save();
+
+         $data = array(
+                'name'   =>$firstResponderUser->name,
+                'caseID' =>$case->id,
+                'caseDesc' => $case->description,
+                'caseReporter' => $case->description,
+            );
+
+        \Log::info("First Responder".$firstResponderUser);
+
+      /*  \Mail::send('emails.responder',$data, function($message) use ($firstResponderUser)
+        {
+            $message->from('info@siyaleader.co.za', 'Siyaleader Port');
+            $message->to($firstResponderUser->username)->subject("Siyaleader Port ");
+
+       });*/
+    }
+
+    if($subSubCatResponders->secondResponder)
+    {
+        $secondResponderUser = UserNew::find($subSubCatResponders->secondResponder);
+        $caseOwner         = new CaseOwner();
+        $caseOwner->user   = $subSubCatResponders->secondResponder;
+        $caseOwner->caseId = $case->id;
+        $caseOwner->type   = 2;
+        $caseOwner->active = 1;
+        $caseOwner->save();
+
+        $data = array(
+                'name'   =>$secondResponderUser->name,
+                'caseID' =>$case->id,
+                'caseDesc' => $case->description,
+                'caseReporter' => $case->description,
+        );
+        \Log::info("second Responder".$secondResponderUser);
+/*
+        \Mail::send('emails.responder',$data, function($message) use ($secondResponderUser)
+        {
+            $message->from('info@siyaleader.co.za', 'Siyaleader Port');
+            $message->to($secondResponderUser->username)->subject("Siyaleader Port ");
+
+       });*/
+    }
+
+    if($subSubCatResponders->thirdResponder)
+    {
+        $thirdResponderUser = UserNew::find($subSubCatResponders->thirdResponder);
+        $caseOwner         = new CaseOwner();
+        $caseOwner->user   = $subSubCatResponders->thirdResponder;
+        $caseOwner->caseId = $case->id;
+        $caseOwner->type   = 3;
+        $caseOwner->active = 1;
+        $caseOwner->save();
+
+        $data = array(
+                'name'   =>$thirdResponderUser->name,
+                'caseID' =>$case->id,
+                'caseDesc' => $case->description,
+                'caseReporter' => $case->description,
+        );
+        \Log::info("third Responder".$thirdResponderUser);
+
+      /*  \Mail::send('emails.responder',$data, function($message) use ($thirdResponderUser)
+        {
+            $message->from('info@siyaleader.co.za', 'Siyaleader Port');
+            $message->to($thirdResponderUser->username)->subject("Siyaleader Port ");
+
+       });*/
+    }
+   }
+  }
 
        return redirect()->back();
 
