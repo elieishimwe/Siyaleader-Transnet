@@ -51,7 +51,7 @@ class CasesController extends Controller
         $cases = \DB::table('cases')
                 ->leftJoin('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
                 ->whereIn('cases.id',$caseIds)
-                ->select(\DB::raw("cases.id, cases.created_at,cases.description,cases.status,caseOwners.accept,caseOwners.type"));
+                ->select(\DB::raw("DISTINCT(`cases`.`id`), cases.created_at,cases.description,cases.status,caseOwners.accept,caseOwners.type"));
         return \Datatables::of($cases)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>
 
@@ -151,9 +151,9 @@ class CasesController extends Controller
        $caseObj->save();
 
        $data = array(
-                'name'   =>$userName,
-                'caseID' =>$caseObj->id,
-                'caseDesc' => $caseObj->description
+                'name'      =>$userName,
+                'caseID'    =>$caseObj->id,
+                'caseDesc'  =>$caseObj->description
         );
 
 
