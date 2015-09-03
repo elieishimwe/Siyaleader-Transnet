@@ -154,8 +154,8 @@ class CasesController extends Controller
             $message->from('info@siyaleader.co.za', 'Siyaleader Port');
             $message->to($user->Email)->subject("Siyaleader Port ");
 
-        });*/
-
+        });
+*/
 
 
 
