@@ -121,9 +121,10 @@ class CasesController extends Controller
        $categoryObj       = Category::where('slug','=',$request['caseCategory'])->first();
        $subCategoryObj    = SubCategory::where('slug','=',$request['caseSubCategory'])->first();
 
+       \Log::info("size".$request['caseSubSubCategory']);
        \Log::info("size".sizeof($request['caseSubSubCategory']));
 
-        if($request['caseSubSubCategory'])
+        if($request['caseSubSubCategory'] > 0)
         {
             $subSubCategoryObj = SubSubCategory::where('slug','=',$request['caseSubSubCategory'])->first();
             $subSubCategory    = $subSubCategoryObj->id;
