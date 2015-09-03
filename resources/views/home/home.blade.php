@@ -59,6 +59,7 @@
 @include('addressbook.list')
 @include('addressbook.add')
 @include('casenotes.add')
+@include('messages.add')
 
 
 @endsection
