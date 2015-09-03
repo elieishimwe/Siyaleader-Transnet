@@ -141,12 +141,19 @@ class CasesController extends Controller
        $caseObj->status           = "Pending";
        $caseObj->save();
 
+      /* $data = array(
+                'name'   =>$user->Fname,
+                'caseID' =>$case->id,
+                'caseDesc' => $case->description
+        );
+
+
         \Mail::send('emails.sms',$data, function($message) use ($user)
         {
             $message->from('info@siyaleader.co.za', 'Siyaleader Port');
             $message->to($user->Email)->subject("Siyaleader Port ");
 
-        });
+        });*/
 
 
 
@@ -164,16 +171,16 @@ class CasesController extends Controller
                             $firstResponderUser = UserNew::find($subSubCatResponders->firstResponder);
                             $caseOwner         = new CaseOwner();
                             $caseOwner->user   = $subSubCatResponders->firstResponder ;
-                            $caseOwner->caseId = $case->id;
+                            $caseOwner->caseId = $caseObj->id;
                             $caseOwner->type   = 1;
                             $caseOwner->active = 1;
                             $caseOwner->save();
 
                              $data = array(
                                     'name'   =>$firstResponderUser->name,
-                                    'caseID' =>$case->id,
-                                    'caseDesc' => $case->description,
-                                    'caseReporter' => $case->description,
+                                    'caseID' =>$caseObj->id,
+                                    'caseDesc' => $caseObj->description,
+                                    'caseReporter' => $caseObj->description,
                                 );
 
                             \Log::info("First Responder".$firstResponderUser);
@@ -190,16 +197,16 @@ class CasesController extends Controller
                             $secondResponderUser = UserNew::find($subSubCatResponders->secondResponder);
                             $caseOwner         = new CaseOwner();
                             $caseOwner->user   = $subSubCatResponders->secondResponder;
-                            $caseOwner->caseId = $case->id;
+                            $caseOwner->caseId = $caseObj->id;
                             $caseOwner->type   = 2;
                             $caseOwner->active = 1;
                             $caseOwner->save();
 
                             $data = array(
                                     'name'   =>$secondResponderUser->name,
-                                    'caseID' =>$case->id,
-                                    'caseDesc' => $case->description,
-                                    'caseReporter' => $case->description,
+                                    'caseID' =>$caseObj->id,
+                                    'caseDesc' => $caseObj->description,
+                                    'caseReporter' => $caseObj->description,
                             );
                             \Log::info("second Responder".$secondResponderUser);
 
@@ -216,16 +223,16 @@ class CasesController extends Controller
                             $thirdResponderUser = UserNew::find($subSubCatResponders->thirdResponder);
                             $caseOwner         = new CaseOwner();
                             $caseOwner->user   = $subSubCatResponders->thirdResponder;
-                            $caseOwner->caseId = $case->id;
+                            $caseOwner->caseId = $caseObj->id;
                             $caseOwner->type   = 3;
                             $caseOwner->active = 1;
                             $caseOwner->save();
 
                             $data = array(
                                     'name'   =>$thirdResponderUser->name,
-                                    'caseID' =>$case->id,
-                                    'caseDesc' => $case->description,
-                                    'caseReporter' => $case->description,
+                                    'caseID' =>$caseObj->id,
+                                    'caseDesc' => $caseObj->description,
+                                    'caseReporter' => $caseObj->description,
                             );
                             \Log::info("third Responder".$thirdResponderUser);
 
