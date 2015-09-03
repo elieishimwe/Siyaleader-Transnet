@@ -111,6 +111,8 @@ class CasesController extends Controller
 
         $user        = (sizeof($userObj) <= 0)? $userAddressbookObj->id:$userObj->id;
         $addressbook = (sizeof($userObj) <= 0)? 1:0;
+        $userName    = (sizeof($userObj) <= 0)? $userAddressbookObj->FirstName:$userObj->name;
+        $userSurname = (sizeof($userObj) <= 0)? $userAddressbookObj->Surname:$userObj->surname;
 
 
        $caseDescription   = $request['caseDescription'];
@@ -144,10 +146,10 @@ class CasesController extends Controller
        $caseObj->status           = "Pending";
        $caseObj->save();
 
-      /* $data = array(
-                'name'   =>$user->Fname,
-                'caseID' =>$case->id,
-                'caseDesc' => $case->description
+       $data = array(
+                'name'   =>$userName,
+                'caseID' =>$caseObj->id,
+                'caseDesc' => $caseObj->description
         );
 
 
@@ -157,7 +159,7 @@ class CasesController extends Controller
             $message->to($user->Email)->subject("Siyaleader Port ");
 
         });
-*/
+
 
 
 
