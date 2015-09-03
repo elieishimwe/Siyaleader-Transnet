@@ -1131,7 +1131,7 @@ function createZoneArray ()
 
                             <tr style="font: 11pt 'Arial';color:#ffffff">
                                 <td valign=middle>
-                                    <textarea name="caseDescription"  id="caseDescription" class="formField" wrap="physical" style="resize:none;height:100px;text-align:left" placeholder="Case details ..." onchange="this.value=toSentenceCase(this.value)"></textarea>
+                                    <textarea name="caseDescription"  id="caseDescription" class="formField" wrap="soft" style="resize:none;height:100px;text-align:left" placeholder="Case details ..." onchange="this.value=toSentenceCase(this.value)"></textarea>
                                 </td>
                             </tr>
 
