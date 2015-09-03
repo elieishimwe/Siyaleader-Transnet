@@ -51,7 +51,7 @@ class CasesController extends Controller
          \Log::info($caseIds);
 
         $cases = \DB::table('cases')
-                ->leftJoin('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
+                ->join('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
                 ->whereIn('cases.id',$caseIds)
                 ->select(\DB::raw("cases.id, cases.created_at,cases.description,cases.status,caseOwners.accept,caseOwners.type"));
         return \Datatables::of($cases)
