@@ -23,7 +23,7 @@ class RespondersController extends Controller
                         ->where('type','>',0)
                         ->join('users','users.id','=','caseOwners.user')
                         ->join('positions','users.position','=','positions.id')
-                        ->select(array('users.name','users.surname','users.cellphone','positions.name as position','caseOwners.type','caseOwners.accept'));
+                        ->select(array('users.id','users.name','users.surname','users.cellphone','positions.name as position','caseOwners.type','caseOwners.accept'));
 
         return \Datatables::of($caseResponders)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchMessageModal({{$id}});" data-target=".modalSendMessage">Send Message</a>'
