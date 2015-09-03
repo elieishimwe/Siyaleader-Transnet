@@ -171,7 +171,7 @@ class CasesController extends Controller
 
                         if($subSubCatResponders->firstResponder)
                         {
-                            $firstResponderUser = UserNew::find($subSubCatResponders->firstResponder);
+                            $firstResponderUser = User::find($subSubCatResponders->firstResponder);
                             $caseOwner         = new CaseOwner();
                             $caseOwner->user   = $subSubCatResponders->firstResponder ;
                             $caseOwner->caseId = $caseObj->id;
@@ -197,7 +197,7 @@ class CasesController extends Controller
 
                         if($subSubCatResponders->secondResponder)
                         {
-                            $secondResponderUser = UserNew::find($subSubCatResponders->secondResponder);
+                            $secondResponderUser = User::find($subSubCatResponders->secondResponder);
                             $caseOwner         = new CaseOwner();
                             $caseOwner->user   = $subSubCatResponders->secondResponder;
                             $caseOwner->caseId = $caseObj->id;
@@ -223,7 +223,7 @@ class CasesController extends Controller
 
                         if($subSubCatResponders->thirdResponder)
                         {
-                            $thirdResponderUser = UserNew::find($subSubCatResponders->thirdResponder);
+                            $thirdResponderUser = User::find($subSubCatResponders->thirdResponder);
                             $caseOwner         = new CaseOwner();
                             $caseOwner->user   = $subSubCatResponders->thirdResponder;
                             $caseOwner->caseId = $caseObj->id;
