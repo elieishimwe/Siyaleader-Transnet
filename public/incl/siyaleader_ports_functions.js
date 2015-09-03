@@ -627,17 +627,8 @@ function submitCaptureForm (map_center, map_zoom)
 							caseSubSubCategory:caseSubSubCategory
         			   };
 
-		$.ajax({
-        type    :"POST",
-        data    : formData,
-        headers : { 'X-CSRF-Token': token },
-        url     :"addCaseForm",
-        success : function(){
 
-        }
-       });
-
-		capture_map_center = map_center;
+        capture_map_center = map_center;
 		capture_map_zoom   = map_zoom;
 		if(document.getElementById('caseReporter').value == "" || document.getElementById('caseMunicipality').value == "" || document.getElementById('caseCategory').value == "" || document.getElementById('caseSubCategory').value == "" || document.getElementById('caseDescription').value == "")
 			{
@@ -654,7 +645,20 @@ function submitCaptureForm (map_center, map_zoom)
 		document.getElementById('caseCaptureSuccess').className = "animated zoomInLeft";
 		document.getElementById('ruSure').style.display = "none";
 		document.getElementById('ruSure').className="animated bounceIn";
-		location.reload();
+
+		$.ajax({
+        type    :"POST",
+        data    : formData,
+        headers : { 'X-CSRF-Token': token },
+        url     :"addCaseForm",
+        success : function(){
+
+        		location.reload();
+        }
+       });
+
+
+
 
 	}
 
