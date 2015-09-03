@@ -137,7 +137,7 @@ class CasesController extends Controller
 
        $gps                       = explode(",",$request['GPS']);
        $caseObj                   = new CaseReport();
-       $caseObj->description      = mysqli_real_escape_string($caseDescription);
+       $caseObj->description      = htmlentities($caseDescription);
        $caseObj->user             = \Auth::user()->id;
        $caseObj->reporter         = $user;
        $caseObj->addressbook      = $addressbook;
