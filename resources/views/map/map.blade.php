@@ -208,7 +208,7 @@ foreach ($cases as $case) {
     {
         $userObj          = user::find($case->reporter);
         $ReporterName     = $userObj->name .' '.$userObj->surname;
-        $RepPos           = Position::find($user->position);
+        $RepPos           = Position::find($userObj->position);
         $ReporterPosition = $RepPos->name;
         $ReporterMobile   = $userObj->email;
 
