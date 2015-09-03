@@ -184,6 +184,7 @@ use App\Ship;
 use App\Position;
 use App\Department;
 use App\Municipality;
+use App\addressbook;
 
 
 $cases = CaseReport::whereNotNull('gps_lat')
@@ -193,6 +194,25 @@ $cases = CaseReport::whereNotNull('gps_lat')
 
 
 foreach ($cases as $case) {
+
+    $addressbook = (sizeof($userObj) <= 0)? 1:0;
+
+    if ($case->addressbook == 1)
+    {
+        $userObj          = addressbook::find($case->reporter);
+        $ReporterName     = $userObj->FirstName .' '.$userObj->Surname;
+        $ReporterPosition = "";
+        $ReporterMobile   = $userObj->cellphone;
+    }
+    else
+    {
+        $userObj          = user::find($case->reporter);
+        $ReporterName     = $userObj->name .' '.$userObj->surname;
+        $RepPos           = Position::find($user->position);
+        $ReporterPosition = $RepPos->name;
+        $ReporterMobile   = $userObj->email;
+
+    }
 
 
     $user         = User::find($case->user);
@@ -209,9 +229,9 @@ foreach ($cases as $case) {
     $Category     = $catObjCat->name;
     $PhotoURL     = "http://www.siyaleader.co.za:8080/ecin2edin/console/app_backend/port_backend/public/".$case->img_url;
     $LastActivity = $case->updated_at;
-    $Reporter     = $user->name .' '.$user->surname;
-    $Position     = $position->name;
-    $Mobile       = $user->email;
+    $Reporter     = $ReporterName;
+    $Position     = $ReporterPosition;
+    $Mobile       = $ReporterMobile;
     $Priority     = $case->priority;
     $Description  = $case->description;
 
