@@ -57,17 +57,16 @@
                    <div class="pull-left tm-icon">
                         <a data-drawer="messages" class="drawer-toggle">
                             <i class="fa fa-envelope-o fa-2x"></i>
-                            <i class="n-count animated">5</i>
+                            <i class="n-count animated">0</i>
 
                         </a>
                     </div>
 
                     <div class="pull-left tm-icon">
 
-                        <a data-toggle="modal" onClick="launchAddress();" data-target=".modalAddress">
+                        <a data-toggle="modal" onClick="launchAddress();" >
                             <i class="fa fa-book fa-2x"></i>
                             <i class="n-count animated">{{ count($addressBookNumber,0) }}</i>
-
                         </a>
                     </div>
 
@@ -154,10 +153,10 @@
 
             <!-- Content -->
             <section id="content" class="container">
-
+                @include('messages.list')
                 @yield('content')
-
                 @include('addressbook.list')
+
             </section>
 
         </section>
