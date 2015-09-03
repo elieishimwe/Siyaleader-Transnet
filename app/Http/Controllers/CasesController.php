@@ -87,7 +87,7 @@ class CasesController extends Controller
 
             \Session::flash('successReferral', 'Thanks for accepting Case Number:'.$id);
 
-           return redirect()->back();
+            return view('home.home');
         }
 
 
