@@ -630,7 +630,7 @@ function createZoneArray ()
             <td>&nbsp; Resolved &nbsp;</td>
         </tr>
     </table>
-    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closex.png" BORDER=0 title="Close this Status Selector"></a>
+    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closeX.png" BORDER=0 title="Close this Status Selector"></a>
 </td>
 </table>
 </div>
@@ -662,7 +662,7 @@ function createZoneArray ()
             <td>&nbsp; Resolved &nbsp;</td>
         </tr>
     </table>
-    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closex.png" BORDER=0 title="Close this Status Selector"></a>
+    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closeX.png" BORDER=0 title="Close this Status Selector"></a>
 </td>
 </table>
 </div>
@@ -694,7 +694,7 @@ function createZoneArray ()
             <td>&nbsp; Resolved &nbsp;</td>
         </tr>
     </table>
-    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closex.png" BORDER=0 title="Close this Status Selector"></a>
+    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closeX.png" BORDER=0 title="Close this Status Selector"></a>
 </td>
 </table>
 </div>
@@ -726,7 +726,7 @@ function createZoneArray ()
             <td>&nbsp; Resolved &nbsp;</td>
         </tr>
     </table>
-    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closex.png" BORDER=0 title="Close this Status Selector"></a>
+    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closeX.png" BORDER=0 title="Close this Status Selector"></a>
 </td>
 </table>
 </div>
@@ -758,7 +758,7 @@ function createZoneArray ()
             <td>&nbsp; Resolved &nbsp;</td>
         </tr>
     </table>
-    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closex.png" BORDER=0 title="Close this Status Selector"></a>
+    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closeX.png" BORDER=0 title="Close this Status Selector"></a>
 </td>
 </table>
 </div>
@@ -790,7 +790,7 @@ function createZoneArray ()
             <td>&nbsp; Resolved &nbsp;</td>
         </tr>
     </table>
-    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closex.png" BORDER=0 title="Close this Status Selector"></a>
+    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closeX.png" BORDER=0 title="Close this Status Selector"></a>
 </td>
 </table>
 </div>
@@ -822,7 +822,7 @@ function createZoneArray ()
             <td>&nbsp; Resolved &nbsp;</td>
         </tr>
     </table>
-    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closex.png" BORDER=0 title="Close this Status Selector"></a>
+    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closeX.png" BORDER=0 title="Close this Status Selector"></a>
 </td>
 </table>
 </div>
@@ -854,7 +854,7 @@ function createZoneArray ()
             <td>&nbsp; Resolved &nbsp;</td>
         </tr>
     </table>
-    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closex.png" BORDER=0 title="Close this Status Selector"></a>
+    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closeX.png" BORDER=0 title="Close this Status Selector"></a>
 </td>
 </table>
 </div>
@@ -886,7 +886,7 @@ function createZoneArray ()
             <td>&nbsp; Resolved &nbsp;</td>
         </tr>
     </table>
-    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closex.png" BORDER=0 title="Close this Status Selector"></a>
+    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closeX.png" BORDER=0 title="Close this Status Selector"></a>
 </td>
 </table>
 </div>
@@ -918,7 +918,7 @@ function createZoneArray ()
             <td>&nbsp; Resolved &nbsp;</td>
         </tr>
     </table>
-    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closex.png" BORDER=0 title="Close this Status Selector"></a>
+    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closeX.png" BORDER=0 title="Close this Status Selector"></a>
 </td>
 </table>
 </div>
@@ -950,7 +950,7 @@ function createZoneArray ()
             <td>&nbsp; Resolved &nbsp;</td>
         </tr>
     </table>
-    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closex.png" BORDER=0 title="Close this Status Selector"></a>
+    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closeX.png" BORDER=0 title="Close this Status Selector"></a>
 </td>
 </table>
 </div>
@@ -982,7 +982,7 @@ function createZoneArray ()
             <td>&nbsp; Resolved &nbsp;</td>
         </tr>
     </table>
-    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closex.png" BORDER=0 title="Close this Status Selector"></a>
+    <a href="#" onclick="hideStatusSelects()"><IMG SRC="images/closeX.png" BORDER=0 title="Close this Status Selector"></a>
 </td>
 </table>
 </div>
@@ -1008,7 +1008,7 @@ function createZoneArray ()
                     <td valign=top>&nbsp;Logout&nbsp;</td>
                 </tr>
             </table>
-            <a href="#" onclick="switchMainMenu()"><IMG SRC="images/closex.png" BORDER=0 title="Close Main Menu"></a>
+            <a href="#" onclick="switchMainMenu()"><IMG SRC="{{ asset('/images/closeX.png') }}" BORDER=0 title="Close Main Menu"></a>
         </td>
     </table>
 </div>
@@ -1049,7 +1049,7 @@ function createZoneArray ()
                     <td valign=top><HR size=1 color="#ffffff" style="margin: 0px 0 0px 0"></td>
                 </tr>
             </table>
-            <a href="#" onclick="switchMenu()"><IMG SRC="images/closex.png" BORDER=0 title="Close Main Menu"></a>
+            <a href="#" onclick="switchMenu()"><IMG SRC="{{ asset('/images/closeX.png') }}" BORDER=0 title="Close Main Menu"></a>
         </td>
     </table>
 </div>
@@ -1088,7 +1088,7 @@ function createZoneArray ()
                     <td valign=top>&nbsp;All Locations&nbsp;</td>
                 </tr>
             </table>
-            <a href="#" onclick="switchLayerMenu()"><IMG SRC="images/closex.png" BORDER=0 title="Close Location Layers Menu"></a>
+            <a href="#" onclick="switchLayerMenu()"><IMG SRC="{{ asset('/images/closeX.png') }}" BORDER=0 title="Close Location Layers Menu"></a>
         </td>
     </table>
 </div>
@@ -1225,7 +1225,7 @@ function createZoneArray ()
             <td id="photoToolbarTD">
                 <table id="photoToolbar" border=0 cellpadding=6 cellspacing=0 style="width:100%;background:#1c1c1c;margin-top:0px;margin-bottom:0px;border-collapse:collapse;border-style:solid;border-top:0px solid #1C1C1C;border-left:0px solid #1C1C1C;border-bottom:0px solid #1C1C1C;border-right:0px solid #1C1C1C">
                     <td width=20>&nbsp;</td>
-                    <td align=center valign=middle><a href="#" onclick="hidePhoto()"><IMG SRC="images/closeXB.png" BORDER=0></a></td>
+                    <td align=center valign=middle><a href="#" onclick="hidePhoto()"><IMG SRC="{{ asset('/images/closeX.png') }}" BORDER=0></a></td>
                     <td width=20>&nbsp;</td>
 
                 <!--    <td width=20><a href="#" onclick="rotatePhoto()"><img src="images/rotate_photo.png" title="Rotate Photo 90&#176;"></a></td>  -->
@@ -1250,7 +1250,7 @@ function createZoneArray ()
             &nbsp;
         </td>
         <td align=center valign=middle height=30>
-            <a href="#" onclick="hideWeather()"><IMG SRC="images/closeXB.png" BORDER=0 title="Click to hide weather"></a>
+            <a href="#" onclick="hideWeather()"><IMG SRC="{{ asset('/images/closeX.png') }}" BORDER=0 title="Click to hide weather"></a>
         </td>
         <td width=300 valign=middle align=right>
             <input id="weatherSlide" type="range" min="0.2" max="1" step="0.1" value="0.8" title="Slide to set weather opacity" onchange="document.all.weatherFrame.style.opacity=this.value">
