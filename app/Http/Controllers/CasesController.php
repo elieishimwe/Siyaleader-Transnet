@@ -113,6 +113,7 @@ class CasesController extends Controller
         $addressbook = (sizeof($userObj) <= 0)? 1:0;
         $userName    = (sizeof($userObj) <= 0)? $userAddressbookObj->FirstName:$userObj->name;
         $userSurname = (sizeof($userObj) <= 0)? $userAddressbookObj->Surname:$userObj->surname;
+        $userEmail   = (sizeof($userObj) <= 0)? $userAddressbookObj->email:$userObj->username;
 
 
        $caseDescription   = $request['caseDescription'];
@@ -153,10 +154,10 @@ class CasesController extends Controller
         );
 
 
-        \Mail::send('emails.sms',$data, function($message) use ($user)
+        \Mail::send('emails.sms',$data, function($message) use ($userEmail)
         {
             $message->from('info@siyaleader.co.za', 'Siyaleader Port');
-            $message->to($user->Email)->subject("Siyaleader Port ");
+            $message->to($userEmail)->subject("Siyaleader Port ");
 
         });
 
