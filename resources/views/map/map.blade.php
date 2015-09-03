@@ -195,7 +195,7 @@ $cases = CaseReport::whereNotNull('gps_lat')
 
 foreach ($cases as $case) {
 
-    $addressbook = (sizeof($userObj) <= 0)? 1:0;
+
 
     if ($case->addressbook == 1)
     {
