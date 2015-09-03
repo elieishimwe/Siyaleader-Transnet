@@ -34,7 +34,7 @@ class CasesController extends Controller
 
         $otherCases = CaseReport::where('user','=',\Auth::user()->id)
                              ->get();
-         $caseIds = array();
+        $caseIds   = array();
 
 
 

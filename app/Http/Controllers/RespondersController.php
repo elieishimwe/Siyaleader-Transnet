@@ -26,7 +26,7 @@ class RespondersController extends Controller
                         ->select(array('users.name','users.surname','users.cellphone','positions.name as position','caseOwners.type','caseOwners.accept'));
 
         return \Datatables::of($caseResponders)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="#" data-target=".modalCase">View</a>'
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchMessageModal({{$id}});" data-target=".modalSendMessage">Send Message</a>'
                                        )
                             ->make(true);
     }

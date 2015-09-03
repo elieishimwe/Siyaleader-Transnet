@@ -355,7 +355,9 @@
                         return "no";
                     }
 
-                  },"name" : 'accept'}
+                  },"name" : 'accept'},
+
+                  {data: 'actions', name: 'actions'},
 
 
                  ],

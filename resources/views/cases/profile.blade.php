@@ -177,6 +177,7 @@
                                                   <th>Position</th>
                                                   <th>Cellphone</th>
                                                   <th>Accepted</th>
+                                                  <th>Actions</th>
                                             </tr>
                                           </thead>
                                       </table>
