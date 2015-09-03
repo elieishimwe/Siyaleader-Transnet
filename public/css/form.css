@@ -84,7 +84,11 @@ select:not([multiple]){
 }
 
 select option {
-   /*color: #000;*/
+  /* color: #000;*/
+}
+
+.capture {
+   color:white !important;
 }
 
 .ie9 select option:first-child, select[multiple] option {
