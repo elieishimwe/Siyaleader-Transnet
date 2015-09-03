@@ -57,7 +57,7 @@
                    <div class="pull-left tm-icon">
                         <a data-drawer="messages" class="drawer-toggle">
                             <i class="fa fa-envelope-o fa-2x"></i>
-                            <i class="n-count animated">0</i>
+                            <i class="n-count animated">1</i>
 
                         </a>
                     </div>
