@@ -759,8 +759,8 @@ function ruSure (val)
 					document.getElementById('submitButton').disabled = false;
 
 					markerNew.setMap(null);
-					iframeDoc.getElementById('captureForm').reset();
-					iframeDoc.getElementById('captureContainer').style="display:block;overflow-y:auto;overflow-x:hidden;border-collapse:collapse;border:1px solid #FFFFFF";
+					document.getElementById('captureForm').reset();
+					document.getElementById('captureContainer').style="display:block;overflow-y:auto;overflow-x:hidden;border-collapse:collapse;border:1px solid #FFFFFF";
 					document.getElementById('caseCapture').style.right = "0";
 					document.getElementById("caseCapture").className = "animated hinge";
 					newCaseMarkerStatus = 0;
