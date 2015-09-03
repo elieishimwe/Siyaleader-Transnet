@@ -1014,7 +1014,7 @@ function createZoneArray ()
 </div>
 
 
-<div id="portsMenu" style="opacity:0.9;box-shadow:6px 6px 6px #000000;z-index:150;position:fixed;top:31px;left:0px;display:none">
+<div id="portsMenu" style="opacity:0.9;box-shadow:6px 6px 6px #000000;z-index:200;position:fixed;top:130px;left:250px;display:none">
     <table bgcolor="#1c1c1c" cellpadding=0 style="font: 11pt 'Arial';color: #FFFFFF;border-collapse: collapse; border: 6px solid #1c1c1c;">
         <td align=center>
             <table border=0 cellpadding=0 cellspacing=0 style="border-collapse: collapse; border: 1px solid #FFFFFF">
