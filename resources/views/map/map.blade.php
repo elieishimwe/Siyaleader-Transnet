@@ -1107,7 +1107,7 @@ function createZoneArray ()
                                 <td valign=top align=center nowrap style="font: 11pt 'Arial';color:#FFFFFF">
                                     GPS COORDINATES<BR>
 
-                                    {!! Form::text('GPS',NULL,['class' => 'GPSField','id' => 'GPS','title' =>'GPS Coordinates','onfocus' => 'this.blur()']) !!}
+                                    {!! Form::text('GPS',NULL,['class' => 'form-control','id' => 'GPS','title' =>'GPS Coordinates','onfocus' => 'this.blur()']) !!}
                                 </td>
                             </tr>
 
@@ -1115,8 +1115,9 @@ function createZoneArray ()
 
                             <tr style="font: 11pt 'Arial';color:#ffffff">
 
-                                    <td valign=middle>
-                                        {!! Form::text('caseReporter',NULL,['class' => 'formField','id' => 'caseReporter']) !!}
+                                    <td valign=middle align=center nowrap>
+                                        REPORTER <BR>
+                                        {!! Form::text('caseReporter',NULL,['class' => 'form-control','id' => 'caseReporter']) !!}
 
                                     </td>
                             </tr>
@@ -1124,35 +1125,35 @@ function createZoneArray ()
 
                             <tr style="font: 11pt 'Arial';color:#ffffff">
                                 <td valign=middle>
-                                    {!! Form::select('caseMunicipality',$selectMunicipalities,0,['class' => 'formField','id' => 'caseMunicipality']) !!}
+                                    {!! Form::select('caseMunicipality',$selectMunicipalities,0,['class' => 'form-control','id' => 'caseMunicipality']) !!}
                                 </td>
                             </tr>
 
                             <tr style="font: 11pt 'Arial';color:#ffffff">
 
                                 <td valign=middle>
-                                    {!! Form::select('caseCategory',$selectCategories,0,['class' => 'formField','id' => 'caseCategory']) !!}
+                                    {!! Form::select('caseCategory',$selectCategories,0,['class' => 'form-control','id' => 'caseCategory']) !!}
                                 </td>
                             </tr>
 
                              <tr style="font: 11pt 'Arial';color:#ffffff">
 
                                 <td valign=middle>
-                                    {!! Form::select('caseSubCategory',$selectSubCategories,0,['class' => 'formField','id' => 'caseSubCategory']) !!}
+                                    {!! Form::select('caseSubCategory',$selectSubCategories,0,['class' => 'form-control','id' => 'caseSubCategory']) !!}
                                 </td>
                             </tr>
 
                             <tr style="font: 11pt 'Arial';color:#ffffff">
 
                                 <td valign=middle>
-                                    {!! Form::select('caseSubSubCategory',$selectSubSubCategories,0,['class' => 'formField','id' => 'caseSubSubCategory']) !!}
+                                    {!! Form::select('caseSubSubCategory',$selectSubSubCategories,0,['class' => 'form-control','id' => 'caseSubSubCategory']) !!}
                                 </td>
                             </tr>
 
 
                             <tr style="font: 11pt 'Arial';color:#ffffff">
                                 <td valign=middle>
-                                    <textarea name="caseDescription"  id="caseDescription" class="formField" wrap="soft" style="resize:none;height:100px;text-align:left" placeholder="Case details ..." onchange="this.value=toSentenceCase(this.value)"></textarea>
+                                    <textarea name="caseDescription"  id="caseDescription" class="form-control" wrap="soft" style="resize:none;height:100px;text-align:left" placeholder="Case details ..." onchange="this.value=toSentenceCase(this.value)"></textarea>
                                 </td>
                             </tr>
 
