@@ -58,8 +58,7 @@
 
                         <a data-drawer="notifications" class="drawer-toggle" href="" data-toggle="modal" onClick="launchAddress();" data-target=".modalAddress">
                             <i class="fa fa-book fa-3x"></i>
-                            <i class="n-count animated">9</i>
-
+                            <i class="n-count animated">{{ count($addressBookNumber,0) }}</i>
                         </a>
                     </div>
 

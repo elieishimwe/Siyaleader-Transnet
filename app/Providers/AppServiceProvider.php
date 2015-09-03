@@ -13,6 +13,7 @@ use App\SubSubCategory;
 use App\CaseReport;
 use App\User;
 use App\Relationship;
+use App\addressbook;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -145,6 +146,23 @@ class AppServiceProvider extends ServiceProvider
              \View::share('selectRelationships',$selectRelationships);
 
         }
+
+        View()->composer('master',function($view){
+
+        $view->with('addressBookNumber',addressbook::all());
+
+          if(\Auth::check())
+          {
+
+
+            $number = addressbook::where('user','=',\Auth::user()->id)->get();
+
+            $view->with('addressBookNumber',$number);
+
+
+          }
+
+        });
 
 
     }
