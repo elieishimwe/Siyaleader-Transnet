@@ -220,7 +220,7 @@ foreach ($cases as $case) {
     $ID           = $case->id;
     $GPS          = $case->gps_lat .','. $case->gps_lng;
     $Province     = 'KZN';
-    $Port         = 'Maydon Warf';
+    $Port         = Municipality::find($case->precinct);
     $precinctObj  = Municipality::find($case->precinct);
     $Precinct     = $precinctObj->name;
     $Submitted    = $case->created_at;

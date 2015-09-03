@@ -54,11 +54,20 @@
             <div class="media-body">
                 <div class="media" id="top-menu">
 
+                   <div class="pull-left tm-icon">
+                        <a data-drawer="messages" class="drawer-toggle">
+                            <i class="fa fa-envelope-o fa-2x"></i>
+                            <i class="n-count animated">5</i>
+
+                        </a>
+                    </div>
+
                     <div class="pull-left tm-icon">
 
-                        <a data-drawer="notifications" class="drawer-toggle" href="" data-toggle="modal" onClick="launchAddress();" data-target=".modalAddress">
-                            <i class="fa fa-book fa-3x"></i>
+                        <a data-toggle="modal" onClick="launchAddress();" data-target=".modalAddress">
+                            <i class="fa fa-book fa-2x"></i>
                             <i class="n-count animated">{{ count($addressBookNumber,0) }}</i>
+
                         </a>
                     </div>
 
@@ -71,9 +80,7 @@
                         <span id="sec"></span>
                     </div>
 
-                    <div class="media-body">
-                        <input type="text" class="main-search">
-                    </div>
+
                 </div>
             </div>
         </header>
@@ -147,10 +154,10 @@
 
             <!-- Content -->
             <section id="content" class="container">
-                @include('addressbook.list')
+
                 @yield('content')
 
-
+                @include('addressbook.list')
             </section>
 
         </section>
