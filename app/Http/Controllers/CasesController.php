@@ -486,7 +486,19 @@ class CasesController extends Controller
             ->join('sub-categories', 'cases.sub_category', '=', 'sub-categories.id')
             ->join('users', 'cases.user', '=', 'users.id')
             ->where('cases.id','=',$id)
-            ->select(\DB::raw("cases.id, cases.description,cases.status,cases.img_url,CONCAT(users.`name`, ' ', users.`surname`) as reporter,users.email as reporterCell,municipalities.name as department,categories.name as category,`sub-categories`.name as sub_category,`cases`.sub_sub_category as sub_sub_category "))
+            ->select(\DB::raw( "
+                                    cases.id,
+                                    cases.description,
+                                    cases.status,cases.img_url,
+                                    CONCAT(users.`name`, ' ', users.`surname`) as capturer,
+                                     IF(`cases`.`addressbook` = 1,(SELECT CONCAT(`FirstName`, ' ', `Surname`) FROM `addressbook` WHERE `addressbook`.`id`= `cases`.`reporter`), (SELECT CONCAT(users.`name`, ' ', users.`surname`) FROM `users` WHERE `users`.`id`= `cases`.`reporter`)) as reporter,
+                                    users.email as reporterCell,
+                                    municipalities.name as department,
+                                    categories.name as category,
+                                    `sub-categories`.name as sub_category,
+                                    `cases`.sub_sub_category as sub_sub_category "
+                            )
+                    )
             ->get();
 
 
@@ -501,7 +513,19 @@ class CasesController extends Controller
             ->join('sub-sub-categories', 'cases.sub_sub_category', '=', 'sub-sub-categories.id')
             ->join('users', 'cases.user', '=', 'users.id')
             ->where('cases.id','=',$id)
-            ->select(\DB::raw("cases.id, cases.description,cases.status,cases.img_url,CONCAT(users.`name`, ' ', users.`surname`) as reporter,users.email as reporterCell,municipalities.name as department,categories.name as category,`sub-categories`.name as sub_category,`sub-sub-categories`.name as sub_sub_category "))
+            ->select(\DB::raw("
+                                cases.id,
+                                cases.description,
+                                cases.status,
+                                cases.img_url,CONCAT(users.`name`, ' ', users.`surname`) as capturer,
+                                 IF(`cases`.`addressbook` = 1,(SELECT CONCAT(`FirstName`, ' ', `Surname`) FROM `addressbook` WHERE `addressbook`.`id`= `cases`.`reporter`), (SELECT CONCAT(users.`name`, ' ', users.`surname`) FROM `users` WHERE `users`.`id`= `cases`.`reporter`)) as reporter,
+                                users.email as reporterCell,
+                                municipalities.name as department,
+                                categories.name as category,
+                                `sub-categories`.name as sub_category,
+                                `sub-sub-categories`.name as sub_sub_category
+
+                            "))
             ->get();
 
 
