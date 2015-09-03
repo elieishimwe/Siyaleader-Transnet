@@ -30,7 +30,11 @@
                  "columns": [
                 {data: 'id', name: 'id'},
                 {data: 'created_at', name: 'created_at'},
-                {data: 'description', name: 'description'},
+                {data: function(d){
+
+                    return d.description;
+
+                },"name" : 'description',"width":"35%" },
                 {data: 'status', name: 'status'},
                 {data: 'actions',  name: 'actions'},
                ],
