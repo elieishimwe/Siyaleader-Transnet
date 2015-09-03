@@ -459,6 +459,13 @@
 
     }
 
+    function launchMessageModal()
+    {
+
+      $('#modalCase').modal('toggle');
+
+    }
+
     function launchAddContact()
     {
 
