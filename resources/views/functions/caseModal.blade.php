@@ -417,6 +417,7 @@
     {
 
 
+
        if ( $.fn.dataTable.isDataTable( '#addressBook' ) ) {
                     oTableAddress.destroy();
         }
