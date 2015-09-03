@@ -17,6 +17,7 @@ use App\Municipality;
 use App\Category;
 use App\SubCategory;
 use App\SubSubCategory;
+use App\CaseResponder;
 
 class CasesController extends Controller
 {
