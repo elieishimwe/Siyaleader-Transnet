@@ -102,6 +102,8 @@ class CasesController extends Controller
         $reporter    = $request['caseReporter'];
         $userObj     = User::where('username','=',$reporter)->first();
 
+        \Log::info(sizeof($userObj));
+
         if(sizeof($userObj) <= 0 )
         {
             $userAddressbookObj = addressbook::where('email','=',$reporter)->first();
