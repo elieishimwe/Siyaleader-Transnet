@@ -53,7 +53,8 @@ class CasesController extends Controller
         $cases = \DB::table('cases')
                 ->join('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
                 ->whereIn('cases.id',$caseIds)
-                ->select(\DB::raw("cases.id, cases.created_at,cases.description,cases.status,caseOwners.accept,caseOwners.type"));
+                ->select(\DB::raw("cases.id as id, cases.created_at,cases.description,cases.status,caseOwners.accept,caseOwners.type"))
+                ->groupBy('id');
         return \Datatables::of($cases)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>
 
