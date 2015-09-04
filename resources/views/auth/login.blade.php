@@ -73,7 +73,7 @@
             </form>
 
             <!-- Forgot Password -->
-            <form class="box animated tile" id="box-reset" method="POST" action="/password/email">
+            <form class="box animated tile" id="box-reset" method="POST" action="{{ url('/password/email') }}">
                 {!! csrf_field() !!}
                 <h2 class="m-t-0 m-b-15">Reset Password</h2>
                 <p></p>
