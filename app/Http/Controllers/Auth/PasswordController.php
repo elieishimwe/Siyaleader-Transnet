@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use App\User;
 use Illuminate\Support\Facades\Password;
+use Illuminate\Mail\Message;
 
 class PasswordController extends Controller
 {
@@ -51,9 +52,5 @@ class PasswordController extends Controller
                 return redirect()->back()->withErrors(['username' => trans($response)]);
         }
     }
-
-
-
-
 
 }
