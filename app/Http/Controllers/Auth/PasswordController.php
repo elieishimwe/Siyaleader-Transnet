@@ -65,4 +65,31 @@ class PasswordController extends Controller
         return view('auth.reset')->with('token', $token);
     }
 
+      public function postReset(Request $request)
+    {
+        $this->validate($request, [
+            'token' => 'required',
+            'username' => 'required|email',
+            'password' => 'required|confirmed',
+        ]);
+
+        $credentials = $request->only(
+            'username', 'password', 'password_confirmation', 'token'
+        );
+
+        $response = Password::reset($credentials, function ($user, $password) {
+            $this->resetPassword($user, $password);
+        });
+
+        switch ($response) {
+            case Password::PASSWORD_RESET:
+                return redirect($this->redirectPath());
+
+            default:
+                return redirect()->back()
+                            ->withInput($request->only('email'))
+                            ->withErrors(['username' => trans($response)]);
+        }
+    }
+
 }
