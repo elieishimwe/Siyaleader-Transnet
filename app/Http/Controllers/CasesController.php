@@ -87,7 +87,7 @@ class CasesController extends Controller
             $caseOwnerObj->accept = 1;
             $caseOwnerObj->save();
 
-            \Session::flash('success', 'Thanks for accepting Case Number:'.$id);
+            \Session::flash('success', 'Thank you for accepting Case Number:'.$id);
 
             return view('home.home',compact('numberCases'));
         }
