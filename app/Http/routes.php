@@ -337,20 +337,6 @@ Route::post('addPosition', 'PositionsController@store');
 
 
 
-/*
-|--------------------------------------------------------------------------
-| PASSWORD ACTIVITIES ROUTING
-|--------------------------------------------------------------------------
-|
-*/
-  Route::get('resend_password/{id}', 'UserController@resendPassword');
-
-/*
-|--------------------------------------------------------------------------
-| END PASSWORD ACTIVITIES ROUTING
-|--------------------------------------------------------------------------
-|
-*/
 
 
 /*
@@ -374,6 +360,8 @@ Route::post('addPosition', 'PositionsController@store');
 |--------------------------------------------------------------------------
 |
 */
+
+  Route::get('resend_password/{id}', 'UserController@resendPassword');
   // Password reset link request routes...
   Route::get('password/email', 'Auth\PasswordController@getEmail');
   Route::post('password/email', 'Auth\PasswordController@postEmail');
