@@ -39,19 +39,16 @@
 
             <div class="clearfix"></div>
 
-            <!-- resources/views/auth/reset.blade.php -->
 
-            <form method="POST" class="box animated tile" action="{{ url('/password/reset') }}">
-                {!! csrf_field() !!}
+            <!-- Login -->
+            <form class="box tile animated active" id="box-login" role="form" method="POST" action="{{ url('/password/reset') }}">
+                <h2 class="m-t-0 m-b-15">Password Reset</h2>
+                 {!! csrf_field() !!}
                 <input type="hidden" name="token" value="{{ $token }}">
-                <h2 class="m-t-0 m-b-15">Password Resett</h2>
-
-                    <input type="email" class = "login-control m-b-10" name="email" value="{{ old('email') }}" placeholder="Email Address">
-                    <input type="password" name="password" class = "login-control m-b-10" placeholder="Password">
-                    <input type="password" name="password_confirmation" class = "login-control m-b-10" placeholder="Password Confirmation">
-                    <button type="submit" class="btn btn-sm m-r-5">
-                        Reset Password
-                    </button>
+                <input type="text" class="login-control m-b-10" placeholder="email" name="email">
+                <input type="password" class="login-control m-b-10" placeholder="Password" name="password">
+                <input type="password" class="login-control m-b-20" placeholder="Password Confirmation" name="password_confirmation">
+                <button class="btn btn-sm m-r-5" type="submit">Reset Password</button>
             </form>
 
         </section>
