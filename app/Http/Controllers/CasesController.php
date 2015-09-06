@@ -34,7 +34,7 @@ class CasesController extends Controller
 
         $otherCases = CaseReport::where('user','=',\Auth::user()->id)
                              ->get();
-        $caseIds   = array();
+        $caseIds    = array();
 
 
 
@@ -48,11 +48,10 @@ class CasesController extends Controller
 
         $caseIds = array_unique($caseIds);
 
-         \Log::info($caseIds);
-
         $cases = \DB::table('cases')
                 ->join('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
                 ->whereIn('cases.id',$caseIds)
+                ->where('caseOwners.user','=',\Auth::user()->id)
                 ->select(\DB::raw("cases.id, cases.created_at,cases.description,cases.status,caseOwners.accept,caseOwners.type"))
                 ->groupBy('cases.id');
         return \Datatables::of($cases)
