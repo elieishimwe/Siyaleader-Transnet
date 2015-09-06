@@ -29,6 +29,10 @@
         </ul>
     </div>
     @endif
+
+    @if (Session::has('status'))
+        <div class="alert alert-info">{{ Session::get('status') }}</div>
+    @endif
         <section id="login">
             <header>
                 <h1></h1>
@@ -52,8 +56,8 @@
                 <button class="btn btn-sm m-r-5" type="submit">Sign In</button>
 
                 <small>
-                    <!-- a class="box-switcher" data-switch="box-register" href="">Don't have an Account?</a> or -->
-                    <a class="box-switcher" data-switch="box-reset" href="">Forgot Password?</a>
+
+                    <a class="box-switcher" data-switch="box-reset" href="">Forgot/Change Password?</a>
                 </small>
             </form>
 
