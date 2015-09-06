@@ -79,6 +79,8 @@ class CasesController extends Controller
                                    ->where("type",'<>',0)
                                    ->first();
 
+         $numberCases   = CaseReport::where('user','=',\Auth::user()->id)->get();
+
 
         if (sizeof($caseOwnerObj) > 0)
         {
@@ -87,7 +89,7 @@ class CasesController extends Controller
 
             \Session::flash('successReferral', 'Thanks for accepting Case Number:'.$id);
 
-            return view('home.home');
+            return view('home.home',compact('numberCases'));
         }
 
 
