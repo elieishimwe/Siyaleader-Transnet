@@ -86,7 +86,7 @@ class CasesController extends Controller
             $caseOwnerObj->accept = 1;
             $caseOwnerObj->save();
             $caseActivity              = New CaseActivity();
-            $caseActivity->caseId      = $request['caseID'];
+            $caseActivity->caseId      = $id;
             $caseActivity->user        = \Auth::user()->id;
             $caseActivity->addressbook = 0;
             $caseActivity->note        = "Case Accepted by ".\Auth::user()->name.' '.\Auth::user()->surname;
