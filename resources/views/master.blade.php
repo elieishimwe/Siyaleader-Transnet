@@ -19,6 +19,7 @@
         <link href="{{ asset('/css/calendar.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/token-input.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/icons.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/lightbox.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/media-player.css') }}" rel="stylesheet">
         <link href="{{ asset('/incl/animate.css') }}" rel="stylesheet">
