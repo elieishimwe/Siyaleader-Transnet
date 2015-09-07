@@ -82,7 +82,7 @@ class CaseNotesController extends Controller
 
             \Mail::send('casenotes.email',$data, function($message) use ($user)
             {
-                $message->from('info@siyaleader.co.za', 'Siyaleader Port');
+                $message->from('info@siyaleader.co.za', 'Siyaleader');
                 $message->to($user->username)->subject("Siyaleader Notification - New Case Note: ");
 
             });
