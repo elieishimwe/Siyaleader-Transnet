@@ -56,7 +56,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td width="100%" style="font-family: helvetica, Arial, sans-serif; font-size: 18px; letter-spacing: 0px; text-align: center; color:#2E363F;">
-                                                        A Case your involved in has been accepted by {{ acceptedBy }}
+                                                        A Case your involved in has been accepted by {{ $acceptedBy }}
                                                     </td>
                                                 </tr>
                                                 <tr><!-- spacing bottom -->
