@@ -108,7 +108,7 @@
                                       <div class="col-md-6">
 
                                         <a href="#" data-rel="gallery" id="CaseImageA" class="pirobox_gall img-popup" title="">
-                                          <img src="#" data-img="#" alt="" class="superbox-img" id="CaseImage" width="150">
+                                          <img src="#" data-img="#" alt="" class="superbox-img" id="CaseImage" width="220">
                                         </a>
 
                                       </div>
