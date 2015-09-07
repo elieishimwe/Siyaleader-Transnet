@@ -204,7 +204,7 @@ class CasesController extends Controller
         \Mail::send('emails.sms',$data, function($message) use ($userEmail)
         {
             $message->from('info@siyaleader.co.za', 'Siyaleader');
-            $message->to($userEmail)->subject("Siyaleader Port ");
+            $message->to($userEmail)->subject("Siyaleader Notification - New Case Reported:");
 
         });
 
@@ -240,7 +240,7 @@ class CasesController extends Controller
                             \Mail::send('emails.responder',$data, function($message) use ($firstResponderUser)
                             {
                                 $message->from('info@siyaleader.co.za', 'Siyaleader');
-                                $message->to($firstResponderUser->username)->subject("Siyaleader Port ");
+                                $message->to($firstResponderUser->username)->subject("Siyaleader Notification - New Case Reported:");
 
                            });
                         }
@@ -266,7 +266,7 @@ class CasesController extends Controller
                             \Mail::send('emails.responder',$data, function($message) use ($secondResponderUser)
                             {
                                 $message->from('info@siyaleader.co.za', 'Siyaleader');
-                                $message->to($secondResponderUser->username)->subject("Siyaleader Port ");
+                                $message->to($secondResponderUser->username)->subject("Siyaleader Notification - New Case Reported:");
 
                            });
                         }
@@ -292,7 +292,7 @@ class CasesController extends Controller
                             \Mail::send('emails.responder',$data, function($message) use ($thirdResponderUser)
                             {
                                 $message->from('info@siyaleader.co.za', 'Siyaleader');
-                                $message->to($thirdResponderUser->username)->subject("Siyaleader Port ");
+                                $message->to($thirdResponderUser->username)->subject("Siyaleader Notification - New Case Reported:");
 
                            });
                         }
@@ -332,7 +332,7 @@ class CasesController extends Controller
                             \Mail::send('emails.responder',$data, function($message) use ($firstResponderUser)
                             {
                                 $message->from('info@siyaleader.co.za', 'Siyaleader');
-                                $message->to($firstResponderUser->username)->subject("Siyaleader Port ");
+                                $message->to($firstResponderUser->username)->subject("Siyaleader Notification - New Case Reported:");
 
                            });
                         }
@@ -358,7 +358,7 @@ class CasesController extends Controller
                             \Mail::send('emails.responder',$data, function($message) use ($secondResponderUser)
                             {
                                 $message->from('info@siyaleader.co.za', 'Siyaleader');
-                                $message->to($secondResponderUser->username)->subject("Siyaleader Port ");
+                                $message->to($secondResponderUser->username)->subject("Siyaleader Notification - New Case Reported:");
 
                            });
                         }
@@ -384,7 +384,7 @@ class CasesController extends Controller
                             \Mail::send('emails.responder',$data, function($message) use ($thirdResponderUser)
                             {
                                 $message->from('info@siyaleader.co.za', 'Siyaleader');
-                                $message->to($thirdResponderUser->username)->subject("Siyaleader Port ");
+                                $message->to($thirdResponderUser->username)->subject("Siyaleader Notification - New Case Reported:");
 
                            });
                         }

@@ -77,11 +77,9 @@
 
   @endif
 
-
-    document.addEventListener('DOMContentLoaded', function(){
-         $('#modalCase').modal('hide');
-         Code.photoSwipe('a', '#photo-gallery-alt');
-    }, false);
+document.addEventListener('DOMContentLoaded', function(){
+     Code.photoSwipe('a', '#photo-gallery-alt');
+}, false);
 
 
 </script>
