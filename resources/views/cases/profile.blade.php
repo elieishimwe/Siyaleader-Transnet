@@ -45,8 +45,8 @@
                                   <div class="form-group">
                                       {!! Form::label('Description', 'Description', array('class' => 'col-md-2 control-label')) !!}
                                       <div class="col-md-6">
-                                        {!! Form::text('description',NULL,['class' => 'form-control input-sm','id' => 'description']) !!}
 
+                                        {!! Form::textarea('description', null, ['class' => 'form-control input-sm','id' => 'description','size' => '30x5']) !!}
                                       </div>
                                   </div>
 
