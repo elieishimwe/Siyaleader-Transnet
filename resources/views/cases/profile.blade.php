@@ -106,7 +106,7 @@
                                   <div class="">
                                       {!! Form::label('Image', 'Image', array('class' => 'col-md-2 control-label')) !!}
                                       <div class="col-md-6">
-                                        <a href="../ecin2edin/console/app_backend/port_backend/public/uploads/" data-rel="gallery" id="CaseImageA" class="pirobox_gall img-popup" title="">
+                                        <a href="../ecin2edin/console/app_backend/port_backend/public/uploads/case_14.jpg" data-rel="gallery" id="CaseImageA" class="pirobox_gall img-popup" title="">
                                           <img src="#" alt="" class="superbox-img" id="CaseImage" width="220">
                                         </a>
                                       </div>
