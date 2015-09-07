@@ -226,6 +226,12 @@
                $("#modalCase #department").val(data[0].department);
                var ImgUrl = "http://www.siyaleader.co.za:8080/ecin2edin/console/app_backend/port_backend/public/"+data[0].img_url;
                $("#modalCase #CaseImageA").attr("href",ImgUrl);
+
+               $('a[class*="pirobox"]').piroBox_ext({
+                    piro_speed : 900,
+                    bg_alpha : 0.1,
+                    piro_scroll : true //pirobox always positioned at the center of the page
+               });
                $("#modalCase #CaseImage").attr("src",ImgUrl);
                $("#modalCase #reporter").val(data[0].reporter);
                $("#modalCase #reporterCell").val(data[0].reporterCell);
