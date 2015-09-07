@@ -21,6 +21,7 @@
         <link href="{{ asset('/css/icons.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/generics.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/token-input.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/photo-gallery-alt.css') }}" rel="stylesheet">
 
         <link href="{{ asset('/incl/animate.css') }}" rel="stylesheet">
         <link href="{{ asset('/incl/siyaleader_ports.css') }}" rel="stylesheet">
@@ -218,6 +219,10 @@
         <!-- Jquery Bootstrap Maxlength -->
         <script src="{{ asset('/bower_components/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
 
+
+         <!-- Media -->
+        <script src="{{ asset('js/simple-inheritance.min.js') }}"></script> <!-- Photo Gallery alt requirred -->
+        <script src="{{ asset('js/code-photoswipe-1.0.11.min.js') }}"></script> <!-- Photo Gallery alt -->
 
 
         @yield('footer')

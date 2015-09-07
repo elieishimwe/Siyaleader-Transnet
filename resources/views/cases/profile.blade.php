@@ -107,9 +107,10 @@
                                       {!! Form::label('Image', 'Image', array('class' => 'col-md-2 control-label')) !!}
                                       <div class="col-md-6">
                                           <div class="superbox-list">
-                                              <img src="#" data-img="#" alt="" class="superbox-img" id="CaseImage" width="65%">
+                                              <img src="#" data-img="#" alt="" class="superbox-img" id="CaseImage" width="70%">
                                           </div>
                                       </div>
+
                                   </div>
                                   </div>
 
