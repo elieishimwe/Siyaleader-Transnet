@@ -225,9 +225,8 @@
                $("#modalCase #status").val(data[0].status);
                $("#modalCase #department").val(data[0].department);
                var ImgUrl = "http://www.siyaleader.co.za:8080/ecin2edin/console/app_backend/port_backend/public/"+data[0].img_url;
-               $("#modalCase #CaseImage").attr("src",ImgUrl);
                $("#modalCase #CaseImageA").attr("href",ImgUrl);
-               $("#modalCase #CaseImage").attr("data-img",ImgUrl);
+               $("#modalCase #CaseImage").attr("src",ImgUrl);
                $("#modalCase #reporter").val(data[0].reporter);
                $("#modalCase #reporterCell").val(data[0].reporterCell);
                $("#modalCase #reporterPosition").val(data[0].reporterPosition);
