@@ -107,7 +107,7 @@
                                       {!! Form::label('Image', 'Image', array('class' => 'col-md-2 control-label')) !!}
                                       <div class="col-md-6">
 
-                                        <a href="#" data-rel="gallery" id="CaseImageA" class="pirobox_gall img-popup" title="">
+                                        <a href="http://www.siyaleader.co.za:8080/ecin2edin/console/app_backend/port_backend/public/uploads/case_14.jpg" data-rel="gallery" id="CaseImageA" class="pirobox_gall img-popup" title="">
                                           <img src="#" data-img="#" alt="" class="superbox-img" id="CaseImage" width="220">
                                         </a>
 
