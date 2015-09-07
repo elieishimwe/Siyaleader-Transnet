@@ -204,9 +204,24 @@
    function launchCaseModal(id)
     {
 
-
+      $( "#acceptCaseClass" ).removeClass( "hidden" );
       $(".modal-body #categoryID").val(id);
       $(".modal-body #caseID").val(id);
+      var userID = {!! Auth::user()->id !!};
+      $.ajax({
+        type    :"GET",
+        dataType:"json",
+        url     :"{!! url('/caseOwner/"+ id + "/" + userID + "')!!}",
+        success :function(data) {
+
+           if(data == 1)
+           {
+
+              $( "#acceptCaseClass" ).addClass( "hidden" );
+           }
+        }
+        }
+        )
 
         $.ajax({
         type    :"GET",

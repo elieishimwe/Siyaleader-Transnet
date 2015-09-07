@@ -57,9 +57,7 @@ class CasesController extends Controller
         return \Datatables::of($cases)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>
 
-                                                     @if($accept == 0 && $type <> 0)
-                                                        <a class="btn btn-xs btn-alt" href="{{ url("acceptCase/$id") }}">Accept</a>
-                                                     @endif
+
                                                    '
                                        )
                             ->make(true);
@@ -126,7 +124,7 @@ class CasesController extends Controller
 
             }
 
-            \Session::flash('success', 'Thank you for accepting Case Number:'.$id);
+            \Session::flash('successNotes', 'Thank you for accepting Case Number:'.$id);
 
             return view('home.home',compact('numberCases'));
         }
