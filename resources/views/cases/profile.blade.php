@@ -106,9 +106,11 @@
                                   <div class="">
                                       {!! Form::label('Image', 'Image', array('class' => 'col-md-2 control-label')) !!}
                                       <div class="col-md-6">
-                                          <div class="superbox-list">
-                                              <img src="#" data-img="#" alt="" class="superbox-img" id="CaseImage" width="70%">
-                                          </div>
+
+                                        <a href="#" data-rel="gallery" id="CaseImageA" class="pirobox_gall img-popup" title="">
+                                          <img src="#" data-img="#" alt="" class="superbox-img" id="CaseImage" width="150">
+                                        </a>
+
                                       </div>
 
                                   </div>

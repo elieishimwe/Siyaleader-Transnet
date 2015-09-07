@@ -18,13 +18,12 @@
         <link href="{{ asset('/css/form.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/calendar.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
-        <link href="{{ asset('/css/icons.css') }}" rel="stylesheet">
-        <link href="{{ asset('/css/generics.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/token-input.css') }}" rel="stylesheet">
-        <link href="{{ asset('/css/photo-gallery-alt.css') }}" rel="stylesheet">
-
+        <link href="{{ asset('/css/lightbox.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/media-player.css') }}" rel="stylesheet">
         <link href="{{ asset('/incl/animate.css') }}" rel="stylesheet">
         <link href="{{ asset('/incl/siyaleader_ports.css') }}" rel="stylesheet">
+
 
 
         <!-- DataTables CSS -->
@@ -200,9 +199,6 @@
         <!-- All JS functions -->
         <script src="{{ asset('/js/functions.js') }}"></script>
 
-         <!-- Media -->
-        <script src="{{ asset('/js/superbox.min.js') }}"></script> <!-- Photo Gallery -->
-
 
          <!-- Token Input -->
         <script src="{{ asset('/js/jquery.tokeninput.js') }}"></script> <!-- Token Input -->
@@ -220,10 +216,9 @@
         <script src="{{ asset('/bower_components/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
 
 
-         <!-- Media -->
-        <script src="{{ asset('js/simple-inheritance.min.js') }}"></script> <!-- Photo Gallery alt requirred -->
-        <script src="{{ asset('js/code-photoswipe-1.0.11.min.js') }}"></script> <!-- Photo Gallery alt -->
-
+        <!-- Media -->
+        <script src="{{ asset('/js/media-player.min.js') }}"></script> <!-- Video Player -->
+        <script src="{{ asset('/js/pirobox.min.js') }}"></script> <!-- Lightbox -->
 
         @yield('footer')
     </body>
