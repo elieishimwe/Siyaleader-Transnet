@@ -5,8 +5,6 @@
 
 @include('cases.profile')
 @include('cases.refer')
-@include('addressbook.global')
-@include('addressbook.globalAdd')
 @include('casenotes.add')
 
 

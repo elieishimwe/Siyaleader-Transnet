@@ -157,6 +157,8 @@
                 @include('messages.list')
                 @yield('content')
                 @include('addressbook.list')
+                @include('addressbook.global')
+                @include('addressbook.globalAdd')
 
             </section>
 
