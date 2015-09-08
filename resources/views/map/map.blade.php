@@ -109,7 +109,7 @@ function launchAddCaseModal()
 {
     $('#modalAddCaseModal').modal('show');
 }
-@include('functions.caseModal')
+
 
 function initialize()
     {

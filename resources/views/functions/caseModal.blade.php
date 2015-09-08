@@ -1,5 +1,5 @@
 
-
+  <script>
   $(document).ready(function() {
 
   $("#addresses").tokenInput("getContacts");
@@ -523,5 +523,8 @@
        })
 
     }
+
+    </script>
+
 
 

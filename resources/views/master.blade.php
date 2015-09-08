@@ -223,6 +223,7 @@
         <script src="{{ asset('/js/media-player.min.js') }}"></script> <!-- Video Player -->
         <script src="{{ asset('/js/pirobox.min.js') }}"></script> <!-- Lightbox -->
 
+        @include('functions.caseModal')
         @yield('footer')
     </body>
 </html>
