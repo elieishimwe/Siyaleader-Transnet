@@ -106,7 +106,11 @@
     function launchSubCatResponders(id)
     {
 
+
       $(".modal-body #subCatID").val(id);
+      var prepopulateFirst  = new Array();
+      var prepopulateSecond = new Array();
+      var prepopulateThird  = new Array();
 
       $.ajax({
           type    :"GET",
@@ -114,36 +118,56 @@
           url     :"{!! url('/getSubResponders/"+ id + "')!!}",
           success :function(data) {
 
-              if(data[0] !== null)
+              if(data.length > 0)
               {
+
+                 for (var j = 0; j < data.length; j++) {
+                            if (typeof data[j].firstResponder !== 'undefined')
+                            {
+                              prepopulateFirst.push({ id: data[j].id, name: data[j].firstResponder });
+                            }
+                            if (typeof data[j].secondResponder !== 'undefined')
+                            {
+                              prepopulateSecond.push({ id: data[j].id, name: data[j].secondResponder });
+                            }
+
+                            if (typeof data[j].thirdResponder !== 'undefined')
+                            {
+                              prepopulateThird.push({ id: data[j].id, name: data[j].thirdResponder });
+                            }
+
+                 }
+
                 if(data[0].firstResponder !== null)
                 {
+
+
                   $("#firstResponder").prev(".token-input-list").remove();
-                  $("#firstResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1,prePopulate:[{id: data[0].id, name: data[0].firstResponder}]});
+
+                  $("#firstResponder").tokenInput("{!! url('/getResponder') !!}",{ prePopulate:prepopulateFirst });
                 }
                 else {
-
-                  $("#firstResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1});
+                  $("#firstResponder").tokenInput("{!! url('/getResponder') !!}");
                 }
 
                 if(data[0].secondResponder !== null)
                 {
                   $("#secondResponder").prev(".token-input-list").remove();
-                  $("#secondResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1,prePopulate:[{id: data[0].id, name: data[0].secondResponder}]});
+                  $("#secondResponder").tokenInput("{!! url('/getResponder') !!}",{ prePopulate: prepopulateSecond });
                 }
                 else {
 
 
-                  $("#secondResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1});
+                  $("#secondResponder").tokenInput("{!! url('/getResponder') !!}",{});
                 }
 
                 if(data[0].thirdResponder !== null)
                 {
                   $("#thirdResponder").prev(".token-input-list").remove();
-                  $("#thirdResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1,prePopulate:[{id: data[0].id, name: data[0].thirdResponder}]});
+                  $("#thirdResponder").tokenInput("{!! url('/getResponder') !!}",{ prePopulate:prepopulateThird });
                 }
                 else {
-                  $("#thirdResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1});
+                  $("#thirdResponder").tokenInput("{!! url('/getResponder') !!}",{});
                 }
 
               }
@@ -156,7 +180,7 @@
                   }
                   else
                   {
-                    $("#firstResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1});
+                    $("#firstResponder").tokenInput("{!! url('/getResponder') !!}");
                   }
 
                   if($("#secondResponder").prev(".token-input-list").html())
@@ -165,7 +189,7 @@
                   }
                   else
                   {
-                    $("#secondResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1});
+                    $("#secondResponder").tokenInput("{!! url('/getResponder') !!}");
                   }
 
                   if($("#thirdResponder").prev(".token-input-list").html())
@@ -174,7 +198,7 @@
                   }
                   else
                   {
-                    $("#thirdResponder").tokenInput("{!! url('/getResponder') !!}",{tokenLimit:1});
+                    $("#thirdResponder").tokenInput("{!! url('/getResponder') !!}");
                   }
 
 

@@ -92,6 +92,7 @@ class RespondersController extends Controller
       public function storeSubResponder(Request $request)
     {
 
+
         $sub_cat = $request['subCatID'];
         $result  = CaseResponder::where('sub_category','=',$sub_cat)
                                 ->where('sub_sub_category','=',0)
@@ -139,28 +140,104 @@ class RespondersController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     public function subResponder($id)
     {
 
-        $responders = \DB::table('responders')
-            ->where('responders.sub_category','=',$id)
-            ->select(\DB::raw(
-                                "
+        $firstRespondersObj  = CaseResponder::where("sub_category",'=',$id)
+                                                ->select('firstResponder')->first();
 
-                                responders.id as id,
-                                (select CONCAT(users.name, ' ',users.surname) from users where responders.firstResponder = users.id) as firstResponder,
-                                (select CONCAT(users.name, ' ',users.surname) from users where responders.secondResponder = users.id) as secondResponder,
-                                (select CONCAT(users.name, ' ',users.surname) from users where responders.thirdResponder = users.id) as thirdResponder
+        $secondRespondersObj = CaseResponder::where("sub_category",'=',$id)
+                                                ->select('secondResponder')->first();
 
-                                "
-                            )
+        $thirdRespondersObj  = CaseResponder::where("sub_category",'=',$id)
+                                                ->select('thirdResponder')->first();
 
-                    )
-            ->first();
-        return [$responders];
+        $response            = array();
+
+        if (sizeof($firstRespondersObj) > 0) {
+            $firstResponders  = explode(",",$firstRespondersObj->firstResponder);
+
+                if ($firstRespondersObj->firstResponder > 0) {
+
+                           foreach ($firstResponders as $firstResponder) {
+
+                             $user = \DB::table('users')
+                                        ->where('id','=',$firstResponder)
+                                        ->select(\DB::raw(
+                                                    "
+                                                    id,
+                                                    (select CONCAT(name, ' ',surname) ) as firstResponder
+
+                                                    "
+                                                      )
+                                                )->first();
+
+                            $response[] = $user;
+
+                            }
+
+                }
+
+        }
+
+        if (sizeof($secondRespondersObj) > 0) {
+
+            $secondResponders = explode(",",$secondRespondersObj->secondResponder);
+
+            if ($secondRespondersObj->secondResponder > 0) {
+
+                foreach ($secondResponders as $secondResponder) {
+
+                     $user = \DB::table('users')
+                                ->where('id','=',$secondResponder)
+                                ->select(\DB::raw(
+                                            "
+                                            id,
+                                            (select CONCAT(name, ' ',surname) ) as secondResponder
+
+                                            "
+                                              )
+                                        )->first();
+
+                    $response[] = $user;
+
+                 }
+
+            }
+
+        }
+
+        if (sizeof($thirdRespondersObj) > 0) {
+
+            $thirdResponders  = explode(",",$thirdRespondersObj->thirdResponder);
+
+            if ($thirdRespondersObj->thirdResponder > 0) {
+
+                 foreach ($thirdResponders as $thirdResponder) {
+
+                     $user = \DB::table('users')
+                                ->where('id','=',$thirdResponder)
+                                ->select(\DB::raw(
+                                            "
+                                            id,
+                                            (select CONCAT(name, ' ',surname) ) as thirdResponder
+
+                                            "
+                                              )
+                                        )->first();
+
+                    $response[] = $user;
+
+                 }
+
+             }
+
+        }
+
+        return $response;
     }
 
     /**
@@ -172,22 +249,100 @@ class RespondersController extends Controller
     public function subSubResponder($id)
     {
 
-        $responders = \DB::table('responders')
-            ->where('responders.sub_sub_category','=',$id)
-            ->select(\DB::raw(
-                                "
+       $firstRespondersObj  = CaseResponder::where("sub_sub_category",'=',$id)
+                                                ->select('firstResponder')->first();
 
-                                responders.id as id,
-                                (select CONCAT(users.name, ' ',users.surname) from users where responders.firstResponder = users.id) as firstResponder,
-                                (select CONCAT(users.name, ' ',users.surname) from users where responders.secondResponder = users.id) as secondResponder,
-                                (select CONCAT(users.name, ' ',users.surname) from users where responders.thirdResponder = users.id) as thirdResponder
+        $secondRespondersObj = CaseResponder::where("sub_sub_category",'=',$id)
+                                                ->select('secondResponder')->first();
 
-                                "
-                            )
+        $thirdRespondersObj  = CaseResponder::where("sub_sub_category",'=',$id)
+                                                ->select('thirdResponder')->first();
 
-                    )
-            ->first();
-        return [$responders];
+        $response            = array();
+
+        if (sizeof($firstRespondersObj) > 0) {
+            $firstResponders  = explode(",",$firstRespondersObj->firstResponder);
+
+                if ($firstRespondersObj->firstResponder > 0) {
+
+                           foreach ($firstResponders as $firstResponder) {
+
+                             $user = \DB::table('users')
+                                        ->where('id','=',$firstResponder)
+                                        ->select(\DB::raw(
+                                                    "
+                                                    id,
+                                                    (select CONCAT(name, ' ',surname) ) as firstResponder
+
+                                                    "
+                                                      )
+                                                )->first();
+
+                            $response[] = $user;
+
+                            }
+
+                }
+
+        }
+
+        if (sizeof($secondRespondersObj) > 0) {
+
+            $secondResponders = explode(",",$secondRespondersObj->secondResponder);
+
+            if ($secondRespondersObj->secondResponder > 0) {
+
+                foreach ($secondResponders as $secondResponder) {
+
+                     $user = \DB::table('users')
+                                ->where('id','=',$secondResponder)
+                                ->select(\DB::raw(
+                                            "
+                                            id,
+                                            (select CONCAT(name, ' ',surname) ) as secondResponder
+
+                                            "
+                                              )
+                                        )->first();
+
+                    $response[] = $user;
+
+                 }
+
+            }
+
+        }
+
+        if (sizeof($thirdRespondersObj) > 0) {
+
+            $thirdResponders  = explode(",",$thirdRespondersObj->thirdResponder);
+
+            if ($thirdRespondersObj->thirdResponder > 0) {
+
+                 foreach ($thirdResponders as $thirdResponder) {
+
+                     $user = \DB::table('users')
+                                ->where('id','=',$thirdResponder)
+                                ->select(\DB::raw(
+                                            "
+                                            id,
+                                            (select CONCAT(name, ' ',surname) ) as thirdResponder
+
+                                            "
+                                              )
+                                        )->first();
+
+                    $response[] = $user;
+
+                 }
+
+             }
+
+        }
+
+        return $response;
+
+
     }
 
     /**

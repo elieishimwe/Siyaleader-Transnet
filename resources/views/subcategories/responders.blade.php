@@ -16,7 +16,8 @@
             <div class="form-group">
                 {!! Form::label('First Responder', 'First Responder', array('class' => 'col-md-2 control-label')) !!}
                 <div class="col-md-10">
-                  {!! Form::text('firstResponder',NULL,['class' => 'form-control input-sm','id' => 'firstResponder']) !!}
+                  {!! Form::text('firstResponder',NULL,['class' => 'form-control','id' => 'firstResponder']) !!}
+
                 </div>
             </div>
 
