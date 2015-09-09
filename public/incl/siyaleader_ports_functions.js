@@ -4,27 +4,6 @@
 
 $(document).ready(function(){
 
-	/*$("#category").change(function(){
-	setCaptureBorder(document.getElementById('prob_category').options[document.getElementById('prob_category').selectedIndex].id);
-	$.ajax({ dataType: "json",url:"ajax/getCategories.php?Action=getSubCats&Category=" +$(this).val()+ "", success: function(result){
-		$('#prob_subcategory').empty();
-		$('#prob_sub_sub_category').empty();
-		if(result != "") $('#prob_subcategory').append("<option value='0'>Please select ...</option><BR>");
-		$.each(result, function(element, element) {
-			$('#prob_subcategory').append("<option value="+ element +">" + element + "</option><BR>");
-			});
-		}});
-	});
-
-	$("#prob_subcategory").change(function(){
-	$.ajax({ dataType: "json",url:"ajax/getCategories.php?Action=getSubSubCats&subCategory=" +$(this).val()+ "", success: function(result){
-		$('#prob_sub_sub_category').empty();
-		if(result != "") $('#prob_sub_sub_category').append("<option value='0'>Please select ...</option><BR>");
-		$.each(result, function(element, element) {
-			$('#prob_sub_sub_category').append("<option value="+ element +">" + element + "</option><BR>");
-			});
-		}});
-	});*/
 });
 
 
