@@ -141,10 +141,11 @@ class CasesController extends Controller
     public function captureCase(Request $request)
     {
 
-        $reporter    = $request['caseReporter'];
-        $userObj     = User::where('username','=',$reporter)->first();
+        $reporter     = $request['caseReporter'];
+        $caseSeverity = $request['caseSeverity'];
+        \Log::info($caseSeverity);
+        $userObj      = User::where('username','=',$reporter)->first();
 
-        \Log::info(sizeof($userObj));
 
         if(sizeof($userObj) <= 0 )
         {
@@ -190,7 +191,7 @@ class CasesController extends Controller
        $caseObj->sub_sub_category = $subSubCategory;
        $caseObj->gps_lat          = $gps[0];
        $caseObj->gps_lng          = $gps[1];
-       $caseObj->severity         = $request['severity'];
+       $caseObj->severity         = $caseSeverity;
        $caseObj->status           = "Pending";
        $caseObj->save();
 
@@ -207,7 +208,7 @@ class CasesController extends Controller
 
         });
 
-        if ($request['severity'] <= 4) {
+        if ($caseSeverity <= 4) {
 
                $severityData = array(
                     'severity'  => $caseObj->severity ,

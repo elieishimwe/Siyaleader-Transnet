@@ -1099,7 +1099,7 @@ function createZoneArray ()
 
                {!! Form::open(['url' => 'addCaseForm', 'method' => 'post', 'style' => 'margin:0px;padding:0px;', 'id'=>'captureForm' ]) !!}
 
-                        <input type="hidden" name="severity" id="severity">
+                        <input type="hidden" name="caseSeverity" id="caseSeverity">
                         <input type="hidden" name="priority" id="priority" value="urgent">
 
                         <table id="captureContainer" border=0 cellpadding=4 cellspacing=0 style="font: 11pt 'Arial';color:#ffffff;border-collapse:collapse;border:1px solid #ffffff">

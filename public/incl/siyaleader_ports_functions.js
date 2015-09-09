@@ -41,10 +41,10 @@ function setSeverity (val)
 	if(val)
 			{
 				eval("document.getElementById('severitySpan" + val + "').style.fontSize = '24px'");
-				document.getElementById('severity').value = val;
+				document.getElementById('caseSeverity').value = val;
 			}
 	else	{
-				document.getElementById('severity').value = "5";
+				document.getElementById('caseSeverity').value = "5";
 			}
 }
 
@@ -56,7 +56,7 @@ if(document.getElementById('severitySpan').style.display == 'none')
 		}
 else	{
 			document.getElementById('severitySpan').style.display = 'none';
-			document.getElementById('severity').value = '5';
+			document.getElementById('caseSeverity').value = '5';
 		}
 }
 
