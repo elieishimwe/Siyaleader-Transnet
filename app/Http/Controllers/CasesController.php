@@ -143,7 +143,7 @@ class CasesController extends Controller
 
         $reporter     = $request['caseReporter'];
         $caseSeverity = $request['caseSeverity'];
-        \Log::info("Severity Leve".$caseSeverity);
+        \Log::info("Severity LeveL".$reporter);
         $userObj      = User::where('username','=',$reporter)->first();
 
 
@@ -160,13 +160,10 @@ class CasesController extends Controller
         $cell        = (sizeof($userObj) <= 0)? $userAddressbookObj->cellphone:$userObj->email;
 
 
-       $caseDescription   = $request['caseDescription'];
-       $precinctObj       = Municipality::where('slug','=',$request['caseMunicipality'])->first();
-       $categoryObj       = Category::where('slug','=',$request['caseCategory'])->first();
-       $subCategoryObj    = SubCategory::where('slug','=',$request['caseSubCategory'])->first();
-
-       \Log::info("size".$request['caseSubSubCategory']);
-       \Log::info("size".sizeof($request['caseSubSubCategory']));
+        $caseDescription   = $request['caseDescription'];
+        $precinctObj       = Municipality::where('slug','=',$request['caseMunicipality'])->first();
+        $categoryObj       = Category::where('slug','=',$request['caseCategory'])->first();
+        $subCategoryObj    = SubCategory::where('slug','=',$request['caseSubCategory'])->first();
 
         if($request['caseSubSubCategory'] > 0)
         {
