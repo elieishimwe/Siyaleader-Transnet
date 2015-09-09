@@ -143,7 +143,7 @@ class CasesController extends Controller
 
         $reporter     = $request['caseReporter'];
         $caseSeverity = $request['caseSeverity'];
-        \Log::info($caseSeverity);
+        \Log::info("Severity Leve".$caseSeverity);
         $userObj      = User::where('username','=',$reporter)->first();
 
 
