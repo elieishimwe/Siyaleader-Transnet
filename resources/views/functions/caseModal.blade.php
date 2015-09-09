@@ -35,7 +35,7 @@
                     return d.description;
 
                 },"name" : 'cases.description',"width":"35%" },
-                {data: 'cases.status', name: 'status'},
+                {data: 'status', name: 'cases.status'},
                 {data: 'actions',  name: 'actions'},
                ],
 
