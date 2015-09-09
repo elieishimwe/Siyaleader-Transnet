@@ -55,11 +55,7 @@ class CasesController extends Controller
                 ->select(\DB::raw("cases.id, cases.created_at,cases.description,cases.status,caseOwners.accept,caseOwners.type"))
                 ->groupBy('cases.id');
         return \Datatables::of($cases)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>
-
-
-                                                   '
-                                       )
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>')
                             ->make(true);
     }
 

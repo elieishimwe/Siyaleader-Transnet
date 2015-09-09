@@ -28,20 +28,20 @@
                 "order" :[[0,"desc"]],
                 "ajax": "{!! url('/cases-list/" + user +"')!!}",
                  "columns": [
-                {data: 'id', name: 'id'},
-                {data: 'created_at', name: 'created_at'},
+                {data: 'id', name: 'cases.id'},
+                {data: 'created_at', name: 'cases.created_at'},
                 {data: function(d){
 
                     return d.description;
 
-                },"name" : 'description',"width":"35%" },
-                {data: 'status', name: 'status'},
+                },"name" : 'cases.description',"width":"35%" },
+                {data: 'cases.status', name: 'status'},
                 {data: 'actions',  name: 'actions'},
                ],
 
             "aoColumnDefs": [
-                { "bSearchable": false, "aTargets": [ 1] },
-                { "bSortable": false, "aTargets": [ 1 ] }
+                { "bSearchable": false, "aTargets": [ 4] },
+                { "bSortable": false, "aTargets": [ 4 ] }
             ]
 
          });
