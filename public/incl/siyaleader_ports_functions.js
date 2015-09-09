@@ -39,13 +39,13 @@ function resetControllers ()
 	}
 function switchPriority ()
 	{
-		if(document.getElementById("prob_priority").value == "Urgent")
+		if(document.getElementById("priority").value == "Urgent")
 				{
-					document.getElementById("prob_priority").value = "Critical";
+					document.getElementById("priority").value = "Critical";
 					document.getElementById('prioritySpan').innerHTML = "&#9745;";
 				}
 		else	{
-					document.getElementById("prob_priority").value = "Urgent";
+					document.getElementById("priority").value = "Urgent";
 					document.getElementById('prioritySpan').innerHTML = "&#9744;";
 					setSeverity();
 				}

@@ -156,6 +156,7 @@ class CasesController extends Controller
         $userName    = (sizeof($userObj) <= 0)? $userAddressbookObj->FirstName:$userObj->name;
         $userSurname = (sizeof($userObj) <= 0)? $userAddressbookObj->Surname:$userObj->surname;
         $userEmail   = (sizeof($userObj) <= 0)? $userAddressbookObj->email:$userObj->username;
+        $cell        = (sizeof($userObj) <= 0)? $userAddressbookObj->cellphone:$userObj->email;
 
 
        $caseDescription   = $request['caseDescription'];
@@ -189,6 +190,7 @@ class CasesController extends Controller
        $caseObj->sub_sub_category = $subSubCategory;
        $caseObj->gps_lat          = $gps[0];
        $caseObj->gps_lng          = $gps[1];
+       $caseObj->severity         = $request['severity'];
        $caseObj->status           = "Pending";
        $caseObj->save();
 
@@ -199,14 +201,30 @@ class CasesController extends Controller
         );
 
 
-        \Mail::send('emails.sms',$data, function($message) use ($userEmail)
-        {
+        \Mail::send('emails.sms',$data, function($message) use ($userEmail) {
             $message->from('info@siyaleader.co.za', 'Siyaleader');
             $message->to($userEmail)->subject("Siyaleader Notification - New Case Reported:");
 
         });
 
+        if ($request['severity'] <= 4) {
 
+               $severityData = array(
+                    'severity'  => $caseObj->severity ,
+                    'name'      => $userName .' '.$userSurname,
+                    'cell'      => $cell,
+                    'category'  => $categoryObj->name,
+                    'caseId'    => $caseObj->id
+                );
+
+                \Mail::send('emails.severity',$severityData, function($message) {
+
+                    $message->from('info@siyaleader.co.za', 'Siyaleader');
+                    $message->to('gavin@squeakytakkie.co.za')->subject("SEVERE");
+
+                });
+
+        }
 
 
             if ($subSubCategory > 0)

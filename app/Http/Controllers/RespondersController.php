@@ -158,7 +158,8 @@ class RespondersController extends Controller
         $response            = array();
 
         if (sizeof($firstRespondersObj) > 0) {
-            $firstResponders  = explode(",",$firstRespondersObj->firstResponder);
+
+            $firstResponders = explode(",",$firstRespondersObj->firstResponder);
 
                 if ($firstRespondersObj->firstResponder > 0) {
 

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMessagesTable extends Migration
+class AddColumnsCaseTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,12 @@ class CreateMessagesTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('cases', function($table) {
+
+            $table->integer('severity');
+
+
+        });
     }
 
     /**
@@ -22,6 +27,10 @@ class CreateMessagesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('cases', function($table) {
+
+            $table->dropColumn('severity');
+
+        });
     }
 }

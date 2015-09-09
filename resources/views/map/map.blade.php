@@ -1091,7 +1091,7 @@ function createZoneArray ()
     </table>
 </div>
 
-<div id="caseCapture" style="opacity:0.9;padding:6px;border-radius:3px;position:absolute;right:10px;top:31px;background:#1c1c1c;align:center;z-index:11;display:none;box-shadow:4px 4px 4px #000000">
+<div id="caseCapture" style="opacity:0.9;padding:6px;border-radius:3px;position:absolute;right:10px;top:80px;background:#1c1c1c;align:center;z-index:11;display:none;box-shadow:4px 4px 4px #000000">
 
     <table border=0 cellpadding=0 cellspacing=0>
         <tr>
@@ -1099,6 +1099,8 @@ function createZoneArray ()
 
                {!! Form::open(['url' => 'addCaseForm', 'method' => 'post', 'style' => 'margin:0px;padding:0px;', 'id'=>'captureForm' ]) !!}
 
+                        <input type="hidden" name="severity" id="severity">
+                        <input type="hidden" name="priority" id="priority" value="urgent">
 
                         <table id="captureContainer" border=0 cellpadding=4 cellspacing=0 style="font: 11pt 'Arial';color:#ffffff;border-collapse:collapse;border:1px solid #ffffff">
                             <tr>
@@ -1160,17 +1162,16 @@ function createZoneArray ()
                                     Critical Emergency: &nbsp;<a href="#" onclick="switchPriority();this.blur()"><span id="prioritySpan" style="font-size:22px">&#9744;</span></a>
                                     &nbsp;
                                     <span id="severitySpan" style="display:none">
-                                    <a href="#" onclick="setSeverity('4');this.blur()"><span id="severitySpan4" style="font-size:20px;color:#00FF00">&#9315;</span></a>
-                                    <a href="#" onclick="setSeverity('3');this.blur()"><span id="severitySpan3" style="font-size:20px;color:#FFFF00">&#9314;</span></a>
-                                    <a href="#" onclick="setSeverity('2');this.blur()"><span id="severitySpan2" style="font-size:20px;color:#ff7800">&#9313;</span></a>
-                                    <a href="#" onclick="setSeverity('1');this.blur()"><span id="severitySpan1" style="font-size:20px;color:#FF0000">&#9312;</span></a>
+                                        <a href="#" class="pover" data-trigger="hover" data-toggle="popover" data-html="true" data-placement="left" title ="LEVEL 4 INCIDENT" data-content="<ul><li>Minor incidents, daily incident or safety occurrence.</li><li>Environmental incident that could result in service disruption with a lesser significance.</li></ul>" onclick="setSeverity('4');this.blur()"><span id="severitySpan4" style="font-size:20px;color:#00FF00">&#9315;</span></a>
+                                        <a href="#" class="pover" data-trigger="hover" data-toggle="popover" data-html="true" data-placement="left" title ="LEVEL 3 INCIDENT" data-content="<ul><li>R100 000 asset damage Business interruption considered significant by the Executive of the Business Unit concerned.</li><li>Time lost incident.</li><li>Minor impact to physical or biological environment.</li><li>Release of material that has potential to cause illness.</li><li>Isolated complaints by interested and affected parties.</li></ul>" onclick="setSeverity('3');this.blur()"><span id="severitySpan3" style="font-size:20px;color:#FFFF00">&#9314;</span></a>
+                                        <a href="#" class="pover" data-trigger="hover" data-toggle="popover" data-html="true" data-placement="left" title ="LEVEL 2 INCIDENT" data-content="<ul><li>Physical Harm that results in hospitalization.</li><li>R200 000 asset damage.</li><li>Serious business interruption Non-routine security response.</li><li>Significant Fraud or theft.</li><li>Changes in security risk.</li><li>Significant political or media/ reputation focus.</li><li>Environmental incident that result to moderate impact on the physical or biological environment.</li><li>An inconvenience disturbance/ disruption/annoyance (including odour, dust, noise, loss of water supply) of moderate effects.</li></ul>" onclick="setSeverity('2');this.blur()"><span id="severitySpan2" style="font-size:20px;color:#ff7800">&#9313;</span></a>
+                                        <a href="#" class="pover" data-trigger="hover" data-toggle="popover" data-html="true" data-placement="left"   title ="LEVEL 1 INCIDENT" data-content="<ul><li>Fatality.</li><li>R500 000 Assets damage.</li><li>Impact on customers</li>.<li>Significant business interruption.</li><li>Significant dangerous substance spillage.</li><li>Exposure to any hazardous material.</li><li>Environmental incidents as defined by NEMA section 30 and National Water Act (36 of 1998) section 20(1), that result in a significant impact on the physical or biological environment (air, ground, water and habitat) with extensive or long term impairment of ecosystem functions.</li></ul>" onclick="setSeverity('1');this.blur()"><span id="severitySpan1" style="font-size:20px;color:#FF0000">&#9312;</span></a>
                                     </span>
                                 </td>
                             </tr>
                         </table>
 
-                        <input type=hidden name="prob_priority" id="prob_priority" value="Urgent">
-                        <input type=hidden name="severity" id="severity" value="5">
+
 
             </td>
         </tr><tr>
@@ -1196,7 +1197,7 @@ function createZoneArray ()
     </table>
 </div>
 
-<div id="ruSure" style="opacity:0.9;padding:6px;border-radius:3px;position:absolute;width:212px;right:230px;top:31px;background:#1c1c1c;align:center;z-index:12;display:none;box-shadow:4px 4px 4px #000000">
+<div id="ruSure" style="opacity:0.9;padding:6px;border-radius:3px;position:absolute;width:212px;right:250px;top:80px;background:#1c1c1c;align:center;z-index:12;display:none;box-shadow:4px 4px 4px #000000">
     <table border=0 cellpadding=3 cellspacing=0 style="width:100%;font: 12pt 'Arial';color: #ffffff;border-collapse:collapse;border:1px solid #ffffff">
         <tr>
             <td valign=middle align=center colspan=2>
