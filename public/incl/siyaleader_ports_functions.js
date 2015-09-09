@@ -594,6 +594,7 @@ function submitCaptureForm (map_center, map_zoom)
 		var caseSubCategory    = $("#captureForm #caseSubCategory").val();
 		var caseSubSubCategory = $("#captureForm #caseSubSubCategory").val();
 		var caseDescription    = $("#captureForm #caseDescription").val();
+		var caseSeverity       = $("#captureForm #caseSeverity").val();
 		var token              = $('input[name="_token"]').val();
 
         var formData = {
@@ -603,7 +604,8 @@ function submitCaptureForm (map_center, map_zoom)
 							caseCategory:caseCategory,
 							caseReporter:caseReporter,
 							caseSubCategory:caseSubCategory,
-							caseSubSubCategory:caseSubSubCategory
+							caseSubSubCategory:caseSubSubCategory,
+							caseSeverity:caseSeverity
         			   };
 
 
