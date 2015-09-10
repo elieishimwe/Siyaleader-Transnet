@@ -19,7 +19,6 @@ class CaseOwnerController extends Controller
     {
         $caseOwner = CaseOwner::where('caseId','=', $id)
                                 ->where('user','=',$user)
-                                ->where('type','<>',0)
                                 ->first();
 
         if (sizeof($caseOwner) > 0)
