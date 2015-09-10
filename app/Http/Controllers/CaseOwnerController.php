@@ -24,6 +24,9 @@ class CaseOwnerController extends Controller
 
         if (sizeof($caseOwner) > 0)
             return ($caseOwner->accept == 1)? 1 : 0;
+
+        else
+            return 0;
     }
 
     /**
