@@ -223,47 +223,49 @@
            {
 
               $( "#acceptCaseClass" ).addClass( "hidden" );
+
            }
+
+            $.ajax({
+                  type    :"GET",
+                  dataType:"json",
+                  url     :"{!! url('/case/"+ id + "')!!}",
+                  success :function(data) {
+
+                  if(data[0] !== null)
+                  {
+
+                     $("#modalCase #id").val(data[0].id);
+                     $("#modalCase #description").val(data[0].description);
+                     $("#modalCase #category").val(data[0].category);
+                     $("#modalCase #sub_category").val(data[0].sub_category);
+                     $("#modalCase #sub_sub_category").val(data[0].sub_sub_category);
+                     $("#modalCase #status").val(data[0].status);
+                     $("#modalCase #department").val(data[0].department);
+                     var ImgUrl = "http://www.siyaleader.co.za:8080/ecin2edin/console/app_backend/port_backend/public/"+data[0].img_url;
+                     $("#modalCase #CaseImageA").attr("href",ImgUrl);
+
+                     $('a[class*="pirobox"]').piroBox_ext({
+                          piro_speed : 900,
+                          bg_alpha : 0.1,
+                          piro_scroll : true //pirobox always positioned at the center of the page
+                     });
+                     $("#modalCase #CaseImage").attr("src",ImgUrl);
+                     $("#modalCase #reporter").val(data[0].reporter);
+                     $("#modalCase #reporterCell").val(data[0].reporterCell);
+                     $("#modalCase #reporterPosition").val(data[0].reporterPosition);
+
+                  }
+                  else {
+                     $("#modalCase #name").val('');
+                  }
+
+                }
+               })
         }
         }
         )
 
-        $.ajax({
-        type    :"GET",
-        dataType:"json",
-        url     :"{!! url('/case/"+ id + "')!!}",
-        success :function(data) {
-
-            if(data[0] !== null)
-            {
-
-               $("#modalCase #id").val(data[0].id);
-               $("#modalCase #description").val(data[0].description);
-               $("#modalCase #category").val(data[0].category);
-               $("#modalCase #sub_category").val(data[0].sub_category);
-               $("#modalCase #sub_sub_category").val(data[0].sub_sub_category);
-               $("#modalCase #status").val(data[0].status);
-               $("#modalCase #department").val(data[0].department);
-               var ImgUrl = "http://www.siyaleader.co.za:8080/ecin2edin/console/app_backend/port_backend/public/"+data[0].img_url;
-               $("#modalCase #CaseImageA").attr("href",ImgUrl);
-
-               $('a[class*="pirobox"]').piroBox_ext({
-                    piro_speed : 900,
-                    bg_alpha : 0.1,
-                    piro_scroll : true //pirobox always positioned at the center of the page
-               });
-               $("#modalCase #CaseImage").attr("src",ImgUrl);
-               $("#modalCase #reporter").val(data[0].reporter);
-               $("#modalCase #reporterCell").val(data[0].reporterCell);
-               $("#modalCase #reporterPosition").val(data[0].reporterPosition);
-
-            }
-            else {
-               $("#modalCase #name").val('');
-            }
-
-        }
-    })
 
           if ( $.fn.dataTable.isDataTable( '#caseNotesTable' ) ) {
                     oTableCaseNotes.destroy();
