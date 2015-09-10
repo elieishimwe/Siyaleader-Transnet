@@ -523,7 +523,7 @@
         url     :"{!! url('/acceptCase/" + id +"')!!}",
         success : function(){
           launchCaseModal(id);
-          $('#modalCase').modal('show');
+
         }
        })
 
