@@ -22,7 +22,8 @@ class CaseOwnerController extends Controller
                                 ->where('type','<>',0)
                                 ->first();
 
-        return ($caseOwner->accept == 1)? 1 : 0;
+        if (sizeof($caseOwner) > 0)
+            return ($caseOwner->accept == 1)? 1 : 0;
     }
 
     /**
