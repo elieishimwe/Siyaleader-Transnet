@@ -4,6 +4,11 @@
 
   $("#addresses").tokenInput("getContacts");
 
+  $("#acceptCaseClass").on("click",function(){
+
+    $( "#acceptCaseClass" ).addClass( "hidden" );
+  })
+
 
 
   $('#message').maxlength({
