@@ -120,9 +120,9 @@ class CasesController extends Controller
 
             }
 
-            \Session::flash('successNotes', 'Thank you for accepting Case Number:'.$id);
+            \Session::flash('elie', 'Well done! You successfully acceptes case.'.$id);
 
-            return view('home.home',compact('numberCases'));
+
         }
 
 

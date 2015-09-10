@@ -200,7 +200,6 @@ Route::post('addCaseForm', 'CasesController@captureCase');
 
 
 
-
 /*
 |--------------------------------------------------------------------------
 | END CASES ROUTING

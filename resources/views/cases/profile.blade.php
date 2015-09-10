@@ -128,13 +128,11 @@
 
                                             <!-- Responsive Table -->
                                         <div class="block-area" id="responsiveTable">
+                                             <div id="caseNotesNotification">
 
-                                            @if(Session::has('successNotes'))
-                                            <div class="alert alert-info alert-dismissable fade in">
-                                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                                {{ Session::get('successNotes') }}
-                                            </div>
-                                            @endif
+
+                                             </div>
+
                                             <div class="table-responsive overflow">
                                                 <table class="table tile table-striped" id="caseNotesTable">
                                                     <thead>
