@@ -19,6 +19,7 @@ class CaseOwnerController extends Controller
     {
         $caseOwner = CaseOwner::where('caseId','=', $id)
                                 ->where('user','=',$user)
+                                ->where('type','<>',0)
                                 ->first();
 
         return ($caseOwner->accept == 1)? 1 : 0;
