@@ -193,6 +193,13 @@ class CasesController extends Controller
                 'caseDesc'  =>$caseObj->description
         );
 
+        $caseOwner              = new CaseOwner();
+        $caseOwner->user        = $user;
+        $caseOwner->caseId      = $caseObj->id;
+        $caseOwner->type        = 0;
+        $caseOwner->active      = 1;
+        $caseOwner->save();
+
 
         \Mail::send('emails.sms',$data, function($message) use ($userEmail) {
             $message->from('info@siyaleader.co.za', 'Siyaleader');
