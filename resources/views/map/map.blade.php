@@ -56,6 +56,7 @@
                             <td align=left>
                                 <table cellpadding=1 cellspacing=0 border=1 style="border-collapse:collapse;border:1px solid #FFFFFF">
                                     <td style="background:#e0e1e0" title="Toggle Port Ops Centre Markers"><input id="poCheckBox" type="checkbox" checked onclick="switchMarkers('po');" title="Toggle port ops centre" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
+                                    <td style="background:#e0e1e0" title="Toggle Port Ops Centre Markers"><input id="poCheckBox" type="checkbox" checked onclick="switchMarkers('po');" title="Toggle port ops centre" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
                                     <td style="background:#999999" title="Toggle Property Markers"><input id="prCheckBox" type="checkbox" checked onclick="switchMarkers('pr');" title="Toggle property" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
                                     <td style="background:#000000" title="Toggle Traffic Management  Markers"><input id="trCheckBox" type="checkbox" checked onclick="switchMarkers('tr');" title="Toggle traffic management" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
                                     <td style="background:#ff0000" title="Toggle Safety / Risk / Fire Management  Markers"><input id="srCheckBox" type="checkbox" checked onclick="switchMarkers('sr');" title="Toggle safety / risk / fire" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
@@ -1259,7 +1260,7 @@ function createZoneArray ()
 <div id="closeFrameX" class="closeFrameX" border=0 cellpadding=0 cellspacing=0 style="border-top:0px;margin-top:0;position:absolute;align:center;top:43px;left:7px;20px;height:20px;z-index:1501;display:flex">
     <table width=20 border=0 cellpadding=0 cellspacing=0>
         <td align=center valign=top>
-            <a href="#" onclick="hideCMC();closeFrameX.style.display='none'"><IMG id="closeXB" height=20 width=20 SRC="images/closexb_off.png" BORDER=0 align=center title="Close Case Management Console"></a>
+            <a href="#" onclick="hideCMC();closeFrameX.style.display='none'"><IMG id="closeXB" height=20 width=20 SRC="images/closeXB_off.png" BORDER=0 align=center title="Close Case Management Console"></a>
         </td>
     </table>
 </div>
