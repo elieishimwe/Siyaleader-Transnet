@@ -223,7 +223,7 @@ class CasesController extends Controller
             if ($subSubCategory > 0)
             {
                  $subSubCatResponders = CaseResponder::where('sub_sub_category','=',$subSubCategory)->first();
-                \Log::info("subSubCatResponders".sizeof($subSubCatResponders));
+
 
                     if (sizeof($subSubCatResponders) > 0)
                     {
@@ -245,7 +245,7 @@ class CasesController extends Controller
                                     'caseReporter' => $caseObj->description,
                                 );
 
-                            \Log::info("First Responder".$firstResponderUser);
+
                             \Mail::send('emails.responder',$data, function($message) use ($firstResponderUser)
                             {
                                 $message->from('info@siyaleader.co.za', 'Siyaleader');
@@ -270,7 +270,7 @@ class CasesController extends Controller
                                     'caseDesc' => $caseObj->description,
                                     'caseReporter' => $caseObj->description,
                             );
-                            \Log::info("second Responder".$secondResponderUser);
+
 
                             \Mail::send('emails.responder',$data, function($message) use ($secondResponderUser)
                             {
@@ -296,7 +296,7 @@ class CasesController extends Controller
                                     'caseDesc' => $caseObj->description,
                                     'caseReporter' => $caseObj->description,
                             );
-                            \Log::info("third Responder".$thirdResponderUser);
+
 
                             \Mail::send('emails.responder',$data, function($message) use ($thirdResponderUser)
                             {
@@ -315,7 +315,7 @@ class CasesController extends Controller
 
 
                   $subCatResponders = CaseResponder::where('sub_category','=',$subCategoryObj->id)->first();
-                \Log::info("subCatResponders".sizeof($subCatResponders));
+
 
                     if (sizeof($subCatResponders) > 0)
                     {
@@ -337,7 +337,7 @@ class CasesController extends Controller
                                     'caseReporter' => $caseObj->description,
                                 );
 
-                            \Log::info("First Responder".$firstResponderUser);
+
                             \Mail::send('emails.responder',$data, function($message) use ($firstResponderUser)
                             {
                                 $message->from('info@siyaleader.co.za', 'Siyaleader');
@@ -362,7 +362,7 @@ class CasesController extends Controller
                                     'caseDesc' => $caseObj->description,
                                     'caseReporter' => $caseObj->description,
                             );
-                            \Log::info("second Responder".$secondResponderUser);
+
 
                             \Mail::send('emails.responder',$data, function($message) use ($secondResponderUser)
                             {
@@ -388,7 +388,7 @@ class CasesController extends Controller
                                     'caseDesc' => $caseObj->description,
                                     'caseReporter' => $caseObj->description,
                             );
-                            \Log::info("third Responder".$thirdResponderUser);
+
 
                             \Mail::send('emails.responder',$data, function($message) use ($thirdResponderUser)
                             {

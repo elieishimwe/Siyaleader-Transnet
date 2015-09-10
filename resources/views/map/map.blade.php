@@ -236,12 +236,9 @@ foreach ($cases as $case) {
 
     if($case->id)
     {
-        \Log::info($case->id);
+
         $noteResult   = CaseNote::where('caseId','=',$case->id)
                     ->first();
-
-        \Log::info($noteResult);
-        \Log::info(sizeof($noteResult));
 
     }
 
