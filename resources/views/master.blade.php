@@ -25,7 +25,11 @@
         <link href="{{ asset('/incl/animate.css') }}" rel="stylesheet">
         <link href="{{ asset('/incl/siyaleader_ports.css') }}" rel="stylesheet">
 
+        <!-- jQuery Library -->
+        <script src="{{ asset('/js/jquery.min.js') }}"></script>
 
+        <!-- Map -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwXS96_uM6y-6ZJZhSJGE87pO-qxpDp-Q&libraries=geometry"></script>
 
         <!-- DataTables CSS -->
         <link href="{{ asset('/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css') }}" rel="stylesheet">
@@ -33,15 +37,6 @@
         <!-- DataTables Responsive CSS -->
         <link href="{{ asset('/bower_components/datatables-responsive/css/responsive.dataTables.scss') }}" rel="stylesheet">
 
-
-         <!-- Map -->
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwXS96_uM6y-6ZJZhSJGE87pO-qxpDp-Q&libraries=geometry"></script>
-        <script src="{{ asset('/js/jquery.min.js') }}"></script> <!-- jQuery Library -->
-        <script type="text/javascript" src="{{ asset('/incl/oms.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('incl/infobox_packed.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('/incl/markerclusterer.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('/incl/siyaleader_ports_vars.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('/incl/siyaleader_ports_functions.js') }}"></script>
 
     </head>
     <body id="skin-blur-sunset">
@@ -222,6 +217,16 @@
         <!-- Media -->
         <script src="{{ asset('/js/media-player.min.js') }}"></script> <!-- Video Player -->
         <script src="{{ asset('/js/pirobox.min.js') }}"></script> <!-- Lightbox -->
+
+
+
+
+        <script type="text/javascript" src="{{ asset('/incl/oms.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('incl/infobox_packed.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('/incl/markerclusterer.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('/incl/siyaleader_ports_vars.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('/incl/siyaleader_ports_functions.js') }}"></script>
+
 
         @include('functions.caseModal')
         @yield('footer')

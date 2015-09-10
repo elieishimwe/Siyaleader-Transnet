@@ -413,6 +413,8 @@ function showAllMarkers ()
 
 function switchMarkers (cat)
 	{
+
+
 		if(eval(cat+"Status") == 1)
 				{
 					for(var i = 0; i < eval(cat+"Array.length"); i++)
