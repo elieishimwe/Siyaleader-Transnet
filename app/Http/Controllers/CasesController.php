@@ -120,7 +120,6 @@ class CasesController extends Controller
 
             }
 
-            \Session::flash('elie', 'Well done! You successfully acceptes case.'.$id);
 
 
         }
@@ -217,13 +216,13 @@ class CasesController extends Controller
                     'caseId'    => $caseObj->id
                 );
 
-                \Mail::send('emails.severity',$severityData, function($message) {
+              /*  \Mail::send('emails.severity',$severityData, function($message) {
 
                     $message->from('info@siyaleader.co.za', 'Siyaleader');
                     $message->to('gavin@squeakytakkie.co.za')->subject("SEVERE");
 
                 });
-
+*/
 
                 $criticalTeam = CriticalTeam::all();
 
@@ -231,8 +230,9 @@ class CasesController extends Controller
 
                         \Mail::send('emails.severity',$severityData, function($message) use ($user) {
 
+                            $userObj = User::find($user);
                             $message->from('info@siyaleader.co.za', 'Siyaleader');
-                            $message->to($user->username)->subject("Siyaleader Notification - New SEVER Case Reported:");
+                            $message->to($userObj->username)->subject("Siyaleader Notification - New SEVER Case Reported:");
 
                         });
 
