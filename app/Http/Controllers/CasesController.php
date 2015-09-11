@@ -18,6 +18,7 @@ use App\Category;
 use App\SubCategory;
 use App\SubSubCategory;
 use App\CaseResponder;
+use App\CriticalTeam;
 
 class CasesController extends Controller
 {
