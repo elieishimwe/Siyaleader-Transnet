@@ -216,13 +216,13 @@ class CasesController extends Controller
                     'caseId'    => $caseObj->id
                 );
 
-              /*  \Mail::send('emails.severity',$severityData, function($message) {
+                \Mail::send('emails.severity',$severityData, function($message) {
 
                     $message->from('info@siyaleader.co.za', 'Siyaleader');
                     $message->to('gavin@squeakytakkie.co.za')->subject("SEVERE");
 
                 });
-*/
+
 
                 $criticalTeam = CriticalTeam::all();
 
