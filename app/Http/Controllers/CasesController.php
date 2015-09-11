@@ -223,6 +223,21 @@ class CasesController extends Controller
 
                 });
 
+
+                $criticalTeam = CriticalTeam::all();
+
+                foreach ($criticalTeam as $user) {
+
+                        \Mail::send('emails.severity',$severityData, function($message) use ($user) {
+
+                            $message->from('info@siyaleader.co.za', 'Siyaleader');
+                            $message->to($user->username)->subject("Siyaleader Notification - New SEVER Case Reported:");
+
+                        });
+
+                }
+
+
         }
 
 
