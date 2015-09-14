@@ -10,6 +10,21 @@
   })
 
 
+   $('#fileManager').elfinder({
+                      resizable: false,
+                      url : 'php/connector.minimal.php',  // connector URL (REQUIRED)
+                      uiOptions : {
+                      toolbar : [
+                              ['reload'],
+                              ['view', 'sort'],
+                              ['search']
+                      ]},
+                      height: 500
+    });
+
+    $('.elfinder-cwd-wrapper, .elfinder-navbar').niceScroll();
+
+
 
   $('#message').maxlength({
             alwaysShow: true,
@@ -80,6 +95,29 @@
        })
 
      });
+
+    $("#submitAddCaseFileForm").on("click",function(){
+
+        var myForm   = $("#addCaseFileForm")[0];
+        var formData = new FormData(myForm);
+        var token    = $('input[name="_token"]').val();
+        $('#modalAddCaseFilesModal').modal('toggle');
+
+        $.ajax({
+        type    :"POST",
+        data    : formData,
+        contentType: false,
+        processData: false,
+        headers : { 'X-CSRF-Token': token },
+        url     :"{!! url('/addCaseFile')!!}",
+        success : function(){
+          launchCaseModal(caseId);
+          $('#modalCase').modal('toggle');
+        }
+       })
+
+     });
+
 
       $("#submitAddContactForm").on("click",function(){
 
@@ -510,6 +548,16 @@
 
       $('#modalCase').modal('hide');
       $('#modalAddCaseNotesModal').modal('toggle');
+
+
+
+    }
+
+    function launchCaseFilesModal(id)
+    {
+
+      $('#modalCase').modal('hide');
+      $('#modalAddCaseFilesModal').modal('toggle');
 
 
 
