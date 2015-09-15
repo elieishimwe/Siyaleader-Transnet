@@ -2272,6 +2272,8 @@ a.list-group-item.active > .badge,
 .modalCase .modal-dialog
 {
     width: 90%; /* your width */
+    background: none repeat scroll 0 0 #757575;
+
 }
 
 
