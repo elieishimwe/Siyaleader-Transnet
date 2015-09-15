@@ -115,7 +115,7 @@
                                   </div>
                                   </div>
                                   <div class="form-group">
-                                    {!! Form::label('Attach File', 'Attachments', array('class' => 'col-md-2 control-label')) !!}
+                                    {!! Form::label('Attach File', 'Case Attachments', array('class' => 'col-md-2 control-label')) !!}
 
 
                                   </div>
