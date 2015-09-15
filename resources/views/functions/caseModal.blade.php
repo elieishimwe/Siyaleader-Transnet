@@ -103,6 +103,7 @@
         url     :"{!! url('/addCaseFile')!!}",
         success : function(){
           launchCaseModal(caseId);
+          $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You file has been successfully uploaded <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
           $('#modalCase').modal('toggle');
         }
        })
