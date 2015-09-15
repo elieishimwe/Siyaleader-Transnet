@@ -31,7 +31,12 @@
                         <a href="#" class="btn btn-sm btn-gr-gray fileupload-exists" data-dismiss="fileupload">Remove</a>
                     </div>
                 </div>
-
+            </div>
+             <div class="form-group">
+                {!! Form::label('Your Note', 'Your Note', array('class' => 'col-md-2 control-label')) !!}
+                <div class="col-md-10">
+                    <textarea rows="5" id="fileNote" name="fileNote" class="sms form-control" maxlength="500"></textarea>
+                </div>
             </div>
 
              <div class="form-group">

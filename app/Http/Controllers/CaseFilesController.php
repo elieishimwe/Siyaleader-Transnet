@@ -60,10 +60,11 @@ class CaseFilesController extends Controller
             $caseOwners = CaseOwner::where('caseId','=',$request['caseID'])->get();
             $author     = User::find($request['uid']);
 
-            $caseFile         = new CaseFile();
-            $caseFile->file   = $fileFullPath;
-            $caseFile->user   = $request['uid'];
-            $caseFile->caseId = $request['caseID'];
+            $caseFile           = new CaseFile();
+            $caseFile->file     = $fileFullPath;
+            $caseFile->user     = $request['uid'];
+            $caseFile->caseId   = $request['caseID'];
+            $caseFile->fileNote = $request['fileNote'];
             $caseFile->save();
 
             $caseActivity              = New CaseActivity();
