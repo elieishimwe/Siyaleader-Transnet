@@ -210,6 +210,16 @@
 
       });
 
+      $("#closeCaseFile").on("click",function(){
+
+        $('#modalAddCaseFilesModal').modal('toggle');
+        var caseId       = $("#modalReferCase #caseID").val();
+        launchCaseModal(caseId);
+        $('#modalCase').modal('toggle');
+
+      });
+
+
       $("#closeListContactModal").on("click",function(){
 
         $('#modalAddressBook').modal('toggle');

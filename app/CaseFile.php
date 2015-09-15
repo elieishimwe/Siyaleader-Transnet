@@ -7,7 +7,7 @@ class CaseFile extends Eloquent
 
 
     protected $table    = 'caseFiles';
-    protected $fillable = ['caseId','user','file','active','addressbook'];
+    protected $fillable = ['caseId','user','file','active','addressbook','fileNote'];
 
 
 
