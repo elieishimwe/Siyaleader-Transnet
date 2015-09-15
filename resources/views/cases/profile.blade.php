@@ -116,23 +116,7 @@
                                   </div>
                                   <div class="form-group">
                                     {!! Form::label('Attach File', 'Attachments', array('class' => 'col-md-2 control-label')) !!}
-                                    <div class="fileupload fileupload-new row" data-provides="fileupload">
-                                        <div class="input-group col-md-6">
-                                            <div class="uneditable-input form-control">
-                                                <i class="fa fa-file m-r-5 fileupload-exists"></i>
-                                                <span class="fileupload-preview"></span>
-                                            </div>
-                                            <div class="input-group-btn">
-                                                <span class="btn btn-file btn-alt btn-sm">
-                                                <span class="fileupload-new">Select file</span>
-                                                <span class="fileupload-exists">Change</span>
-                                                <input type="file" />
-                                            </span>
-                                            </div>
 
-                                            <a href="#" class="btn btn-sm btn-gr-gray fileupload-exists" data-dismiss="fileupload">Remove</a>
-                                        </div>
-                                    </div>
 
                                   </div>
 

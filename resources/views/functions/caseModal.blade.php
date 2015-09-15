@@ -9,20 +9,10 @@
     $( "#acceptCaseClass" ).addClass( "hidden" );
   })
 
+  $('#modalCase').on('hidden.bs.modal', function () {
 
-   $('#fileManager').elfinder({
-                      resizable: false,
-                      url : 'php/connector.minimal.php',  // connector URL (REQUIRED)
-                      uiOptions : {
-                      toolbar : [
-                              ['reload'],
-                              ['view', 'sort'],
-                              ['search']
-                      ]},
-                      height: 500
-    });
-
-    $('.elfinder-cwd-wrapper, .elfinder-navbar').niceScroll();
+      $('#fileManager').empty();
+  })
 
 
 
@@ -244,8 +234,28 @@
 
    });
 
+
+
    function launchCaseModal(id)
     {
+
+
+      var options = {
+          resizable : false,
+          url : 'php/connector.minimal.php?folderId='+ id,
+          uiOptions : {
+                      toolbar : [
+                              ['reload'],
+                              ['view', 'sort'],
+                              ['search']
+                      ]},
+          height: 300
+      }
+
+
+      var elfinder = new window.elFinder(document.getElementById('fileManager'), options);
+
+      $('.elfinder-cwd-wrapper, .elfinder-navbar').niceScroll();
 
       $( "#acceptCaseClass" ).removeClass( "hidden" );
       $(".modal-body #categoryID").val(id);
