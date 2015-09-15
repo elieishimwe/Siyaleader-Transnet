@@ -88,6 +88,7 @@
 
     $("#submitAddCaseFileForm").on("click",function(){
 
+        var caseId   = $("#modalAddCaseFilesModal #caseID").val();
         var myForm   = $("#addCaseFileForm")[0];
         var formData = new FormData(myForm);
         var token    = $('input[name="_token"]').val();
