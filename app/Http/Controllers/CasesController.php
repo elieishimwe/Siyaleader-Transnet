@@ -550,6 +550,12 @@ class CasesController extends Controller
     public function edit($id)
     {
 
+        $destinationFolder = 'files/case_'.$id;
+
+        if(!\File::exists($destinationFolder)) {
+             $createDir         = \File::makeDirectory($destinationFolder,0777,true);
+        }
+
         $caseObj = CaseReport::find($id);
 
         if($caseObj->sub_sub_category == 0)
