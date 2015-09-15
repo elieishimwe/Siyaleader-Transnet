@@ -44,6 +44,7 @@ class CaseFilesController extends Controller
 
         //tutsnare.com/upload-files-in-laravel/
         //laravel-recipes.com/recipes/147/creating-a-directory
+        //github.com/Studio-42/elFinder/wiki/Client-configuration-options#uiOptions
         $destinationFolder = 'files/case_'.$request['caseID'];
 
         if(!\File::exists($destinationFolder)) {

@@ -252,8 +252,23 @@
                               ['view', 'sort'],
                               ['search']
                       ]},
-          disabled:['rename', 'rm'],
-          height: 300
+          contextmenu : {
+                  // navbarfolder menu
+                  navbar : ['copy', '|', 'info'],
+
+                  // current directory menu
+                  cwd    : ['reload','|', 'back', '|', 'info'],
+
+                  // current directory file menu
+                  files  : [
+                      'getfile', '|','quicklook', '|', 'download', '|', 'copy',
+                      '|', 'edit', 'resize', '|', 'info'
+                  ]
+              },
+
+          height: 300,
+
+          dragUploadAllow:false
       }
 
 

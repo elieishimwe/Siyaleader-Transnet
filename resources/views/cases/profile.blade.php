@@ -105,7 +105,7 @@
                                   </div>
                                   <div class="form-group">
                                   <div class="">
-                                      {!! Form::label('Image', 'Image', array('class' => 'col-md-2 control-label')) !!}
+                                      {!! Form::label('Report Image', 'Report Image', array('class' => 'col-md-2 control-label')) !!}
                                       <div class="col-md-6">
                                         <a data-rel="gallery" id="CaseImageA" class="pirobox_gall img-popup" title="">
                                           <img src="#" alt="" class="superbox-img" id="CaseImage" width="220">
