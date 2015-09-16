@@ -252,39 +252,68 @@
    function launchCaseModal(id)
     {
 
-
       var options = {
           resizable : false,
           url : 'php/connector.minimal.php?folderId='+ id,
-
           commandsOptions : {
-            info: {
-              // Key is the same as your command name
-              desc : {
-                // Field label
-                label : 'Description',
+            info : {
+              nullUrlDirLinkSelf : true,
+              custom : {
+                // /**
+                //  * Example of custom info `desc`
+                //  */
+                  desc : {
+                //  /**
+                //   * Lable (require)
+                //   * It is filtered by the `fm.i18n()`
+                //   *
+                //   * @type String
+                //   */
+                   label : 'Description',
+                //
+                //  /**
+                //   * Template (require)
+                //   * `{id}` is replaced in dialog.id
+                //   *
+                //   * @type String
+                //   */
+                    tpl : '<div class="elfinder-info-desc"><span class="elfinder-info-spinner"></span></div>',
+                //
+                //  /**
+                //   * Restricts to mimetypes (optional)
+                //   * Exact match or category match
+                //   *
+                //   * @type Array
+                //   */
+                     mimes : ['text', 'image/jpeg', 'directory'],
+                //
+                //  /**
+                //   * Restricts to file.hash (optional)
+                //   *
+                //   * @ type Regex
+                //   */
+                     hashRegex : /^l\d+_/,
+                //
+                //  /**
+                //   * Request that asks for the description and sets the field (optional)
+                //   *
+                //   * @type Function
+                //   */
+                      action : function(file, fm, dialog) {
+                       fm.request({
+                       data : { cmd : 'desc', target: file.hash },
+                         preventDefault: true,
+                       })
+                       .fail(function() {
+                         dialog.find('div.elfinder-info-desc').html(fm.i18n('unknown'));
+                       })
+                       .done(function(data) {
+                         dialog.find('div.elfinder-info-desc').html(data.desc);
+                       });
+                     }
+                    }
+              }
 
-                // HTML Template
-                tpl : '<div class="elfinder-info-desc"><span class="elfinder-info-spinner"></span></div>',
-
-                // Action that sends the request to the server and get the description
-                select : function(file, filemanager, dialog) {
-                  // Use the @filemanager object to issue a request
-                  filemanager.request({
-                    // Issuing the custom 'desc' command, targetting the selected file
-                    data : { cmd: 'desc', target: file.hash, },
-                    preventDefault: true,
-                  })
-                  // If the request fails, populate the field with 'Unknown'
-                  .fail(function() {
-                    dialog.find('.elfinder-info-desc').html(filemanager.i18n('unknown'));
-                  })
-                  // When the request is successful, show the description
-                  .done(function(data) {
-                    dialog.find('.elfinder-info-desc').html(data.desc);
-                  });
-                },
-              },
             },
           },
           uiOptions : {
