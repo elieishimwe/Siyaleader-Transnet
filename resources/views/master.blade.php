@@ -23,6 +23,7 @@
         <link href="{{ asset('/css/lightbox.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/media-player.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/file-manager.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/HoldOn.min.css') }}" rel="stylesheet">
         <link href="{{ asset('/incl/animate.css') }}" rel="stylesheet">
         <link href="{{ asset('/incl/siyaleader_ports.css') }}" rel="stylesheet">
 
@@ -231,7 +232,7 @@
         <script src="{{ asset('/js/fileupload.min.js') }}"></script> <!-- File Upload -->
 
         <!-- Spinner -->
-        <script src="{{ asset('/js/jquery.easy-overlay.js') }}"></script> <!-- Spinner -->
+        <script src="{{ asset('/js/HoldOn.min.js') }}"></script> <!-- Spinner -->
 
         @include('functions.caseModal')
         @yield('footer')

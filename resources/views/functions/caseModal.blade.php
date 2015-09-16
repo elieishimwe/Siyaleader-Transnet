@@ -101,9 +101,20 @@
         processData: false,
         headers : { 'X-CSRF-Token': token },
         url     :"{!! url('/addCaseFile')!!}",
+        beforeSend : function() {
+            HoldOn.open({
+                theme:"sk-rect",//If not given or inexistent theme throws default theme sk-rect
+                message: "<h4> uploading please wait... ! </h4>",
+                content:"Your HTML Content", // If theme is set to "custom", this property is available
+                                             // this will replace the theme by something customized.
+                backgroundColor:"none repeat scroll 0 0 rgba(0, 0, 0, 0.8)",//Change the background color of holdon with javascript
+                           // Keep in mind is necessary the .css file too.
+                textColor:"white" // Change the font color of the message
+            });
+
+        },
         success : function(data){
 
-          $(".demo").overlay();
 
           if( data == 'ok')
           {
@@ -111,7 +122,9 @@
             $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You file has been successfully uploaded <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
             launchCaseModal(caseId);
             $('#modalCase').modal('toggle')
-            $(".demo").overlayout();
+
+            HoldOn.close()
+
           }
 
         }
