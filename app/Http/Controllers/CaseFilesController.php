@@ -98,7 +98,7 @@ class CaseFilesController extends Controller
 
             }
 
-             return "File Uploaded successfully!!!";
+             return "ok";
 
 
         }
