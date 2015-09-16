@@ -230,6 +230,8 @@
         <!-- File Upload -->
         <script src="{{ asset('/js/fileupload.min.js') }}"></script> <!-- File Upload -->
 
+        <!-- Spinner -->
+        <script src="{{ asset('/js/jquery.easy-overlay.js') }}"></script> <!-- Spinner -->
 
         @include('functions.caseModal')
         @yield('footer')

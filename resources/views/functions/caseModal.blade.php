@@ -92,7 +92,7 @@
         var myForm   = $("#addCaseFileForm")[0];
         var formData = new FormData(myForm);
         var token    = $('input[name="_token"]').val();
-        $('#modalAddCaseFilesModal').modal('toggle');
+        //$('#modalAddCaseFilesModal').modal('toggle');
 
         $.ajax({
         type    :"POST",
@@ -101,11 +101,21 @@
         processData: false,
         headers : { 'X-CSRF-Token': token },
         url     :"{!! url('/addCaseFile')!!}",
-        success : function(){
-          $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You file has been successfully uploaded <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
-          launchCaseModal(caseId);
-          $('#modalCase').modal('toggle');
+        success : function(data){
+
+          $(".demo").overlay();
+
+          if( data == 'ok')
+          {
+            $('#modalAddCaseFilesModal').modal('toggle');
+            $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You file has been successfully uploaded <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
+            launchCaseModal(caseId);
+            $('#modalCase').modal('toggle')
+            $(".demo").overlayout();
+          }
+
         }
+
        })
 
      });
