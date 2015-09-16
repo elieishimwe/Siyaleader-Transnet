@@ -7666,7 +7666,8 @@ $.fn.elfinderdialog = function(opts) {
 		}
 		dialog.prepend(
 			$('<div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">'+opts.title+'</div>')
-				.prepend($('<a href="#" class="ui-dialog-titlebar-close ui-corner-all"><span class="ui-icon ui-icon-closethick"/></a>')
+
+				.prepend($('<a href="#" class="ui-dialog-titlebar-close ui-corner-all"><span class="ui-icon ui-icon-closethick">&times;</span></a>')
 					.mousedown(function(e) {
 						e.preventDefault();
 						self.elfinderdialog('close');
