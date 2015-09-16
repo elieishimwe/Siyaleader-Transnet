@@ -297,6 +297,7 @@ Route::get('getContacts', 'AddressBookController@show');
 */
   Route::get('caseNotes-list/{id}', 'CaseNotesController@index');
   Route::post('addCaseFile', 'CaseFilesController@store');
+  Route::get('fileDescription/{id}/{name}', 'CaseFilesController@index');
 
 /*
 |--------------------------------------------------------------------------

@@ -18,9 +18,12 @@ class CaseFilesController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index($id,$name)
     {
-        //
+        $file = CaseFile::where('caseId','=',$id)
+                            ->where('file','=',$name)->first();
+
+        return [$file->fileNote];
     }
 
     /**
@@ -61,7 +64,8 @@ class CaseFilesController extends Controller
             $author     = User::find($request['uid']);
 
             $caseFile           = new CaseFile();
-            $caseFile->file     = $fileFullPath;
+            $caseFile->file     = $fileName;
+            $caseFile->imgUrl   = $fileFullPath;
             $caseFile->user     = $request['uid'];
             $caseFile->caseId   = $request['caseID'];
             $caseFile->fileNote = $request['fileNote'];

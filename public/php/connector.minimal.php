@@ -47,5 +47,5 @@ $opts = array(
 );
 
 // run elFinder
-$connector = new elFinderConnector(new elFinder($opts));
+$connector = new elFinderConnector(new elFinder($opts),true);
 $connector->run();

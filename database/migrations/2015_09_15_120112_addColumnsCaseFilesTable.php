@@ -15,6 +15,7 @@ class AddColumnsCaseFilesTable extends Migration
         Schema::table('caseFiles', function($table) {
 
             $table->string('fileNote');
+            $table->string('imgUrl');
 
 
         });
@@ -31,6 +32,7 @@ class AddColumnsCaseFilesTable extends Migration
         {
 
             $table->dropColumn('fileNote');
+            $table->dropColumn('imgUrl');
 
 
         });

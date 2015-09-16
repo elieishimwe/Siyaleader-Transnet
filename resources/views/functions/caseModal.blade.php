@@ -285,7 +285,7 @@
                 //   *
                 //   * @type Array
                 //   */
-                     mimes : ['text', 'image/jpeg', 'directory'],
+
                 //
                 //  /**
                 //   * Restricts to file.hash (optional)
@@ -300,16 +300,19 @@
                 //   * @type Function
                 //   */
                       action : function(file, fm, dialog) {
-                       fm.request({
-                       data : { cmd : 'desc', target: file.hash },
-                         preventDefault: true,
-                       })
-                       .fail(function() {
-                         dialog.find('div.elfinder-info-desc').html(fm.i18n('unknown'));
-                       })
-                       .done(function(data) {
-                         dialog.find('div.elfinder-info-desc').html(data.desc);
-                       });
+                      var fileName = file.name;
+                      $.ajax({
+                        type    :"GET",
+                        dataType:"json",
+                        url     :"{!! url('/fileDescription/"+ id + "/"+ fileName +"')!!}",
+                        success :function(data) {
+                          console.log(data);
+                          console.log(data.length);
+                          dialog.find('div.elfinder-info-desc').html(data);
+
+                        }
+                     })
+
                      }
                     }
               }
