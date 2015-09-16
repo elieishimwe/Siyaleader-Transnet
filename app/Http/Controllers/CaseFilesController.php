@@ -83,9 +83,10 @@ class CaseFilesController extends Controller
                 $user = User::find($caseOwner->user);
 
                 $data = array(
-                                'name'     => $user->name,
-                                'caseID'   => $request['caseID'],
-                                'caseNote' => $fileName,
+                                'name'          => $user->name,
+                                'caseID'        => $request['caseID'],
+                                'caseNote'      => $fileName,
+                                'caseFileDesc'  =>  $request['fileNote'],
                                 'author'   => $author->name .' '.$author->surname
                             );
 
