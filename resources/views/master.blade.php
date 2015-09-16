@@ -218,7 +218,7 @@
         <!-- Media -->
         <script src="{{ asset('/js/media-player.min.js') }}"></script> <!-- Video Player -->
         <script src="{{ asset('/js/pirobox.min.js') }}"></script> <!-- Lightbox -->
-        <script src="{{ asset('js/file-manager/elfinder.min.js') }}"></script> <!-- File Manager -->
+        <script src="{{ asset('js/file-manager/elfinder.js') }}"></script> <!-- File Manager -->
 
 
         <script type="text/javascript" src="{{ asset('/incl/oms.min.js') }}"></script>
