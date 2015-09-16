@@ -77,7 +77,7 @@
                                                     <td width="100%" height="15"></td>
                                                 </tr>
 
-                                                 <tr>
+                                                    <tr>
                                                         <td width="100%" style="font-family:helvetica, Arial, sans-serif; font-size: 13px; text-align: left; color:#2E363F; line-height: 24px;">
                                                             <strong>Case File:</strong>
                                                         </td>
@@ -88,6 +88,19 @@
                                                             {{ $caseNote }}
                                                         </td>
                                                     </tr>
+
+                                                    <tr>
+                                                        <td width="100%" style="font-family:helvetica, Arial, sans-serif; font-size: 13px; text-align: left; color:#2E363F; line-height: 24px;">
+                                                            <strong>Case File Description:</strong>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td width="100%" style="font-family:helvetica, Arial, sans-serif; font-size: 14px; text-align: left; color:#87919F; line-height: 24px;">
+                                                            {{ $caseFileDesc }}
+                                                        </td>
+                                                    </tr>
+
 
                                                   <tr>
                                                         <td width="100%" style="font-family:helvetica, Arial, sans-serif; font-size: 13px; text-align: left; color:#2E363F; line-height: 24px;">
