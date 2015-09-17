@@ -24,6 +24,7 @@
         <link href="{{ asset('/css/media-player.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/file-manager.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/HoldOn.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/bootstrap-switch.min.css') }}" rel="stylesheet">
         <link href="{{ asset('/incl/animate.css') }}" rel="stylesheet">
         <link href="{{ asset('/incl/siyaleader_ports.css') }}" rel="stylesheet">
 
@@ -233,6 +234,9 @@
 
         <!-- Spinner -->
         <script src="{{ asset('/js/HoldOn.min.js') }}"></script> <!-- Spinner -->
+
+        <!-- bootstrap-switch. -->
+        <script src="{{ asset('/js/bootstrap-switch.js') }}"></script> <!-- bootstrap-switch. -->
 
         @include('functions.caseModal')
         @yield('footer')

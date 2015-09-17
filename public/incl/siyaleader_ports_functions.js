@@ -4,6 +4,20 @@
 
 $(document).ready(function(){
 
+
+	var options = {
+    onText: "Yes",
+    onColor: 'primary',
+    offColor: 'danger',
+    offText: "No",
+    animate: true,
+    size:'mini',
+	};
+
+	$('input[name="poCheckBox"]').bootstrapSwitch(options);
+
+
+
 });
 
 
@@ -413,7 +427,6 @@ function showAllMarkers ()
 
 function switchMarkers (cat)
 	{
-
 
 		if(eval(cat+"Status") == 1)
 				{

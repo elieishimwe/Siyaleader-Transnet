@@ -28,6 +28,7 @@
     <tr height="31">
         <td align=left>
             <div style="z-index:5000">
+
                 <table cellpadding=0 cellspacing=0 style="width:100%;border-collapse: collapse; border: 0px solid #1c1c1c;">
                     <tr style="opacity:1">
                     <td bgcolor="#1c1c1c" valign=middle align=center width=115 style="min-width:115px" title="Select a port ... " onmouseover="updateToolTip('Select a port ... ')" onmouseout="document.all.toolTip.innerHTML= ''">
@@ -55,8 +56,10 @@
                         <table border=0 cellpadding=0 cellspacing=0>
                             <td align=left>
                                 <table cellpadding=1 cellspacing=0 border=1 style="border-collapse:collapse;border:1px solid #FFFFFF">
+                                     <td><input type="checkbox" name="poCheckBox" id="poCheckBox"></td>
 
-                                    <td style="background:#e0e1e0" title="Toggle Port Ops Centre Markers"><input id="poCheckBox" type="checkbox" checked onClick="switchMarkers('po');" title="Toggle port ops centre" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
+
+                                  <!--<td style="background:#e0e1e0" title="Toggle Port Ops Centre Markers"><input id="poCheckBox" type="checkbox" checked  title="Toggle port ops centre" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
                                     <td style="background:#999999" title="Toggle Property Markers"><input id="prCheckBox" type="checkbox" checked onclick="switchMarkers('pr');" title="Toggle property" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
                                     <td style="background:#000000" title="Toggle Traffic Management  Markers"><input id="trCheckBox" type="checkbox" checked onclick="switchMarkers('tr');" title="Toggle traffic management" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
                                     <td style="background:#ff0000" title="Toggle Safety / Risk / Fire Management  Markers"><input id="srCheckBox" type="checkbox" checked onclick="switchMarkers('sr');" title="Toggle safety / risk / fire" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
@@ -67,7 +70,7 @@
                                     <td style="background:#0df1ff" title="Toggle Health Markers"><input id="heCheckBox" type="checkbox" checked onclick="switchMarkers('he');" title="Toggle health" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
                                     <td style="background:#333dc7" title="Toggle Marine Maintanence Markers"><input id="mmCheckBox" type="checkbox" checked onclick="switchMarkers('mm');" title="Toggle marine maintenance" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
                                     <td style="background:#ff33a6" title="Toggle Electrical Maintanence Markers"><input id="meCheckBox" type="checkbox" checked onclick="switchMarkers('me');" title="Toggle elec. maintenance" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                    <td style="background:#8a1ec7" title="Toggle Security Markers"><input id="seCheckBox" type="checkbox" checked onclick="switchMarkers('se');" title="Toggle security" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
+                                    <td style="background:#8a1ec7" title="Toggle Security Markers"><input id="seCheckBox" type="checkbox" checked onclick="switchMarkers('se');" title="Toggle security" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td> -->
                                 </table>
                             </td>
                             <td align=right width=30 style="min-width:30px">
@@ -87,6 +90,7 @@
                     <td bgcolor="#1c1c1c" valign=middle align=right><font style="font: 10pt 'arial'; color:#FFFFFF;"><span id="toolTip"></span></font>&nbsp;</td>
                     </tr>
                 </table>
+
             </div>
         </td>
     </tr>

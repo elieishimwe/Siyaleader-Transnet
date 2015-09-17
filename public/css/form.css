@@ -1811,3 +1811,13 @@ div.spinedit span:hover {
    border: 0;
 
 }
+
+label[for=poCheckBox]
+{
+   background-color: #e0e1e0 !important;
+}
+
+
+
+
+

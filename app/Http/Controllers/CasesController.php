@@ -226,13 +226,20 @@ class CasesController extends Controller
 
                 $criticalTeam = CriticalTeam::all();
 
-                foreach ($criticalTeam as $user) {
+                foreach ($criticalTeam as $critical) {
 
-                        \Mail::send('emails.severity',$severityData, function($message) use ($user) {
+                        $caseOwner         = new CaseOwner();
+                        $caseOwner->user   = $critical->user;
+                        $caseOwner->caseId = $caseObj->id;
+                        $caseOwner->type   = 5;//Critical Team
+                        $caseOwner->active = 1;
+                        $caseOwner->save();
 
-                            $userObj = User::find($user);
+                        \Mail::send('emails.severity',$severityData, function($message) use ($critical) {
+
+                            $userObj = User::find($critical->user);
                             $message->from('info@siyaleader.co.za', 'Siyaleader');
-                            $message->to($userObj->username)->subject("Siyaleader Notification - New SEVER Case Reported:");
+                            $message->to($userObj->username)->subject("Siyaleader Notification - New Severe Case Reported:");
 
                         });
 
