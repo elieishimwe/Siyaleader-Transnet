@@ -1817,6 +1817,54 @@ label[for=poCheckBox]
    background-color: #e0e1e0 !important;
 }
 
+.poCheckBox {
+
+  color:#e0e1e0 !important;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-poCheckBox,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-poCheckBox {
+  color: black;
+  background: #e0e1e0;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-prCheckBox,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-prCheckBox {
+  color: black;
+  background: #999999;
+}
+
+
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-trCheckBox,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-trCheckBox {
+  color: white;
+  background: #000000;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-srCheckBox,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-srCheckBox {
+  color: white;
+  background: #ff0000;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-maCheckBox,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-maCheckBox {
+  color: white;
+  background: #fe940a;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-mcCheckBox,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-mcCheckBox {
+  color: black;
+  background: #ffff00;
+}
+
+
+
+
+
+
+
 
 
 

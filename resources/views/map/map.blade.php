@@ -52,11 +52,18 @@
                     <td bgcolor="#1c1c1c" valign=middle align=center width=30 style="min-width:30px">
                         <a href="#" onclick="closeInfoBoxes();this.blur()"><i class="fa fa-info fa-fw" style="color:#ffffff" title="Close all Info Boxes" onmouseover="updateToolTip('Close all info boxes')" onmouseout="document.all.toolTip.innerHTML= ''"></i></a>
                     </td>
-                    <td bgcolor="#1c1c1c" valign=middle align=right width=280 style="min-width:285px">
+                    <td bgcolor="#1c1c1c" valign=middle align=right width=400 style="min-width:285px">
                         <table border=0 cellpadding=0 cellspacing=0>
                             <td align=left>
-                                <table cellpadding=1 cellspacing=0 border=1 style="border-collapse:collapse;border:1px solid #FFFFFF">
-                                     <td><input type="checkbox" name="poCheckBox" id="poCheckBox"></td>
+                        <!--     http://jsfiddle.net/sumw4/13/ -->
+                                <table cellpadding=1 cellspacing=0 border=0 style="border-collapse:collapse;border:0px solid #FFFFFF">
+
+                                        <td align=right width=60 style="min-width:30px"><input type="checkbox" name="poCheckBox" id="poCheckBox"></td>
+                                        <td align=right width=60 style="min-width:30px"><input type="checkbox" name="prCheckBox" id="prCheckBox"></td>
+                                        <td align=right width=60 style="min-width:30px"><input type="checkbox" name="trCheckBox" id="trCheckBox"></td>
+                                        <td align=right width=60 style="min-width:30px"><input type="checkbox" name="srCheckBox" id="srCheckBox"></td>
+                                        <td align=right width=60 style="min-width:30px"><input type="checkbox" name="maCheckBox" id="maCheckBox"></td>
+                                        <td align=right width=60 style="min-width:30px"><input type="checkbox" name="mcCheckBox" id="mcCheckBox"></td>
 
 
                                   <!--<td style="background:#e0e1e0" title="Toggle Port Ops Centre Markers"><input id="poCheckBox" type="checkbox" checked  title="Toggle port ops centre" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
@@ -75,7 +82,7 @@
                             </td>
                             <td align=right width=30 style="min-width:30px">
                                 <table cellpadding=1 cellspacing=0 border=1 style="border-collapse:collapse;border:1px solid #ffffff;">
-                                    <td style="background:url('images/toggle_all.png')" align=center title="Toggle All Markers"><input ID="toggleCheckBox" TYPE="checkbox" checked onclick="toggleAllMarkers();" title="Toggle all markers" onmouseover="updateToolTip('Toggle All Markers')" onmouseout="document.all.toolTip.innerHTML= ''"></td>
+                                    <!-- <td style="background:url('images/toggle_all.png')" align=center title="Toggle All Markers"><input ID="toggleCheckBox" TYPE="checkbox" checked onclick="toggleAllMarkers();" title="Toggle all markers" onmouseover="updateToolTip('Toggle All Markers')" onmouseout="document.all.toolTip.innerHTML= ''"></td> -->
                                 </table>
                             </td>
                         </table>
@@ -763,7 +770,7 @@ function createZoneArray ()
 </table>
 </div>
 
-<div id="mcStatusSelect" style="opacity:0.9;box-shadow:6px 6px 6px #000000;z-index:104;position:fixed;top:31px;left:603px;display:none">
+<div id="mcStatusSelect" style="opacity:0.9;box-shadow:6px 6px 6px #000000;z-index:104;position:fixed;top:130px;left:850px;display:none">
 <table border=0 cellpadding=0 cellspacing=0 style="background:#1c1c1c;color:#ffffff;margin-top:0px;margin-bottom:0px;border-collapse:collapse;border-style:solid;border-top:0px solid #1C1C1C;border-left:6px solid #1C1C1C;border-bottom:6px solid #1C1C1C;border-right:6px solid #1C1C1C">
 <td align=center>
     <table border=0 cellpadding=0 cellspacing=0 width="117">

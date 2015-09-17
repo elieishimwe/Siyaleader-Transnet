@@ -5,16 +5,118 @@
 $(document).ready(function(){
 
 
-	var options = {
-    onText: "Yes",
-    onColor: 'primary',
-    offColor: 'danger',
-    offText: "No",
+	var poCheckBoxoptions = {
+    onText: "On",
+    onColor: 'poCheckBox',
+    offColor: 'poCheckBox',
+    offText: "Off",
     animate: true,
     size:'mini',
 	};
 
-	$('input[name="poCheckBox"]').bootstrapSwitch(options);
+	$('input[name="poCheckBox"]').bootstrapSwitch(poCheckBoxoptions);
+
+	$('input[name="poCheckBox"]').on('switchChange.bootstrapSwitch', function (event, state) {
+
+
+    		switchMarkers('po')
+	});
+
+
+
+	var prCheckBoxoptions = {
+    onText: "On",
+    onColor: 'prCheckBox',
+    offColor: 'prCheckBox',
+    offText: "Off",
+    animate: true,
+    size:'mini',
+	};
+
+	$('input[name="prCheckBox"]').bootstrapSwitch(prCheckBoxoptions);
+
+	$('input[name="prCheckBox"]').on('switchChange.bootstrapSwitch', function (event, state) {
+
+    		switchMarkers('pr')
+	});
+
+
+
+	var trCheckBoxoptions = {
+    onText: "On",
+    onColor: 'trCheckBox',
+    offColor: 'trCheckBox',
+    offText: "Off",
+    animate: true,
+    size:'mini',
+	};
+
+	$('input[name="trCheckBox"]').bootstrapSwitch(trCheckBoxoptions);
+
+	$('input[name="trCheckBox"]').on('switchChange.bootstrapSwitch', function (event, state) {
+
+
+    		switchMarkers('tr')
+	});
+
+
+	var srCheckBoxoptions = {
+    onText: "On",
+    onColor: 'srCheckBox',
+    offColor: 'srCheckBox',
+    offText: "Off",
+    animate: true,
+    size:'mini',
+	};
+
+	$('input[name="srCheckBox"]').bootstrapSwitch(trCheckBoxoptions);
+
+	$('input[name="srCheckBox"]').on('switchChange.bootstrapSwitch', function (event, state) {
+
+
+    		switchMarkers('sr')
+	});
+
+
+	var maCheckBoxoptions = {
+    onText: "On",
+    onColor: 'maCheckBox',
+    offColor: 'maCheckBox',
+    offText: "Off",
+    animate: true,
+    size:'mini',
+	};
+
+	$('input[name="maCheckBox"]').bootstrapSwitch(maCheckBoxoptions);
+
+	$('input[name="maCheckBox"]').on('switchChange.bootstrapSwitch', function (event, state) {
+
+
+    		switchMarkers('ma')
+	});
+
+
+	var mcCheckBoxoptions = {
+    onText: "On",
+    onColor: 'mcCheckBox',
+    offColor: 'mcCheckBox',
+    offText: "Off",
+    animate: true,
+    size:'mini',
+	};
+
+	$('input[name="mcCheckBox"]').bootstrapSwitch(mcCheckBoxoptions);
+
+	$('input[name="mcCheckBox"]').on('switchChange.bootstrapSwitch', function (event, state) {
+
+
+    		switchMarkers('mc')
+	});
+
+
+
+
+
 
 
 
