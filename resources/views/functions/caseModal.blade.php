@@ -92,10 +92,13 @@
         success : function(data){
 
           if (data == 'ok') {
+
+            $('#addCaseNoteForm')[0].reset();
             launchCaseModal(caseId);
             $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! you case note has been successfully added <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
             $('#modalCase').modal('toggle');
             HoldOn.close();
+
           }
 
         }
@@ -134,6 +137,7 @@
 
           if( data == 'ok')
           {
+            $('#addCaseFileForm')[0].reset();
             $('#modalAddCaseFilesModal').modal('toggle');
             $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! your file has been successfully uploaded <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
             launchCaseModal(caseId);
