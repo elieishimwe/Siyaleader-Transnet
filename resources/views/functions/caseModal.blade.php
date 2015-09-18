@@ -15,7 +15,6 @@
   })
 
 
-
   $('#message').maxlength({
             alwaysShow: true,
             threshold: 10,
@@ -78,9 +77,27 @@
         data    : formData,
         headers : { 'X-CSRF-Token': token },
         url     :"{!! url('/addCaseNote')!!}",
-        success : function(){
-          launchCaseModal(caseId);
-          $('#modalCase').modal('toggle');
+        beforeSend : function() {
+            HoldOn.open({
+                theme:"sk-rect",//If not given or inexistent theme throws default theme sk-rect
+                message: "<h4> loading please wait... ! </h4>",
+                content:"Your HTML Content", // If theme is set to "custom", this property is available
+                                             // this will replace the theme by something customized.
+                backgroundColor:"none repeat scroll 0 0 rgba(0, 0, 0, 0.8)",//Change the background color of holdon with javascript
+                           // Keep in mind is necessary the .css file too.
+                textColor:"white" // Change the font color of the message
+            });
+
+        },
+        success : function(data){
+
+          if (data == 'ok') {
+            launchCaseModal(caseId);
+            $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! you case note has been successfully added <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
+            $('#modalCase').modal('toggle');
+            HoldOn.close();
+          }
+
         }
        })
 
@@ -115,15 +132,13 @@
         },
         success : function(data){
 
-
           if( data == 'ok')
           {
             $('#modalAddCaseFilesModal').modal('toggle');
-            $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You file has been successfully uploaded <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
+            $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! your file has been successfully uploaded <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
             launchCaseModal(caseId);
             $('#modalCase').modal('toggle')
-
-            HoldOn.close()
+            HoldOn.close();
 
           }
 
@@ -205,10 +220,28 @@
         data    : formData,
         headers : { 'X-CSRF-Token': token },
         url     :"{!! url('/escalateCase')!!}",
-        success : function(){
-           $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You case has been successfully escaleted <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
-          launchCaseModal(caseID);
-          $('#modalCase').modal('toggle');
+        beforeSend : function() {
+          HoldOn.open({
+          theme:"sk-rect",//If not given or inexistent theme throws default theme sk-rect
+          message: "<h4> loading please wait... ! </h4>",
+          content:"Your HTML Content", // If theme is set to "custom", this property is available
+                                       // this will replace the theme by something customized.
+          backgroundColor:"none repeat scroll 0 0 rgba(0, 0, 0, 0.8)",//Change the background color of holdon with javascript
+                     // Keep in mind is necessary the .css file too.
+          textColor:"white" // Change the font color of the message
+            });
+        },
+        success : function(data){
+
+          if (data == 'ok') {
+
+            $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You case has been successfully escalated <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
+            launchCaseModal(caseID);
+            $('#modalCase').modal('toggle');
+            HoldOn.close();
+
+          }
+
         }
 
     })
