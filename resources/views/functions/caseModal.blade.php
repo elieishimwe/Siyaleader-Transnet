@@ -234,6 +234,7 @@
         success : function(data){
 
           if (data == 'ok') {
+            $(".token-input-list").remove();
             $('#escalateCaseForm')[0].reset();
             $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You case has been successfully escalated <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
             launchCaseModal(caseID);
