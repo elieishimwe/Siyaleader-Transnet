@@ -124,7 +124,7 @@ class CasesController extends Controller
 
         }
 
-
+            return "ok";
     }
 
     /**

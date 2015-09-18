@@ -405,8 +405,13 @@
                      $("#modalCase #sub_sub_category").val(data[0].sub_sub_category);
                      $("#modalCase #status").val(data[0].status);
                      $("#modalCase #department").val(data[0].department);
-                     var ImgUrl = "http://www.siyaleader.co.za:8080/ecin2edin/console/app_backend/port_backend/public/"+data[0].img_url;
-                     $("#modalCase #CaseImageA").attr("href",ImgUrl);
+
+                     if (data[0].img_url) {
+
+                        var ImgUrl = "http://www.siyaleader.co.za:8080/ecin2edin/console/app_backend/port_backend/public/"+data[0].img_url;
+                        $("#modalCase #CaseImageA").attr("href",ImgUrl);
+
+                     }
 
                      $('a[class*="pirobox"]').piroBox_ext({
                           piro_speed : 900,
@@ -691,15 +696,36 @@
     function acceptCase()
     {
 
+
+      $('#modalCase').modal('toggle');
       var id = $(".modal-body #caseID").val();
 
       $.ajax({
         type    :"GET",
         url     :"{!! url('/acceptCase/" + id +"')!!}",
-        success : function(){
+        beforeSend : function() {
+            HoldOn.open({
+                theme:"sk-rect",//If not given or inexistent theme throws default theme sk-rect
+                message: "<h4>processing please wait... ! </h4>",
+                content:"Your HTML Content", // If theme is set to "custom", this property is available
+                                             // this will replace the theme by something customized.
+                backgroundColor:"none repeat scroll 0 0 rgba(0, 0, 0, 0.8)",//Change the background color of holdon with javascript
+                           // Keep in mind is necessary the .css file too.
+                textColor:"white" // Change the font color of the message
+            });
 
-          $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You successfully accepted case ' + id +'<i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
-          launchCaseModal(id);
+        },
+        success : function(data){
+
+          if (data == "ok") {
+
+              $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You successfully accepted case ' + id +'<i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
+              launchCaseModal(id);
+              $('#modalCase').modal('show');
+              HoldOn.close()
+
+          }
+
 
         }
        })
