@@ -326,7 +326,6 @@ echo 'var image = "markers/' .$imageName. '";';
                     boxContent += "<tr><td align='left' valign='top' nowrap><B>Last Activity :</B></td><td align='left'><?php echo $LastActivity; ?></td></tr>";  // Last person to have interacted on CMC
                     boxContent += "<tr><td align='left' valign='top' nowrap><B>Author Date :</B></td><td align='left'><?php echo $AuthDate; ?></td></tr>";  // Last person to have interacted on CMC
                     boxContent += "<tr><td align='left' valign='top' nowrap><B>Author :</B></td><td align='left'><?php echo $Author; ?></td></tr>";  // Last person to have interacted on CMC
-
                     boxContent += "</table>";
                     boxContent += "</div>";
 

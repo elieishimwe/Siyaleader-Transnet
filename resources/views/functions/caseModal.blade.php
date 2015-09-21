@@ -571,6 +571,11 @@
                         return "Escalation";
                     }
 
+                    if (d.type  == 5  )
+                    {
+                        return "Critical Team";
+                    }
+
 
 
                   },"name" : 'type'},
