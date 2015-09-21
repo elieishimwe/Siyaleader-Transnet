@@ -50,6 +50,7 @@ class notifyCommand extends Command
                                 ->where('referred_at','<>','0000-00-00 00:00:00')
                                 ->get();
 
+        \Log::info("Cases:");
         \Log::info($cases);
 
 
@@ -59,9 +60,15 @@ class notifyCommand extends Command
 
                $firstRespondersObj  = CaseResponder::where("sub_sub_category",'=',$case->sub_sub_category)
                                                         ->select('firstResponder')->first();
+                \Log::info("First Responders");
+                \Log::info($firstRespondersObj);
 
                $secondRespondersObj = CaseResponder::where("sub_sub_category",'=',$case->sub_sub_category)
                                                 ->select('secondResponder')->first();
+
+
+                \Log::info("Second Responders");
+                \Log::info($secondRespondersObj);
 
 
                if (sizeof($firstRespondersObj) > 0) {
