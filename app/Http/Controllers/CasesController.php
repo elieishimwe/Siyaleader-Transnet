@@ -89,6 +89,7 @@ class CasesController extends Controller
             $case = CaseReport::find($id);
             if($case->status == "Pending") {
                 $case->status = "Actioned";
+                $case->accepted_at = \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString();
                 $case->save();
             }
 
