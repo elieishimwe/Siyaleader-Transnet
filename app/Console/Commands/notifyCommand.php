@@ -59,16 +59,17 @@ class notifyCommand extends Command
             if ($case->sub_sub_category > 0) {
 
                $firstRespondersObj  = CaseResponder::where("sub_sub_category",'=',$case->sub_sub_category)
-                                                        ->select('firstResponder')->first();
+                                                        ->select('firstResponder')->get();
                 \Log::info("First Responders");
                 \Log::info($firstRespondersObj);
+                \Log::info(sizeof($firstRespondersObj));
 
                $secondRespondersObj = CaseResponder::where("sub_sub_category",'=',$case->sub_sub_category)
-                                                ->select('secondResponder')->first();
-
+                                                ->select('secondResponder')->get();
 
                 \Log::info("Second Responders");
                 \Log::info($secondRespondersObj);
+                \Log::info(sizeof($secondRespondersObj));
 
 
                if (sizeof($firstRespondersObj) > 0) {
