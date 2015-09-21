@@ -42,13 +42,15 @@ class notifyCommand extends Command
     public function fire()
     {
 
-
+        \Log::info("Elie Ishimwe");
         $nowDate = \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString();
         //$endDate = \Carbon\Carbon::now('Africa/Johannesburg')->addMinutes(5);
 
         $cases   = CaseReport::where('accepted_at', '=' ,'0000-00-00 00:00:00')
                                 ->where('referred_at','<>','0000-00-00 00:00:00')
                                 ->get();
+
+        \Log::info($cases);
 
 
         foreach ($cases as $case) {
