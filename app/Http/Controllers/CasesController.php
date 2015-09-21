@@ -86,6 +86,12 @@ class CasesController extends Controller
             $caseActivity->note        = "Case Accepted by ".\Auth::user()->name.' '.\Auth::user()->surname;
             $caseActivity->save();
 
+            $case = CaseReport::find($id);
+            if($case->status == "Pending") {
+                $case->status = "Actioned";
+                $case->save();
+            }
+
             $caseOwners = CaseOwner::where("caseId",'=',$id)
                                      ->where("user","<>",\Auth::user()->id)
                                      ->get();
