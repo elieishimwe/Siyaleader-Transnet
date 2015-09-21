@@ -23,9 +23,9 @@
                           </div>
                            <div class="col-md-6">
                             <a id='acceptCaseClass' class="btn btn-xs btn-alt" onClick="acceptCase()">Accept Case</a>
-                            <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchReferModal();" data-target=".modalReferCase">Escalate Case</a>
+                            <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchReferModal();" data-target=".modalReferCase">Refer Case</a>
                             <a class="btn btn-xs btn-alt" onClick="launchCaseNotesModal();">Add Case Note</a>
-                            <a class="btn btn-xs btn-alt" onClick="launchCaseFilesModal();">Attach a File</a>
+                            <a class="btn btn-xs btn-alt" onClick="launchCaseFilesModal();">Attach File</a>
                           </div>
                         </div>
 
