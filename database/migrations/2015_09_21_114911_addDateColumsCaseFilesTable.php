@@ -15,6 +15,10 @@ class AddDateColumsCaseFilesTable extends Migration
         Schema::table('cases', function($table)
         {
             $table->dateTime('accepted_at');
+            $table->dateTime('referred_at');
+            $table->dateTime('escalated_at');
+            $table->dateTime('resolved_at');
+            $table->dateTime('closed_at');
 
         });
     }
@@ -30,6 +34,10 @@ class AddDateColumsCaseFilesTable extends Migration
         {
 
             $table->dropColumn('accepted_at');
+            $table->dropColumn('referred_at');
+            $table->dropColumn('escalated_at');
+            $table->dropColumn('resolved_at');
+            $table->dropColumn('closed_at');
 
         });
     }
