@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close"  id="closeReferCase" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id='depTitle'>Escalate Case</h4>
+                <h4 class="modal-title" id='depTitle'>Refer Case</h4>
             </div>
             <div class="row">
               <div class="col-md-6">
@@ -35,7 +35,7 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                   <a type="#" id='submitEscalateCaseForm' class="btn btn-sm">Escalate</a>
+                   <a type="#" id='submitEscalateCaseForm' class="btn btn-sm">Refer</a>
                 </div>
             </div>
 
