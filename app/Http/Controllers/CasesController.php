@@ -478,7 +478,7 @@ class CasesController extends Controller
             \Mail::send('emails.caseEscalation',$data, function($message) use ($user)
             {
                 $message->from('info@siyaleader.co.za', 'Siyaleader');
-                $message->to($user->username)->subject("Siyaleader Notification - Case escalated: " );
+                $message->to($user->username)->subject("Siyaleader Notification - Case referred: " );
 
             });
 
@@ -511,14 +511,14 @@ class CasesController extends Controller
             $caseActivity->caseId      = $request['caseID'];
             $caseActivity->user        = $to;
             $caseActivity->addressbook = $addressbook;
-            $caseActivity->note        = "Case Escalated to ".$name ." ".$surname." by ".\Auth::user()->name.' '.\Auth::user()->surname;
+            $caseActivity->note        = "Case Referred to ".$name ." ".$surname." by ".\Auth::user()->name.' '.\Auth::user()->surname;
             $caseActivity->save();
 
 
             \Mail::send('emails.caseEscalated',$data, function($message) use ($address)
             {
                 $message->from('info@siyaleader.co.za', 'Siyaleader');
-                $message->to($address)->subject("Siyaleader Notification - Case escalated: " );
+                $message->to($address)->subject("Siyaleader Notification - Case referred: " );
 
             });
 
