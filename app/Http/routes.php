@@ -197,6 +197,10 @@ Route::get('case/{id}', 'CasesController@edit');
 Route::post('escalateCase', 'CasesController@escalate');
 Route::get('acceptCase/{id}', 'CasesController@acceptCase');
 Route::post('addCaseForm', 'CasesController@captureCase');
+Route::get('closeCase/{id}', 'CasesController@closeCase');
+Route::get('requestCaseClosure/{id}', 'CasesController@requestCaseClosure');
+Route::get('request-cases-closure-list', 'CasesController@requestCaseClosureList');
+Route::get('resolved-cases-list', 'CasesController@resolvedCasesList');
 
 
 

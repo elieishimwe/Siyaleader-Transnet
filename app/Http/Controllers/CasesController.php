@@ -49,12 +49,50 @@ class CasesController extends Controller
 
         $caseIds = array_unique($caseIds);
 
-        $cases = \DB::table('cases')
+        if (\Auth::user()->role == 1) {
+
+              $cases = \DB::table('cases')
+                ->join('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
+                ->where('cases.status','<>','Pending Closure')
+                ->where('cases.status','<>','Resolved')
+                ->select(\DB::raw("cases.id, cases.created_at,cases.description,cases.status,caseOwners.accept,caseOwners.type"))
+                ->groupBy('cases.id');
+
+        }
+        else {
+
+              $cases = \DB::table('cases')
                 ->join('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
                 ->whereIn('cases.id',$caseIds)
                 ->where('caseOwners.user','=',\Auth::user()->id)
+                ->where('cases.status','<>','Pending Closure')
+                ->where('cases.status','<>','Resolved')
                 ->select(\DB::raw("cases.id, cases.created_at,cases.description,cases.status,caseOwners.accept,caseOwners.type"))
                 ->groupBy('cases.id');
+
+        }
+
+
+        return \Datatables::of($cases)
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>')
+                            ->make(true);
+    }
+
+
+    public function requestCaseClosureList()
+    {
+
+        $cases = CaseReport::where('status','=','Pending Closure');
+        return \Datatables::of($cases)
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>')
+                            ->make(true);
+    }
+
+
+    public function resolvedCasesList()
+    {
+
+        $cases = CaseReport::where('status','=','Resolved');
         return \Datatables::of($cases)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>')
                             ->make(true);
@@ -73,6 +111,7 @@ class CasesController extends Controller
                                    ->first();
 
          $numberCases   = CaseReport::where('user','=',\Auth::user()->id)->get();
+
 
 
         if (sizeof($caseOwnerObj) > 0)
@@ -550,9 +589,56 @@ class CasesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function closeCase($id)
     {
-        //
+
+      $case = CaseReport::find($id);
+      $case->status = "Resolved";
+      $case->save();
+
+
+   /*   \Mail::send('emails.caseEscalation',$data, function($message) use ($user) {
+            $message->from('info@siyaleader.co.za', 'Siyaleader');
+            $message->to($user->username)->subject("Siyaleader Notification - Case referred: " );
+
+        });*/
+
+       return "ok";
+
+    }
+
+
+    public function requestCaseClosure($id)
+    {
+        $case = CaseReport::find($id);
+        $case->status = "Pending Closure";
+        $case->save();
+
+        $caseAdministrators    = User::where('role','=',1)
+                                    ->where('role','=',3)
+                                    ->get();
+
+        foreach ($caseAdministrators as $admin) {
+
+             $data = array(
+                            'name'   =>$admin->name,
+                            'caseID' =>$case->id,
+                            'content' => $case->description,
+                            );
+
+
+            \Mail::send('emails.requestCaseClosure',$data, function($message) use ($admin) {
+            $message->from('info@siyaleader.co.za', 'Siyaleader');
+            $message->to($admin->username)->subject("Siyaleader Notification - Request for Case Closure: " );
+
+            });
+
+        }
+
+
+
+
+        return "Case Closed";
     }
 
     /**

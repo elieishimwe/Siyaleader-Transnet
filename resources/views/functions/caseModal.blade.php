@@ -53,12 +53,60 @@
                 { "bSortable": false, "aTargets": [ 4 ] }
             ]
 
-         });
+  });
+
+  var requestCasesClosureTable     = $('#deletedCasesTable').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "dom": 'T<"clear">lfrtip',
+                "order" :[[0,"desc"]],
+                "ajax": "{!! url('/request-cases-closure-list/')!!}",
+                 "columns": [
+                {data: 'id', name: 'cases.id'},
+                {data: 'created_at', name: 'cases.created_at'},
+                {data: function(d){
+
+                    return d.description;
+
+                },"name" : 'cases.description',"width":"35%" },
+                {data: 'status', name: 'cases.status'},
+                {data: 'actions',  name: 'actions'},
+               ],
+
+            "aoColumnDefs": [
+                { "bSearchable": false, "aTargets": [ 4] },
+                { "bSortable": false, "aTargets": [ 4 ] }
+            ]
+
+  });
+
+  var resolvedCasesTable     = $('#resolvedCasesTable').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "dom": 'T<"clear">lfrtip',
+                "order" :[[0,"desc"]],
+                "ajax": "{!! url('/resolved-cases-list/')!!}",
+                 "columns": [
+                {data: 'id', name: 'cases.id'},
+                {data: 'created_at', name: 'cases.created_at'},
+                {data: function(d){
+
+                    return d.description;
+
+                },"name" : 'cases.description',"width":"35%" },
+                {data: 'status', name: 'cases.status'},
+                {data: 'actions',  name: 'actions'},
+               ],
+
+            "aoColumnDefs": [
+                { "bSearchable": false, "aTargets": [ 4] },
+                { "bSortable": false, "aTargets": [ 4 ] }
+            ]
+
+  });
 
 
-
-
-     var oTableCaseNotes,oTableCaseResponders,oTableAddressBook,oTableCaseActivities,oTableAddress;
+  var oTableCaseNotes,oTableCaseResponders,oTableAddressBook,oTableCaseActivities,oTableAddress;
 
 
 
@@ -252,6 +300,15 @@
     })
 
      });
+
+      $("#closeProfileCase").on("click",function(){
+
+          $('#modalCase').modal('toggle');
+          location.reload();
+
+
+      });
+
 
       $("#closeReferCase").on("click",function(){
 
@@ -774,6 +831,83 @@
        })
 
     }
+
+    function closeCase() {
+
+
+      $('#modalCase').modal('toggle');
+      var id = $(".modal-body #caseID").val();
+
+      $.ajax({
+        type    :"GET",
+        url     :"{!! url('/closeCase/" + id +"')!!}",
+        beforeSend : function() {
+            HoldOn.open({
+                theme:"sk-rect",//If not given or inexistent theme throws default theme sk-rect
+                message: "<h4>processing please wait... ! </h4>",
+                content:"Your HTML Content", // If theme is set to "custom", this property is available
+                                             // this will replace the theme by something customized.
+                backgroundColor:"none repeat scroll 0 0 rgba(0, 0, 0, 0.8)",//Change the background color of holdon with javascript
+                           // Keep in mind is necessary the .css file too.
+                textColor:"white" // Change the font color of the message
+            });
+
+        },
+        success : function(data){
+
+          if (data == "ok") {
+
+              $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You successfully closed case ' + id +'<i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
+              launchCaseModal(id);
+              $('#modalCase').modal('show');
+              HoldOn.close()
+
+          }
+
+
+        }
+       })
+
+    }
+
+    function requestCaseClosure() {
+
+
+      $('#modalCase').modal('toggle');
+      var id = $(".modal-body #caseID").val();
+
+      $.ajax({
+        type    :"GET",
+        url     :"{!! url('/requestCaseClosure/" + id +"')!!}",
+        beforeSend : function() {
+            HoldOn.open({
+                theme:"sk-rect",//If not given or inexistent theme throws default theme sk-rect
+                message: "<h4>processing please wait... ! </h4>",
+                content:"Your HTML Content", // If theme is set to "custom", this property is available
+                                             // this will replace the theme by something customized.
+                backgroundColor:"none repeat scroll 0 0 rgba(0, 0, 0, 0.8)",//Change the background color of holdon with javascript
+                           // Keep in mind is necessary the .css file too.
+                textColor:"white" // Change the font color of the message
+            });
+
+        },
+        success : function(data) {
+
+          if (data == "Case Closed") {
+
+              $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You close request has bees successfully submitted for case: ' + id +'<i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
+              launchCaseModal(id);
+               $('#modalCase').modal('show');
+              HoldOn.close();
+
+          }
+
+
+        }
+       })
+
+    }
+
 
     </script>
 

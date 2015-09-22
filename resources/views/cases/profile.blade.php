@@ -6,7 +6,8 @@
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <button type="button" class="close"  id="closeProfileCase" aria-hidden="true">&times;</button>
+                            <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
                             <h4 class="modal-title" id='depTitle'>Case details</h4>
 
                         </div>
@@ -26,6 +27,11 @@
                             <a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchReferModal();" data-target=".modalReferCase">Refer Case</a>
                             <a class="btn btn-xs btn-alt" onClick="launchCaseNotesModal();">Add Case Note</a>
                             <a class="btn btn-xs btn-alt" onClick="launchCaseFilesModal();">Attach File</a>
+                            @if ( Auth::user()->role == 1 || Auth::user()->role == 3 )
+                              <a class="btn btn-xs btn-alt" onClick="closeCase()">Close Case</a>
+                            @else
+                              <a class="btn btn-xs btn-alt" onClick="requestCaseClosure()">Request Case Closure</a>
+                            @endif
                           </div>
                         </div>
 

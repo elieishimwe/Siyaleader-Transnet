@@ -21,8 +21,60 @@ class HomeController extends Controller
 
         if (\Auth::check())
         {
-            $numberCases = CaseReport::where('user','=',\Auth::user()->id)->get();
-            return view('home.home',compact('numberCases'));
+
+            if (\Auth::user()->role == 1) {
+
+                $numberReferredCases = \DB::table('cases')
+                                ->join('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
+                                ->where('cases.status','<>','Pending Closure')
+                                ->where('cases.status','<>','Resolved')
+                                ->groupBy('cases.id')
+                                ->get();
+
+                $numberPendingClosureCases = \DB::table('cases')
+                                            ->join('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
+                                            ->where('cases.status','=','Pending Closure')
+                                            ->groupBy('cases.id')
+                                            ->get();
+
+                $numberResolvedCases = \DB::table('cases')
+                                        ->join('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
+                                        ->where('cases.status','=','Resolved')
+                                        ->groupBy('cases.id')
+                                        ->get();
+
+                $numberPendingCases = \DB::table('cases')
+                                        ->where('cases.status','=','Pending')
+                                        ->get();
+
+            }
+            else {
+
+                $numberReferredCases = \DB::table('cases')
+                                        ->join('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
+                                        ->where('cases.status','<>','Pending Closure')
+                                        ->where('cases.status','<>','Resolved')
+                                        ->where('caseOwners.user','=',\Auth::user()->id)
+                                        ->groupBy('cases.id')
+                                        ->get();
+
+                $numberPendingClosureCases = \DB::table('cases')
+                                            ->join('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
+                                            ->where('cases.status','=','Pending Closure')
+                                            ->where('caseOwners.user','=',\Auth::user()->id)
+                                            ->groupBy('cases.id')
+                                            ->get();
+
+                $numberResolvedCases = \DB::table('cases')
+                                        ->join('caseOwners', 'cases.id', '=', 'caseOwners.caseId')
+                                        ->where('cases.status','=','Resolved')
+                                        ->where('caseOwners.user','=',\Auth::user()->id)
+                                        ->groupBy('cases.id')
+                                        ->get();
+
+            }
+
+            return view('home.home',compact('numberReferredCases','numberPendingClosureCases','numberResolvedCases','numberPendingCases'));
 
         }
         else {
