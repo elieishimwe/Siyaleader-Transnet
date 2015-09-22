@@ -2,6 +2,12 @@
   <script>
   $(document).ready(function() {
 
+
+
+  var activeTab = localStorage.getItem('activeTab');
+  console.log(activeTab);
+  $('#tabs a[href="#' + activeTab + '"]').tab('show');
+
   $("#addresses").tokenInput("getContacts");
 
   $("#acceptCaseClass").on("click",function(){
@@ -303,8 +309,27 @@
 
       $("#closeProfileCase").on("click",function(){
 
+         var $tab = $('.tab-container'), $active = $tab.find('.tab-pane.active');
+
           $('#modalCase').modal('toggle');
+          var tabId = $active[0].id;
+          localStorage.setItem('activeTab', tabId);
           location.reload();
+
+
+
+
+
+         /*if ($active[0].id == 'reported') {
+
+
+
+         }
+         else {
+
+             $('#modalCase').modal('toggle');
+
+         }*/
 
 
       });
