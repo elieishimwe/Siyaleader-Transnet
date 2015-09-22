@@ -13,12 +13,19 @@
   $("#acceptCaseClass").on("click",function(){
 
     $( "#acceptCaseClass" ).addClass( "hidden" );
-  })
+  });
+
+  $("#requestCaseClosureClass").on("click",function(){
+
+    $("#requestCaseClosureClass" ).addClass( "hidden" );
+  });
+
+
 
   $('#modalCase').on('hidden.bs.modal', function () {
 
       $('#fileManager').empty();
-  })
+  });
 
 
   $('#message').maxlength({
@@ -519,6 +526,8 @@
       $('.elfinder-cwd-wrapper, .elfinder-navbar').niceScroll();
 
       $( "#acceptCaseClass" ).removeClass( "hidden" );
+      $( "#requestCaseClosureClass" ).removeClass( "hidden" );
+
       $(".modal-body #categoryID").val(id);
       $(".modal-body #caseID").val(id);
       var userID = {!! Auth::user()->id !!};
