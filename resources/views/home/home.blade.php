@@ -23,7 +23,7 @@
                         <div id="stats-line-2" class="pull-left"></div>
                         <div class="data">
                             <h2 data-value="{{ count($numberReferredCases,0)}}">0</h2>
-                            <small>Reported Cases </small>
+                            <small>Reported/Referred Cases </small>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                             <div id="stats-line" class="pull-left"></div>
                             <div class="data">
                                 <h2 data-value="{{ count($numberPendingCases,0)}}">0</h2>
-                                <small>Pending Referral Cases </small>
+                                <small>Reported/Pending Referral Cases </small>
                             </div>
                         </div>
                     </div>
