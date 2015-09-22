@@ -98,6 +98,15 @@ class CasesController extends Controller
                             ->make(true);
     }
 
+    public function pendingReferralCasesList()
+    {
+
+        $cases = CaseReport::where('status','=','Pending');
+        return \Datatables::of($cases)
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>')
+                            ->make(true);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

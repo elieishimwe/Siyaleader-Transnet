@@ -111,6 +111,32 @@
 
   });
 
+   var pendingreferralCasesTable     = $('#pendingreferralCasesTable').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "dom": 'T<"clear">lfrtip',
+                "order" :[[0,"desc"]],
+                "ajax": "{!! url('/pending-referral-cases-list/')!!}",
+                 "columns": [
+                {data: 'id', name: 'cases.id'},
+                {data: 'created_at', name: 'cases.created_at'},
+                {data: function(d){
+
+                    return d.description;
+
+                },"name" : 'cases.description',"width":"35%" },
+                {data: 'status', name: 'cases.status'},
+                {data: 'actions',  name: 'actions'},
+               ],
+
+            "aoColumnDefs": [
+                { "bSearchable": false, "aTargets": [ 4] },
+                { "bSortable": false, "aTargets": [ 4 ] }
+            ]
+
+  });
+
+
 
   var oTableCaseNotes,oTableCaseResponders,oTableAddressBook,oTableCaseActivities,oTableAddress;
 

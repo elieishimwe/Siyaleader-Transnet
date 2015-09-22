@@ -121,6 +121,31 @@
                 </div>
             </div>
 
+            <div class="tab-pane" id="pendingreferral">
+             <!-- Responsive Table -->
+                <div class="block-area" id="responsiveTable">
+                    @if(Session::has('success'))
+                    <div class="alert alert-info alert-dismissable fade in">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        {{ Session::get('success') }}
+                    </div>
+                    @endif
+                    <div class="table-responsive overflow">
+                        <table class="table tile table-striped" id="pendingreferralCasesTable">
+                            <thead>
+                              <tr>
+                                    <th>Id</th>
+                                    <th>Created At</th>
+                                    <th>Description</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                              </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
             <div class="tab-pane" id="resolved">
              <!-- Responsive Table -->
                 <div class="block-area" id="responsiveTable">

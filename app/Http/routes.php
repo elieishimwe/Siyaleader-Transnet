@@ -201,6 +201,7 @@ Route::get('closeCase/{id}', 'CasesController@closeCase');
 Route::get('requestCaseClosure/{id}', 'CasesController@requestCaseClosure');
 Route::get('request-cases-closure-list', 'CasesController@requestCaseClosureList');
 Route::get('resolved-cases-list', 'CasesController@resolvedCasesList');
+Route::get('pending-referral-cases-list', 'CasesController@pendingReferralCasesList');
 
 
 
