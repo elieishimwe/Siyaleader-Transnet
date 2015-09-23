@@ -663,20 +663,22 @@ class CasesController extends Controller
 
 
 
-        foreach ($caseAdministrators as $admin) {
+        foreach ($caseAdministrators as $caseAdmin) {
+
+            \Log::info($caseAdmin->name);
 
              $data = array(
-                            'name'    =>$admin->name,
+                            'name'    =>$caseAdmin->name,
                             'caseID'  =>$case->id,
                             'content' => $case->description,
                             'note'    => $request['caseNote'],
                             );
 
 
-            \Mail::send('emails.requestCaseClosure',$data, function($message) use ($admin) {
+            \Mail::send('emails.requestCaseClosure',$data, function($message) use ($caseAdmin) {
 
                 $message->from('info@siyaleader.co.za', 'Siyaleader');
-                $message->to($admin->username)->subject("Siyaleader Notification - Request for Case Closure: " );
+                $message->to($caseAdmin->username)->subject("Siyaleader Notification - Request for Case Closure: " );
 
             });
 
