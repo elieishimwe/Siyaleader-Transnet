@@ -918,7 +918,6 @@
           if (data == "ok") {
 
               $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You successfully closed case ' + id +'<i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
-              launchCaseModal(id);
               $('#modalCase').modal('show');
               HoldOn.close()
 
@@ -953,11 +952,12 @@
         },
         success : function(data) {
 
+          console.log(data);
           if (data == "Case Closed") {
 
+              console.log("I am inside the if statement");
               $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You close request has bees successfully submitted for case: ' + id +'<i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
-              launchCaseModal(id);
-               $('#modalCase').modal('show');
+              $('#modalCase').modal('show');
               HoldOn.close();
 
           }
