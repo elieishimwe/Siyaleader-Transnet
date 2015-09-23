@@ -16,8 +16,7 @@
   });
 
   $("#requestCaseClosureClass").on("click",function(){
-
-    $("#requestCaseClosureClass" ).addClass( "hidden" );
+      $("#requestCaseClosureClass" ).addClass( "hidden" );
   });
 
 
@@ -552,6 +551,11 @@
 
                   if(data[0] !== null)
                   {
+
+                      if (data[0].status == "Pending Closure" || data[0].status == "Resolved" ) {
+
+                         $( "#requestCaseClosureClass" ).addClass( "hidden" );
+                      }
 
                      $("#modalCase #id").val(data[0].id);
                      $("#modalCase #description").val(data[0].description);
