@@ -22,11 +22,11 @@ class AuthController extends Controller
     |
     */
 
+    protected $redirectPath = '/home';
 
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
-    protected $redirectPath = '/home';
 
      /**
      * Create a new authentication controller instance.
