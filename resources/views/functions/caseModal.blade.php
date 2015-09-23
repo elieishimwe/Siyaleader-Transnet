@@ -295,6 +295,54 @@
      });
 
 
+    $("#submitCaseClosureForm").on("click",function(){
+
+
+        var caseId   = $("#modalCaseCloseRequestModal #caseID").val();
+        var uid      = $("#modalCaseCloseRequestModal #uid").val();
+        var token    = $('input[name="_token"]').val();
+        var caseNote = $("#modalCaseCloseRequestModal #caseNote").val();
+        var formData = { caseID:caseId,caseNote:caseNote,uid:uid};
+
+        $('#modalCaseCloseRequestModal').modal('toggle');
+
+        $.ajax({
+        type    :"POST",
+        data    : formData,
+        headers : { 'X-CSRF-Token': token },
+        url     :"{!! url('/requestCaseClosure')!!}",
+        beforeSend : function() {
+              HoldOn.open({
+                  theme:"sk-rect",//If not given or inexistent theme throws default theme sk-rect
+                  message: "<h4>processing please wait... ! </h4>",
+                  content:"Your HTML Content", // If theme is set to "custom", this property is available
+                                               // this will replace the theme by something customized.
+                  backgroundColor:"none repeat scroll 0 0 rgba(0, 0, 0, 0.8)",//Change the background color of holdon with javascript
+                             // Keep in mind is necessary the .css file too.
+                  textColor:"white" // Change the font color of the message
+              });
+
+          },
+          success : function(data) {
+
+
+            if (data == "Case Closed") {
+                $('#caseClosureForm')[0].reset();
+                $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You close request has bees successfully submitted<i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
+                $('#modalCase').modal('show');
+                HoldOn.close();
+
+            }
+
+
+          }
+         })
+
+
+
+     });
+
+
      $("#submitEscalateCaseForm").on("click",function(){
 
         var addresses = $("#modalReferCase #addresses").val();
@@ -393,6 +441,16 @@
         $('#modalCase').modal('toggle');
 
       });
+
+       $("#closeCaseClosure").on("click",function(){
+
+        $('#modalCaseCloseRequestModal').modal('toggle');
+        var caseId       = $("#modalReferCase #caseID").val();
+        launchCaseModal(caseId);
+        $('#modalCase').modal('toggle');
+
+      });
+
 
 
       $("#closeListContactModal").on("click",function(){
@@ -857,6 +915,14 @@
 
     }
 
+    function launchRequestCaseClosureModal()
+    {
+
+      $('#modalCase').modal('hide');
+      $('#modalCaseCloseRequestModal').modal('toggle');
+
+    }
+
     function acceptCase()
     {
 
@@ -924,45 +990,6 @@
               $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You successfully closed case ' + id +'<i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
               $('#modalCase').modal('show');
               HoldOn.close()
-
-          }
-
-
-        }
-       })
-
-    }
-
-    function requestCaseClosure() {
-
-
-      $('#modalCase').modal('toggle');
-      var id = $(".modal-body #caseID").val();
-
-      $.ajax({
-        type    :"GET",
-        url     :"{!! url('/requestCaseClosure/" + id +"')!!}",
-        beforeSend : function() {
-            HoldOn.open({
-                theme:"sk-rect",//If not given or inexistent theme throws default theme sk-rect
-                message: "<h4>processing please wait... ! </h4>",
-                content:"Your HTML Content", // If theme is set to "custom", this property is available
-                                             // this will replace the theme by something customized.
-                backgroundColor:"none repeat scroll 0 0 rgba(0, 0, 0, 0.8)",//Change the background color of holdon with javascript
-                           // Keep in mind is necessary the .css file too.
-                textColor:"white" // Change the font color of the message
-            });
-
-        },
-        success : function(data) {
-
-          console.log(data);
-          if (data == "Case Closed") {
-
-              console.log("I am inside the if statement");
-              $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! You close request has bees successfully submitted for case: ' + id +'<i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
-              $('#modalCase').modal('show');
-              HoldOn.close();
 
           }
 

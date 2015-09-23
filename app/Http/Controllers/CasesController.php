@@ -644,14 +644,14 @@ class CasesController extends Controller
     }
 
 
-    public function requestCaseClosure($id)
+    public function requestCaseClosure(Request $request)
     {
-        $case = CaseReport::find($id);
+        $case = CaseReport::find($request['caseID']);
         $case->status = "Pending Closure";
         $case->save();
 
         $caseActivity              = New CaseActivity();
-        $caseActivity->caseId      = $id;
+        $caseActivity->caseId      = $request['caseID'];
         $caseActivity->user        = \Auth::user()->id;
         $caseActivity->addressbook = 0;
         $caseActivity->note        = \Auth::user()->name.' '.\Auth::user()->surname ." requested case closure";
@@ -661,12 +661,15 @@ class CasesController extends Controller
                                     ->where('role','=',3)
                                     ->get();
 
+
+
         foreach ($caseAdministrators as $admin) {
 
              $data = array(
-                            'name'   =>$admin->name,
-                            'caseID' =>$case->id,
+                            'name'    =>$admin->name,
+                            'caseID'  =>$case->id,
                             'content' => $case->description,
+                            'note'    => $request['caseNote'],
                             );
 
 
