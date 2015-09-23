@@ -623,6 +623,13 @@ class CasesController extends Controller
         $case->status = "Pending Closure";
         $case->save();
 
+        $caseActivity              = New CaseActivity();
+        $caseActivity->caseId      = $id;
+        $caseActivity->user        = \Auth::user()->id;
+        $caseActivity->addressbook = 0;
+        $caseActivity->note        = \Auth::user()->name.' '.\Auth::user()->surname ."requested case closure";
+        $caseActivity->save();
+
         $caseAdministrators    = User::where('role','=',1)
                                     ->where('role','=',3)
                                     ->get();
@@ -637,14 +644,13 @@ class CasesController extends Controller
 
 
             \Mail::send('emails.requestCaseClosure',$data, function($message) use ($admin) {
-            $message->from('info@siyaleader.co.za', 'Siyaleader');
-            $message->to($admin->username)->subject("Siyaleader Notification - Request for Case Closure: " );
+
+                $message->from('info@siyaleader.co.za', 'Siyaleader');
+                $message->to($admin->username)->subject("Siyaleader Notification - Request for Case Closure: " );
 
             });
 
         }
-
-
 
 
         return "Case Closed";
