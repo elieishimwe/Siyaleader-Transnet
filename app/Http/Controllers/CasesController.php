@@ -82,10 +82,24 @@ class CasesController extends Controller
     public function requestCaseClosureList()
     {
 
-        $cases = CaseReport::where('status','=','Pending Closure');
-        return \Datatables::of($cases)
+        if (\Auth::user()->role == 1 || \Auth::user()->role == 3) {
+
+            $cases = CaseReport::where('status','=','Pending Closure');
+            return \Datatables::of($cases)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>')
                             ->make(true);
+        }
+        else {
+
+            $cases = CaseReport::where('status','=','Pending Closure')
+                                ->where('user','=',\Auth::user()->id);
+            return \Datatables::of($cases)
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>')
+                            ->make(true);
+
+        }
+
+
     }
 
 
@@ -627,7 +641,7 @@ class CasesController extends Controller
         $caseActivity->caseId      = $id;
         $caseActivity->user        = \Auth::user()->id;
         $caseActivity->addressbook = 0;
-        $caseActivity->note        = \Auth::user()->name.' '.\Auth::user()->surname ."requested case closure";
+        $caseActivity->note        = \Auth::user()->name.' '.\Auth::user()->surname ." requested case closure";
         $caseActivity->save();
 
         $caseAdministrators    = User::where('role','=',1)
