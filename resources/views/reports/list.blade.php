@@ -11,7 +11,7 @@
 <h4 class="page-title">Reports</h4>
 <!-- Alternative -->
 <div class="block-area" id="alternative-buttons">
-    <h3 class="block-title">Toggle column:</h3>
+    <h3 class="block-title">Toggle columns</h3>
 
     <div>
 Toggle column:
@@ -71,7 +71,7 @@ Toggle column:
   var oTable     = $('#reportsTable').DataTable({
                 "processing": true,
                 "serverSide": true,
-                "dom": 'T<"clear">lfrtip',
+                "dom": '<"toolbar">frtip',
                 "order" :[[0,"desc"]],
                 "ajax": "{!! url('/reports-list/')!!}",
                  "columns": [
@@ -93,6 +93,8 @@ Toggle column:
             ]
 
          });
+
+     $("div.toolbar").html('<b>Custom tool bar! Text/images etc.</b>');
 
     $('a.toggle-vis').on( 'click', function (e) {
         e.preventDefault();
