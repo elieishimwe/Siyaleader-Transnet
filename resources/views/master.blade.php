@@ -146,6 +146,12 @@
                         </ul>
                     </li>
 
+                    <li {{ (Request::is('reports') ? "class=active" : '') }}>
+                        <a class="sa-side-chart" href="{{ url('reports') }}">
+                            <span class="menu-item">Reports</span>
+                        </a>
+                    </li>
+
                 </ul>
 
             </aside>

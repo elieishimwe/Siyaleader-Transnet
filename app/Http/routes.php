@@ -419,6 +419,31 @@ Route::post('addPosition', 'PositionsController@store');
 
 
 
+/*
+|--------------------------------------------------------------------------
+| REPORTS ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get('reports', function () {
+    return view('reports.list');
+});
+
+Route::get('reports-list', 'ReportsController@index');
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| END REPORTS ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+
+
 $router->resource('users','UserController');
 
 Route::get('/api/dropdown/{to}/{from}', function($to,$from){
