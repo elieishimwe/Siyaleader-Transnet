@@ -11,30 +11,7 @@
 <h4 class="page-title">Reports</h4>
 <!-- Alternative -->
 <div class="block-area" id="alternative-buttons">
-    <h3 class="block-title">Toggle columns</h3>
 
-    <div>
-Toggle column:
-<a class="toggle-vis" data-column="0">ID</a>
--
-<a class="toggle-vis" data-column="1">Created At</a>
--
-<a class="toggle-vis" data-column="2">Description</a>
--
-<a class="toggle-vis" data-column="3">Business Unit</a>
--
-<a class="toggle-vis" data-column="4">Precinct</a>
--
-<a class="toggle-vis" data-column="5">Reporter</a>
--
-<a class="toggle-vis" data-column="6">Category</a>
--
-<a class="toggle-vis" data-column="7">Priority</a>
--
-<a class="toggle-vis" data-column="8">Severity</a>
--
-<a class="toggle-vis" data-column="9">Status</a>
-</div>
 
 <h3 class="block-title">FILTERS</h3>
 
@@ -132,6 +109,31 @@ Toggle column:
 </div>
 {!! Form::close() !!}
 
+<h3 class="block-title">Toggle columns</h3>
+
+    <div>
+        Toggle column:
+        <a class="toggle-vis" data-column="0">ID</a>
+        -
+        <a class="toggle-vis" data-column="1">Created At</a>
+        -
+        <a class="toggle-vis" data-column="2">Description</a>
+        -
+        <a class="toggle-vis" data-column="3">Business Unit</a>
+        -
+        <a class="toggle-vis" data-column="4">Precinct</a>
+        -
+        <a class="toggle-vis" data-column="5">Reporter</a>
+        -
+        <a class="toggle-vis" data-column="6">Category</a>
+        -
+        <a class="toggle-vis" data-column="7">Priority</a>
+        -
+        <a class="toggle-vis" data-column="8">Severity</a>
+        -
+        <a class="toggle-vis" data-column="9">Status</a>
+    </div>
+
 </div>
 
 <!-- Responsive Table -->
@@ -187,15 +189,6 @@ Toggle column:
 
   var oReportsTable;
 
-    $('a.toggle-vis').on( 'click', function (e) {
-        e.preventDefault();
-
-        // Get the column API object
-        var column = oReportsTable.column( $(this).attr('data-column') );
-
-        // Toggle the visibility
-        column.visible( ! column.visible() );
-    });
 
 /*  var oReportsTable     = $('#reportsTable').DataTable({
                 "processing": true,
