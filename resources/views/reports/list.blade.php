@@ -100,7 +100,7 @@
       <div class="col-md-4 m-b-15">
           <p>Type of Report:</p>
            <div class="p-relative">
-              {!! Form::select('typeReporter',['1' => "Tabular Report"],0,['class' => 'form-control input-sm' ,'id' => 'typeReporter']) !!}
+              {!! Form::select('typeReporter',['1' => "Tabular Report",'2' => "Pie Chart Report"],0,['class' => 'form-control input-sm' ,'id' => 'typeReporter']) !!}
           </div>
       </div>
 
@@ -170,7 +170,30 @@
 
         </table>
     </div>
+
 </div>
+
+<br/>
+<!-- <div class="block-area">
+  <div class="row">
+    <div class="col-md-6">
+        <div class="tile">
+            <h2 class="tile-title">Pie Chart</h2>
+            <div class="tile-config dropdown">
+                <a data-toggle="dropdown" href="" class="tooltips tile-menu" title="Options"></a>
+                <ul class="dropdown-menu pull-right text-right">
+                    <li><a href="">Refresh</a></li>
+                    <li><a href="">Settings</a></li>
+                </ul>
+            </div>
+            <div class="p-10">
+                <div id="pie-chart" class="main-chart" style="height: 300px"></div>
+            </div>
+        </div>
+    </div>
+  </div>
+ </div>
+ -->
 @endsection
 
 @section('footer')
@@ -181,71 +204,7 @@
   var defaultDate = $.datepicker.formatDate('yy-mm-dd', new Date());
   $("#fromDate").val(defaultDate);
   $("#toDate").val(defaultDate);
-
   var oReportsTable;
-
-
-
-/*  var oReportsTable     = $('#reportsTable').DataTable({
-                "processing": true,
-                "serverSide": true,
-                "bSearchable": true,
-                "bPaginate" : false,
-                "dom": '<"toolbar">frtip',
-                "order" :[[0,"desc"]],
-                "ajax": "{!! url('/reports-list/')!!}",
-                 "columns": [
-                {data: 'id', name: 'cases.id'},
-                {data: 'created_at', name: 'cases.created_at'},
-                {data: 'description', name: 'cases.description'},
-                {data: 'department', name: 'departments.name'},
-                {data: 'precinct', name: 'municipalities.name'},
-                {data: 'reporterName', name: 'reporterName'},
-                {data: 'category', name: 'categories.name'},
-                {data: 'priority', name: 'cases.priority'},
-                {data: 'severity', name: 'cases.severity'},
-                {data: 'status',  name: 'cases.status'}
-
-               ],
-
-          "initComplete": function () {
-
-            this.api().columns().every( function () {
-                var column = this;
-                var select = $('<select class="form-control"><option value=""></option></select>')
-                    .appendTo( $(column.footer()).empty() )
-                    .on( 'change', function () {
-                        var val = $.fn.dataTable.util.escapeRegex(
-                            $(this).val()
-                        );
-
-                        column
-                            .search( val ? val: '', true, false )
-                            .draw();
-
-                          console.log(val);
-                    } );
-
-                column.data().unique().sort().each( function ( d, j ) {
-                    select.append( '<option value="'+d+'">'+d+'</option>' )
-                } );
-            } );
-          }
-
-         });
-*/
-   /* var html = "<div class='row'>";
-      html += " <div class='col-md-2 m-b-15'>";
-      html += " <select class='select'><option>Default</option></select>";
-      html += " </div>";
-      html += " <div class='col-md-2 m-b-15'>";
-      html += " <select class='select'><option>Default</option></select>";
-      html += " </div>";
-      html += " </div>";*/
-
-   /* $("div.toolbar").html("");*/
-
-
 
   });
 
