@@ -53,7 +53,7 @@ Toggle column:
       <div class="col-md-4 m-b-15">
           <p>To:</p>
           <div class="input-icon datetime-pick date-only">
-              <input data-format="yyyy-MM-dd" type="text" id='toDate' name ='toDate' class="form-control input-sm" />
+              <input data-format="yyyy-MM-dd" type="text" value ="" id='toDate' name ='toDate' class="form-control input-sm" />
               <span class="add-on">
                   <i class="sa-plus"></i>
               </span>
@@ -181,8 +181,11 @@ Toggle column:
  <script>
  $(document).ready(function() {
 
+  var defaultDate = $.datepicker.formatDate('yy-mm-dd', new Date());
+  $("#fromDate").val(defaultDate);
+  $("#toDate").val(defaultDate);
 
-   var oReportsTable;
+  var oReportsTable;
 
     $('a.toggle-vis').on( 'click', function (e) {
         e.preventDefault();
