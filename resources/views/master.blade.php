@@ -23,6 +23,7 @@
         <link href="{{ asset('/css/lightbox.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/media-player.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/file-manager.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/buttons.dataTables.min.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/HoldOn.min.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/bootstrap-switch.min.css') }}" rel="stylesheet">
         <link href="{{ asset('/incl/animate.css') }}" rel="stylesheet">
@@ -246,6 +247,15 @@
 
         <!-- Date & Time Picker -->
         <script src="{{ asset('/js/datetimepicker.min.js') }}"></script> <!-- Date & Time Picker -->
+
+        <!-- Buttons HTML5 -->
+        <script src="{{ asset('/js/dataTables.buttons.min.js') }}"></script>
+        <script src="{{ asset('/js/buttons.html5.min.js') }}"></script>
+        <script src="{{ asset('/js/jszip.min.js') }}"></script>
+        <script src="{{ asset('/js/pdfmake.min.js') }}"></script>
+        <script src="{{ asset('/js/vfs_fonts.js') }}"></script>
+        <!--  Buttons HTML5 -->
+
 
         @include('functions.caseModal')
         @yield('footer')

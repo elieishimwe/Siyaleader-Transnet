@@ -233,7 +233,13 @@
 
           oReportsTable     = $('#reportsTable').DataTable({
                 "data": dataSet.data,
-                "dom": '<"toolbar">frtip',
+                "dom": 'Bfrtip',
+                "buttons": [
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5'
+                ],
                 "order" :[[0,"asc"]],
                  "columns": [
                 {data: 'id', name: 'cases.id'},
