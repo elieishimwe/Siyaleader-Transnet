@@ -210,17 +210,19 @@
         data    : formData,
         headers : { 'X-CSRF-Token': token },
         url     :"{!! url('/filterReports')!!}",
- /*       beforeSend : function() {
+        beforeSend : function() {
             HoldOn.open({
                 theme:"sk-rect",
-                message: "<h4> loading please wait... ! </h4>",
+                message: "<h4> generating report please wait... ! </h4>",
                 content:"Your HTML Content",
                 backgroundColor:"none repeat scroll 0 0 rgba(0, 0, 0, 0.8)",
                 textColor:"white"
             });
 
-        },*/
+        },
         success : function(dataSet){
+
+          console.log(dataSet.data.length);
 
           if ( $.fn.dataTable.isDataTable( '#reportsTable' ) ) {
                     oReportsTable.destroy();
@@ -246,17 +248,7 @@
 
          });
 
-          /*$('#example').DataTable( {
-              data: dataSet,
-              columns: [
-                  { title: "Name" },
-                  { title: "Position" },
-                  { title: "Office" },
-                  { title: "Extn." },
-                  { title: "Start date" },
-                  { title: "Salary" }
-              ]
-          } );*/
+          HoldOn.close();
 
         }
        })
