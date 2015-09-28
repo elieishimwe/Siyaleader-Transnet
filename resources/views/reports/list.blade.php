@@ -94,23 +94,29 @@ Toggle column:
       <div class="col-md-4 m-b-15">
           <p>Status:</p>
           <div class="p-relative">
-              {!! Form::select('reporter',$selectDepartments,0,['class' => 'form-control input-sm' ,'id' => 'reporter']) !!}
+              {!! Form::select('status',[
+                                          '0'                 => 'Select / All',
+                                          'Pending'           => 'Pending',
+                                          'Pending Closure'   => 'Pending Closure',
+                                          'Referred'          => 'Referred',
+                                          'Resolved'          => 'Resolved'
+                                        ],0,['class' => 'form-control input-sm' ,'id' => 'status']) !!}
           </div>
       </div>
 
 </div>
 
-
+<br/>
 
 
   <div class="row">
-        <div class="col-md-2 m-b-15">
+        <div class="col-md-4 m-b-15">
 
 
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                   <a type="#" id='submitFilters' class="btn btn-sm">Submit</a>
-                </div>
+            <div class="p-relative">
+
+                   <a type="#" id='submitFilters' class="btn btn-sm">Generate Report</a>
+
             </div>
 
         </div>

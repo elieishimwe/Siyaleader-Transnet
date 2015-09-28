@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $positions          = Position::all();
             $selectPositions    = array();
-            $selectPositions[0] = "Select";
+            $selectPositions[0] = "Select / All";
 
             foreach ($positions as $position) {
                $selectPositions[$position->slug] = $position->name;
@@ -43,7 +43,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $departments          = Department::all();
             $selectDepartments    = array();
-            $selectDepartments[0] = "Select";
+            $selectDepartments[0] = "Select / All";
 
             foreach ($departments as $department) {
                $selectDepartments[$department->slug] = $department->name;
@@ -57,7 +57,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $provinces          = Province::all();
             $selectProvinces    = array();
-            $selectProvinces[0] = "Select";
+            $selectProvinces[0] = "Select / All";
 
             foreach ($provinces as $Province) {
                $selectProvinces[$Province->slug] = $Province->name;
@@ -71,7 +71,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $districts          = District::all();
             $selectDistrict     = array();
-            $selectDistricts[0] = "Select";
+            $selectDistricts[0] = "Select / All";
 
             foreach ($districts as $district) {
                $selectDistricts[$district->slug] = $district->name;
@@ -85,7 +85,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $municipalities          = Municipality::all();
             $selectMunicipalities    = array();
-            $selectMunicipalities[0] = "Select";
+            $selectMunicipalities[0] = "Select / All";
             foreach ($municipalities as $municipality) {
                $selectMunicipalities[$municipality->slug] = $municipality->name;
             }
@@ -99,7 +99,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $categories          = Category::all();
             $selectCategories    = array();
-            $selectCategories[0] = "Select";
+            $selectCategories[0] = "Select / All";
             foreach ($categories as $category) {
                $selectCategories[$category->slug] = $category->name;
             }
@@ -112,7 +112,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $subCategories       = SubCategory::all();
             $selectSubCategories    = array();
-            $selectSubCategories[0] = "Select";
+            $selectSubCategories[0] = "Select / All";
             foreach ($subCategories as $subCategory) {
                $selectSubCategories[$subCategory->slug] = $subCategory->name;
             }
@@ -125,7 +125,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $subSubCategories          = SubSubCategory::all();
             $selectSubSubCategories    = array();
-            $selectSubSubCategories[0] = "Select";
+            $selectSubSubCategories[0] = "Select / All";
             foreach ($subSubCategories as $subSubCategory) {
                $selectSubSubCategories[$subSubCategory->slug] = $subSubCategory->name;
             }
@@ -138,7 +138,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $relationships          = Relationship::all();
             $selectRelationships    = array();
-            $selectRelationships[0] = "Select";
+            $selectRelationships[0] = "Select / All";
             foreach ($relationships as $relationship) {
                $selectRelationships[$relationship->id] = $relationship->name;
             }
