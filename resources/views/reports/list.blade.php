@@ -63,6 +63,14 @@ Toggle column:
 <br/>
 
 <div class="row">
+
+      <div class="col-md-4 m-b-15">
+          <p>Precinct:</p>
+           <div class="p-relative">
+              {!! Form::select('precinct',$selectMunicipalities,0,['class' => 'form-control input-sm' ,'id' => 'precinct']) !!}
+          </div>
+      </div>
+
       <div class="col-md-4 m-b-15">
           <p>Business Unit:</p>
           <div class="p-relative">
@@ -70,12 +78,7 @@ Toggle column:
           </div>
       </div>
 
-      <div class="col-md-4 m-b-15">
-          <p>Precinct:</p>
-           <div class="p-relative">
-              {!! Form::select('department',$selectDepartments,0,['class' => 'form-control input-sm' ,'id' => 'department']) !!}
-          </div>
-      </div>
+
 </div>
 
 
