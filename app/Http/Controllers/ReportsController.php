@@ -79,14 +79,27 @@ class ReportsController extends Controller
     {
 
 
+        $fromDate      = $request['fromDate']." 00:00:00";
+        $toDate        = $request['toDate']." 23:59:59";
+        $precinct      = $request['precinct'];
+        if ($precinct == "0") {
+
+            $precinct = "%";
+        }
 
         $department    = $request['department'];
+
         if ($department == "0") {
 
              $department = "%";
         }
-        $fromDate      = $request['fromDate']." 00:00:00";
-        $toDate        = $request['toDate']." 23:59:59";
+
+        $category      = $request['category'];
+        if ($category == "0") {
+
+            $category = "%";
+        }
+
 
 
         $cases = \DB::table('cases')
@@ -111,7 +124,9 @@ class ReportsController extends Controller
                                 )
                         )
             ->whereBetween('cases.created_at', array($fromDate,$toDate))
+            ->where('municipalities.slug','LIKE',$precinct)
             ->where('departments.slug','LIKE',$department)
+            ->where('categories.slug','LIKE',$category)
 
             ->groupBy('cases.id');
 

@@ -78,8 +78,28 @@ Toggle column:
           </div>
       </div>
 
+</div>
+
+<br/>
+
+<div class="row">
+
+      <div class="col-md-4 m-b-15">
+          <p>Category:</p>
+           <div class="p-relative">
+              {!! Form::select('category',$selectCategories,0,['class' => 'form-control input-sm' ,'id' => 'category']) !!}
+          </div>
+      </div>
+
+      <div class="col-md-4 m-b-15">
+          <p>Status:</p>
+          <div class="p-relative">
+              {!! Form::select('reporter',$selectDepartments,0,['class' => 'form-control input-sm' ,'id' => 'reporter']) !!}
+          </div>
+      </div>
 
 </div>
+
 
 
 
@@ -115,8 +135,8 @@ Toggle column:
                     <th>Id</th>
                     <th>Created At</th>
                     <th>Description </th>
-                    <th>Business Unit</th>
                     <th>Precinct</th>
+                    <th>Business Unit</th>
                     <th>Reporter</th>
                     <th>Category</th>
                     <th>Priority</th>

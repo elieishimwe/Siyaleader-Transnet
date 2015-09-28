@@ -196,11 +196,13 @@
      $("#submitFilters").on("click",function(){
 
 
+        var precinct   = $("#precinct").val();
         var department = $("#department").val();
         var fromDate   = $("#fromDate").val();
         var toDate     = $("#toDate").val();
+        var category   = $("#category").val();
         var token      = $('input[name="_token"]').val();
-        var formData   = { department:department,fromDate:fromDate,toDate:toDate};
+        var formData   = { precinct:precinct,department:department,fromDate:fromDate,toDate:toDate,category:category};
 
         $.ajax({
         type    :"POST",
@@ -231,8 +233,8 @@
                 {data: 'id', name: 'cases.id'},
                 {data: 'created_at', name: 'cases.created_at'},
                 {data: 'description', name: 'cases.description'},
-                {data: 'department', name: 'departments.name'},
                 {data: 'precinct', name: 'municipalities.name'},
+                {data: 'department', name: 'departments.name'},
                 {data: 'reporterName', name: 'reporterName'},
                 {data: 'category', name: 'categories.name'},
                 {data: 'priority', name: 'cases.priority'},
