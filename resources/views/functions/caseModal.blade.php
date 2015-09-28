@@ -225,6 +225,8 @@
 
           console.log(dataSet.data.length);
 
+          $("#responsiveTable").removeClass("hidden");
+
           if ( $.fn.dataTable.isDataTable( '#reportsTable' ) ) {
                     oReportsTable.destroy();
           }

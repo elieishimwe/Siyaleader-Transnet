@@ -109,7 +109,15 @@
 </div>
 {!! Form::close() !!}
 
-<h3 class="block-title">Toggle columns</h3>
+</div>
+
+
+
+<!-- Responsive Table -->
+<div class="block-area hidden" id="responsiveTable">
+
+
+    <h3 class="block-title">Toggle columns</h3>
 
     <div>
         Toggle column:
@@ -133,16 +141,9 @@
         -
         <a class="toggle-vis" data-column="9">Status</a>
     </div>
+    <br/>
 
-</div>
 
-<!-- Responsive Table -->
-<div class="block-area" id="responsiveTable">
-    @if(Session::has('success'))
-      <div class="status alert alert-danger">
-          {{ Session::get('success') }}
-      </div>
-    @endif
     <div class="table-responsive overflow">
         <table class="table tile table-striped" id="reportsTable">
             <thead>
@@ -159,20 +160,7 @@
                     <th>Status</th>
               </tr>
             </thead>
-            <!--  <tfoot>
-              <tr>
-                    <th>Id</th>
-                    <th>Created At</th>
-                    <th>Description </th>
-                    <th>Business Unit</th>
-                    <th>Precinct</th>
-                    <th>Reporter</th>
-                    <th>Category</th>
-                    <th>Priority</th>
-                    <th>Severity</th>
-                    <th>Status</th>
-              </tr>
-            </tfoot> -->
+
         </table>
     </div>
 </div>
@@ -188,6 +176,7 @@
   $("#toDate").val(defaultDate);
 
   var oReportsTable;
+
 
 
 /*  var oReportsTable     = $('#reportsTable').DataTable({
