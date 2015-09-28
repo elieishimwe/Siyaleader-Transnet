@@ -143,6 +143,7 @@
     </div>
     <br/>
 
+    <h3 class="block-title">Export options</h3>
 
     <div class="table-responsive overflow">
         <table class="table tile table-striped" id="reportsTable">
