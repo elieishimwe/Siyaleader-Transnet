@@ -202,8 +202,9 @@
         var toDate     = $("#toDate").val();
         var category   = $("#category").val();
         var status     = $("#status").val();
+        var reporter   = $("#reporter").val();
         var token      = $('input[name="_token"]').val();
-        var formData   = { precinct:precinct,department:department,fromDate:fromDate,toDate:toDate,category:category,status:status};
+        var formData   = { precinct:precinct,department:department,fromDate:fromDate,toDate:toDate,category:category,status:status,reporter:reporter};
 
         $.ajax({
         type    :"POST",

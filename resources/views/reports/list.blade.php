@@ -104,6 +104,13 @@ Toggle column:
           </div>
       </div>
 
+      <div class="col-md-4 m-b-15">
+          <p>Reporter:</p>
+           <div class="p-relative">
+              {!! Form::select('reporter',$selectReporters,0,['class' => 'form-control input-sm' ,'id' => 'reporter']) !!}
+          </div>
+      </div>
+
 </div>
 
 <br/>

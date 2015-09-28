@@ -108,6 +108,10 @@ class ReportsController extends Controller
             $status = "%";
         }
 
+        $reporter  = $request['reporter'];
+
+
+
 
         $cases = \DB::table('cases')
             ->join('departments', 'cases.department', '=', 'departments.id')

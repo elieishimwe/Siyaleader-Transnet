@@ -147,6 +147,34 @@ class AppServiceProvider extends ServiceProvider
 
         }
 
+
+        if (\Schema::hasTable('cases')) {
+
+            $cases = \DB::table('cases')
+                        ->join('users', 'cases.reporter', '=', 'users.id')
+                        ->select(
+                                    \DB::raw(
+                                                "
+                                                    IF(`cases`.`addressbook` = 1,(SELECT CONCAT(`FirstName`, ' ', `Surname`) FROM `addressbook` WHERE `addressbook`.`id`= `cases`.`reporter`), (SELECT CONCAT(users.`name`, ' ', users.`surname`) FROM `users` WHERE `users`.`id`= `cases`.`reporter`)) as reporterName
+
+                                                "
+                                            )
+                                )
+                        ->get();
+
+
+
+            $reporters    = array();
+            $reporters[0] = "Select / All";
+            foreach ($cases as $case) {
+               $reporters[$case->reporterName] = $case->reporterName;
+            }
+
+             \View::share('selectReporters',$reporters);
+
+        }
+
+
         View()->composer('master',function($view){
 
         $view->with('addressBookNumber',addressbook::all());
