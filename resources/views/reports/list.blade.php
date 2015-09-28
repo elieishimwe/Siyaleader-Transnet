@@ -92,17 +92,23 @@
 
 <br/>
 
+<br/>
+
 
   <div class="row">
+
+      <div class="col-md-4 m-b-15">
+          <p>Type of Report:</p>
+           <div class="p-relative">
+              {!! Form::select('typeReporter',['1' => "Tabular Report"],0,['class' => 'form-control input-sm' ,'id' => 'typeReporter']) !!}
+          </div>
+      </div>
+
         <div class="col-md-4 m-b-15">
-
-
+            <p></p><br/>
             <div class="p-relative">
-
                    <a type="#" id='submitFilters' class="btn btn-sm">Generate Report</a>
-
-            </div>
-
+           </div>
         </div>
 
 
