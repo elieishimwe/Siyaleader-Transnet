@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $positions          = Position::all();
             $selectPositions    = array();
-            $selectPositions[0] = "Select one";
+            $selectPositions[0] = "Select";
 
             foreach ($positions as $position) {
                $selectPositions[$position->slug] = $position->name;
@@ -43,7 +43,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $departments          = Department::all();
             $selectDepartments    = array();
-            $selectDepartments[0] = "Select one";
+            $selectDepartments[0] = "Select";
 
             foreach ($departments as $department) {
                $selectDepartments[$department->slug] = $department->name;
@@ -57,7 +57,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $provinces          = Province::all();
             $selectProvinces    = array();
-            $selectProvinces[0] = "Select one";
+            $selectProvinces[0] = "Select";
 
             foreach ($provinces as $Province) {
                $selectProvinces[$Province->slug] = $Province->name;
@@ -71,7 +71,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $districts          = District::all();
             $selectDistrict     = array();
-            $selectDistricts[0] = "Select one";
+            $selectDistricts[0] = "Select";
 
             foreach ($districts as $district) {
                $selectDistricts[$district->slug] = $district->name;
@@ -99,7 +99,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $categories          = Category::all();
             $selectCategories    = array();
-            $selectCategories[0] = "Select Category";
+            $selectCategories[0] = "Select";
             foreach ($categories as $category) {
                $selectCategories[$category->slug] = $category->name;
             }
@@ -112,7 +112,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $subCategories       = SubCategory::all();
             $selectSubCategories    = array();
-            $selectSubCategories[0] = "Select Sub Category";
+            $selectSubCategories[0] = "Select";
             foreach ($subCategories as $subCategory) {
                $selectSubCategories[$subCategory->slug] = $subCategory->name;
             }
@@ -125,7 +125,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $subSubCategories          = SubSubCategory::all();
             $selectSubSubCategories    = array();
-            $selectSubSubCategories[0] = "Select Sub Sub Category";
+            $selectSubSubCategories[0] = "Select";
             foreach ($subSubCategories as $subSubCategory) {
                $selectSubSubCategories[$subSubCategory->slug] = $subSubCategory->name;
             }
@@ -138,7 +138,7 @@ class AppServiceProvider extends ServiceProvider
         {
             $relationships          = Relationship::all();
             $selectRelationships    = array();
-            $selectRelationships[0] = "Select one";
+            $selectRelationships[0] = "Select";
             foreach ($relationships as $relationship) {
                $selectRelationships[$relationship->id] = $relationship->name;
             }

@@ -17,6 +17,9 @@ class ReportsController extends Controller
     public function index()
     {
 
+
+
+
         $cases = \DB::table('cases')
             ->join('departments', 'cases.department', '=', 'departments.id')
             ->join('municipalities', 'cases.precinct', '=', 'municipalities.id')
@@ -33,7 +36,7 @@ class ReportsController extends Controller
                                         cases.severity,
                                         departments.name as department,
                                         municipalities.name as precinct,
-                                        IF(`cases`.`addressbook` = 1,(SELECT CONCAT(`FirstName`, ' ', `Surname`) FROM `addressbook` WHERE `addressbook`.`id`= `cases`.`reporter`), (SELECT CONCAT(users.`name`, ' ', users.`surname`) FROM `users` WHERE `users`.`id`= `cases`.`reporter`)) as reporter,
+                                        IF(`cases`.`addressbook` = 1,(SELECT CONCAT(`FirstName`, ' ', `Surname`) FROM `addressbook` WHERE `addressbook`.`id`= `cases`.`reporter`), (SELECT CONCAT(users.`name`, ' ', users.`surname`) FROM `users` WHERE `users`.`id`= `cases`.`reporter`)) as reporterName,
                                         categories.name as category
                                     "
                                 )
@@ -72,9 +75,50 @@ class ReportsController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+
+
+
+        $department    = $request['department'];
+        if ($department == "0") {
+
+             $department = "%";
+        }
+        $fromDate      = $request['fromDate']." 00:00:00";
+        $toDate        = $request['toDate']." 23:59:59";
+
+
+        $cases = \DB::table('cases')
+            ->join('departments', 'cases.department', '=', 'departments.id')
+            ->join('municipalities', 'cases.precinct', '=', 'municipalities.id')
+            ->join('users', 'cases.reporter', '=', 'users.id')
+            ->join('categories', 'cases.category', '=', 'categories.id')
+            ->select(
+                        \DB::raw(
+                                    "
+                                        cases.id,
+                                        cases.created_at,
+                                        cases.description,
+                                        cases.status,
+                                        cases.priority,
+                                        cases.severity,
+                                        departments.name as department,
+                                        municipalities.name as precinct,
+                                        IF(`cases`.`addressbook` = 1,(SELECT CONCAT(`FirstName`, ' ', `Surname`) FROM `addressbook` WHERE `addressbook`.`id`= `cases`.`reporter`), (SELECT CONCAT(users.`name`, ' ', users.`surname`) FROM `users` WHERE `users`.`id`= `cases`.`reporter`)) as reporterName,
+                                        categories.name as category
+                                    "
+                                )
+                        )
+            ->whereBetween('cases.created_at', array($fromDate,$toDate))
+            ->where('departments.slug','LIKE',$department)
+
+            ->groupBy('cases.id');
+
+        return \Datatables::of($cases)
+                            ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>')
+                            ->make(true);
+
     }
 
     /**

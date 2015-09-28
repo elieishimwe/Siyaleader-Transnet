@@ -244,6 +244,9 @@
         <!-- bootstrap-switch. -->
         <script src="{{ asset('/js/bootstrap-switch.js') }}"></script> <!-- bootstrap-switch. -->
 
+        <!-- Date & Time Picker -->
+        <script src="{{ asset('/js/datetimepicker.min.js') }}"></script> <!-- Date & Time Picker -->
+
         @include('functions.caseModal')
         @yield('footer')
     </body>

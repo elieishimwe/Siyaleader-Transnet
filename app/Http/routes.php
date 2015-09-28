@@ -431,7 +431,7 @@ Route::get('reports', function () {
 });
 
 Route::get('reports-list', 'ReportsController@index');
-
+Route::post('filterReports', 'ReportsController@show');
 
 
 

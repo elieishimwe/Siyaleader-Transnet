@@ -192,6 +192,105 @@
 
      });
 
+
+     $("#submitFilters").on("click",function(){
+
+
+        var department = $("#department").val();
+        var fromDate   = $("#fromDate").val();
+        var toDate     = $("#toDate").val();
+        var token      = $('input[name="_token"]').val();
+        var formData   = { department:department,fromDate:fromDate,toDate:toDate};
+
+        $.ajax({
+        type    :"POST",
+        data    : formData,
+        headers : { 'X-CSRF-Token': token },
+        url     :"{!! url('/filterReports')!!}",
+ /*       beforeSend : function() {
+            HoldOn.open({
+                theme:"sk-rect",
+                message: "<h4> loading please wait... ! </h4>",
+                content:"Your HTML Content",
+                backgroundColor:"none repeat scroll 0 0 rgba(0, 0, 0, 0.8)",
+                textColor:"white"
+            });
+
+        },*/
+        success : function(dataSet){
+
+          if ( $.fn.dataTable.isDataTable( '#reportsTable' ) ) {
+                    oReportsTable.destroy();
+          }
+
+          oReportsTable     = $('#reportsTable').DataTable({
+                "data": dataSet.data,
+                "dom": '<"toolbar">frtip',
+                "order" :[[0,"asc"]],
+                 "columns": [
+                {data: 'id', name: 'cases.id'},
+                {data: 'created_at', name: 'cases.created_at'},
+                {data: 'description', name: 'cases.description'},
+                {data: 'department', name: 'departments.name'},
+                {data: 'precinct', name: 'municipalities.name'},
+                {data: 'reporterName', name: 'reporterName'},
+                {data: 'category', name: 'categories.name'},
+                {data: 'priority', name: 'cases.priority'},
+                {data: 'severity', name: 'cases.severity'},
+                {data: 'status',  name: 'cases.status'}
+
+               ],
+
+         });
+
+          /*$('#example').DataTable( {
+              data: dataSet,
+              columns: [
+                  { title: "Name" },
+                  { title: "Position" },
+                  { title: "Office" },
+                  { title: "Extn." },
+                  { title: "Start date" },
+                  { title: "Salary" }
+              ]
+          } );*/
+
+        }
+       })
+
+    /*    if ( $.fn.dataTable.isDataTable( '#reportsTable' ) ) {
+                    oReportsTable.destroy();
+        }
+*/
+      /*  var oReportsTable     = $('#reportsTable').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "bSearchable": true,
+                "bPaginate" : false,
+                "dom": '<"toolbar">frtip',
+                "order" :[[0,"desc"]],
+                "ajax": "{!! url('/reports-list/')!!}",
+                 "columns": [
+                {data: 'id', name: 'cases.id'},
+                {data: 'created_at', name: 'cases.created_at'},
+                {data: 'description', name: 'cases.description'},
+                {data: 'department', name: 'departments.name'},
+                {data: 'precinct', name: 'municipalities.name'},
+                {data: 'reporterName', name: 'reporterName'},
+                {data: 'category', name: 'categories.name'},
+                {data: 'priority', name: 'cases.priority'},
+                {data: 'severity', name: 'cases.severity'},
+                {data: 'status',  name: 'cases.status'}
+
+               ],
+
+         });
+*/
+
+
+
+     });
+
     $("#submitAddCaseFileForm").on("click",function(){
 
         var caseId   = $("#modalAddCaseFilesModal #caseID").val();
