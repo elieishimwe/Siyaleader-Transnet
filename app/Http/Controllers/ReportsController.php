@@ -110,7 +110,10 @@ class ReportsController extends Controller
 
         $reporter  = $request['reporter'];
 
+        if ($reporter == "0") {
 
+            $reporter = "%";
+        }
 
 
         $cases = \DB::table('cases')
@@ -139,6 +142,7 @@ class ReportsController extends Controller
             ->where('departments.slug','LIKE',$department)
             ->where('categories.slug','LIKE',$category)
             ->where('cases.status','LIKE',$status)
+            ->whereRaw("CONCAT(`users`.`name`, ' ', `users`.`surname`) LIKE '$reporter'")
             ->groupBy('cases.id');
 
         return \Datatables::of($cases)
