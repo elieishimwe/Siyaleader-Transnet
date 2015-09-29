@@ -5,7 +5,7 @@
 
 
   var activeTab = localStorage.getItem('activeTab');
-  console.log(activeTab);
+
   $('#tabs a[href="#' + activeTab + '"]').tab('show');
 
   $("#addresses").tokenInput("getContacts");
