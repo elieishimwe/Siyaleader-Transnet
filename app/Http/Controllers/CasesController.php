@@ -629,7 +629,8 @@ class CasesController extends Controller
     {
 
       $case = CaseReport::find($id);
-      $case->status = "Resolved";
+      $case->status      = "Resolved";
+      $case->resolved_at = \Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString();
       $case->save();
 
       $caseActivity              = New CaseActivity();
