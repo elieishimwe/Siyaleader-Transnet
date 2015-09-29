@@ -293,7 +293,10 @@ if($Category == "Property")  {  $imageCategory = "pr";   echo "var infoBoxBorder
 if($Category == "Safety-Risk-Fire")  {  $imageCategory = "sr";   echo "var infoBoxBorder = '#ff0000';";  }
 if($Category == "Security")  {  $imageCategory = "se";   echo "var infoBoxBorder = '#8a1ec7';";  }
 
+\Log::info($imageStatus);
+
 $imageName = "" .$imageCategory. "" .$imageStatus. "";
+
 
 echo 'var image = "markers/' .$imageName. '";';
 
