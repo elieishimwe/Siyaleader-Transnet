@@ -636,7 +636,7 @@ class CasesController extends Controller
       $caseActivity->caseId      = $id;
       $caseActivity->user        = \Auth::user()->id;
       $caseActivity->addressbook = 0;
-      $caseActivity->note        = \Auth::user()->name.' '.\Auth::user()->surname ."closed case";
+      $caseActivity->note        = \Auth::user()->name.' '.\Auth::user()->surname ." closed case";
       $caseActivity->save();
 
       $data = array (
