@@ -272,6 +272,8 @@ foreach ($cases as $case) {
 
     }
 
+$imageStatus = "";
+
 if($Status == "Pending")  {  $catStatus = "Pen";  $imageStatus = "_pen.png";  }
 if($Status == "Allocated")  {  $catStatus = "All";  $imageStatus = "_all.png";  }
 if($Status == "Referred")  {  $catStatus = "Ref";  $imageStatus = "_ref.png";  }
