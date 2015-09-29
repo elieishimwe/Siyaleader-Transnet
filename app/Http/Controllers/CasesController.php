@@ -658,18 +658,16 @@ class CasesController extends Controller
         $caseActivity->save();
 
         $caseAdministrators    = User::where('role','=',1)
-                                    ->where('role','=',3)
+                                    ->orWhere('role','=',3)
                                     ->get();
-
 
 
         foreach ($caseAdministrators as $caseAdmin) {
 
-            \Log::info($caseAdmin->name);
 
              $data = array(
-                            'name'    =>$caseAdmin->name,
-                            'caseID'  =>$case->id,
+                            'name'    => $caseAdmin->name,
+                            'caseID'  => $case->id,
                             'content' => $case->description,
                             'note'    => $request['caseNote'],
                             );
