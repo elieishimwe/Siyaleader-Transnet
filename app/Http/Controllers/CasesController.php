@@ -666,10 +666,11 @@ class CasesController extends Controller
 
 
              $data = array(
-                            'name'    => $caseAdmin->name,
-                            'caseID'  => $case->id,
-                            'content' => $case->description,
-                            'note'    => $request['caseNote'],
+                            'name'      => $caseAdmin->name,
+                            'caseID'    => $case->id,
+                            'content'   => $case->description,
+                            'note'      => $request['caseNote'],
+                            'requestor' => \Auth::user()->name.' '.\Auth::user()->surname,
                             );
 
 

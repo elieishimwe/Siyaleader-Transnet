@@ -56,7 +56,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td width="100%" style="font-family: helvetica, Arial, sans-serif; font-size: 18px; letter-spacing: 0px; text-align: center; color:#2E363F;">
-                                                        A new case closure request has been submitted.Case Closure Note:{{ $note }}
+                                                        A new case closure request has been submitted by {{ $requestor }}.Case Closure Note:{{ $note }}
                                                     </td>
                                                 </tr>
                                                 <tr><!-- spacing bottom -->
