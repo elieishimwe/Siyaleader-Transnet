@@ -632,12 +632,35 @@ class CasesController extends Controller
       $case->status = "Resolved";
       $case->save();
 
+      $caseActivity              = New CaseActivity();
+      $caseActivity->caseId      = $id;
+      $caseActivity->user        = \Auth::user()->id;
+      $caseActivity->addressbook = 0;
+      $caseActivity->note        = \Auth::user()->name.' '.\Auth::user()->surname ."closed case";
+      $caseActivity->save();
 
-   /*   \Mail::send('emails.caseEscalation',$data, function($message) use ($user) {
+      $data = array (
+                            'name'      => \Auth::user()->name,
+                            'caseID'    => $id,
+                            'content'   => $case->description,
+                            'executor'  => \Auth::user()->name.' '.\Auth::user()->surname,
+                    );
+
+      $user   = User::find($case->reporter);
+
+       if(sizeof($user) <= 0 ) {
+
+           $userAddressbook = addressbook::where('id','=',$case->reporter)->first();
+       }
+
+       $email  = (sizeof($user) <= 0)? $userAddressbook->email : $user->username;
+
+      \Mail::send('emails.caseEscalation',$data, function($message) use ($email) {
+
             $message->from('info@siyaleader.co.za', 'Siyaleader');
-            $message->to($user->username)->subject("Siyaleader Notification - Case referred: " );
+            $message->to($email)->subject("Siyaleader Notification - Case Closed: " );
 
-        });*/
+        });
 
        return "ok";
 

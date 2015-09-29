@@ -40,7 +40,7 @@
                                                 </tr>
                                                 <tr><!-- title -->
                                                     <td width="100%" style="font-family: helvetica, Arial, sans-serif; font-size: 18px; letter-spacing: 0px; text-align: center; color:#F07057;">
-                                                        <strong>NEW CASE</strong> ESCALATION!
+                                                        <strong>CASE</strong> CLOSED!
                                                     </td>
                                                 </tr>
                                                 <tr><!-- spacing bottom -->
@@ -56,7 +56,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td width="100%" style="font-family: helvetica, Arial, sans-serif; font-size: 18px; letter-spacing: 0px; text-align: center; color:#2E363F;">
-                                                        A Case your involved in has been escalated
+                                                        A Case your involved in has been closed by {{ $executor }}
                                                     </td>
                                                 </tr>
                                                 <tr><!-- spacing bottom -->
@@ -78,7 +78,7 @@
                                                 </tr>
                                                   <tr>
                                                         <td width="100%" style="font-family:helvetica, Arial, sans-serif; font-size: 13px; text-align: left; color:#2E363F; line-height: 24px;">
-                                                            <strong>Escalation Note:</strong>
+                                                            <strong>Case Description:</strong>
                                                         </td>
                                                     </tr>
 
