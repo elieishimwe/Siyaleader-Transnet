@@ -55,7 +55,7 @@
 
                     return d.description;
 
-                },"name" : 'cases.description',"width":"35%" },
+                },"name" : 'cases.description'},
                 {data: 'status', name: 'cases.status'},
                 {data: 'actions',  name: 'actions'},
                ],
@@ -80,7 +80,7 @@
 
                     return d.description;
 
-                },"name" : 'cases.description',"width":"35%" },
+                },"name" : 'cases.description'},
                 {data: 'status', name: 'cases.status'},
                 {data: 'actions',  name: 'actions'},
                ],
@@ -105,7 +105,7 @@
 
                     return d.description;
 
-                },"name" : 'cases.description',"width":"35%" },
+                },"name" : 'cases.description'},
                 {data: 'status', name: 'cases.status'},
                 {data: 'actions',  name: 'actions'},
                ],
@@ -130,7 +130,7 @@
 
                     return d.description;
 
-                },"name" : 'cases.description',"width":"35%" },
+                },"name" : 'cases.description'},
                 {data: 'status', name: 'cases.status'},
                 {data: 'actions',  name: 'actions'},
                ],
