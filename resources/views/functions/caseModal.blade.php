@@ -273,37 +273,6 @@
         }
        })
 
-    /*    if ( $.fn.dataTable.isDataTable( '#reportsTable' ) ) {
-                    oReportsTable.destroy();
-        }
-*/
-      /*  var oReportsTable     = $('#reportsTable').DataTable({
-                "processing": true,
-                "serverSide": true,
-                "bSearchable": true,
-                "bPaginate" : false,
-                "dom": '<"toolbar">frtip',
-                "order" :[[0,"desc"]],
-                "ajax": "{!! url('/reports-list/')!!}",
-                 "columns": [
-                {data: 'id', name: 'cases.id'},
-                {data: 'created_at', name: 'cases.created_at'},
-                {data: 'description', name: 'cases.description'},
-                {data: 'department', name: 'departments.name'},
-                {data: 'precinct', name: 'municipalities.name'},
-                {data: 'reporterName', name: 'reporterName'},
-                {data: 'category', name: 'categories.name'},
-                {data: 'priority', name: 'cases.priority'},
-                {data: 'severity', name: 'cases.severity'},
-                {data: 'status',  name: 'cases.status'}
-
-               ],
-
-         });
-*/
-
-
-
      });
 
     $("#submitAddCaseFileForm").on("click",function(){
@@ -510,22 +479,6 @@
           localStorage.setItem('activeTab', tabId);
           location.reload();
 
-
-
-
-
-         /*if ($active[0].id == 'reported') {
-
-
-
-         }
-         else {
-
-             $('#modalCase').modal('toggle');
-
-         }*/
-
-
       });
 
 
@@ -727,6 +680,11 @@
                       if (data[0].status == "Pending Closure" || data[0].status == "Resolved" ) {
 
                          $( "#requestCaseClosureClass" ).addClass( "hidden" );
+                      }
+
+                      if (data[0].status == "Resolved" ) {
+
+                         $( "#closeCaseClass" ).addClass( "hidden" );
                       }
 
                      $("#modalCase #id").val(data[0].id);

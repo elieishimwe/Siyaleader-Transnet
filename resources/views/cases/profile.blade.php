@@ -28,7 +28,7 @@
                             <a class="btn btn-xs btn-alt" onClick="launchCaseNotesModal();">Add Case Note</a>
                             <a class="btn btn-xs btn-alt" onClick="launchCaseFilesModal();">Attach File</a>
                             @if ( Auth::user()->role == 1 || Auth::user()->role == 3 )
-                              <a class="btn btn-xs btn-alt" onClick="closeCase()">Close Case</a>
+                              <a id='closeCaseClass' class="btn btn-xs btn-alt" onClick="closeCase()">Close Case</a>
                             @else
                               <a id='requestCaseClosureClass' class="btn btn-xs btn-alt" onClick="launchRequestCaseClosureModal();">Request Case Closure</a>
                              <!--  <a id='requestCaseClosureClass' class="btn btn-xs btn-alt" onClick="requestCaseClosure()">Request Case Closure</a> -->
