@@ -273,6 +273,7 @@ foreach ($cases as $case) {
     }
 
 $imageStatus = "";
+$catStatus   = "";
 
 if($Status == "Pending")  {  $catStatus = "Pen";  $imageStatus = "_pen.png";  }
 if($Status == "Allocated")  {  $catStatus = "All";  $imageStatus = "_all.png";  }
@@ -294,8 +295,6 @@ if($Category == "Port Operations Centre")  {  $imageCategory = "po";   echo "var
 if($Category == "Property")  {  $imageCategory = "pr";   echo "var infoBoxBorder = '#999999';";  }
 if($Category == "Safety-Risk-Fire")  {  $imageCategory = "sr";   echo "var infoBoxBorder = '#ff0000';";  }
 if($Category == "Security")  {  $imageCategory = "se";   echo "var infoBoxBorder = '#8a1ec7';";  }
-
-\Log::info($imageStatus);
 
 $imageName = "" .$imageCategory. "" .$imageStatus. "";
 
