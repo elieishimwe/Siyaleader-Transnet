@@ -82,7 +82,7 @@
                     </div>
                     @endif
                     <div class="table-responsive overflow">
-                        <h3 class="block-title">Reported/Referred Cases</h3>
+                        <h3 class="block-title">Reported/Referred Cases Listing</h3>
                         <table class="table tile table-striped" id="casesTable">
                             <thead>
                               <tr>
@@ -107,7 +107,7 @@
                     </div>
                     @endif
                     <div class="table-responsive overflow">
-                        <h3 class="block-title">Pending Closure Cases</h3>
+                        <h3 class="block-title">Pending Closure Cases Listing</h3>
                         <table class="table tile table-striped" id="deletedCasesTable">
                             <thead>
                               <tr>
@@ -133,7 +133,7 @@
                     </div>
                     @endif
                     <div class="table-responsive overflow">
-                        <h3 class="block-title">Reported/Pending Referral Cases</h3>
+                        <h3 class="block-title">Reported/Pending Referral Cases Listing</h3>
                         <table class="table tile table-striped" id="pendingreferralCasesTable">
                             <thead>
                               <tr>
@@ -159,7 +159,7 @@
                     </div>
                     @endif
                     <div class="table-responsive overflow">
-                        <h3 class="block-title">Resolved Cases</h3>
+                        <h3 class="block-title">Resolved Cases Listing</h3>
                         <table class="table tile table-striped" id="resolvedCasesTable">
                             <thead>
                               <tr>
