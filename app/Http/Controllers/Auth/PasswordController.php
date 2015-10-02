@@ -42,7 +42,7 @@ class PasswordController extends Controller
 
         $response = Password::sendResetLink($request->only('username'), function (Message $message) {
 
-            $message->from('info@siyaleader.co.za', 'Siyaleader');
+            $message->from('info@siyaleader.net', 'Siyaleader');
             $message->subject("Siyaleader Notification - Your Password Reset Link: ");
         });
 

@@ -79,7 +79,7 @@ class UserController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(UserRequest $request, User $user,OldUser $oldUser)
+    public function store(UserRequest $request, User $user)
     {
 
         /*  New User Table */
@@ -109,20 +109,7 @@ class UserController extends Controller
         $user->role         = 2;
         $user->save();
 
-        /*  Old User Table */
-        $oldUser->Fname        = $request['Fname'];
-        $oldUser->Sname        = $request['Sname'];
-        $oldUser->Cell1        = $request['Cell1'];
-        $oldUser->Email        = $request['Email'];
-        $oldUser->Position     = $request['Position'];
-        $oldUser->Province     = $request['Province'];
-        $oldUser->District     = $request['District'];
-        $oldUser->Municipality = implode(",",$request['Municipality']);
-        $oldUser->Department   = $request['Department'];
-        $oldUser->Password     = $password;
-        $oldUser->api_key      = uniqid();
-        $oldUser->Status       = 'Active';
-        $oldUser->save();
+
          \Session::flash('success', $request['Fname'].' '.$request['Sname'].' has been added successfully!');
 
 
@@ -134,7 +121,7 @@ class UserController extends Controller
 
         \Mail::send('emails.registrationConfirmation',$data, function($message) use ($user)
         {
-            $message->from('info@siyaleader.co.za', 'Siyaleader');
+            $message->from('info@siyaleader.net', 'Siyaleader');
             $message->to($user->username)->subject("Siyaleader User Registration Confirmation: " .$user->name);
 
         });
@@ -164,7 +151,7 @@ class UserController extends Controller
 
         \Mail::send('emails.registrationConfirmation',$data, function($message) use ($user)
         {
-            $message->from('info@siyaleader.co.za', 'Siyaleader');
+            $message->from('info@siyaleader.net', 'Siyaleader');
             $message->to($user->username)->subject("Siyaleader User Registration Confirmation: " .$user->name);
 
         });

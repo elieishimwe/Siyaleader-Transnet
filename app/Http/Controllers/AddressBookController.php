@@ -66,7 +66,6 @@ class AddressBookController extends Controller
     {
 
         $searchString = \Input::get('q');
-
         $contacts     = \DB::table('addressbook')
             ->where('user','=',\Auth::user()->id)
             ->whereRaw("CONCAT(`FirstName`, ' ', `Surname`, ' ', `email`) LIKE '%{$searchString}%'")

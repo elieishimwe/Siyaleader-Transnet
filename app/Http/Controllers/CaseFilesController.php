@@ -92,7 +92,7 @@ class CaseFilesController extends Controller
 
                 \Mail::send('casefiles.email',$data, function($message) use ($user)
                 {
-                    $message->from('info@siyaleader.co.za', 'Siyaleader');
+                    $message->from('info@siyaleader.net', 'Siyaleader');
                     $message->to($user->username)->subject("Siyaleader Notification - New Case File Uploaded: ");
 
                 });

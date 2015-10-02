@@ -88,7 +88,7 @@ class notifyCommand extends Command
                                     );
 
                         \Mail::send('emails.firstNotification',$data, function($message) use ($firstResponderUser) {
-                            $message->from('info@siyaleader.co.za', 'Siyaleader');
+                            $message->from('info@siyaleader.net', 'Siyaleader');
                             $message->to($firstResponderUser->username)->subject("Siyaleader Notification - New Case Notification:");
 
                         });
@@ -120,7 +120,7 @@ class notifyCommand extends Command
                                     );
 
                         \Mail::send('emails.responder',$data, function($message) use ($secondResponderUser) {
-                            $message->from('info@siyaleader.co.za', 'Siyaleader');
+                            $message->from('info@siyaleader.net', 'Siyaleader');
                             $message->to($secondResponderUser->username)->subject("Siyaleader Notification - New Case Reported:");
 
                         });
