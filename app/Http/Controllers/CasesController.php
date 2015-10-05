@@ -740,6 +740,7 @@ class CasesController extends Controller
             ->select(\DB::raw( "
                                     cases.id,
                                     cases.description,
+                                    cases.created_at,
                                     cases.status,cases.img_url,
                                     CONCAT(users.`name`, ' ', users.`surname`) as capturer,
                                      IF(`cases`.`addressbook` = 1,(SELECT CONCAT(`FirstName`, ' ', `Surname`) FROM `addressbook` WHERE `addressbook`.`id`= `cases`.`reporter`), (SELECT CONCAT(users.`name`, ' ', users.`surname`) FROM `users` WHERE `users`.`id`= `cases`.`reporter`)) as reporter,
@@ -767,6 +768,7 @@ class CasesController extends Controller
             ->select(\DB::raw("
                                 cases.id,
                                 cases.description,
+                                cases.created_at,
                                 cases.status,
                                 cases.img_url,CONCAT(users.`name`, ' ', users.`surname`) as capturer,
                                  IF(`cases`.`addressbook` = 1,(SELECT CONCAT(`FirstName`, ' ', `Surname`) FROM `addressbook` WHERE `addressbook`.`id`= `cases`.`reporter`), (SELECT CONCAT(users.`name`, ' ', users.`surname`) FROM `users` WHERE `users`.`id`= `cases`.`reporter`)) as reporter,
