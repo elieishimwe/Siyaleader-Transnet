@@ -59,6 +59,14 @@
                                   </div>
 
                                   <div class="form-group">
+                                      {!! Form::label('Last Activity Datetime', 'Last Activity Datetime', array('class' => 'col-md-3 control-label')) !!}
+                                      <div class="col-md-6">
+                                        {!! Form::text('last_at',NULL,['class' => 'form-control input-sm','id' => 'last_at']) !!}
+                                      </div>
+                                  </div>
+
+
+                                  <div class="form-group">
                                       {!! Form::label('Description', 'Description', array('class' => 'col-md-3 control-label')) !!}
                                       <div class="col-md-6">
 

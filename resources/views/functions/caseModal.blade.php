@@ -702,6 +702,7 @@
 
                      $("#modalCase #id").val(data[0].id);
                      $("#modalCase #created_at").val(data[0].created_at);
+                     $("#modalCase #last_at").val(data[0].last_at);
                      $("#modalCase #description").val(data[0].description);
                      $("#modalCase #category").val(data[0].category);
                      $("#modalCase #sub_category").val(data[0].sub_category);
