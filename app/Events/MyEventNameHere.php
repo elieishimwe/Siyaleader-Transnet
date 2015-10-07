@@ -10,6 +10,8 @@ class MyEventNameHere extends Event implements ShouldBroadcast
 {
     use SerializesModels;
 
+    public $data;
+
     /**
      * Create a new event instance.
      *

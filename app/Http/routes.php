@@ -507,5 +507,10 @@ Route::get('test', function () {
 });
 
 
+Route::get('kapanga', function () {
+    return view('test');
+});
+
+
 
 
