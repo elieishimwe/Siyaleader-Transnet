@@ -501,5 +501,11 @@ return $listing;
 });
 
 
+Route::get('test', function () {
+    event(new App\Events\MyEventNameHere());
+    return "event fired";
+});
+
+
 
 

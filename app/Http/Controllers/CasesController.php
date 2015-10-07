@@ -546,7 +546,8 @@ class CasesController extends Controller
 
                 'name'    => $user->name,
                 'caseID'  => $request['caseID'],
-                'content' => $request['message']
+                'content' => $request['message'],
+                'executor'  => \Auth::user()->name.' '.\Auth::user()->surname,
             );
 
 
