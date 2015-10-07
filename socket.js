@@ -17,6 +17,6 @@ redis.on('message', function(channel, message) {
 
 });
 
-http.listen(3000, function(){
+http.listen(6379, function(){
     console.log('Listening on Port 3000');
 });
