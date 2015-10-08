@@ -326,7 +326,14 @@
             if ( message.data.dest == loggedUser ) {
 
                  $('.chat .chat-list').removeClass('toggled');
-                 $('.chat').toggleClass('toggled');
+
+                 if ( $('.chat').hasClass( "toggled" ) ) {
+
+                 }
+                 else
+                 {
+                    $('.chat').toggleClass('toggled');
+                 }
                  $("#colleague").html(message.data.author);
 
             }
