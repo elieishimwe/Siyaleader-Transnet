@@ -302,6 +302,14 @@
         url     :"{!! url('/postChat')!!}",
         success : function(data) {
 
+          if (data.result == "success") {
+
+            $("#messageChat").val('');
+            var objDiv = document.getElementById("chat-body");
+            objDiv.scrollTop = objDiv.scrollHeight;
+
+          }
+
         }
 
         });

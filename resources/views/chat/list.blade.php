@@ -34,7 +34,7 @@
             <i class="chat-list-toggle pull-left fa fa-bars"></i>
             {!! Form::open(['url' => 'chat', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"chatForm" ]) !!}
             {!! Form::hidden('to',0,['id' => 'to']) !!}
-            <a type="#" id='submitChat'><i class="pull-right fa fa-picture-o"></i></a>
+            <a type="#" id='submitChat'><i class="pull-right fa fa-share-square-o"></i></a>
             <div class="media-body">
                     <textarea class="form-control" name="messageChat" id="messageChat" placeholder="Type something..." onkeydown="pressed(event)"></textarea>
                 {!! Form::close() !!}
