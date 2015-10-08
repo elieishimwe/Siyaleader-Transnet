@@ -164,7 +164,7 @@
                 @include('addressbook.list')
                 @include('addressbook.global')
                 @include('addressbook.globalAdd')
-              <!--   @include('chat.list') -->
+
             </section>
 
         </section>
