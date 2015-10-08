@@ -16,9 +16,10 @@ class ChatController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $data = $request->session()->all();
+        return $data ;
     }
 
     /**

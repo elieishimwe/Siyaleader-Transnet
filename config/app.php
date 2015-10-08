@@ -138,6 +138,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
         yajra\Datatables\DatatablesServiceProvider::class,
+        Cartalyst\Sentry\SentryServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -195,6 +196,7 @@ return [
         'Form'       => 'Illuminate\Html\FormFacade',
         'HTML'       => 'Illuminate\Html\HtmlFacade',
         'Datatables' => yajra\Datatables\Datatables::class,
+        'Sentry'     => Cartalyst\Sentry\Facades\Laravel\Sentry::class,
 
 
     ],

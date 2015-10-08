@@ -8,6 +8,8 @@ use App\Category;
 use App\SubCategory;
 use App\SubSubCategory;
 use App\CaseReport;
+use App\Online;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -500,12 +502,12 @@ else {
 return $listing;
 });
 
-
-Route::get('kapanga', function () {
-    return view('test');
-});
+Route::get('kapanga','ChatController@index');
 
 Route::post('postChat', 'ChatController@postChat');
+
+
+/*Online::updateCurrent();*/
 
 
 
