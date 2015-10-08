@@ -501,15 +501,11 @@ return $listing;
 });
 
 
-Route::get('test', function () {
-    event(new App\Events\MyEventNameHere());
-    return "event fired";
-});
-
-
 Route::get('kapanga', function () {
     return view('test');
 });
+
+Route::post('postChat', 'ChatController@postChat');
 
 
 

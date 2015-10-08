@@ -164,7 +164,7 @@
                 @include('addressbook.list')
                 @include('addressbook.global')
                 @include('addressbook.globalAdd')
-
+                @include('chat.list')
             </section>
 
         </section>
@@ -258,6 +258,30 @@
         <script src="{{ asset('/js/vfs_fonts.js') }}"></script>
         <!--  Buttons HTML5 -->
 
+        <script src="{{ asset('js/socket.io.js') }}"></script>
+
+        <script>
+        /*  var socket = io('http://41.216.130.6:3000');*/
+        var socket = io('http://localhost:3000');
+        var html = "";
+        var count = 0;
+        var Class = "";
+      /*  var socket = io('http://41.216.130.6:3000');*/
+        socket.on("test-channel:App\\Events\\MyEventNameHere", function(message){
+             // increase the power everytime we load test route
+             count ++;
+             if (count % 2 == 1) {
+
+                Class = "pull-right";
+             }
+             else {
+
+                Class = "pull-left";
+             }
+             html += '<div class="media"><img class="'+ Class +'" src="img/profile-pics/1.jpg" width="30" alt="" /><div class="media-body '+ Class +'">'+ message.data.message +'<small>'+ message.data.author +'</small></div></div>';
+             $('#chat-body').html(html);
+         });
+        </script>
 
         @include('functions.caseModal')
         @yield('footer')

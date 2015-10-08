@@ -17,11 +17,9 @@ class MyEventNameHere extends Event implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($info)
     {
-        $this->data = array(
-            'power'=> '10'
-        );
+        $this->data = $info;
     }
 
     /**
