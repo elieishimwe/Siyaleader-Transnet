@@ -164,7 +164,7 @@
                 @include('addressbook.list')
                 @include('addressbook.global')
                 @include('addressbook.globalAdd')
-
+                @include('chat.list')
             </section>
 
         </section>
@@ -281,6 +281,8 @@
                   if (data == "okay") {
 
                       $("#messageChat").val('');
+                      var objDiv = document.getElementById("chat-body");
+                      objDiv.scrollTop = objDiv.scrollHeight;
                   }
 
 
@@ -290,8 +292,8 @@
         }
         }
 
-        var socket = io('http://41.216.130.6:3000');
-        /*var socket = io('http://localhost:3000');*/
+        /*var socket = io('http://41.216.130.6:3000');*/
+        var socket = io('http://localhost:3000');
         var html = "";
         var count = 0;
         var Class = "";
