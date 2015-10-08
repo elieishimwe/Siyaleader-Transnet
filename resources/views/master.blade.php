@@ -164,7 +164,7 @@
                 @include('addressbook.list')
                 @include('addressbook.global')
                 @include('addressbook.globalAdd')
-
+                @include('chat.list')
             </section>
 
         </section>
@@ -303,8 +303,8 @@
             }
         }
 
-        var socket = io('http://41.216.130.6:3000');
-       /* var socket = io('http://localhost:3000');*/
+       /* var socket = io('http://41.216.130.6:3000');*/
+        var socket = io('http://localhost:3000');
         var html = "";
         var count = 0;
         var Class = "";
@@ -340,6 +340,9 @@
 
              html += '<div class="media"><img class="'+ Class +'" src="img/profile-pics/7.png" width="30" alt="" /><div class="media-body '+ Class +'">'+ message.data.message +'<small>'+ message.data.author +'</small></div></div>';
              $('#chat-body').html(html);
+             var height = $('#chat-body')[0].scrollHeight;
+             $('#chat-body').scrollTop(height);
+
          });
         </script>
 
