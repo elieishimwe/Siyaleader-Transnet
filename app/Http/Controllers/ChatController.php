@@ -30,7 +30,7 @@ class ChatController extends Controller
     {
         $data =  array (
 
-                'message' => $request['message'],
+                'message' => $request['messageChat'],
                 'author'  =>  \Auth::user()->name .' '.\Auth::user()->surname,
             );
 
@@ -38,7 +38,7 @@ class ChatController extends Controller
 
         $message          = new Message();
         $message->from    = \Auth::user()->id;
-        $message->message = $request['message'];
+        $message->message = $request['messageChat'];
         $message->active  = 1;
         $message->save();
 

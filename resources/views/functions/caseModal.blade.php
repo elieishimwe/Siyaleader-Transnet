@@ -1107,33 +1107,6 @@
 
     }
 
-     function pressed(e) {
-            // Has the enter key been pressed?
-        if ( (window.event ? event.keyCode : e.which) == 13) {
-            // If it has been so, manually submit the <form>
-              var myForm   = $("#chatForm")[0];
-              var formData = new FormData(myForm);
-              var token    = $('input[name="_token"]').val();
-              $.ajax({
-              type    :"POST",
-              data    : formData,
-              contentType: false,
-              processData: false,
-              headers : { 'X-CSRF-Token': token },
-              url     :"{!! url('/postChat')!!}",
-              success : function(data) {
-
-                  if (data == "okay") {
-
-                      $("#message").val('');
-                  }
-
-
-              }
-
-              });
-        }
-      }
 
 
     </script>

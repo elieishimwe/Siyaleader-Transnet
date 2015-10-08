@@ -81,7 +81,7 @@
             {!! Form::open(['url' => 'chat', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"chatForm" ]) !!}
             <a type="#" id='submitChat'><i class="pull-right fa fa-picture-o"></i></a>
             <div class="media-body">
-                    <textarea class="form-control" name="message" id="message" placeholder="Type something..." onkeydown="pressed(event)"></textarea>
+                    <textarea class="form-control" name="messageChat" id="messageChat" placeholder="Type something..." onkeydown="pressed(event)"></textarea>
                 {!! Form::close() !!}
             </div>
         </div>
