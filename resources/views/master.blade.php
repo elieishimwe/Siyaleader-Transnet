@@ -262,38 +262,49 @@
 
         <script>
 
+        $(".chatWith").on("click",function(){
+
+            $("#colleague").html($(this).attr("data-names"));
+            $("#chatForm #to").val($(this).attr("data-userid"))
+            $(this).closest('.chat').find('.chat-list').toggleClass('toggled');
+
+        })
+
         function pressed(e) {
-            // Has the enter key been pressed?
-        if ( (window.event ? event.keyCode : e.which) == 13) {
-            // If it has been so, manually submit the <form>
-              var myForm   = $("#chatForm")[0];
-              var formData = new FormData(myForm);
-              var token    = $('input[name="_token"]').val();
-              $.ajax({
-              type    :"POST",
-              data    : formData,
-              contentType: false,
-              processData: false,
-              headers : { 'X-CSRF-Token': token },
-              url     :"{!! url('/postChat')!!}",
-              success : function(data) {
 
-                  if (data == "okay") {
+            if ( (window.event ? event.keyCode : e.which) == 13) {
 
-                      $("#messageChat").val('');
-                      var objDiv = document.getElementById("chat-body");
-                      objDiv.scrollTop = objDiv.scrollHeight;
+                  var myForm   = $("#chatForm")[0];
+                  var formData = new FormData(myForm);
+                  var token    = $('input[name="_token"]').val();
+                  $.ajax({
+                  type    :"POST",
+                  data    : formData,
+                  contentType: false,
+                  processData: false,
+                  headers : { 'X-CSRF-Token': token },
+                  url     :"{!! url('/postChat')!!}",
+                  success : function(data) {
+
+                    var loggedUser = {!! Auth::user()->id !!};
+
+                      if (data.result == "success") {
+
+                          $("#messageChat").val('');
+                          var objDiv = document.getElementById("chat-body");
+                          objDiv.scrollTop = objDiv.scrollHeight;
+
+                      }
+
+
                   }
 
-
-              }
-
-              });
-        }
+                  });
+            }
         }
 
-        /*var socket = io('http://41.216.130.6:3000');*/
-        var socket = io('http://localhost:3000');
+        var socket = io('http://41.216.130.6:3000');
+        /*var socket = io('http://localhost:3000');*/
         var html = "";
         var count = 0;
         var Class = "";
@@ -309,6 +320,17 @@
 
                 Class = "pull-left";
              }
+
+            var loggedUser = {!! Auth::user()->id !!};
+
+            if ( message.data.dest == loggedUser ) {
+
+                 $('.chat .chat-list').removeClass('toggled');
+                 $('.chat').toggleClass('toggled');
+                 $("#colleague").html(message.data.author);
+
+            }
+
              html += '<div class="media"><img class="'+ Class +'" src="img/profile-pics/1.jpg" width="30" alt="" /><div class="media-body '+ Class +'">'+ message.data.message +'<small>'+ message.data.author +'</small></div></div>';
              $('#chat-body').html(html);
          });

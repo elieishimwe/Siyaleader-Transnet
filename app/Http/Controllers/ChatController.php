@@ -32,17 +32,22 @@ class ChatController extends Controller
 
                 'message' => $request['messageChat'],
                 'author'  =>  \Auth::user()->name .' '.\Auth::user()->surname,
-            );
+                'dest'    => $request['to'],
+        );
 
         event(new MyEventNameHere($data));
 
         $message          = new Message();
         $message->from    = \Auth::user()->id;
+        $message->to      = $request['to'];
         $message->message = $request['messageChat'];
         $message->active  = 1;
         $message->save();
 
-        return "okay";
+        $response['result'] = "success";
+        $response['dest']   =  $request['to'];
+
+        return $response;
 
     }
 

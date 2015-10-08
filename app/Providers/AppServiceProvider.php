@@ -179,21 +179,19 @@ class AppServiceProvider extends ServiceProvider
 
         $view->with('addressBookNumber',addressbook::all());
 
-          if(\Auth::check())
-          {
-
+          if(\Auth::check()) {
 
             $number = addressbook::where('user','=',\Auth::user()->id)->get();
-
             $view->with('addressBookNumber',$number);
-
 
           }
 
+        $allUsers = User::where('id','<>',\Auth::user()->id)->get();
+        $view->with('loggedInUsers',$allUsers);
+
         });
 
-
-    }
+      }
 
     /**
      * Register any application services.
