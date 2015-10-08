@@ -7,7 +7,7 @@
 
             @foreach ( $loggedInUsers as $loggedInUser)
                 <div class="media">
-                    <a href="#" class="chatWith" data-userid = "{{ $loggedInUser->id }}" data-names = "{{ $loggedInUser->name}} {{ $loggedInUser->surname}}"><img class="pull-left" src="img/profile-pics/2.jpg" width="30" alt=""></a>
+                    <a href="#" class="chatWith" data-userid = "{{ $loggedInUser->id }}" data-names = "{{ $loggedInUser->name}} {{ $loggedInUser->surname}}"> <img class="pull-left" src="img/profile-pics/7.png" width="30" alt=""></a>
                     <div class="media-body">
                         <span class="t-overflow p-t-5">{{ $loggedInUser->name }} {{ $loggedInUser->surname }}</span>
                     </div>

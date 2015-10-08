@@ -331,7 +331,7 @@
 
             }
 
-             html += '<div class="media"><img class="'+ Class +'" src="img/profile-pics/1.jpg" width="30" alt="" /><div class="media-body '+ Class +'">'+ message.data.message +'<small>'+ message.data.author +'</small></div></div>';
+             html += '<div class="media"><img class="'+ Class +'" src="img/profile-pics/7.png" width="30" alt="" /><div class="media-body '+ Class +'">'+ message.data.message +'<small>'+ message.data.author +'</small></div></div>';
              $('#chat-body').html(html);
          });
         </script>
