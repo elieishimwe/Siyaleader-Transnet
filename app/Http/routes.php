@@ -528,7 +528,7 @@ Event::listen('auth.logout', function()
 
 Route::get('/getLoggedInUsers', function(){
 
-   $allUsers = User::where('id','<>',\Auth::user()->id)->get();
+   $allUsers = User::where('id','<>',\Auth::user()->id)->orderBy('availability','desc')->get();
    $html     = "";
 
    foreach ($allUsers as $user) {

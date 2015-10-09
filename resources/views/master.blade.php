@@ -298,11 +298,10 @@
         }
 
         var socket = io('http://41.216.130.6:3000');
-       /* var socket = io('http://localhost:3000');*/
+        //var socket = io('http://localhost:3000');
         var html = "";
         var count = 0;
         var Class = "";
-      /*  var socket = io('http://41.216.130.6:3000');*/
         socket.on("test-channel:App\\Events\\MyEventNameHere", function(message){
 
              count ++;
