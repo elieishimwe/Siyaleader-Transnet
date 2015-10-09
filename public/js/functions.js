@@ -232,7 +232,7 @@ $(document).ready(function(){
 
             $.ajax({
                 type    :"GET",
-                url     :"/getLoggedInUsers",
+                url     :"getLoggedInUsers",
                 success : function(data) {
                     $("#listLoggedUsers").html(data);
 
