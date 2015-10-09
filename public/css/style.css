@@ -958,6 +958,13 @@ hr {
     color: rgb(3, 204, 3);
 }
 
+.chat .offline {
+    font-size: 14px;
+    margin-top: 3px;
+    color: red;
+}
+
+
 .chat .chat-footer {
     width: 100%;
     background: rgba(255,255,255,0.95);

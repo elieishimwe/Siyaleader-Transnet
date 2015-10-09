@@ -16,8 +16,14 @@ class HomeController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
+
+
+        $data = $request->session()->all();
+
+        \Log::info($data);
+
 
         if (\Auth::check())
         {

@@ -12,17 +12,17 @@ $(document).ready(function(){
 	if($('.select')[0]) {
 	    $('.select').selectpicker();
 	}
-        
+
         //Sortable
         if($('.sortable')[0]) {
 	    $('.sortable').sortable();
 	}
-	
+
         //Tag Select
 	if($('.tag-select')[0]) {
 	    $('.tag-select').chosen();
 	}
-        
+
         /* Tab */
 	if($('.tab')[0]) {
 	    $('.tab a').click(function(e) {
@@ -30,12 +30,12 @@ $(document).ready(function(){
 		$(this).tab('show');
 	    });
 	}
-        
+
         /* Collapse */
 	if($('.collapse')[0]) {
 	    $('.collapse').collapse();
 	}
-        
+
         /* Accordion */
         $('.panel-collapse').on('shown.bs.collapse', function () {
             $(this).prev().find('.panel-title a').removeClass('active');
@@ -48,7 +48,7 @@ $(document).ready(function(){
         //Popover
     	if($('.pover')[0]) {
     	    $('.pover').popover();
-    	} 
+    	}
     })();
 
     /* --------------------------------------------------------
@@ -62,7 +62,7 @@ $(document).ready(function(){
             $('#sidebar').toggleClass('toggled');
             //$('#content').toggleClass('m-0');
         });
-         
+
         /* Active Menu */
         $('#sidebar .menu-item').hover(function(){
             $(this).closest('.dropdown').addClass('hovered');
@@ -74,7 +74,7 @@ $(document).ready(function(){
         $('.side-menu .dropdown > a').click(function(e){
             e.preventDefault();
         });
-	
+
 
     })();
 
@@ -105,7 +105,7 @@ $(document).ready(function(){
 
             $('.todo-list .media input').on('ifUnchecked', function(){
                 $(this).closest('.media').find('.checkbox label').removeAttr('style');
-            });    
+            });
         })
     })();
 
@@ -158,7 +158,7 @@ $(document).ready(function(){
 	Calendar
     -----------------------------------------------------------*/
     (function(){
-	
+
         //Sidebar
         if ($('#sidebar-calendar')[0]) {
             var date = new Date();
@@ -229,6 +229,15 @@ $(document).ready(function(){
     -----------------------------------------------------------*/
     $(function() {
         $('body').on('click touchstart', '.chat-list-toggle', function(){
+
+            $.ajax({
+                type    :"GET",
+                url     :"/getLoggedInUsers",
+                success : function(data) {
+                    $("#listLoggedUsers").html(data);
+
+                }})
+
             $(this).closest('.chat').find('.chat-list').toggleClass('toggled');
         });
 
@@ -244,7 +253,11 @@ $(document).ready(function(){
                 container.removeClass('toggled');
             }
         });
+
+
     });
+
+
 
     /* --------------------------------------------------------
 	Form Validation
@@ -269,21 +282,21 @@ $(document).ready(function(){
 	if($('.color-picker')[0]) {
 	    $('.color-picker').colorpicker();
 	}
-        
+
         //RGB
 	if($('.color-picker-rgb')[0]) {
 	    $('.color-picker-rgb').colorpicker({
 		format: 'rgb'
 	    });
 	}
-        
+
         //RGBA
 	if($('.color-picker-rgba')[0]) {
 	    $('.color-picker-rgba').colorpicker({
 		format: 'rgba'
 	    });
 	}
-	
+
 	//Output Color
 	if($('[class*="color-picker"]')[0]) {
 	    $('[class*="color-picker"]').colorpicker().on('changeColor', function(e){
@@ -318,7 +331,7 @@ $(document).ready(function(){
 		pick12HourFormat: true
 	    });
 	}
-        
+
         $('.datetime-pick input:text').on('click', function(){
             $(this).closest('.datetime-pick').find('.add-on i').click();
         });
@@ -346,14 +359,14 @@ $(document).ready(function(){
 		savable:false
 	    });
 	}
-        
+
         //WYSIWYE Editor
 	if($('.wysiwye-editor')[0]) {
 	    $('.wysiwye-editor').summernote({
 		height: 200
 	    });
 	}
-        
+
     })();
 
     /* --------------------------------------------------------
@@ -384,7 +397,7 @@ $(document).ready(function(){
 		    jQuery.browser.version = RegExp.$1;
 		}
 	    })();
-	    
+
 	    //Lightbox
 	    $().piroBox_ext({
 		piro_speed : 700,
@@ -421,7 +434,7 @@ $(document).ready(function(){
 
 
     })();
-    
+
     /* --------------------------------------------------------
      Login + Sign up
     -----------------------------------------------------------*/
@@ -430,51 +443,51 @@ $(document).ready(function(){
 	    e.preventDefault();
 	    var box = $(this).attr('data-switch');
 	    $(this).closest('.box').toggleClass('active');
-	    $('#'+box).closest('.box').addClass('active'); 
+	    $('#'+box).closest('.box').addClass('active');
 	});
     })();
-    
-   
-    
+
+
+
     /* --------------------------------------------------------
      Checkbox + Radio
      -----------------------------------------------------------*/
     if($('input:checkbox, input:radio')[0]) {
-    	
+
 	//Checkbox + Radio skin
 	$('input:checkbox:not([data-toggle="buttons"] input, .make-switch input), input:radio:not([data-toggle="buttons"] input)').iCheck({
 		    checkboxClass: 'icheckbox_minimal',
 		    radioClass: 'iradio_minimal',
 		    increaseArea: '20%' // optional
 	});
-    
+
 	//Checkbox listing
 	var parentCheck = $('.list-parent-check');
 	var listCheck = $('.list-check');
-    
+
 	parentCheck.on('ifChecked', function(){
 		$(this).closest('.list-container').find('.list-check').iCheck('check');
 	});
-    
+
 	parentCheck.on('ifClicked', function(){
 		$(this).closest('.list-container').find('.list-check').iCheck('uncheck');
 	});
-    
+
 	listCheck.on('ifChecked', function(){
 		    var parent = $(this).closest('.list-container').find('.list-parent-check');
 		    var thisCheck = $(this).closest('.list-container').find('.list-check');
 		    var thisChecked = $(this).closest('.list-container').find('.list-check:checked');
-	    
+
 		    if(thisCheck.length == thisChecked.length) {
 			parent.iCheck('check');
 		    }
 	});
-    
+
 	listCheck.on('ifUnchecked', function(){
 		    var parent = $(this).closest('.list-container').find('.list-parent-check');
 		    parent.iCheck('uncheck');
 	});
-    
+
 	listCheck.on('ifChanged', function(){
 		    var thisChecked = $(this).closest('.list-container').find('.list-check:checked');
 		    var showon = $(this).closest('.list-container').find('.show-on');
@@ -486,9 +499,9 @@ $(document).ready(function(){
 		    }
 	});
     }
-    
+
     /* --------------------------------------------------------
-        MAC Hack 
+        MAC Hack
     -----------------------------------------------------------*/
     (function(){
 	//Mac only
@@ -505,7 +518,7 @@ $(document).ready(function(){
             $('.photo-gallery').SuperBox();
         }
     })();
-    
+
 });
 
 $(window).load(function(){
@@ -541,7 +554,7 @@ $(window).load(function(){
             return val;
         }
     });
-    
+
 });
 
 /* --------------------------------------------------------

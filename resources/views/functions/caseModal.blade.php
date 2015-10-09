@@ -1115,6 +1115,16 @@
 
     }
 
+    function chatStart(d)
+    {
+
+      $("#colleague").html($(d).attr("data-names"));
+      $("#chatForm #to").val($(d).attr("data-userid"))
+      $(d).closest('.chat').find('.chat-list').toggleClass('toggled');
+
+    }
+
+
 
 
     </script>

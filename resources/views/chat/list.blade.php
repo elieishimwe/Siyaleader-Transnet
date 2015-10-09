@@ -3,16 +3,9 @@
 
     <!-- Chat List -->
     <div class="pull-left chat-list">
-        <div class="listview narrow" style="overflow-y:auto; height:320px">
+        <div class="listview narrow" style="overflow-y:auto; height:320px" id ="listLoggedUsers">
 
-            @foreach ( $loggedInUsers as $loggedInUser)
-                <div class="media">
-                    <a href="#" class="chatWith" data-userid = "{{ $loggedInUser->id }}" data-names = "{{ $loggedInUser->name}} {{ $loggedInUser->surname}}"> <img class="pull-left" src="img/profile-pics/7.png" width="30" alt=""></a>
-                    <div class="media-body">
-                        <span class="t-overflow p-t-5">{{ $loggedInUser->name }} {{ $loggedInUser->surname }}</span>
-                    </div>
-                </div>
-            @endforeach
+
 
         </div>
     </div>

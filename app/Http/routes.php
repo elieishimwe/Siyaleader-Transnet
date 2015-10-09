@@ -9,6 +9,7 @@ use App\SubCategory;
 use App\SubSubCategory;
 use App\CaseReport;
 use App\Online;
+use App\User;
 
 
 /*
@@ -507,7 +508,44 @@ Route::get('kapanga','ChatController@index');
 Route::post('postChat', 'ChatController@postChat');
 
 
-/*Online::updateCurrent();*/
+Event::listen('auth.login', function()
+{
+    $user               = User::find(\Auth::user()->id);
+    $user->availability = 1;
+    $user->last_login   =  new DateTime;
+    $user->save();
+});
+
+Event::listen('auth.logout', function()
+{
+    $user = User::find(\Auth::user()->id);
+    $user->availability = 0;
+    $user->last_logout  =  new DateTime;
+    $user->save();
+});
+
+
+
+Route::get('/getLoggedInUsers', function(){
+
+   $allUsers = User::where('id','<>',\Auth::user()->id)->get();
+   $html     = "";
+
+   foreach ($allUsers as $user) {
+
+       $availability = ($user->availability == 1)? "<i class='fa fa-circle-o status m-r-5'></i>":"<i class='fa fa-circle-o offline m-r-5'></i>";
+       $html .=  "<div class='media'>";
+       $html .=  "<a href='#' onClick='chatStart(this)' class='chatWith' data-userid = '$user->id' data-names = '$user->name $user->surname'> <img class='pull-left' src='img/profile-pics/7.png' width='30' alt=''></a>";
+       $html .=  "<div class='media-body'>";
+       $html .=  "<span class='t-overflow p-t-5'>$user->name  $user->surname $availability</span>";
+       $html .=  "</div>";
+       $html .=  "</div>";
+
+  }
+   return $html;
+
+});
+
 
 
 

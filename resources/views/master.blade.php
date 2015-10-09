@@ -164,7 +164,7 @@
                 @include('addressbook.list')
                 @include('addressbook.global')
                 @include('addressbook.globalAdd')
-
+                @include('chat.list')
             </section>
 
         </section>
@@ -262,13 +262,7 @@
 
         <script>
 
-        $(".chatWith").on("click",function(){
 
-            $("#colleague").html($(this).attr("data-names"));
-            $("#chatForm #to").val($(this).attr("data-userid"))
-            $(this).closest('.chat').find('.chat-list').toggleClass('toggled');
-
-        })
 
         function pressed(e) {
 
@@ -303,8 +297,8 @@
             }
         }
 
-       /* var socket = io('http://41.216.130.6:3000');*/
-        var socket = io('http://localhost:3000');
+        var socket = io('http://41.216.130.6:3000');
+       /* var socket = io('http://localhost:3000');*/
         var html = "";
         var count = 0;
         var Class = "";
