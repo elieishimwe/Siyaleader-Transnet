@@ -304,8 +304,9 @@
         var Class = "";
       /*  var socket = io('http://41.216.130.6:3000');*/
         socket.on("test-channel:App\\Events\\MyEventNameHere", function(message){
-             // increase the power everytime we load test route
+
              count ++;
+
              if (count % 2 == 1) {
 
                 Class = "pull-right";
@@ -332,10 +333,15 @@
 
             }
 
-             html += '<div class="media"><img class="'+ Class +'" src="img/profile-pics/7.png" width="30" alt="" /><div class="media-body '+ Class +'">'+ message.data.message +'<small>'+ message.data.author +'</small></div></div>';
-             $('#chat-body').html(html);
-             var height = $('#chat-body')[0].scrollHeight;
-             $('#chat-body').scrollTop(height);
+            if ( message.data.dest == loggedUser  || message.data.origin == loggedUser) {
+
+                html += '<div class="media"><img class="'+ Class +'" src="img/profile-pics/7.png" width="30" alt="" /><div class="media-body '+ Class +'">'+ message.data.message +'<small>'+ message.data.author +'</small></div></div>';
+                $('#chat-body').html(html);
+                var height = $('#chat-body')[0].scrollHeight;
+                $('#chat-body').scrollTop(height);
+            }
+
+
 
          });
         </script>

@@ -34,6 +34,7 @@ class ChatController extends Controller
                 'message' => $request['messageChat'],
                 'author'  =>  \Auth::user()->name .' '.\Auth::user()->surname,
                 'dest'    => $request['to'],
+                'origin'  =>  \Auth::user()->id
         );
 
         event(new MyEventNameHere($data));
