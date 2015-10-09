@@ -297,8 +297,8 @@
             }
         }
 
-        var socket = io('http://41.216.130.6:3000');
-       /* var socket = io('http://localhost:3000');*/
+        //var socket = io('http://41.216.130.6:3000');
+        var socket = io('http://localhost:3000');
         var html = "";
         var count = 0;
         var Class = "";
@@ -321,6 +321,8 @@
 
                  $('.chat .chat-list').removeClass('toggled');
 
+                 $('#chatForm #to').val(message.data.origin);
+
                  if ( $('.chat').hasClass( "toggled" ) ) {
 
                  }
@@ -334,8 +336,8 @@
 
             if ( message.data.dest == loggedUser  || message.data.origin == loggedUser) {
 
-                console.log(message.data.dest);
-                console.log(message.data.origin);
+               /* alert(message.data.dest);
+                alert(message.data.origin);*/
 
                 html += '<div class="media"><img class="'+ Class +'" src="img/profile-pics/7.png" width="30" alt="" /><div class="media-body '+ Class +'">'+ message.data.message +'<small>'+ message.data.author +'</small></div></div>';
                 $('#chat-body').html(html);
