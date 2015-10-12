@@ -47,37 +47,37 @@
                                   <div class="form-group">
                                       {!! Form::label('Case Number', 'Case Number', array('class' => 'col-md-3 control-label')) !!}
                                       <div class="col-md-6">
-                                        {!! Form::text('id',NULL,['class' => 'form-control input-sm','id' => 'id']) !!}
+                                        {!! Form::text('id',NULL,['class' => 'form-control input-sm','id' => 'id','disabled' => 'disabled']) !!}
                                       </div>
                                   </div>
 
                                   <div class="form-group">
                                       {!! Form::label('Reported Datetime', 'Reported Datetime', array('class' => 'col-md-3 control-label')) !!}
                                       <div class="col-md-6">
-                                        {!! Form::text('created_at',NULL,['class' => 'form-control input-sm','id' => 'created_at']) !!}
+                                        {!! Form::text('created_at',NULL,['class' => 'form-control input-sm','id' => 'created_at','disabled' => 'disabled']) !!}
                                       </div>
                                   </div>
 
                                   <div class="form-group">
                                       {!! Form::label('Last Activity Datetime', 'Last Activity Datetime', array('class' => 'col-md-3 control-label')) !!}
                                       <div class="col-md-6">
-                                        {!! Form::text('last_at',NULL,['class' => 'form-control input-sm','id' => 'last_at']) !!}
+                                        {!! Form::text('last_at',NULL,['class' => 'form-control input-sm','id' => 'last_at','disabled' => 'disabled']) !!}
                                       </div>
                                   </div>
 
 
                                   <div class="form-group">
-                                      {!! Form::label('Description', 'Description', array('class' => 'col-md-3 control-label')) !!}
+                                      {!! Form::label('Description', 'Description', array('class' => 'col-md-3 control-label','disabled' => 'disabled')) !!}
                                       <div class="col-md-6">
 
-                                        {!! Form::textarea('description', null, ['class' => 'form-control input-sm','id' => 'description','size' => '30x5']) !!}
+                                        {!! Form::textarea('description', null, ['class' => 'form-control input-sm','id' => 'description','size' => '30x5','disabled' => 'disabled']) !!}
                                       </div>
                                   </div>
 
                                   <div class="form-group">
                                       {!! Form::label('Precinct', 'Precinct', array('class' => 'col-md-3 control-label')) !!}
                                       <div class="col-md-6">
-                                        {!! Form::text('department',NULL,['class' => 'form-control input-sm','id' => 'department']) !!}
+                                        {!! Form::text('department',NULL,['class' => 'form-control input-sm','id' => 'department','disabled' => 'disabled']) !!}
 
                                       </div>
                                   </div>
@@ -85,7 +85,7 @@
                                    <div class="form-group">
                                       {!! Form::label('Category', 'Category', array('class' => 'col-md-3 control-label')) !!}
                                       <div class="col-md-6">
-                                        {!! Form::text('category',NULL,['class' => 'form-control input-sm','id' => 'category']) !!}
+                                        {!! Form::text('category',NULL,['class' => 'form-control input-sm','id' => 'category','disabled' => 'disabled']) !!}
 
                                       </div>
                                   </div>
@@ -93,7 +93,7 @@
                                   <div class="form-group">
                                       {!! Form::label('Sub Category', 'Sub Category', array('class' => 'col-md-3 control-label')) !!}
                                       <div class="col-md-6">
-                                        {!! Form::text('sub_category',NULL,['class' => 'form-control input-sm','id' => 'sub_category']) !!}
+                                        {!! Form::text('sub_category',NULL,['class' => 'form-control input-sm','id' => 'sub_category','disabled' => 'disabled']) !!}
 
                                       </div>
                                   </div>
@@ -101,28 +101,28 @@
                                    <div class="form-group">
                                       {!! Form::label('Sub Sub Category', 'Sub Sub Category', array('class' => 'col-md-3 control-label')) !!}
                                       <div class="col-md-6">
-                                        {!! Form::text('sub_category',NULL,['class' => 'form-control input-sm','id' => 'sub_sub_category']) !!}
+                                        {!! Form::text('sub_category',NULL,['class' => 'form-control input-sm','id' => 'sub_sub_category','disabled' => 'disabled']) !!}
 
                                       </div>
                                   </div>
                                   <div class="form-group">
                                       {!! Form::label('Status', 'Status', array('class' => 'col-md-3 control-label')) !!}
                                       <div class="col-md-6">
-                                        {!! Form::text('status',NULL,['class' => 'form-control input-sm','id' => 'status']) !!}
+                                        {!! Form::text('status',NULL,['class' => 'form-control input-sm','id' => 'status','disabled' => 'disabled']) !!}
 
                                       </div>
                                   </div>
                                   <div class="form-group">
                                       {!! Form::label('Report Name', 'Report Name', array('class' => 'col-md-3 control-label')) !!}
                                       <div class="col-md-6">
-                                        {!! Form::text('reporter',NULL,['class' => 'form-control input-sm','id' => 'reporter']) !!}
+                                        {!! Form::text('reporter',NULL,['class' => 'form-control input-sm','id' => 'reporter','disabled' => 'disabled']) !!}
 
                                       </div>
                                   </div>
                                   <div class="form-group">
                                       {!! Form::label('Report Cellphone', 'Report Cellphone', array('class' => 'col-md-3 control-label')) !!}
                                       <div class="col-md-6">
-                                        {!! Form::text('reporterCell',NULL,['class' => 'form-control input-sm','id' => 'reporterCell']) !!}
+                                      {!! Form::text('reporterCell',NULL,['class' => 'form-control input-sm','id' => 'reporterCell','disabled' => 'disabled']) !!}
 
                                       </div>
                                   </div>
@@ -203,9 +203,7 @@
                                             <tr>
                                                   <th>Type</th>
                                                   <th>Name</th>
-                                                  <th>Surname</th>
                                                   <th>Position</th>
-                                                  <th>Cellphone</th>
                                                   <th>Accepted</th>
                                                   <th>Actions</th>
                                             </tr>

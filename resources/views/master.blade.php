@@ -57,7 +57,7 @@
                    <div class="pull-left tm-icon">
                         <a data-drawer="messages" class="drawer-toggle">
                             <i class="fa fa-envelope-o fa-2x"></i>
-                            <i class="n-count animated">1</i>
+                            <i class="n-count animated" id='countPrivateMessages'>{{ count($noPrivateMessages,0) }}</i>
 
                         </a>
                     </div>
@@ -304,46 +304,76 @@
         var Class = "";
         socket.on("test-channel:App\\Events\\MyEventNameHere", function(message){
 
-             count ++;
+        var loggedUser = {!! Auth::user()->id !!};
 
-             if (count % 2 == 1) {
+          if (message.data.type == 'noUnreadprivatemsg') {
 
-                Class = "pull-right";
-             }
-             else {
+                if(message.data.dest = loggedUser) {
 
-                Class = "pull-left";
-             }
+                    var noPrivateMessages =  parseInt($("#countPrivateMessages").html()) + 1;
+                    $("#countPrivateMessages").html(noPrivateMessages);
 
-            var loggedUser = {!! Auth::user()->id !!};
+                }
 
-            if ( message.data.dest == loggedUser ) {
+          }
 
-                 $('.chat .chat-list').removeClass('toggled');
+         if (message.data.type == 'noreadprivatemsg') {
 
-                 $('#chatForm #to').val(message.data.origin);
+                if(message.data.dest = loggedUser) {
 
-                 if ( $('.chat').hasClass( "toggled" ) ) {
 
-                 }
-                 else
-                 {
-                    $('.chat').toggleClass('toggled');
-                 }
-                 $("#colleague").html(message.data.author);
+                    $("#countPrivateMessages").html('0');
 
-            }
+                }
 
-            if ( message.data.dest == loggedUser  || message.data.origin == loggedUser) {
+          }
 
-               /* alert(message.data.dest);
-                alert(message.data.origin);*/
+            if (message.data.type == 'chat') {
 
-                html += '<div class="media"><img class="'+ Class +'" src="img/profile-pics/7.png" width="30" alt="" /><div class="media-body '+ Class +'">'+ message.data.message +'<small>'+ message.data.author +'</small></div></div>';
-                $('#chat-body').html(html);
-                var height = $('#chat-body')[0].scrollHeight;
-                $('#chat-body').scrollTop(height);
-            }
+
+                     count ++;
+
+                     if (count % 2 == 1) {
+
+                        Class = "pull-right";
+                     }
+                     else {
+
+                        Class = "pull-left";
+                     }
+
+
+
+                    if ( message.data.dest == loggedUser ) {
+
+                         $('.chat .chat-list').removeClass('toggled');
+
+                         $('#chatForm #to').val(message.data.origin);
+
+                         if ( $('.chat').hasClass( "toggled" ) ) {
+
+                         }
+                         else
+                         {
+                            $('.chat').toggleClass('toggled');
+                         }
+                         $("#colleague").html(message.data.author);
+
+                    }
+
+                    if ( message.data.dest == loggedUser  || message.data.origin == loggedUser) {
+
+                        html += '<div class="media"><img class="'+ Class +'" src="img/profile-pics/7.png" width="30" alt="" /><div class="media-body '+ Class +'">'+ message.data.message +'<small>'+ message.data.author +'</small></div></div>';
+                        $('#chat-body').html(html);
+                        var height = $('#chat-body')[0].scrollHeight;
+                        $('#chat-body').scrollTop(height);
+                }
+
+
+
+
+                }
+
 
 
 

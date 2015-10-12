@@ -14,6 +14,7 @@ use App\CaseReport;
 use App\User;
 use App\Relationship;
 use App\addressbook;
+use App\Message;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -184,10 +185,19 @@ class AppServiceProvider extends ServiceProvider
             $number = addressbook::where('user','=',\Auth::user()->id)->get();
             $view->with('addressBookNumber',$number);
 
+            $allUsers = User::where('id','<>',\Auth::user()->id)->get();
+            $view->with('loggedInUsers',$allUsers);
+
+            $noPrivateMessages = Message::where('to','=',\Auth::user()->id)
+                                         ->where('read','=',0)
+                                         ->where('online','=',0)
+                                         ->get();
+
+            $view->with('noPrivateMessages',$noPrivateMessages);
+
           }
 
-        $allUsers = User::where('id','<>',\Auth::user()->id)->get();
-        $view->with('loggedInUsers',$allUsers);
+
 
         });
 

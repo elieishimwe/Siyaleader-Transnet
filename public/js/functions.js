@@ -127,6 +127,16 @@ $(document).ready(function(){
             e.preventDefault();
             var drawer = $(this).attr('data-drawer');
 
+
+           $.ajax({
+            type    :"GET",
+            url     :"getOfflineMessage",
+            success : function(data) {
+
+                $("#listOfflineMessages").html(data);
+
+            }})
+
             $('.drawer:not("#'+drawer+'")').removeClass('toggled');
 
             if ($('#'+drawer).hasClass('toggled')) {
@@ -148,6 +158,13 @@ $(document).ready(function(){
 
         //Close
         $('body').on('click touchstart', '.drawer-close', function(){
+            $.ajax({
+            type    :"GET",
+            url     :"markReadOfflineMessage",
+            success : function(data) {
+
+            }});
+
             $(this).closest('.drawer').removeClass('toggled');
             $('.drawer-toggle').removeClass('open');
         });

@@ -363,6 +363,52 @@
 
      });
 
+      $("#submitAddCaseMessageForm").on("click",function(){
+
+        var caseId   = $("#compose-message #caseID").val();
+        var myForm   = $("#addCaseMessage")[0];
+        var formData = new FormData(myForm);
+        var token    = $('input[name="_token"]').val();
+
+        $.ajax({
+        type    :"POST",
+        data    : formData,
+        contentType: false,
+        processData: false,
+        headers : { 'X-CSRF-Token': token },
+        url     :"{!! url('/addCaseMessage')!!}",
+        beforeSend : function() {
+            HoldOn.open({
+                theme:"sk-rect",//If not given or inexistent theme throws default theme sk-rect
+                message: "<h4> uploading please wait... ! </h4>",
+                content:"Your HTML Content", // If theme is set to "custom", this property is available
+                                             // this will replace the theme by something customized.
+                backgroundColor:"none repeat scroll 0 0 rgba(0, 0, 0, 0.8)",//Change the background color of holdon with javascript
+                           // Keep in mind is necessary the .css file too.
+                textColor:"white" // Change the font color of the message
+            });
+
+        },
+        success : function(data){
+
+          if( data == 'ok')
+          {
+            $('#addCaseMessage')[0].reset();
+            $('#compose-message').modal('toggle');
+            $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! your message has been sent successfully <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
+            launchCaseModal(caseId);
+            $('#modalCase').modal('toggle')
+            HoldOn.close();
+
+          }
+
+        }
+
+       })
+
+     });
+
+
 
       $("#submitAddContactForm").on("click",function(){
 
@@ -545,6 +591,15 @@
       $("#closeCaseFile").on("click",function(){
 
         $('#modalAddCaseFilesModal').modal('toggle');
+        var caseId       = $("#modalReferCase #caseID").val();
+        launchCaseModal(caseId);
+        $('#modalCase').modal('toggle');
+
+      });
+
+      $("#closeCaseMessage").on("click",function(){
+
+        $('#compose-message').modal('toggle');
         var caseId       = $("#modalReferCase #caseID").val();
         launchCaseModal(caseId);
         $('#modalCase').modal('toggle');
@@ -875,12 +930,14 @@
 
                   },"name" : 'type'},
 
+                  {data: function(d){
+
+                       return d.name + ' ' + d.surname;
 
 
-                  {data: 'name', name: 'name'},
-                  {data: 'surname', name: 'surname'},
+                  },"name" : 'name'},
+
                   {data: 'position', name: 'position'},
-                  {data: 'cellphone', name: 'cellphone'},
 
                   {data: function(d){
 
@@ -997,9 +1054,11 @@
 
     }
 
-    function launchMessageModal()
+    function launchMessageModal(id,element)
     {
 
+      $('#addCaseMessage #msgTo').val($(element).attr("data-name"));
+      $('#addCaseMessage #to').val(id);
       $('#modalCase').modal('toggle');
 
     }

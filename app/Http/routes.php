@@ -10,6 +10,7 @@ use App\SubSubCategory;
 use App\CaseReport;
 use App\Online;
 use App\User;
+use App\Message;
 
 
 /*
@@ -503,7 +504,7 @@ else {
 return $listing;
 });
 
-Route::get('kapanga','ChatController@index');
+
 
 Route::post('postChat', 'ChatController@postChat');
 
@@ -545,6 +546,57 @@ Route::get('/getLoggedInUsers', function(){
    return $html;
 
 });
+
+
+
+/*
+|--------------------------------------------------------------------------
+| CASE MESSAGE ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+  Route::post('addCaseMessage', 'MessageController@store');
+
+  Route::get('/getOfflineMessage', function(){
+
+   $offlineMessages = Message::where('to','=',\Auth::user()->id)
+                                ->where('online','=',0)
+                                ->orderBy('created_at','desc')
+                                ->orderBy('read','asc')
+                                ->get();
+
+   $html     = "";
+
+   foreach ($offlineMessages as $message) {
+
+       $user = User::where('id','=',$message->from)->first();
+       $read = ($message->read == 0)? "<span class='label label-danger'>New</span>":"";
+       $html .=  "<div class='media'>";
+       $html .=  "<div class='pull-left'>";
+       $html .=  "<a href='#' onClick='chatStart(this)'> <img class='pull-left' src='img/profile-pics/7.png' width='30' alt=''></a>";
+       $html .=  "</div>";
+       $html .=  "<div class='media-body'>";
+       $html .=  "<small class='text-muted'>$user->name  $user->surname - $message->created_at</small> $read<br>";
+       $html .=  "<a class='t-overflow' href=''>$message->message .Ref:Case ID $message->caseId</a>";
+       $html .=  "</div>";
+       $html .=  "</div>";
+
+  }
+   return $html;
+
+});
+
+Route::get('markReadOfflineMessage','MessageController@read');
+
+
+/*
+|--------------------------------------------------------------------------
+| END CASE MESSAGE ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
 
 
 

@@ -31,6 +31,7 @@ class ChatController extends Controller
     {
         $data =  array (
 
+                'type'    => 'chat',
                 'message' => $request['messageChat'],
                 'author'  =>  \Auth::user()->name .' '.\Auth::user()->surname,
                 'dest'    => $request['to'],
@@ -44,6 +45,7 @@ class ChatController extends Controller
         $message->to      = $request['to'];
         $message->message = $request['messageChat'];
         $message->active  = 1;
+        $message->online  = 1;
         $message->save();
 
         $response['result'] = "success";
