@@ -92,4 +92,9 @@ class PasswordController extends Controller
         }
     }
 
+     public function getEmailForPasswordReset()
+    {
+        return $this->username;
+    }
+
 }
