@@ -28,7 +28,7 @@
 
             <ul class="list-inline list-mass-actions pull-left">
                 <li class="m-r-10">
-                    <a href="messages.html" title="Back to Inbox" class="tooltips">
+                    <a href="{{ url('/all-messages') }}" title="Back to Inbox" class="tooltips">
                         <i class="sa-list-back"></i>
                     </a>
                 </li>
