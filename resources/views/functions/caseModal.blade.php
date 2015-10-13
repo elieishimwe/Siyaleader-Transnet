@@ -818,7 +818,7 @@
 
                      if (data[0].img_url) {
 
-                        var ImgUrl = "http://www.siyaleader.co.za:8080/ecin2edin/console/app_backend/port_backend/public/"+data[0].img_url;
+                        var ImgUrl = "http://www.siyaleader.net:8080/ecin2edin/console/app_backend/port_backend/public/"+data[0].img_url;
                         $("#modalCase #CaseImageA").attr("href",ImgUrl);
 
                      }
