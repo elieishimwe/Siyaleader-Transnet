@@ -77,7 +77,7 @@ class MessageController extends Controller
                     'name'        =>$user->name,
                     'caseID'      =>$request['caseID'],
                     'sender'      => \Auth::user()->name.' '.\Auth::user()->surname,
-                    'message'     =>$request['msg'],
+                    'msg'         =>$request['msg'],
                     );
 
 
