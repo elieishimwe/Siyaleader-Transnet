@@ -112,7 +112,7 @@
 
                     </div>
 
-                    @if (Request::is('message-detail/*'))
+                    @if (Request::is('message-detail/*') || Request::is('all-messages'))
                           @include('messages.message-widget')
                     @endif
 

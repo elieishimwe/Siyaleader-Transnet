@@ -18,7 +18,15 @@ class MessageController extends Controller
      */
     public function index()
     {
-        //
+
+        $msgs = \DB::table('messages')
+                    ->join('users', 'users.id', '=', 'messages.to')
+                    ->where('messages.to','=',\Auth::user()->id)
+                    ->select(\DB::raw("messages.id,messages.created_at,messages.read,messages.message,CONCAT(`users`.`name`,' ',`users`.`surname`) as originator"))
+                    ->orderBy('messages.created_at','desc')
+                    ->get();
+
+        return view('messages.list-all',compact('msgs'));
     }
 
     /**

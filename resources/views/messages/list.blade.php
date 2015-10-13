@@ -11,7 +11,7 @@
 
         </div>
         <div class="media text-center whiter l-100">
-            <a href=""><small>VIEW ALL</small></a>
+            <a href="/all-messages"><small>VIEW ALL</small></a>
         </div>
     </div>
 </div>

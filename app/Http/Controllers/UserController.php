@@ -8,7 +8,6 @@ use App\Http\Requests;
 use App\Http\Requests\UserRequest;
 use App\Http\Controllers\Controller;
 use App\User;
-use App\OldUser;
 use App\Position;
 use App\Province;
 use App\District;
@@ -139,24 +138,7 @@ class UserController extends Controller
     public function resendPassword($id)
     {
 
-        $user     = User::find($id);
-        $password = OldUser::where('Cell1','=',$user->email)->first();
 
-
-        $data = array(
-            'name'     =>$user->name,
-            'username' =>$user->email,
-            'password' =>$password->Password
-        );
-
-        \Mail::send('emails.registrationConfirmation',$data, function($message) use ($user)
-        {
-            $message->from('info@siyaleader.net', 'Siyaleader');
-            $message->to($user->username)->subject("Siyaleader User Registration Confirmation: " .$user->name);
-
-        });
-
-        \Session::flash('success','Password has been resent successfully!');
 
         return redirect('list-users');
     }
