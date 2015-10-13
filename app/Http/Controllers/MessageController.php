@@ -71,6 +71,23 @@ class MessageController extends Controller
         $caseMessage->active   = 1;
         $caseMessage->save();
 
+        $user = User::find($request['to']);
+
+        $data = array(
+                    'name'        =>$user->name,
+                    'caseID'      =>$request['caseID'],
+                    'sender'      => \Auth::user()->name.' '.\Auth::user()->surname,
+                    'message'     =>$request['msg'],
+                    );
+
+
+        \Mail::send('emails.privateMessage',$data, function($message) use ($user)
+        {
+            $message->from('info@siyaleader.net', 'Siyaleader');
+            $message->to($user->username)->subject("Siyaleader Notification - New Private Message: ");
+
+       });
+
         $data =  array (
 
                 'type'    => 'noUnreadprivatemsg',
