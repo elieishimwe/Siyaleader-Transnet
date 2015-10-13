@@ -600,11 +600,20 @@
       $("#closeCaseMessage").on("click",function(){
 
         var request = "{!! Request::url() !!}";
-        alert(request);
-        $('#compose-message').modal('toggle');
-        var caseId       = $("#modalReferCase #caseID").val();
-        launchCaseModal(caseId);
-        $('#modalCase').modal('toggle');
+        if (request.indexOf("message-detail") >= 0)
+        {
+           $('#compose-message').modal('toggle');
+        }
+        else {
+
+            $('#compose-message').modal('toggle');
+            var caseId       = $("#modalReferCase #caseID").val();
+            launchCaseModal(caseId);
+            $('#modalCase').modal('toggle');
+
+        }
+
+
 
       });
 
