@@ -575,7 +575,7 @@ Route::get('/getLoggedInUsers', function(){
        $read = ($message->read == 0)? "<span class='label label-danger'>New</span>":"";
        $html .=  "<div class='media'>";
        $html .=  "<div class='pull-left'>";
-       $html .=  "<a href='#' onClick='chatStart(this)'> <img class='pull-left' src='/img/profile-pics/7.png' width='30' alt=''></a>";
+       $html .=  "<a href='#' onClick='chatStart(this)'> <img class='pull-left' src='img/profile-pics/7.png' width='30' alt=''></a>";
        $html .=  "</div>";
        $html .=  "<div class='media-body'>";
        $html .=  "<small class='text-muted'>$user->name  $user->surname - $message->created_at</small> $read<br>";
