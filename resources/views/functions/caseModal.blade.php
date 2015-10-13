@@ -1080,6 +1080,7 @@
     {
 
       $('#addCaseMessage #msgTo').val($(element).attr("data-name"));
+      $('#addCaseMessage #to').val($(element).attr("data-dest"));
       $('#addCaseMessage #msgSubject').val("");
       $('#addCaseMessage #msg').val("");
 
