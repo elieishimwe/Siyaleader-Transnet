@@ -395,9 +395,20 @@
           {
             $('#addCaseMessage')[0].reset();
             $('#compose-message').modal('toggle');
-            $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! your message has been sent successfully <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
-            launchCaseModal(caseId);
-            $('#modalCase').modal('toggle')
+
+            var request = "{!! Request::url() !!}";
+            if (request.indexOf("message-detail") >= 0) {
+
+              $("#caseNotifyMessage").html('<div class="alert alert-success alert-icon">Well done! your message has been sent successfully <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
+            }
+            else {
+
+              $("#caseNotesNotification").html('<div class="alert alert-success alert-icon">Well done! your message has been sent successfully <i class="icon">&#61845;</i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div>');
+              launchCaseModal(caseId);
+              $('#modalCase').modal('toggle')
+
+            }
+
             HoldOn.close();
 
           }
@@ -1069,8 +1080,22 @@
     {
 
       $('#addCaseMessage #msgTo').val($(element).attr("data-name"));
-      $('#addCaseMessage #to').val(id);
+      $('#addCaseMessage #msgSubject').val("");
+      $('#addCaseMessage #msg').val("");
+
       $('#modalCase').modal('toggle');
+
+    }
+
+
+    function launchMessageModalW(element)
+    {
+
+      $('#addCaseMessage #msgTo').val($(element).attr("data-name"));
+      $('#addCaseMessage #to').val($(element).attr("data-dest"));
+      $('#addCaseMessage #msgSubject').val("");
+      $('#addCaseMessage #msg').val("");
+
 
     }
 

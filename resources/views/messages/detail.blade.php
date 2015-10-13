@@ -10,6 +10,8 @@
 
 <h4 class="page-title">Messages</h4>
 
+<div id="caseNotifyMessage"><div>
+
  <div class="listview list-click">
         <header class="listview-header media">
             <ul class="list-inline pull-right m-t-5 m-b-0">
@@ -49,8 +51,7 @@
             <div class="pull-right dropdown m-t-10">
                 <a href="" data-toggle="dropdown" class="p-5">Options</a>
                 <ul class="dropdown-menu text-right">
-                    <li><a href="" data-toggle="modal" data-target=".compose-message">Reply</a></li>
-
+                    <li><a href="" data-toggle="modal" data-dest="{{ $msgObj->from }}" data-name="{{$sender->name}} {{$sender->surname}}" data-target=".compose-message" onClick="launchMessageModalW(this);">Reply</a></li>
                 </ul>
             </div>
             <div class="media-body">
