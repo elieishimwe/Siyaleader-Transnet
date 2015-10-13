@@ -588,8 +588,6 @@ Route::get('/getLoggedInUsers', function(){
 
 });
 
-Route::get('markReadOfflineMessage','MessageController@read');
-
 Route::get('message-detail/{id}','MessageController@edit');
 
 Route::get('all-messages','MessageController@index');

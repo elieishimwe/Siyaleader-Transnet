@@ -599,6 +599,8 @@
 
       $("#closeCaseMessage").on("click",function(){
 
+        var request = "{!! Request::url() !!}";
+        alert(request);
         $('#compose-message').modal('toggle');
         var caseId       = $("#modalReferCase #caseID").val();
         launchCaseModal(caseId);

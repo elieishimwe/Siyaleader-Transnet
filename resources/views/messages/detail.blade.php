@@ -49,7 +49,7 @@
             <div class="pull-right dropdown m-t-10">
                 <a href="" data-toggle="dropdown" class="p-5">Options</a>
                 <ul class="dropdown-menu text-right">
-                    <li><a href="">Reply</a></li>
+                    <li><a href="" data-toggle="modal" data-target=".compose-message">Reply</a></li>
 
                 </ul>
             </div>

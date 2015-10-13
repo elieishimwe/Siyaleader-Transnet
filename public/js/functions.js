@@ -130,7 +130,7 @@ $(document).ready(function(){
 
            $.ajax({
             type    :"GET",
-            url     :"getOfflineMessage",
+            url     :"/getOfflineMessage",
             success : function(data) {
 
                 $("#listOfflineMessages").html(data);

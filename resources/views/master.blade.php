@@ -165,6 +165,7 @@
             <!-- Content -->
             <section id="content" class="container">
                 @include('messages.list')
+                @include('messages.add')
                 @yield('content')
                 @include('addressbook.list')
                 @include('addressbook.global')
