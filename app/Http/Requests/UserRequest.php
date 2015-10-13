@@ -30,8 +30,8 @@ class UserRequest extends Request
             'District'     =>'required|not_in:0',
             'Position'     =>'required|not_in:0',
             'Department'   =>'required|not_in:0',
-            'Cell1'        =>'required|not_in:0|digits:10|unique:imb_oss_users,Cell1',
-            'Email'        =>'email|unique:imb_oss_users,Email'
+            'Cell1'        =>'required|not_in:0|digits:10|unique:users,email',
+            'Email'        =>'email|unique:users,username'
 
         ];
     }
