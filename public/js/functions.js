@@ -158,13 +158,6 @@ $(document).ready(function(){
 
         //Close
         $('body').on('click touchstart', '.drawer-close', function(){
-            $.ajax({
-            type    :"GET",
-            url     :"markReadOfflineMessage",
-            success : function(data) {
-
-            }});
-
             $(this).closest('.drawer').removeClass('toggled');
             $('.drawer-toggle').removeClass('open');
         });

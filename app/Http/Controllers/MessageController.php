@@ -36,29 +36,8 @@ class MessageController extends Controller
      */
     public function read(Request $request)
     {
-        $unreadMessages = Message::where('to','=',\Auth::user()->id)
-                                    ->where('read','=',0)
-                                    ->where('online','=',0)
-                                    ->get();
-
-        foreach ($unreadMessages as $unreadMessage) {
-
-            $unreadMessage->read = 1;
-            $unreadMessage->save();
 
 
-        }
-
-        $data =  array (
-
-                'type'    => 'noreadprivatemsg',
-                'dest'    => $request['to']
-
-        );
-
-        event(new MyEventNameHere($data));
-
-        return 'ok';
     }
 
     /**
@@ -131,6 +110,16 @@ class MessageController extends Controller
     {
 
         $msgObj = Message::find($id);
+        $msgObj->read = 1;
+        $msgObj->save();
+        $data =  array (
+
+                'type'    => 'noreadprivatemsg',
+                'dest'    => $msgObj->to,
+
+        );
+
+        event(new MyEventNameHere($data));
         $sender = User::find($msgObj->from);
         return view('messages.detail',compact('msgObj','sender'));
     }
