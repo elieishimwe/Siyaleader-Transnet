@@ -64,7 +64,7 @@
         <div class="media">
         <input type="checkbox" class="pull-left list-check">
 
-        <a class="media-body" href="message-detail.html">
+        <a class="media-body" href="{{ url('message-detail/') }}/{{ $msg->id }}">
             <div class="pull-left list-title">
                 <span class="t-overflow {{ $bold }}">{{ $msg->originator }}</span>
             </div>
