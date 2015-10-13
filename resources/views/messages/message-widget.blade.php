@@ -1,6 +1,6 @@
 <div class="s-widgets">
     <div class="m-5">
-        <a href="#compose-message" data-toggle="modal" class="btn btn-sm btn-block">Compose Message</a>
+        <a href="#" class="btn btn-sm btn-block">Compose Message</a>
     </div>
 
     <div class="list-group m-t-10 list-group-flat">

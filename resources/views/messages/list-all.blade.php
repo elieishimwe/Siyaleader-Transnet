@@ -32,7 +32,7 @@
 
         <ul class="list-inline list-mass-actions pull-left">
             <li>
-                <a data-toggle="modal" href="#compose-message" title="Add" class="tooltips">
+                <a  href="#" title="Add" class="tooltips">
                     <i class="sa-list-add"></i>
                 </a>
             </li>
