@@ -18,6 +18,7 @@ class AddColumnsMessageTable extends Migration
             $table->integer('online');
             $table->integer('caseId');
             $table->integer('read');
+            $table->string('subject');
 
         });
     }
@@ -35,6 +36,7 @@ class AddColumnsMessageTable extends Migration
             $table->dropColumn('online');
             $table->dropColumn('caseId');
             $table->dropColumn('read');
+            $table->dropColumn('subject');
 
         });
     }

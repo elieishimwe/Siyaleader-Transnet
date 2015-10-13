@@ -68,6 +68,7 @@ class MessageController extends Controller
         $caseMessage->online   = 0;
         $caseMessage->caseId   = $request['caseID'];
         $caseMessage->message  = $request['msg'];
+        $caseMessage->subject  = $request['msgSubject'];
         $caseMessage->active   = 1;
         $caseMessage->save();
 
@@ -120,7 +121,10 @@ class MessageController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $msgObj = Message::find($id);
+        $sender = User::find($msgObj->from);
+        return view('messages.detail',compact('msgObj','sender'));
     }
 
     /**

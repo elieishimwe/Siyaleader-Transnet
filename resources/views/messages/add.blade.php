@@ -21,6 +21,14 @@
                         {!! Form::text('msgTo',NULL,['class' => 'form-control input-sm','id' => 'msgTo']) !!}
                     </div>
                 </div>
+
+                <div class="form-group">
+                    {!! Form::label('Subject', 'Subject', array('class' => 'col-md-2 control-label')) !!}
+
+                    <div class="col-md-10">
+                        {!! Form::text('msgSubject',NULL,['class' => 'form-control input-sm','id' => 'msgSubject']) !!}
+                    </div>
+                </div>
                  <div class="form-group">
                     {!! Form::label('Message', 'Message', array('class' => 'col-md-2 control-label')) !!}
                     <div class="col-md-10">

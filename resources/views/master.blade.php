@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
 
         <meta name="description" content="Siyaleader Ports Case Console Management">
-        <meta name="keywords" content="Siyaleader, Ports, Trasnet,">
+        <meta name="keywords" content="Siyaleader, Ports, Transnet,Port Management System,Incidents Management System">
         <link rel="icon" type="image/x-icon" sizes="16x16" href="/img/favicon.ico?v1">
 
         <title>Siyaleader Ports</title>
@@ -18,6 +18,7 @@
         <link href="{{ asset('/css/form.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/calendar.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/generics.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/token-input.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/icons.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/lightbox.css') }}" rel="stylesheet">
@@ -110,6 +111,10 @@
 
 
                     </div>
+
+                    @if (Request::is('message-detail/*'))
+                          @include('messages.message-widget')
+                    @endif
 
                     <!-- Calendar -->
                     <div class="s-widget m-b-25">

@@ -578,7 +578,7 @@ Route::get('/getLoggedInUsers', function(){
        $html .=  "</div>";
        $html .=  "<div class='media-body'>";
        $html .=  "<small class='text-muted'>$user->name  $user->surname - $message->created_at</small> $read<br>";
-       $html .=  "<a class='t-overflow' href=''>$message->message .Ref:Case ID $message->caseId</a>";
+       $html .=  "<a class='t-overflow' href='message-detail/$message->id'>$message->message .Ref:Case ID $message->caseId</a>";
        $html .=  "</div>";
        $html .=  "</div>";
 
@@ -588,6 +588,8 @@ Route::get('/getLoggedInUsers', function(){
 });
 
 Route::get('markReadOfflineMessage','MessageController@read');
+
+Route::get('message-detail/{id}','MessageController@edit');
 
 
 /*
