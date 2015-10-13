@@ -563,6 +563,7 @@ Route::get('/getLoggedInUsers', function(){
    $offlineMessages = Message::where('to','=',\Auth::user()->id)
                                 ->where('online','=',0)
                                 ->orderBy('created_at','desc')
+                                ->take(5)
                                 ->orderBy('read','asc')
                                 ->get();
 

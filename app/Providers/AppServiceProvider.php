@@ -191,7 +191,6 @@ class AppServiceProvider extends ServiceProvider
             $noPrivateMessages = Message::where('to','=',\Auth::user()->id)
                                          ->where('read','=',0)
                                          ->where('online','=',0)
-                                         ->take(5)
                                          ->get();
 
             $view->with('noPrivateMessages',$noPrivateMessages);
