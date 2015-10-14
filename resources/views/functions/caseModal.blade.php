@@ -818,7 +818,7 @@
 
                      if (data[0].img_url) {
 
-                        var ImgUrl = "http://41.216.130.6:8080/siyaleader-dbnports-mobileApp-api/port_backend/public/uploads/"+data[0].img_url;
+                        var ImgUrl = "http://41.216.130.6:8080/siyaleader-dbnports-mobileApp-api/port_backend/public/"+data[0].img_url;
                         $("#modalCase #CaseImageA").attr("href",ImgUrl);
 
                      }
