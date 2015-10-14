@@ -318,6 +318,15 @@
 
                     var noPrivateMessages =  parseInt($("#countPrivateMessages").html()) + 1;
                     $("#countPrivateMessages").html(noPrivateMessages);
+                    $.ajax({
+                        type    :"GET",
+                        url     :"getOfflineMessage",
+                        success : function(data) {
+
+                            $("#listOfflineMessages").html(data);
+
+                    }});
+
                     $("#messages").addClass('toggled');
 
                 }
