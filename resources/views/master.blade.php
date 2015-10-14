@@ -99,7 +99,9 @@
                         <a href="" data-toggle="dropdown">
                             <img class="profile-pic animated" src="{{ asset('/img/dark.png') }}" alt="">
                         </a>
+
                         <ul class="dropdown-menu profile-menu">
+                            <li><a href="{{ url('all-messages') }}">Messages</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
                             <li><a href="{{ url('/auth/logout') }}">Sign Out</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
                         </ul>
                         @if (Auth::user())
