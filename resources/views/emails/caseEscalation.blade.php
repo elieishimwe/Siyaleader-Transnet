@@ -40,7 +40,7 @@
                                                 </tr>
                                                 <tr><!-- title -->
                                                     <td width="100%" style="font-family: helvetica, Arial, sans-serif; font-size: 18px; letter-spacing: 0px; text-align: center; color:#F07057;">
-                                                        <strong>CASE</strong> CLOSED!
+                                                        <strong>CASE</strong> REFERRED!
                                                     </td>
                                                 </tr>
                                                 <tr><!-- spacing bottom -->
@@ -56,7 +56,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td width="100%" style="font-family: helvetica, Arial, sans-serif; font-size: 18px; letter-spacing: 0px; text-align: center; color:#2E363F;">
-                                                        A Case your involved in has been closed by {{ $executor }}
+                                                        A Case your involved in has been referred by {{ $executor }}
                                                     </td>
                                                 </tr>
                                                 <tr><!-- spacing bottom -->

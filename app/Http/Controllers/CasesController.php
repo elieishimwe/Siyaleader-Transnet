@@ -551,7 +551,7 @@ class CasesController extends Controller
             );
 
 
-            \Mail::send('emails.caseEscalated',$data, function($message) use ($user)
+            \Mail::send('emails.caseEscalation',$data, function($message) use ($user)
             {
                 $message->from('info@siyaleader.net', 'Siyaleader');
                 $message->to($user->username)->subject("Siyaleader Notification - Case Referred: " );
@@ -657,7 +657,7 @@ class CasesController extends Controller
 
        $email  = (sizeof($user) <= 0)? $userAddressbook->email : $user->username;
 
-      \Mail::send('emails.caseEscalation',$data, function($message) use ($email) {
+      \Mail::send('emails.caseClosed',$data, function($message) use ($email) {
 
             $message->from('info@siyaleader.net', 'Siyaleader');
             $message->to($email)->subject("Siyaleader Notification - Case Closed: " );
