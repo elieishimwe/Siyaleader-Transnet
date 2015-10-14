@@ -417,11 +417,11 @@ Route::post('addPosition', ['middleware' => 'auth', 'uses' => 'PositionsControll
 |
 */
 
-  Route::get('resend_password/{id}', ['middleware' => 'auth', 'uses' => 'UserController@resendPassword']);
-  // Password reset link request routes...
-  Route::get('password/email', ['middleware' => 'auth', 'uses' => 'Auth\PasswordController@getEmail']);
-  Route::post('password/email', ['middleware' => 'auth', 'uses' => 'Auth\PasswordController@postEmail']);
 
+  Route::get('resend_password/{id}', 'UserController@resendPassword');
+  // Password reset link request routes...
+  Route::get('password/email', 'Auth\PasswordController@getEmail');
+  Route::post('password/email', 'Auth\PasswordController@postEmail');
 
 
   // Password reset routes...
@@ -444,12 +444,13 @@ Route::post('addPosition', ['middleware' => 'auth', 'uses' => 'PositionsControll
 |
 */
 
-Route::get('reports', function () {
+Route::get('reports', ['middleware' => 'auth', function()
+{
     return view('reports.list');
-});
+}]);
 
-Route::get('reports-list', 'ReportsController@index');
-Route::post('filterReports', 'ReportsController@show');
+Route::get('reports-list', ['middleware' => 'auth', 'uses' => 'ReportsController@index']);
+Route::post('filterReports', ['middleware' => 'auth', 'uses' => 'ReportsController@show']);
 
 
 
