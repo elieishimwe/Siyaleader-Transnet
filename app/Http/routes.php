@@ -173,17 +173,18 @@ Route::post('addSubCategory', ['middleware' => 'auth', 'uses' => 'SubCategoriesC
 |
 */
 
-Route::get('list-sub-sub-categories/{sub_category}', function ($sub_category) {
+Route::get('list-sub-sub-categories/{sub_category}', ['middleware' => 'auth', function($sub_category)
+{
     $subCatObj = SubCategory::find($sub_category);
     $catObj    = Category::find($subCatObj->category);
     $deptObj   = Department::find($catObj->department);
     return view('subsubcategories.list',compact('subCatObj','deptObj','catObj'));
-});
+}]);
 
-Route::get('sub-sub-categories-list/{id}', 'SubSubCategoriesController@index');
-Route::get('subsubcategories/{id}', 'SubSubCategoriesController@edit');
-Route::post('addSubSubCategory', 'SubSubCategoriesController@store');
-Route::post('updateSubSubCategory', 'SubSubCategoriesController@update');
+Route::get('sub-sub-categories-list/{id}', ['middleware' => 'auth', 'uses' => 'SubSubCategoriesController@index']);
+Route::get('subsubcategories/{id}', ['middleware' => 'auth', 'uses' => 'SubSubCategoriesController@edit']);
+Route::post('addSubSubCategory', ['middleware' => 'auth', 'uses' => 'SubSubCategoriesController@store']);
+Route::post('updateSubSubCategory', ['middleware' => 'auth', 'uses' => 'SubSubCategoriesController@update']);
 
 
 
