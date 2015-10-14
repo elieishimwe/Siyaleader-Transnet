@@ -20,11 +20,6 @@ class HomeController extends Controller
     {
 
 
-        $data = $request->session()->all();
-
-        \Log::info($data);
-
-
         if (\Auth::check())
         {
 
