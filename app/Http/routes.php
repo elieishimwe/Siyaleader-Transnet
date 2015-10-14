@@ -31,7 +31,7 @@ use App\Message;
 |
 */
 
-Route::get('home', 'HomeController@index');
+Route::get('home', ['middleware' => 'auth', 'uses' => 'HomeController@index']);
 
 
 /*
@@ -50,16 +50,21 @@ Route::get('home', 'HomeController@index');
 |
 */
 
-Route::get('list-users', function () {
+Route::get('list-users', ['middleware' => 'auth', function()
+{
     return view('users.list');
-});
+}]);
 
-Route::get('users-list', 'UserController@index');
-Route::get('getResponder', 'UserController@responder');
 
-Route::get('add-user', function () {
+Route::get('users-list', ['middleware' => 'auth', 'uses' => 'UserController@index']);
+
+Route::get('getResponder', ['middleware' => 'auth', 'uses' => 'UserController@responder']);
+
+Route::get('add-user', ['middleware' => 'auth', function()
+{
     return view('users.registration');
-});
+}]);
+
 
 Route::get('/', function () {
     return view('auth.login');
@@ -86,16 +91,16 @@ Route::controllers([
 |--------------------------------------------------------------------------
 |
 */
-
-Route::get('list-departments', function () {
+Route::get('list-departments', ['middleware' => 'auth', function()
+{
     return view('departments.list');
-});
+}]);
 
-Route::get('departments-list', 'DepartmentController@index');
-Route::get('departments/{id}', 'DepartmentController@edit');
+Route::get('departments-list', ['middleware' => 'auth', 'uses' => 'DepartmentController@index']);
+Route::get('departments/{id}', ['middleware' => 'auth', 'uses' => 'DepartmentController@edit']);
 
-Route::post('updateDepartment', 'DepartmentController@update');
-Route::post('addDepartment', 'DepartmentController@store');
+Route::post('updateDepartment', ['middleware' => 'auth', 'uses' => 'DepartmentController@update']);
+Route::post('addDepartment', ['middleware' => 'auth', 'uses' => 'DepartmentController@store']);
 
 
 /*
@@ -114,17 +119,18 @@ Route::post('addDepartment', 'DepartmentController@store');
 |
 */
 
-Route::get('list-categories/{department}', function ($department) {
-
+Route::get('list-categories/{department}', ['middleware' => 'auth', function($department)
+{
     $deptObj = Department::find($department);
     return view('categories.list',compact('deptObj'));
-});
+}]);
 
-Route::get('categories/{id}', 'CategoriesController@edit');
-Route::get('categories-list/{id}', 'CategoriesController@index');
 
-Route::post('updateCategory', 'CategoriesController@update');
-Route::post('addCategory', 'CategoriesController@store');
+Route::get('categories/{id}', ['middleware' => 'auth', 'uses' => 'CategoriesController@edit']);
+Route::get('categories-list/{id}', ['middleware' => 'auth', 'uses' => 'CategoriesController@index']);
+Route::post('updateCategory', ['middleware' => 'auth', 'uses' => 'CategoriesController@update']);
+Route::post('addCategory', ['middleware' => 'auth', 'uses' => 'CategoriesController@store']);
+
 
 /*
 |--------------------------------------------------------------------------
@@ -141,16 +147,17 @@ Route::post('addCategory', 'CategoriesController@store');
 |--------------------------------------------------------------------------
 |
 */
-Route::get('list-sub-categories/{category}', function ($category) {
-    $catObj   = Category::find($category);
-    $deptName = Department::find($catObj->department);
-    return view('subcategories.list',compact('catObj','deptName'));
-});
+Route::get('list-sub-categories/{category}', ['middleware' => 'auth', function($category)
+{
+  $catObj   = Category::find($category);
+  $deptName = Department::find($catObj->department);
+  return view('subcategories.list',compact('catObj','deptName'));
+}]);
 
-Route::get('subcategories/{id}', 'SubCategoriesController@edit');
-Route::get('sub-categories-list/{id}', 'SubCategoriesController@index');
-Route::post('updateSubCategory', 'SubCategoriesController@update');
-Route::post('addSubCategory', 'SubCategoriesController@store');
+Route::get('subcategories/{id}', ['middleware' => 'auth', 'uses' => 'SubCategoriesController@edit']);
+Route::get('sub-categories-list/{id}', ['middleware' => 'auth', 'uses' => 'SubCategoriesController@index']);
+Route::post('updateSubCategory', ['middleware' => 'auth', 'uses' => 'SubCategoriesController@update']);
+Route::post('addSubCategory', ['middleware' => 'auth', 'uses' => 'SubCategoriesController@store']);
 
 /*
 |--------------------------------------------------------------------------
