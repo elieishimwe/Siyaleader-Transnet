@@ -96,8 +96,9 @@
                                                         </td>
                                                     </tr>
 
-                                                    <tr>
-                                                        <td width="100%" style="font-family:helvetica, Arial, sans-serif; font-size: 14px; text-align: left; color:#87919F; line-height: 24px;">
+                                                     <tr>
+                                                        <td width="100%" style="font-family:helvetica, Arial, sans-serif; font-size: 13px; text-align: left; color:#2E363F; line-height: 24px;">
+                                                        <a href="http://ports.siyaleader.net/registration/public"><strong>Click here to login</strong></a>
 
                                                         </td>
                                                     </tr>
