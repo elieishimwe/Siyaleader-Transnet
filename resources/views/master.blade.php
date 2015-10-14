@@ -318,6 +318,7 @@
 
                     var noPrivateMessages =  parseInt($("#countPrivateMessages").html()) + 1;
                     $("#countPrivateMessages").html(noPrivateMessages);
+                    $("#messages").addClass('toggled');
 
                 }
 
