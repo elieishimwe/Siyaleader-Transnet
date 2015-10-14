@@ -354,15 +354,15 @@ Route::get('getContacts', ['middleware' => 'auth', 'uses' => 'AddressBookControl
 |
 */
 
-Route::get('list-positions', function () {
+Route::get('list-positions', ['middleware' => 'auth', function()
+{
     return view('positions.list');
-});
+}]);
 
-Route::get('positions-list', 'PositionsController@index');
-Route::get('positions/{id}', 'PositionsController@edit');
-
-Route::post('updatePosition', 'PositionsController@update');
-Route::post('addPosition', 'PositionsController@store');
+Route::get('positions-list', ['middleware' => 'auth', 'uses' => 'PositionsController@index']);
+Route::get('positions/{id}', ['middleware' => 'auth', 'uses' => 'PositionsController@edit']);
+Route::post('updatePosition', ['middleware' => 'auth', 'uses' => 'PositionsController@update']);
+Route::post('addPosition', ['middleware' => 'auth', 'uses' => 'PositionsController@store']);
 
 
 /*
@@ -382,7 +382,9 @@ Route::post('addPosition', 'PositionsController@store');
 |--------------------------------------------------------------------------
 |
 */
-  Route::get('map', 'MapController@index');
+
+  Route::get('map', ['middleware' => 'auth', 'uses' => 'MapController@index']);
+
 
 /*
 |--------------------------------------------------------------------------
@@ -397,7 +399,9 @@ Route::post('addPosition', 'PositionsController@store');
 |--------------------------------------------------------------------------
 |
 */
-  Route::get('caseOwner/{user}/{id}', 'CaseOwnerController@index');
+
+  Route::get('caseOwner/{user}/{id}', ['middleware' => 'auth', 'uses' => 'CaseOwnerController@index']);
+
 
 /*
 |--------------------------------------------------------------------------
@@ -413,10 +417,11 @@ Route::post('addPosition', 'PositionsController@store');
 |
 */
 
-  Route::get('resend_password/{id}', 'UserController@resendPassword');
+  Route::get('resend_password/{id}', ['middleware' => 'auth', 'uses' => 'UserController@resendPassword']);
   // Password reset link request routes...
-  Route::get('password/email', 'Auth\PasswordController@getEmail');
-  Route::post('password/email', 'Auth\PasswordController@postEmail');
+  Route::get('password/email', ['middleware' => 'auth', 'uses' => 'Auth\PasswordController@getEmail']);
+  Route::post('password/email', ['middleware' => 'auth', 'uses' => 'Auth\PasswordController@postEmail']);
+
 
 
   // Password reset routes...
