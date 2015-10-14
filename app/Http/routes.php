@@ -209,13 +209,10 @@ Route::post('escalateCase', ['middleware' => 'auth', 'uses' => 'CasesController@
 Route::get('acceptCase/{id}', ['middleware' => 'auth', 'uses' => 'CasesController@acceptCase']);
 Route::post('addCaseForm', ['middleware' => 'auth', 'uses' => 'CasesController@captureCase']);
 Route::get('closeCase/{id}', ['middleware' => 'auth', 'uses' => 'CasesController@closeCase']);
-
-Route::post('requestCaseClosure', 'CasesController@requestCaseClosure');
-Route::get('request-cases-closure-list', 'CasesController@requestCaseClosureList');
-Route::get('resolved-cases-list', 'CasesController@resolvedCasesList');
-Route::get('pending-referral-cases-list', 'CasesController@pendingReferralCasesList');
-
-
+Route::post('requestCaseClosure', ['middleware' => 'auth', 'uses' => 'CasesController@requestCaseClosure']);
+Route::get('request-cases-closure-list', ['middleware' => 'auth', 'uses' => 'CasesController@requestCaseClosureList']);
+Route::get('resolved-cases-list', ['middleware' => 'auth', 'uses' => 'CasesController@resolvedCasesList']);
+Route::get('pending-referral-cases-list', ['middleware' => 'auth', 'uses' => 'CasesController@pendingReferralCasesList']);
 
 
 /*
@@ -232,10 +229,10 @@ Route::get('pending-referral-cases-list', 'CasesController@pendingReferralCasesL
 |--------------------------------------------------------------------------
 |
 */
+Route::get('addressbook-list/{id}', ['middleware' => 'auth', 'uses' => 'AddressBookController@index']);
+Route::post('addContact', ['middleware' => 'auth', 'uses' => 'AddressBookController@store']);
+Route::get('getContacts', ['middleware' => 'auth', 'uses' => 'AddressBookController@show']);
 
-Route::get('addressbook-list/{id}', 'AddressBookController@index');
-Route::post('addContact', 'AddressBookController@store');
-Route::get('getContacts', 'AddressBookController@show');
 
 /*
 |--------------------------------------------------------------------------
@@ -272,11 +269,12 @@ Route::get('getContacts', 'AddressBookController@show');
 |--------------------------------------------------------------------------
 |
 */
-  Route::get('getsubSubResponders/{id}', 'RespondersController@subSubResponder');
-  Route::post('addSubSubCategoryResponder', 'RespondersController@storeSubSubResponder');
-  Route::get('getSubResponders/{id}', 'RespondersController@subResponder');
-  Route::post('addSubCategoryResponder', 'RespondersController@storeSubResponder');
-  Route::get('caseResponders-list/{id}', 'RespondersController@index');
+  Route::get('getsubSubResponders/{id}', ['middleware' => 'auth', 'uses' => 'RespondersController@subSubResponder']);
+  Route::post('addSubSubCategoryResponder', ['middleware' => 'auth', 'uses' => 'RespondersController@storeSubSubResponder']);
+  Route::get('getSubResponders/{id}', ['middleware' => 'auth', 'uses' => 'RespondersController@subResponder']);
+  Route::post('addSubCategoryResponder', ['middleware' => 'auth', 'uses' => 'RespondersController@storeSubResponder']);
+  Route::get('caseResponders-list/{id}', ['middleware' => 'auth', 'uses' => 'RespondersController@index']);
+
 
 
 
