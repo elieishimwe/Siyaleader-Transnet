@@ -20,7 +20,7 @@ class MessageController extends Controller
     {
 
         $msgs = \DB::table('messages')
-                    ->join('users', 'users.id', '=', 'messages.to')
+                    ->join('users', 'users.id', '=', 'messages.from')
                     ->where('messages.to','=',\Auth::user()->id)
                     ->select(\DB::raw("messages.id,messages.created_at,messages.read,messages.message,CONCAT(`users`.`name`,' ',`users`.`surname`) as originator"))
                     ->orderBy('messages.created_at','desc')
