@@ -551,10 +551,10 @@ class CasesController extends Controller
             );
 
 
-            \Mail::send('emails.caseEscalation',$data, function($message) use ($user)
+            \Mail::send('emails.caseEscalated',$data, function($message) use ($user)
             {
                 $message->from('info@siyaleader.net', 'Siyaleader');
-                $message->to($user->username)->subject("Siyaleader Notification - Case referred: " );
+                $message->to($user->username)->subject("Siyaleader Notification - Case Referred: " );
 
             });
 
@@ -594,7 +594,7 @@ class CasesController extends Controller
             \Mail::send('emails.caseEscalated',$data, function($message) use ($address)
             {
                 $message->from('info@siyaleader.net', 'Siyaleader');
-                $message->to($address)->subject("Siyaleader Notification - Case referred: " );
+                $message->to($address)->subject("Siyaleader Notification - Case Referred: " );
 
             });
 
