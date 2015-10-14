@@ -380,7 +380,7 @@
         beforeSend : function() {
             HoldOn.open({
                 theme:"sk-rect",//If not given or inexistent theme throws default theme sk-rect
-                message: "<h4> uploading please wait... ! </h4>",
+                message: "<h4> sending message please wait... ! </h4>",
                 content:"Your HTML Content", // If theme is set to "custom", this property is available
                                              // this will replace the theme by something customized.
                 backgroundColor:"none repeat scroll 0 0 rgba(0, 0, 0, 0.8)",//Change the background color of holdon with javascript
