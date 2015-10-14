@@ -521,7 +521,7 @@ return $listing;
 
 
 
-Route::post('postChat', 'ChatController@postChat');
+Route::post('postChat', ['middleware' => 'auth', 'uses' => 'ChatController@postChat']);
 
 
 Event::listen('auth.login', function()
@@ -571,7 +571,7 @@ Route::get('/getLoggedInUsers', function(){
 |
 */
 
-  Route::post('addCaseMessage', 'MessageController@store');
+  Route::post('addCaseMessage', ['middleware' => 'auth', 'uses' => 'MessageController@store']);
 
   Route::get('/getOfflineMessage', function(){
 
