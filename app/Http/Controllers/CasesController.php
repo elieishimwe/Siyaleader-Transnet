@@ -116,7 +116,7 @@ class CasesController extends Controller
         else {
 
 
-            $cases = CaseReport::where('status','=','Pending Closure')
+            $cases = CaseReport::where('status','=','Resolved')
                                 ->where('user','=',\Auth::user()->id);
             return \Datatables::of($cases)
                             ->addColumn('actions','<a class="btn btn-xs btn-alt" data-toggle="modal" onClick="launchCaseModal({{$id}});" data-target=".modalCase">View</a>')
