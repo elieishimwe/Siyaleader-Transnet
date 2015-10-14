@@ -203,13 +203,13 @@ Route::post('updateSubSubCategory', ['middleware' => 'auth', 'uses' => 'SubSubCa
 |
 */
 
+Route::get('cases-list/{id}', ['middleware' => 'auth', 'uses' => 'CasesController@index']);
+Route::get('case/{id}', ['middleware' => 'auth', 'uses' => 'CasesController@edit']);
+Route::post('escalateCase', ['middleware' => 'auth', 'uses' => 'CasesController@escalate']);
+Route::get('acceptCase/{id}', ['middleware' => 'auth', 'uses' => 'CasesController@acceptCase']);
+Route::post('addCaseForm', ['middleware' => 'auth', 'uses' => 'CasesController@captureCase']);
+Route::get('closeCase/{id}', ['middleware' => 'auth', 'uses' => 'CasesController@closeCase']);
 
-Route::get('cases-list/{id}', 'CasesController@index');
-Route::get('case/{id}', 'CasesController@edit');
-Route::post('escalateCase', 'CasesController@escalate');
-Route::get('acceptCase/{id}', 'CasesController@acceptCase');
-Route::post('addCaseForm', 'CasesController@captureCase');
-Route::get('closeCase/{id}', 'CasesController@closeCase');
 Route::post('requestCaseClosure', 'CasesController@requestCaseClosure');
 Route::get('request-cases-closure-list', 'CasesController@requestCaseClosureList');
 Route::get('resolved-cases-list', 'CasesController@resolvedCasesList');
