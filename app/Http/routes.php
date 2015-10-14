@@ -294,8 +294,9 @@ Route::get('getContacts', ['middleware' => 'auth', 'uses' => 'AddressBookControl
 |--------------------------------------------------------------------------
 |
 */
-  Route::get('caseNotes-list/{id}', 'CaseNotesController@index');
-  Route::post('addCaseNote', 'CaseNotesController@store');
+  Route::get('caseNotes-list/{id}', ['middleware' => 'auth', 'uses' => 'CaseNotesController@index']);
+  Route::post('addCaseNote', ['middleware' => 'auth', 'uses' => 'CaseNotesController@store']);
+
 
 /*
 |--------------------------------------------------------------------------
@@ -311,9 +312,10 @@ Route::get('getContacts', ['middleware' => 'auth', 'uses' => 'AddressBookControl
 |--------------------------------------------------------------------------
 |
 */
-  Route::get('caseNotes-list/{id}', 'CaseNotesController@index');
-  Route::post('addCaseFile', 'CaseFilesController@store');
-  Route::get('fileDescription/{id}/{name}', 'CaseFilesController@index');
+
+  Route::post('addCaseFile', ['middleware' => 'auth', 'uses' => 'CaseFilesController@store']);
+  Route::get('fileDescription/{id}/{name}', ['middleware' => 'auth', 'uses' => 'CaseFilesController@index']);
+
 
 /*
 |--------------------------------------------------------------------------
@@ -330,7 +332,8 @@ Route::get('getContacts', ['middleware' => 'auth', 'uses' => 'AddressBookControl
 |--------------------------------------------------------------------------
 |
 */
-  Route::get('caseActivities-list/{id}', 'CaseActivitiesController@index');
+
+  Route::get('caseActivities-list/{id}', ['middleware' => 'auth', 'uses' => 'CaseActivitiesController@index']);
 
 /*
 |--------------------------------------------------------------------------
