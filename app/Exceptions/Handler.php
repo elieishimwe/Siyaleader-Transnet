@@ -41,10 +41,6 @@ class Handler extends ExceptionHandler
     {
 
 
-        App::after(function (Illuminate\Http\Request $request, \Symfony\Component\HttpFoundation\Response $response){
-                $response->header('P3P', 'CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
-        });
-
         if ($e instanceof \Illuminate\Session\TokenMismatchException) {
 
             return redirect()->back()->withInput()->with('token', csrf_token());
