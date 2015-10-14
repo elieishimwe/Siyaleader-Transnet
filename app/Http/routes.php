@@ -564,7 +564,6 @@ Route::get('/getLoggedInUsers', function(){
                                 ->where('online','=',0)
                                 ->orderBy('created_at','desc')
                                 ->take(5)
-                                ->orderBy('read','asc')
                                 ->get();
 
    $html     = "";
