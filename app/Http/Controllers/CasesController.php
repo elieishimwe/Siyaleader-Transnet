@@ -583,6 +583,11 @@ class CasesController extends Controller
             );
 
 
+
+            $caseReport = CaseReport::find($request['caseID']);
+            $caseReport->status = "Referred";
+            $caseReport->save();
+
             $caseActivity              = New CaseActivity();
             $caseActivity->caseId      = $request['caseID'];
             $caseActivity->user        = $to;
