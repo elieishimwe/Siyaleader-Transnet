@@ -823,6 +823,11 @@
                         $("#modalCase #CaseImageA").attr("href",ImgUrl);
 
                      }
+                     else {
+
+                        $("#modalCase #CaseImageA").attr("href","#");
+
+                     }
 
                      $('a[class*="pirobox"]').piroBox_ext({
                           piro_speed : 900,
