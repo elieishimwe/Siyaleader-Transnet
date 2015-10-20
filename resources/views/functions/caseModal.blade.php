@@ -770,6 +770,7 @@
 
       $( "#acceptCaseClass" ).removeClass( "hidden" );
       $( "#requestCaseClosureClass" ).removeClass( "hidden" );
+      $('#registrationForm')[0].reset();
 
       $(".modal-body #categoryID").val(id);
       $(".modal-body #caseID").val(id);
