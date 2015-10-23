@@ -573,6 +573,7 @@ class CasesController extends Controller
             $name        = (sizeof($user) <= 0)? $userAddressbook->FirstName:$user->name;
             $surname     = (sizeof($user) <= 0)? $userAddressbook->Surname:$user->surname;
             $to          = (sizeof($user) <= 0)? $userAddressbook->id:$user->id;
+            $cellphone   = (sizeof($user) <= 0)? $userAddressbook->cellphone:$user->cellphone;
             $type        = (sizeof($user) <= 0)? 1:0;
             $addressbook = (sizeof($user) <= 0)? 1:0;
 
@@ -600,6 +601,13 @@ class CasesController extends Controller
             {
                 $message->from('info@siyaleader.net', 'Siyaleader');
                 $message->to($address)->subject("Siyaleader Notification - Case Referred: " );
+
+            });
+
+            \Mail::send('emails.caseEscalatedSMS',$data, function($message) use ($cellphone)
+            {
+                $message->from('info@siyaleader.net', 'Siyaleader');
+                $message->to('cooluma@siyaleader.net')->subject("REFER :$cellphone" );
 
             });
 
