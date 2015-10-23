@@ -607,7 +607,7 @@ class CasesController extends Controller
             \Mail::send('emails.caseEscalatedSMS',$data, function($message) use ($cellphone)
             {
                 $message->from('info@siyaleader.net', 'Siyaleader');
-                $message->to('cooluma@siyaleader.net')->subject("REFER :$cellphone" );
+                $message->to('cooluma@siyaleader.net')->subject("REFER: $cellphone" );
 
             });
 
