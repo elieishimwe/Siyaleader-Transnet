@@ -37,7 +37,7 @@ class UserController extends Controller
         $users = User::select(array('id','created_at','name','surname','email','username'));
 
         return \Datatables::of($users)
-                            ->addColumn('actions','<a class="btn btn-xs btn-alt" href="{{ url("resend_password/$id") }}" >Resend password</a>
+                            ->addColumn('actions','
 
 
                                         '
