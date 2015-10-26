@@ -44,7 +44,7 @@
 
 
     </head>
-    <body id="skin-blur-kiwi">
+    <body id="skin-blur-sunset">
 
         <header id="header" class="media">
             <a href="" id="menu-toggle"></a>
