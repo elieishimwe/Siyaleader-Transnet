@@ -781,12 +781,16 @@
         url     :"{!! url('/caseOwner/"+ id + "/" + userID + "')!!}",
         success :function(data) {
 
-           if(data == 1)
-           {
+           if(data == 1) {
 
               $( "#acceptCaseClass" ).addClass( "hidden" );
               $( "#acceptedFunctions" ).removeClass( "hidden" );
 
+           }
+
+           else {
+
+              $( "#acceptCaseClass" ).addClass( "hidden" );
            }
 
             $.ajax({
