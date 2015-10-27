@@ -92,7 +92,7 @@
                     </td>
                     <td bgcolor="#1c1c1c" valign=middle align=right width=25 style="min-width:25px">
 
-                        <a href="#" id="newCaseIcon" onclick="document.getElementById('RUS').innerHTML = 'ARE YOU SURE?';switchNewCaseMarker('icon',this.id);this.blur()"><i id="addCase" class="fa fa-plus-square-o fa-lg fa-fw" style="color:#ffffff" title="Add a new case ..." onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></i></a>
+                        <a href="#" id="newCaseIcon" onclick="document.getElementById('RUS').innerHTML = 'ARE YOU SURE?';switchNewCaseMarker('icon',this.id);this.blur()"><i id="addCase" class="fa fa-plus-square-o fa-lg fa-fw" style="color:#ffffff" title="Add a new case ..."  onmouseout="document.all.toolTip.innerHTML= ''"></i></a>
                     </td>
                     <td bgcolor="#1c1c1c" valign=middle align=right><font style="font: 10pt 'arial'; color:#FFFFFF;"><span id="toolTip"></span></font>&nbsp;</td>
                     </tr>
