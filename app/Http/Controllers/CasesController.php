@@ -468,10 +468,10 @@ class CasesController extends Controller
                             $caseOwner->save();
 
                             $data = array(
-                                    'name'   =>$secondResponderUser->name,
-                                    'caseID' =>$caseObj->id,
-                                    'caseDesc' => $caseObj->description,
-                                    'caseReporter' => $caseObj->description,
+                                    'name'          =>$secondResponderUser->name,
+                                    'caseID'        =>$caseObj->id,
+                                    'caseDesc'      =>$caseObj->description,
+                                    'caseReporter'  =>$caseObj->description,
                             );
 
 
@@ -494,10 +494,10 @@ class CasesController extends Controller
                             $caseOwner->save();
 
                             $data = array(
-                                    'name'   =>$thirdResponderUser->name,
-                                    'caseID' =>$caseObj->id,
-                                    'caseDesc' => $caseObj->description,
-                                    'caseReporter' => $caseObj->description,
+                                    'name'          =>$thirdResponderUser->name,
+                                    'caseID'        =>$caseObj->id,
+                                    'caseDesc'      =>$caseObj->description,
+                                    'caseReporter'  =>$caseObj->description,
                             );
 
 

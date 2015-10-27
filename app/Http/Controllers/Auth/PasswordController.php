@@ -68,9 +68,9 @@ class PasswordController extends Controller
       public function postReset(Request $request)
     {
         $this->validate($request, [
-            'token' => 'required',
-            'username' => 'required|email',
-            'password' => 'required|confirmed',
+            'token'     => 'required',
+            'username'  => 'required|email',
+            'password'  => 'required|confirmed',
         ]);
 
         $credentials = $request->only(
