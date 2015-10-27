@@ -725,8 +725,7 @@
                         dataType:"json",
                         url     :"{!! url('/fileDescription/"+ id + "/"+ fileName +"')!!}",
                         success :function(data) {
-                          console.log(data);
-                          console.log(data.length);
+
                           dialog.find('div.elfinder-info-desc').html(data);
 
                         }
@@ -790,7 +789,7 @@
 
            else {
 
-              $( "#acceptCaseClass" ).addClass( "hidden" );
+              $( "#acceptCaseClass" ).removeClass( "hidden" );
            }
 
             $.ajax({
