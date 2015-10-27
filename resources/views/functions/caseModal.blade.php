@@ -785,6 +785,7 @@
            {
 
               $( "#acceptCaseClass" ).addClass( "hidden" );
+              $( "#acceptedFunctions" ).removeClass( "hidden" );
 
            }
 
