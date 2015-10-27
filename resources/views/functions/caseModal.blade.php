@@ -43,6 +43,7 @@
 
   var user = {!! Auth::user()->id !!};
   var oTable     = $('#casesTable').DataTable({
+                "autoWidth": false,
                 "processing": true,
                 "serverSide": true,
                 "dom": 'T<"clear">lfrtip',
@@ -55,7 +56,7 @@
 
                     return d.description;
 
-                },"name" : 'cases.description'},
+                },"name" : 'cases.description',"width" :"60%"},
                 {data: 'status', name: 'cases.status'},
                 {data: 'actions',  name: 'actions'},
                ],
@@ -68,6 +69,7 @@
   });
 
   var requestCasesClosureTable     = $('#deletedCasesTable').DataTable({
+                "autoWidth": false,
                 "processing": true,
                 "serverSide": true,
                 "dom": 'T<"clear">lfrtip',
@@ -80,7 +82,7 @@
 
                     return d.description;
 
-                },"name" : 'cases.description'},
+                },"name" : 'cases.description',"width" :"60%"},
                 {data: 'status', name: 'cases.status'},
                 {data: 'actions',  name: 'actions'},
                ],
@@ -93,6 +95,7 @@
   });
 
   var resolvedCasesTable     = $('#resolvedCasesTable').DataTable({
+                "autoWidth": false,
                 "processing": true,
                 "serverSide": true,
                 "dom": 'T<"clear">lfrtip',
@@ -105,7 +108,7 @@
 
                     return d.description;
 
-                },"name" : 'cases.description'},
+                },"name" : 'cases.description',"width" :"60%"},
                 {data: 'status', name: 'cases.status'},
                 {data: 'actions',  name: 'actions'},
                ],
@@ -118,6 +121,7 @@
   });
 
    var pendingreferralCasesTable     = $('#pendingreferralCasesTable').DataTable({
+                "autoWidth": false,
                 "processing": true,
                 "serverSide": true,
                 "dom": 'T<"clear">lfrtip',
@@ -130,7 +134,7 @@
 
                     return d.description;
 
-                },"name" : 'cases.description'},
+                },"name" : 'cases.description',"width" :"60%"},
                 {data: 'status', name: 'cases.status'},
                 {data: 'actions',  name: 'actions'},
                ],
@@ -223,7 +227,7 @@
         },
         success : function(dataSet){
 
-          console.log(dataSet.data.length);
+
 
           $("#responsiveTable").removeClass("hidden");
 
