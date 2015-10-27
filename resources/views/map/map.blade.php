@@ -209,6 +209,7 @@ foreach ($cases as $case) {
 
     if ($case->addressbook == 1)
     {
+        \Log::info($case->reporter);
         $userObj          = addressbook::find($case->reporter);
         $ReporterName     = $userObj->FirstName .' '.$userObj->Surname;
         $ReporterPosition = "";
@@ -216,6 +217,8 @@ foreach ($cases as $case) {
     }
     else
     {
+
+        \Log::info($case->reporter ."HEllo");
         $userObj          = user::find($case->reporter);
         $ReporterName     = $userObj->name .' '.$userObj->surname;
         $RepPos           = Position::find($userObj->position);
