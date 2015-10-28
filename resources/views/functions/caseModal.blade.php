@@ -777,7 +777,8 @@
 
       $(".modal-body #categoryID").val(id);
       $(".modal-body #caseID").val(id);
-      var userID = {!! Auth::user()->id !!};
+      var userID   = {!! Auth::user()->id !!};
+      var userRole = {!! Auth::user()->role !!};
       $.ajax({
         type    :"GET",
         dataType:"json",
@@ -794,6 +795,12 @@
            else {
 
               $( "#acceptCaseClass" ).removeClass( "hidden" );
+           }
+
+           if ( userRole == 1 && data == 1) {
+
+            $( "#acceptedFunctions" ).removeClass( "hidden" );
+
            }
 
             $.ajax({
