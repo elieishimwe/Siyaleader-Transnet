@@ -197,9 +197,21 @@ use App\Municipality;
 use App\addressbook;
 
 
-$cases = CaseReport::whereNotNull('gps_lat')
-                    ->whereNotNull('gps_lng')
-                    ->get();
+
+if (\Auth::user()->role == 1) {
+
+    $cases = CaseReport::whereNotNull('gps_lat')
+                        ->whereNotNull('gps_lng')
+                        ->get();
+}
+else {
+
+    $cases = CaseReport::whereNotNull('gps_lat')
+                            ->whereNotNull('gps_lng')
+                            ->where('department','=',\Auth::user()->department)
+                            ->get();
+
+}
 
 
 
