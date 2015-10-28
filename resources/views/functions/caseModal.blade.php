@@ -798,6 +798,7 @@
 
               if ( userRole == 1 ) {
 
+                $( "#acceptCaseClass" ).addClass( "hidden" );
                 $( "#acceptedFunctions" ).removeClass( "hidden" );
               }
            }

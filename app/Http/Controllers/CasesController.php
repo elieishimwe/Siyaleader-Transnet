@@ -193,12 +193,12 @@ class CasesController extends Controller
                                 );
 
 
-            /*    \Mail::send('emails.acceptCase',$data, function($message) use ($user)
+                \Mail::send('emails.acceptCase',$data, function($message) use ($user)
                 {
                     $message->from('info@siyaleader.net', 'Siyaleader');
                     $message->to($user->username)->subject("Siyaleader Notification - New Case Accepted: ");
 
-               });*/
+               });
 
             }
 
