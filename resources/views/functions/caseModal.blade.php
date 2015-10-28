@@ -795,13 +795,14 @@
            else {
 
               $( "#acceptCaseClass" ).removeClass( "hidden" );
+
+              if ( userRole == 1 ) {
+
+                $( "#acceptedFunctions" ).removeClass( "hidden" );
+              }
            }
 
-           if ( userRole == 1 && data == 0) {
 
-            $( "#acceptedFunctions" ).removeClass( "hidden" );
-
-           }
 
             $.ajax({
                   type    :"GET",
