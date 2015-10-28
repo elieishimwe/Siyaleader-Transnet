@@ -28,6 +28,7 @@ class UserNewRequest extends Request
             'surname'      =>'required',
             'position'     =>'required|not_in:0',
             'department'   =>'required|not_in:0',
+            'municipality' =>'required|not_in:0',
             'cellphone'    =>'required|unique:users,cellphone',
             'email'        =>'required|unique:users,email'
 
