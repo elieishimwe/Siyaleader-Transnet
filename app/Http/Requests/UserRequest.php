@@ -27,6 +27,7 @@ class UserRequest extends Request
             'Fname'        =>'required',
             'Sname'        =>'required',
             'Province'     =>'required|not_in:0',
+            'Municipality' =>'required|not_in:0',
             'District'     =>'required|not_in:0',
             'Position'     =>'required|not_in:0',
             'Department'   =>'required|not_in:0',
