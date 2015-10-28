@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
     {
         if (\Schema::hasTable('positions'))
         {
-            $positions          = Position::all();
+            $positions          = Position::orderBy('name','ASC')->get();
             $selectPositions    = array();
             $selectPositions[0] = "Select / All";
 
@@ -42,7 +42,7 @@ class AppServiceProvider extends ServiceProvider
 
          if (\Schema::hasTable('departments'))
         {
-            $departments          = Department::all();
+            $departments          = Department::orderBy('name','ASC')->get();
             $selectDepartments    = array();
             $selectDepartments[0] = "Select / All";
 
