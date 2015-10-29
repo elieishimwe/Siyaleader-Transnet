@@ -654,14 +654,7 @@ class CasesController extends Controller
       $caseActivity->note        = \Auth::user()->name.' '.\Auth::user()->surname ." closed case";
       $caseActivity->save();
 
-      $data = array (
-                            'name'      => \Auth::user()->name,
-                            'caseID'    => $id,
-                            'content'   => $case->description,
-                            'executor'  => \Auth::user()->name.' '.\Auth::user()->surname,
-                    );
-
-      $user   = User::find($case->reporter);
+       $user   = User::find($case->reporter);
 
        if(sizeof($user) <= 0 ) {
 
@@ -669,6 +662,19 @@ class CasesController extends Controller
        }
 
        $email  = (sizeof($user) <= 0)? $userAddressbook->email : $user->username;
+
+       $reporterName = (sizeof($user) <= 0)? $userAddressbook->FirstName : $user->name;
+
+
+      $data = array (
+                            'name'      => \Auth::user()->name,
+                            'caseID'    => $id,
+                            'content'   => $case->description,
+                            'executor'  => \Auth::user()->name.' '.\Auth::user()->surname,
+                    );
+
+
+
 
       \Mail::send('emails.caseClosed',$data, function($message) use ($email) {
 
