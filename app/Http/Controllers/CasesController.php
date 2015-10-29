@@ -667,7 +667,7 @@ class CasesController extends Controller
 
 
       $data = array (
-                            'name'      => \Auth::user()->name,
+                            'name'      => $reporterName,
                             'caseID'    => $id,
                             'content'   => $case->description,
                             'executor'  => \Auth::user()->name.' '.\Auth::user()->surname,
