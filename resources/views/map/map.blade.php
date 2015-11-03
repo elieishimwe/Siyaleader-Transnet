@@ -212,7 +212,7 @@ else {
     $ids      = array();
 
     foreach ($casesIds as $case) {
-        $ids[] = $case->id;
+        $ids[] = $case->caseId;
     }
 
     $cases = CaseReport::whereNotNull('gps_lat')
