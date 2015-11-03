@@ -208,7 +208,6 @@ else {
 
     $cases = CaseReport::whereNotNull('gps_lat')
                             ->whereNotNull('gps_lng')
-                            ->where('department','=',\Auth::user()->department)
                             ->get();
 
 }
