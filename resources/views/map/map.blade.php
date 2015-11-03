@@ -253,6 +253,7 @@ foreach ($cases as $case) {
     $Status       = $case->status;
     $catObjCat    = Category::find($case->category);
     $Category     = $catObjCat->name;
+    \Log::info($Category);
     $PhotoURL     = "http://41.216.130.6:8080/siyaleader-dbnports-mobileApp-api/port_backend/public/".$case->img_url;
     $LastActivity = $case->updated_at;
     $Reporter     = $ReporterName;
