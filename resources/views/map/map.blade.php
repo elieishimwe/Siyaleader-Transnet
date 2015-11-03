@@ -195,6 +195,7 @@ use App\Position;
 use App\Department;
 use App\Municipality;
 use App\addressbook;
+use App\CaseOwner;
 
 
 
@@ -206,8 +207,17 @@ if (\Auth::user()->role == 1) {
 }
 else {
 
+
+    $casesIds = CaseOwner::where('user','=',\Auth::user()->id)->get();
+    $ids      = array();
+
+    foreach ($casesIds as $case) {
+        $ids[] = $case->id;
+    }
+
     $cases = CaseReport::whereNotNull('gps_lat')
                             ->whereNotNull('gps_lng')
+                            ->whereIn('id',$ids)
                             ->get();
 
 }
