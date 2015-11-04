@@ -796,7 +796,7 @@
 
               $( "#acceptCaseClass" ).removeClass( "hidden" );
 
-              if ( userRole == 1 ) {
+              if ( userRole == 1 || userRole == 3 ) {
 
                 $( "#acceptCaseClass" ).addClass( "hidden" );
                 $( "#acceptedFunctions" ).removeClass( "hidden" );
