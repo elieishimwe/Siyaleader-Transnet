@@ -167,7 +167,7 @@ function initialize() {
 
 <?php
 
-    $connectionID = mysqli_connect('localhost', 'root', 'elie', 'port') or die ("Unable to connect to database.");
+    $connectionID = mysqli_connect('localhost', 'www', '', 'siyaleader_dbnports_live') or die ("Unable to connect to database.");
     $sql          = "
                         SELECT
                             *
