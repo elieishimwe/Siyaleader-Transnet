@@ -207,9 +207,9 @@ while($row = mysqli_fetch_row($result)) {
         $CategoryID   = $row[4];
         $CatSql       = "  SELECT `name` FROM `categories` WHERE `id` = {$CategoryID} ";
         $CatResult    = mysqli_query($connectionID, $CatSql) or die ("Couldn't query case categories table ... ...");
-        if($row = mysqli_fetch_row($CatResult)){
+        if($rowCat = mysqli_fetch_row($CatResult)){
 
-            $Category = $row[0];
+            $Category = $rowCat[0];
         }
         else {
 
@@ -228,7 +228,7 @@ while($row = mysqli_fetch_row($result)) {
                                     `users`
                             WHERE
 
-                                `id` = '2'
+                                `id` = '$ReporterID'
                         ";
         $reporterResult    = mysqli_query($connectionID, $reporterSql) or die ("Couldn't query case users table ... ...");
 
