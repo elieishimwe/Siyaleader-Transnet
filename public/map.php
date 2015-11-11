@@ -272,7 +272,7 @@ while($row = mysqli_fetch_row($result)) {
         $Priority     = $row[7];
         $Description  = $row[1];
 
-        $noteSql      = "
+/*        $noteSql      = "
                             SELECT
                                  *
                             FROM
@@ -295,7 +295,7 @@ while($row = mysqli_fetch_row($result)) {
             $Author   = "";
             $Note     = "";
         }
-
+*/
 
         $lastSql      = "
                             SELECT
