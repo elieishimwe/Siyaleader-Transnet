@@ -276,7 +276,7 @@ while($row = mysqli_fetch_row($result)) {
                             SELECT
                                  *
                             FROM
-                                `caseNotes`
+                                `casenotes`
                             WHERE
                                 `caseId` = $ID
                             ORDER BY
@@ -301,7 +301,7 @@ while($row = mysqli_fetch_row($result)) {
                             SELECT
                                  `created_at`
                             FROM
-                                `caseActivities`
+                                `caseactivities`
                             WHERE
                                 `caseId` = $ID
                             ORDER BY
