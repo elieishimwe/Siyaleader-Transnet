@@ -162,8 +162,6 @@ function initialize() {
     greenLocalityOverlay = new google.maps.GroundOverlay('images/locality_overlay_green.png', imageBounds);
     greenLocalityOverlay.setMap(null);
 
-    //Failing Here
-
     var oms = new OverlappingMarkerSpiderfier(map, { markersWontMove: true, keepSpiderfied:true, circleSpiralSwitchover:20 });
 
 
@@ -190,10 +188,22 @@ while($row = mysqli_fetch_row($result)) {
         $ID           = $row[0];
         $GPS          = $row[9].",".$row[10];
         $Province     = $row[5];
-        $Port         = $row[20];
-        $Precinct     = $row[10];
-        $Submitted    = $row[15];
-        $Status       = $row[14];
+        $Port         = 'Durban';
+        $PrecinctID   = $row[16];
+        $PrecinctSql  = " SELECT `name` FROM `municipalities` WHERE `id` = {$PrecinctID} ";
+        $PrecinctResult    = mysqli_query($connectionID, $PrecinctSql) or die ("Couldn't query case municipalities table ... ...");
+
+        if($rowP = mysqli_fetch_row($PrecinctResult)){
+
+            $Precinct = $rowP[0];
+        }
+        else {
+
+            $Precinct = 0;
+        }
+
+        $Submitted    = $row[13];
+        $Status       = $row[8];
         $CategoryID   = $row[4];
         $CatSql       = "  SELECT `name` FROM `categories` WHERE `id` = {$CategoryID} ";
         $CatResult    = mysqli_query($connectionID, $CatSql) or die ("Couldn't query case categories table ... ...");
@@ -205,13 +215,38 @@ while($row = mysqli_fetch_row($result)) {
 
             $Category = 0;
         }
-        $PhotoURL     = $row[13];
+        $PhotoURL     = $row[11];
         $LastActivity = $row[13];
-        $Reporter     = $row[2]. " " .$row[3];
+        $ReporterID   = $row[17];
+        $reporterSql  = "  SELECT
+                                `id`,
+                                `name`,
+                                `surname`,
+                                `position`,
+                                `cellphone`
+                            FROM
+                                    `users`
+                            WHERE
+
+                                `id` = '2'
+                        ";
+        $reporterResult    = mysqli_query($connectionID, $reporterSql) or die ("Couldn't query case users table ... ...");
+
+        if($rowU = mysqli_fetch_row($reporterResult)){
+
+            $Reporter = $rowU[1]." ".$rowU[2];
+            $Mobile   = $rowU[4];
+        }
+        else {
+
+            $Reporter = 0;
+            $Mobile   = 0;
+        }
+
         $Position     = $row[4];
-        $Mobile       = $row[6];
-        $Priority     = $row[17];
-        $Description  = $row[13];
+
+        $Priority     = $row[7];
+        $Description  = $row[1];
         /*
         $noteSql      = "
                             SELECT
@@ -259,13 +294,13 @@ while($row = mysqli_fetch_row($result)) {
             $imageStatus = "_act.png";
         }
 
-        if ($Status == "Closure Requested")  {
+        if ($Status == "Pending Closure")  {
 
             $catStatus   = "Clo";
             $imageStatus = "_clo.png";
         }
 
-        if ($Status == "RESOLVED")  {
+        if ($Status == "Resolved")  {
 
             $catStatus   = "Res";
             $imageStatus = "_res.png";
@@ -511,11 +546,6 @@ function toggleZoneSelector () {
 
 var kmzLayer = new google.maps.KmlLayer('http://41.216.130.6:8080/siyaleader/doc.kml');
 kmzLayer.setMap(map);
-
-
-
-
-
 
 
 map = new google.maps.Map(document.getElementById('mapcontainer'), options);
