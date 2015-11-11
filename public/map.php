@@ -185,9 +185,22 @@ function initialize() {
 while($row = mysqli_fetch_row($result)) {
 
 
-        $ID           = $row[0];
-        $GPS          = $row[9].",".$row[10];
-        $Province     = $row[5];
+        $ID             = $row[0];
+        $GPS            = $row[9].",".$row[10];
+        $ProvinceID     = $row[5];
+        $ProvinceSql    = " SELECT `name` FROM `departments` WHERE `id` = {$ProvinceID} ";
+        $ProvinceResult = mysqli_query($connectionID, $ProvinceSql) or die ("Couldn't query case departments table ... ...");
+
+        if($rowD = mysqli_fetch_row($ProvinceResult)){
+
+            $Province = $rowD[0];
+        }
+        else {
+
+            $Province = 0;
+        }
+
+
         $Port         = 'Durban';
         $PrecinctID   = $row[16];
         $PrecinctSql  = " SELECT `name` FROM `municipalities` WHERE `id` = {$PrecinctID} ";
@@ -234,8 +247,20 @@ while($row = mysqli_fetch_row($result)) {
 
         if($rowU = mysqli_fetch_row($reporterResult)){
 
-            $Reporter = $rowU[1]." ".$rowU[2];
-            $Mobile   = $rowU[4];
+            $Reporter   = $rowU[1]." ".$rowU[2];
+            $Mobile     = $rowU[4];
+            $PositionId = $rowU[3];
+
+            $posSql         = "  SELECT `name` FROM `positions` WHERE `id` = {$PositionId} ";
+            $positionResult = mysqli_query($connectionID, $posSql) or die ("Couldn't query case users table ... ...");
+
+            if($rowPos = mysqli_fetch_row($positionResult)){
+
+                $Position     = $rowPos[0];
+            }
+            else {
+                $Position     = 0;
+            }
         }
         else {
 
@@ -243,7 +268,7 @@ while($row = mysqli_fetch_row($result)) {
             $Mobile   = 0;
         }
 
-        $Position     = $row[4];
+
 
         $Priority     = $row[7];
         $Description  = $row[1];
