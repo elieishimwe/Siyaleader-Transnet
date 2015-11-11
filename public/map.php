@@ -229,7 +229,6 @@ while($row = mysqli_fetch_row($result)) {
             $Category = 0;
         }
         $PhotoURL     = $row[11];
-        $LastActivity = $row[13];
         $ReporterID   = $row[17];
         $reporterSql  = "  SELECT
                                 `id`,
@@ -272,7 +271,7 @@ while($row = mysqli_fetch_row($result)) {
 
         $Priority     = $row[7];
         $Description  = $row[1];
-        /*
+
         $noteSql      = "
                             SELECT
                                  *
@@ -281,19 +280,48 @@ while($row = mysqli_fetch_row($result)) {
                             WHERE
                                 `caseId` = $ID
                             ORDER BY
-                                `created_at desc` limit 0,1
+                                `created_at` DESC limit 0,1
                         ";
         $noteResult = mysqli_query($connectionID, $noteSql) or die ("Couldn't query case notes table ... ...");
-        if($row = mysqli_fetch_row($noteResult)){
-            $AuthDate = $row[2];
-            $Author = $row[3];
-            $Note = $row[4];
+
+        if($rowNote = mysqli_fetch_row($noteResult)){
+
+            $AuthDate = $rowNote[5];
+            $Author   = $rowNote[2];
+            $Note     = $rowNote[3];
         }
         else {
             $AuthDate = ""; //
-            $Author = "";
-            $Note = "";
-        }*/
+            $Author   = "";
+            $Note     = "";
+        }
+
+
+        $lastSql      = "
+                            SELECT
+                                 `created_at`
+                            FROM
+                                `caseActivities`
+                            WHERE
+                                `caseId` = $ID
+                            ORDER BY
+                                `created_at` DESC limit 0,1
+                        ";
+
+
+        $lastActResult = mysqli_query($connectionID, $lastSql) or die ("Couldn't query case activities table ... ...");
+
+
+        if($rowLast = mysqli_fetch_row($lastActResult)){
+
+            $LastActivity = $rowLast[0];
+
+        }
+        else {
+           $LastActivity = "";
+        }
+
+
 
         if ($Status == "Pending") {
 
