@@ -82,11 +82,15 @@ window.addEventListener("message", receiveMessage, false);
 
 function receiveMessage(event)
 {
-  if (event.origin == "http://41.216.130.6:8080" || event.origin == "http://localhost:8000") {
+
+
+var strUrl = event.origin;
+
+if ( strUrl.indexOf("http://41.216.130.6:8080") >= 0 || strUrl.indexOf("http://localhost:8000") >= 0)
 
      launchCaseModal(event.data,'1');
 
-  }
+}
 
 
 }
