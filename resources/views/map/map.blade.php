@@ -19,10 +19,22 @@
 
 
 
-<div id="mapBlockDiv" class="block-area" style="height:800px">
+<div id="mapBlockDiv" class="block-area">
 
-    <iframe id="googleMap" src="map.php" MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=auto HSPACE=0 VSPACE=0 NORESIZE frameborder=0 style="width:100%;height:100%;" allowFullScreen></iframe>
+    <div class="tile" style="height:800px">
 
+        <div class="tile-config dropdown">
+            <a data-toggle="dropdown" href="" class="tile-menu"></a>
+            <ul class="dropdown-menu pull-right text-right">
+
+                <li><a href="javascript:void()" onclick="document.getElementById('googleMap').src='map.php'">Refresh</a></li>
+
+            </ul>
+        </div>
+
+        <iframe id="googleMap" src="map.php" MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=auto HSPACE=0 VSPACE=0 NORESIZE frameborder=0 style="width:100%;height:100%;" allowFullScreen></iframe>
+
+    </div>
 </div>
 
 
@@ -65,6 +77,10 @@
 
 $(document).ready(function() {
 
+
+    window.addEventListener("message", function(event) {
+        console.log("Hello from " + event.data);
+    });
 
     $("#caseReporter").tokenInput("getContacts",{tokenLimit:1});
 

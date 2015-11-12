@@ -27,8 +27,7 @@
         <link href="{{ asset('/css/buttons.dataTables.min.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/HoldOn.min.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/bootstrap-switch.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('/incl/animate.css') }}" rel="stylesheet">
-        <link href="{{ asset('/incl/siyaleader_ports.css') }}" rel="stylesheet">
+
 
         <!-- jQuery Library -->
         <script src="{{ asset('/js/jquery.min.js') }}"></script>
@@ -239,12 +238,6 @@
         <script src="{{ asset('/js/pirobox.min.js') }}"></script> <!-- Lightbox -->
         <script src="{{ asset('js/file-manager/elfinder.js') }}"></script> <!-- File Manager -->
 
-
-        <script type="text/javascript" src="{{ asset('/incl/oms.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('incl/infobox_packed.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('/incl/markerclusterer.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('/incl/siyaleader_ports_vars.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('/incl/siyaleader_ports_functions.js') }}"></script>
 
         <!-- File Upload -->
         <script src="{{ asset('/js/fileupload.min.js') }}"></script> <!-- File Upload -->
