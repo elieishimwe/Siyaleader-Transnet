@@ -124,13 +124,12 @@ function switchPhoto (photo,ibBorder)
 
 function showPhoto (photo,ibBorder)
 	{
-		if(photo != "")
-				{
-					photoPath = "../../../../ecin2edin/console/app_backend/port_backend/public/" + photo;
-				}
-		else	{
-					photoPath = "images/no_photo.png";
-				}
+		if(photo != "") {
+		  photoPath = photo;
+		}
+		else {
+		  photoPath = "http://41.216.130.6:8080/siyaleader-dbnports-mobileApp-api/port_backend/public/noimage.png";
+		}
 		document.all.thePhoto.src = photoPath;
 //		document.all.thePhoto.style = "border-top:1px solid " + ibBorder + "";
 //		document.all.thePhoto.style = "border-left:1px solid " + ibBorder + "";
