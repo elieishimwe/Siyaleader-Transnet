@@ -167,7 +167,9 @@ function initialize() {
 
 <?php
 
-    $connectionID = mysqli_connect('localhost', 'www',null, 'siyaleader_dbnports_live') or die ("Unable to connect to database.");
+  /*  $connectionID = mysqli_connect('localhost', 'www',null, 'siyaleader_dbnports_live') or die ("Unable to connect to database.");*/
+
+  $connectionID = mysqli_connect('localhost', 'root','elie', 'port') or die ("Unable to connect to database.");
     $sql          = "
                         SELECT
                             *
@@ -452,7 +454,7 @@ boxContent += "<tr><td align='left' valign='top' nowrap><B>Priority :</B></td><t
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Category :</B></td><td align='left'><?php echo $Category; ?></td></tr>"; // prob_category coll
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Status :</B></td><td align='left'><?php echo $Status; ?></td></tr>"; // status coll
 
-boxContent += "<tr><td align='left' valign='top' nowrap><B>Province :</B></td><td align='left'><?php echo $Province; ?></td></tr>"; // Province coll
+boxContent += "<tr><td align='left' valign='top' nowrap><B>Department :</B></td><td align='left'><?php echo $Province; ?></td></tr>"; // Province coll
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Port :</B></td><td align='left'><?php echo $Port; ?></td></tr>"; // District coll
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Precinct :</B></td><td align='left'><?php echo $Precinct; ?></td></tr>";  // Municipality coll
 
