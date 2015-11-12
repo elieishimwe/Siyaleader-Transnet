@@ -167,9 +167,9 @@ function initialize() {
 
 <?php
 
-    //$connectionID = mysqli_connect('localhost', 'www',null, 'siyaleader_dbnports_live') or die ("Unable to connect to database.");
+    $connectionID = mysqli_connect('localhost', 'www',null, 'siyaleader_dbnports_live') or die ("Unable to connect to database.");
 
-    $connectionID = mysqli_connect('localhost', 'root','elie', 'port') or die ("Unable to connect to database.");
+    //$connectionID = mysqli_connect('localhost', 'root','elie', 'port') or die ("Unable to connect to database.");
     $sql          = "
                         SELECT
                             *
@@ -476,7 +476,7 @@ boxContent += "<td align='center' valign='bottom'><a href='#' onclick='alert(\"W
 boxContent += "<td align='center' valign='bottom'><a href='#' onclick='alert(\"Work in progress ... Watch this space ...\")'><img src='images/icon_weather.png' title='Weather Conditions' ></a></td>";
 boxContent += "<td align='center' valign='bottom'><a href='#' onclick='alert(\"Work in progress ... Watch this space ...\")'><img src='images/icon_refer.png' title='Refer Case' ></a></td>";
 boxContent += "<td align='center' valign='bottom'><a href='#' onclick='showPhoto(\"<?php echo $PhotoURL; ?>\",\"" + infoBoxBorder +"\");killMenu();killLayerMenu()'><img id='photoIcon' src='images/icon_photo.png' title='View Photo'></a></td>";
-boxContent += "<td align='center' valign='bottom'><a href='#' onclick='parent.launchCaseModal(\"<?php echo $ID; ?>\",\"1\");killMenu();killLayerMenu();'><img src='images/icon_interact.png' title='Case Interaction'></a></td>";
+boxContent += "<td align='center' valign='bottom'><a href='#' onclick='parent.postMessage(\"<?php echo $ID; ?>\",\"*\");killMenu();killLayerMenu();'><img src='images/icon_interact.png' title='Case Interaction'></a></td>";
 
 boxContent += "</table>";
 

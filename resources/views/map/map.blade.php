@@ -78,9 +78,19 @@
 $(document).ready(function() {
 
 
-    window.addEventListener("message", function(event) {
-        console.log("Hello from " + event.data);
-    });
+window.addEventListener("message", receiveMessage, false);
+
+function receiveMessage(event)
+{
+  if (event.origin !== "http://example.org:8080") {
+
+     alert(event.origin);
+     launchCaseModal(event.data,'1');
+
+  }
+
+
+}
 
     $("#caseReporter").tokenInput("getContacts",{tokenLimit:1});
 
