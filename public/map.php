@@ -32,57 +32,57 @@
                 <div style="z-index:5000">
                     <table cellpadding=0 cellspacing=0 style="width:100%;border-collapse: collapse; border: 0px solid #1c1c1c;">
                         <tr style="opacity:1">
-                            <td bgcolor="#1c1c1c" valign=middle align=center width=115 style="min-width:115px" title="Select a port ... " onmouseover="updateToolTip('Select a port ... ')" onmouseout="document.all.toolTip.innerHTML= ''">
+                            <td bgcolor="#1c1c1c" valign=middle align=center width=115 style="min-width:115px" title="Select a port ... "  >
                                 <a href="#" onclick="switchMenu();this.blur()"><i class="fa fa-anchor fa-fw" style="color:#ffffff"></i></a>
                             </td>
                             <td bgcolor="#1c1c1c" valign=middle align=center width=115 style="min-width:115px">
-                                <a href="#" onclick="switchMainMenu();this.blur()"><i class="fa fa-navicon fa-fw" style="color:#ffffff" title="Toggle main menu ... " onmouseover="updateToolTip('Toggle main menu')" onmouseout="document.all.toolTip.innerHTML= ''"></i></a>
+                                <a href="#" onclick="switchMainMenu();this.blur()"><i class="fa fa-navicon fa-fw" style="color:#ffffff" title="Toggle main menu ... " ></i></a>
                             </td>
                             <td bgcolor="#1c1c1c" valign=middle align="right" nowrap width=110 style="min-width:110px">
-                                <input maxlength="10" type=text id="searchBox" name="searchBox" title="Search by case number" onmouseover="updateToolTip('Search by case number')" onmouseout="document.all.toolTip.innerHTML= ''" onkeyup="checkInput(this)" onkeydown="javascript:if (event.which || event.keyCode){if ((event.which == 13) || (event.keyCode == 13)) { animateMarker(document.all.searchBox.value); } };" style="text-align:center;width:100px;font-size:10pt;background:#000000;color:#ffffff;border-style:solid;border-color:#ffffff;border-width:1px">
+                                <input maxlength="10" type=text id="searchBox" name="searchBox" title="Search by case number" onkeyup="checkInput(this)" onkeydown="javascript:if (event.which || event.keyCode){if ((event.which == 13) || (event.keyCode == 13)) { animateMarker(document.all.searchBox.value); } };" style="text-align:center;width:100px;font-size:10pt;background:#000000;color:#ffffff;border-style:solid;border-color:#ffffff;border-width:1px">
                             </td>
                             <td bgcolor="#1c1c1c" valign=middle align=center width=25 style="min-width:25px">
-                                <a href="#" onclick="this.blur();animateMarker(document.all.searchBox.value)"><i class="fa fa-search fa-fw" style="color:#ffffff" title="Click to search" onmouseover="updateToolTip('Click to search')" onmouseout="document.all.toolTip.innerHTML= ''"></i></a>
+                                <a href="#" onclick="this.blur();animateMarker(document.all.searchBox.value)"><i class="fa fa-search fa-fw" style="color:#ffffff" title="Click to search"></i></a>
                             </td>
                             <td bgcolor="#1c1c1c" valign=middle align=center width=115 style="min-width:115px">
-                                <a href="#" onclick="switchLayerMenu();this.blur()"><i class="fa fa-clone fa-fw" style="color:#ffffff" title="Toggle Location Layers Menu" onmouseover="updateToolTip('Toggle location layers menu')" onmouseout="document.all.toolTip.innerHTML= ''"></i></a>
+                                <a href="#" onclick="switchLayerMenu();this.blur()"><i class="fa fa-clone fa-fw" style="color:#ffffff" title="Toggle Location Layers Menu" ></i></a>
                             </td>
                             <td bgcolor="#1c1c1c" valign=middle align=center width=30 style="min-width:30px">
-                                <a href="#" onclick="repositionMarkers();this.blur()"><i class="fa fa-compress fa-fw" style="color:#ffffff" title="Reset Dragged and Spidered Markers" onmouseover="updateToolTip('Reset dragged markers')" onmouseout="document.all.toolTip.innerHTML= ''"></i></a>
+                                <a href="#" onclick="repositionMarkers();this.blur()"><i class="fa fa-compress fa-fw" style="color:#ffffff" title="Reset Dragged and Spidered Markers" ></i></a>
                             </td>
                             <td bgcolor="#1c1c1c" valign=middle align=center width=30 style="min-width:30px">
-                                <a href="#" onclick="closeInfoBoxes();this.blur()"><i class="fa fa-info fa-fw" style="color:#ffffff" title="Close all Info Boxes" onmouseover="updateToolTip('Close all info boxes')" onmouseout="document.all.toolTip.innerHTML= ''"></i></a>
+                                <a href="#" onclick="closeInfoBoxes();this.blur()"><i class="fa fa-info fa-fw" style="color:#ffffff" title="Close all Info Boxes" ></i></a>
                             </td>
                             <td bgcolor="#1c1c1c" valign=middle align=right width=280 style="min-width:285px">
                                 <table border=0 cellpadding=0 cellspacing=0>
                                     <td align=left>
                                         <table cellpadding=1 cellspacing=0 border=1 style="border-collapse:collapse;border:1px solid #FFFFFF">
-                                            <td style="background:#e0e1e0" title="Toggle Port Ops Centre Markers"><INPUT ID="poCheckBox" TYPE="checkbox" checked onclick="switchMarkers('po');" title="Toggle port ops centre" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                            <td style="background:#999999" title="Toggle Property Markers"><INPUT ID="prCheckBox" TYPE="checkbox" checked onclick="switchMarkers('pr');" title="Toggle property" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                            <td style="background:#000000" title="Toggle Traffic Management  Markers"><INPUT ID="trCheckBox" TYPE="checkbox" checked onclick="switchMarkers('tr');" title="Toggle traffic management" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                            <td style="background:#ff0000" title="Toggle Safety / Risk / Fire Management  Markers"><INPUT ID="srCheckBox" TYPE="checkbox" checked onclick="switchMarkers('sr');" title="Toggle safety / risk / fire" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                            <td style="background:#fe940a" title="Toggle Maintenance Mechanical Markers"><INPUT ID="maCheckBox" TYPE="checkbox" checked onclick="switchMarkers('ma');" title="Toggle mech. maintenance" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                            <td style="background:#ffff00" title="Toggle Civil Maintanence Markers"><INPUT ID="mcCheckBox" TYPE="checkbox" checked onclick="switchMarkers('mc');" title="Toggle civil maintenance" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                            <td style="background:#00cc00" title="Toggle Housekeeping Markers"><INPUT ID="hkCheckBox" TYPE="checkbox" checked onclick="switchMarkers('hk');" title="Toggle housekeeping" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                            <td style="background:#009000" title="Toggle Environment Markers"><INPUT ID="enCheckBox" TYPE="checkbox" checked onclick="switchMarkers('en');" title="Toggle environment" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                            <td style="background:#0df1ff" title="Toggle Health Markers"><INPUT ID="heCheckBox" TYPE="checkbox" checked onclick="switchMarkers('he');" title="Toggle health" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                            <td style="background:#333dc7" title="Toggle Marine Maintanence Markers"><INPUT ID="mmCheckBox" TYPE="checkbox" checked onclick="switchMarkers('mm');" title="Toggle marine maintenance" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                            <td style="background:#ff33a6" title="Toggle Electrical Maintanence Markers"><INPUT ID="meCheckBox" TYPE="checkbox" checked onclick="switchMarkers('me');" title="Toggle elec. maintenance" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
-                                            <td style="background:#8a1ec7" title="Toggle Security Markers"><INPUT ID="seCheckBox" TYPE="checkbox" checked onclick="switchMarkers('se');" title="Toggle security" onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></td>
+                                            <td style="background:#e0e1e0" title="Toggle Port Ops Centre Markers"><INPUT ID="poCheckBox" TYPE="checkbox" checked onclick="switchMarkers('po');" title="Toggle port ops centre" ></td>
+                                            <td style="background:#999999" title="Toggle Property Markers"><INPUT ID="prCheckBox" TYPE="checkbox" checked onclick="switchMarkers('pr');" title="Toggle property" ></td>
+                                            <td style="background:#000000" title="Toggle Traffic Management  Markers"><INPUT ID="trCheckBox" TYPE="checkbox" checked onclick="switchMarkers('tr');" title="Toggle traffic management" ></td>
+                                            <td style="background:#ff0000" title="Toggle Safety / Risk / Fire Management  Markers"><INPUT ID="srCheckBox" TYPE="checkbox" checked onclick="switchMarkers('sr');" title="Toggle safety / risk / fire" ></td>
+                                            <td style="background:#fe940a" title="Toggle Maintenance Mechanical Markers"><INPUT ID="maCheckBox" TYPE="checkbox" checked onclick="switchMarkers('ma');" title="Toggle mech. maintenance" ></td>
+                                            <td style="background:#ffff00" title="Toggle Civil Maintanence Markers"><INPUT ID="mcCheckBox" TYPE="checkbox" checked onclick="switchMarkers('mc');" title="Toggle civil maintenance" ></td>
+                                            <td style="background:#00cc00" title="Toggle Housekeeping Markers"><INPUT ID="hkCheckBox" TYPE="checkbox" checked onclick="switchMarkers('hk');" title="Toggle housekeeping" ></td>
+                                            <td style="background:#009000" title="Toggle Environment Markers"><INPUT ID="enCheckBox" TYPE="checkbox" checked onclick="switchMarkers('en');" title="Toggle environment"></td>
+                                            <td style="background:#0df1ff" title="Toggle Health Markers"><INPUT ID="heCheckBox" TYPE="checkbox" checked onclick="switchMarkers('he');" title="Toggle health" ></td>
+                                            <td style="background:#333dc7" title="Toggle Marine Maintanence Markers"><INPUT ID="mmCheckBox" TYPE="checkbox" checked onclick="switchMarkers('mm');" title="Toggle marine maintenance"></td>
+                                            <td style="background:#ff33a6" title="Toggle Electrical Maintanence Markers"><INPUT ID="meCheckBox" TYPE="checkbox" checked onclick="switchMarkers('me');" title="Toggle elec. maintenance"></td>
+                                            <td style="background:#8a1ec7" title="Toggle Security Markers"><INPUT ID="seCheckBox" TYPE="checkbox" checked onclick="switchMarkers('se');" title="Toggle security"></td>
                                         </table>
                                     </td>
                                     <td align=right width=30 style="min-width:30px">
                                         <table cellpadding=1 cellspacing=0 border=1 style="border-collapse:collapse;border:1px solid #ffffff;">
-                                            <td style="background:url('images/toggle_all.png')" align=center title="Toggle All Markers"><INPUT ID="toggleCheckBox" TYPE="checkbox" checked onclick="toggleAllMarkers();" title="Toggle all markers" onmouseover="updateToolTip('Toggle All Markers')" onmouseout="document.all.toolTip.innerHTML= ''"></td>
+                                            <td style="background:url('images/toggle_all.png')" align=center title="Toggle All Markers"><INPUT ID="toggleCheckBox" TYPE="checkbox" checked onclick="toggleAllMarkers();" title="Toggle all markers" ></td>
                                         </table>
                                     </td>
                                 </table>
                             </td>
                             <td bgcolor="#1c1c1c" valign=top align=right width=20 style="min-width:20px">
-                                <a href="#" onclick="switchMarkerLegend();this.blur()"><i class="fa fa-map-marker fa-fw" style="color:#ffffff" title="Toggle Marker Legend" onmouseover="updateToolTip('Toggle marker legend')" onmouseout="document.all.toolTip.innerHTML= ''"></i></a>
+                                <a href="#" onclick="switchMarkerLegend();this.blur()"><i class="fa fa-map-marker fa-fw" style="color:#ffffff" title="Toggle Marker Legend" ></i></a>
                             </td>
                             <td bgcolor="#1c1c1c" valign=middle align=right width=25 style="min-width:25px">
-                                <a href="#" id="newCaseIcon" onclick="document.getElementById('RUS').innerHTML = 'ARE YOU SURE?';switchNewCaseMarker('icon',this.id);this.blur()"><i id="addCase" class="fa fa-plus-square-o fa-lg fa-fw" style="color:#ffffff" title="Add a new case ..." onmouseover="updateToolTip(this.title)" onmouseout="document.all.toolTip.innerHTML= ''"></i></a>
+                                <a href="#" id="newCaseIcon" onclick="document.getElementById('RUS').innerHTML = 'ARE YOU SURE?';switchNewCaseMarker('icon',this.id);this.blur()"><i id="addCase" class="fa fa-plus-square-o fa-lg fa-fw" style="color:#ffffff" title="Add a new case ..." ></i></a>
                             </td>
                             <td bgcolor="#1c1c1c" valign=middle align=right><font style="font: 10pt 'arial'; color:#FFFFFF;"><span id="toolTip"></span></font>&nbsp;</td>
                         </tr>
