@@ -14,7 +14,10 @@ if(isset($_POST['prob_exp']))  {  $prob_exp = $_POST['prob_exp'];  }  else if(is
 if(isset($_POST['GPS']))  {  $GPS = $_POST['GPS'];  }  else if(isset($_GET['GPS']))  {  $GPS = $_GET['GPS'];  } else  {  $GPS = "";  }
 
 
-$connectionID = mysqli_connect('localhost', 'www', '', 'siyaleader_dbnports_live') or die ("Unable to connect to database.");
+//$connectionID = mysqli_connect('localhost', 'www',null, 'siyaleader_dbnports_live') or die ("Unable to connect to database.");
+
+ $connectionID = mysqli_connect('localhost', 'root','elie', 'port') or die ("Unable to connect to database.");
+
 
 if($ACTION == "")
 {
@@ -258,11 +261,6 @@ boxContent += "</tr></table>";
 </body>
 
 </html>
-
-
-
-
-
 
 
 <?php
