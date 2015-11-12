@@ -301,7 +301,7 @@ while($row = mysqli_fetch_row($result)) {
                             SELECT
                                  `created_at`
                             FROM
-                                `caseactivities`
+                                `caseActivities`
                             WHERE
                                 `caseId` = $ID
                             ORDER BY
