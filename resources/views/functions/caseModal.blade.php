@@ -672,8 +672,13 @@
 
 
 
-   function launchCaseModal(id)
+   function launchCaseModal(id,modal)
     {
+
+      if (modal == 1) {
+        $('#modalCase').modal('show');
+      }
+
 
       var options = {
           resizable : false,

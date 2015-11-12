@@ -1,10 +1,14 @@
 @extends('master')
 @section('content')
 
+
 @include('cases.profile')
 @include('cases.refer')
+@include('cases.closeRequest')
+@include('addressbook.list')
+@include('addressbook.add')
 @include('casenotes.add')
-
+@include('casefiles.add')
 
 
 <!-- Breadcrumb -->
@@ -53,8 +57,13 @@
 @endsection
 
 @section('footer')
+@include('functions.caseModal')
 <script>
-   $(document).ready(function() {
+
+
+
+
+$(document).ready(function() {
 
 
     $("#caseReporter").tokenInput("getContacts",{tokenLimit:1});
