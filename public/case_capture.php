@@ -4,7 +4,19 @@ if(isset($_POST['ACTION']))  {  $ACTION = $_POST['ACTION'];  }  else if(isset($_
 if(isset($_POST['ccg_nam']))  {  $ccg_nam = $_POST['ccg_nam'];  }  else if(isset($_GET['ccg_nam']))  {  $ccg_nam = $_GET['ccg_nam'];  } else  {  $ccg_nam = "";  }
 if(isset($_POST['ccg_sur']))  {  $ccg_sur = $_POST['ccg_sur'];  }  else if(isset($_GET['ccg_sur']))  {  $ccg_sur = $_GET['ccg_sur'];  } else  {  $ccg_sur = "";  }
 if(isset($_POST['ccg_mob']))  {  $ccg_mob = $_POST['ccg_mob'];  }  else if(isset($_GET['ccg_mob']))  {  $ccg_mob = $_GET['ccg_mob'];  } else  {  $ccg_mob = "";  }
-if(isset($_POST['prob_mun']))  {  $prob_mun = $_POST['prob_mun'];  }  else if(isset($_GET['prob_mun']))  {  $prob_mun = $_GET['prob_mun'];  } else  {  $prob_mun = "";  }
+
+
+if(isset($_POST['precinct']))  {
+
+	$precinct = $_POST['precinct'];
+
+}  else if(isset($_GET['precinct']))  {
+
+		$precinct = $_GET['precinct'];
+ } else  {
+ 		$precinct = "";
+
+ }
 
 
 if(isset($_POST['category']))  {
@@ -83,15 +95,20 @@ if(isset($_POST['description']))  {
 
 if(isset($_POST['GPS']))  {
 
-	$GPS = $_POST['GPS'];
+	$GPS    = explode(',',$_POST['GPS']);
+	$gps_lat = $GPS[0];
+	$gps_lng = $GPS[1];
 
 }  else if(isset($_GET['GPS']))  {
 
-	$GPS = $_GET['GPS'];
+	$GPS    = explode(',',$_GET['GPS']);
+	$gps_lat = $GPS[0];
+	$gps_lng = $GPS[1];
 
 } else  {
 
-	$GPS = "";
+	$gps_lat = "";
+	$gps_lng = "";
 
 }
 
@@ -193,14 +210,14 @@ function toSentenceCase (val)
 		</tr><tr style="font: 11pt 'Arial';color:#ffffff">
 
 			<td valign=middle>
-				<select class="formField" id="prob_mun" name="prob_mun">
+				<select class="formField" id="precinct" name="precinct">
 					<option id="#ffffff" value=""> Please select ...
 <?php
 					$precSql = "select id, name from municipalities order by name asc";
 					$precResult = mysqli_query($connectionID, $precSql) or die ("Couldn't query precinct/municipalities DB ... ...");
 					while($row = mysqli_fetch_row($precResult))
 						{
-							echo "<option id='" .$row[0]. "' value='" .$row[0]. "'> " .$row[1];
+							echo "<option value='" .$row[0]. "'> " .$row[1];
 						}
 ?>
 				</select>
@@ -250,7 +267,7 @@ function toSentenceCase (val)
 		</tr>
 	</table>
 
-	<input type=hidden name="priority" id="priority" value="1">
+	<input type=hidden name="priority" id="priority" value="Normal">
 	<input type=hidden name="severity" id="severity" value="5">
 </form>
 
@@ -276,15 +293,23 @@ if($ACTION == "SUBMITCASE")
 									`sub_category`,
 									`sub_sub_category`,
 									`priority`,
-									`description`
+									`description`,
+									`precinct`,
+									`gps_lng`,
+									`gps_lat`,
+									`created_at`
 
 								)  values (
 
-											'$category',
-											'$sub_category',
-											'$sub_sub_category',
-											'$priority',
-											'$description'
+									'$category',
+									'$sub_category',
+									'$sub_sub_category',
+									'$priority',
+									'$description',
+									'$precinct',
+									'$gps_lng',
+									'$gps_lat',
+									 NOW()
 
 								)
             ";

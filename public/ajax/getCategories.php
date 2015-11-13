@@ -11,6 +11,7 @@ if($Action == "getSubCats")
 		$Category = $_GET['Category'];
 		$sql = "
 					SELECT
+					    `id`,
 						`name`
 					FROM
 						`sub-categories`
@@ -24,7 +25,7 @@ if($Action == "getSubCats")
 		$subCats = array();
 		while($row = mysqli_fetch_row($result))
 			{
-				$subCats[]=array($row[0]);
+				$subCats[$row[0]]=array($row[1]);
 			}
 		print json_encode($subCats);
 	}
@@ -34,19 +35,12 @@ if($Action == "getSubSubCats")
 		$subCategory = $_GET['subCategory'];
 		$sql         = "
 							SELECT
+							    `id`,
 								`name`
 							FROM
 								`sub-sub-categories`
 							WHERE
-								`sub_category` =
-												(
-													SELECT
-															`id`
-													FROM
-															`sub-categories`
-													WHERE
-															`name` = '{$subCategory}'
-												)
+								`sub_category` = '{$subCategory}'
 
 							ORDER by `name` ASC
 						";
@@ -54,7 +48,7 @@ if($Action == "getSubSubCats")
 		$subSubCats  = array();
 		while($row = mysqli_fetch_row($result))
 		{
-			$subSubCats[]=array($row[0]);
+			$subSubCats[$row[0]]=array($row[1]);
 		}
 		print json_encode($subSubCats);
 	}

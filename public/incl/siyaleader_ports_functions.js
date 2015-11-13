@@ -7,8 +7,9 @@ $(document).ready(function(){
 		$('#sub_category').empty();
 		$('#sub_sub_category').empty();
 		if(result != "") $('#sub_category').append("<option value='0'>Please select ...</option><BR>");
-		$.each(result, function(element, element) {
-			$('#sub_category').append("<option value="+ element +">" + element + "</option><BR>");
+		$.each(result, function(element, value) {
+
+			$('#sub_category').append("<option value="+ element +">" + value + "</option><BR>");
 			});
 		}});
 	});
@@ -17,8 +18,9 @@ $(document).ready(function(){
 	$.ajax({ dataType: "json",url:"ajax/getCategories.php?Action=getSubSubCats&subCategory=" +$(this).val()+ "", success: function(result){
 		$('#sub_sub_category').empty();
 		if(result != "") $('#sub_sub_category').append("<option value='0'>Please select ...</option><BR>");
-		$.each(result, function(element, element) {
-			$('#sub_sub_category').append("<option value="+ element +">" + element + "</option><BR>");
+		$.each(result, function(element, value) {
+
+			$('#sub_sub_category').append("<option value="+ element +">" + value  + "</option><BR>");
 			});
 		}});
 	});
@@ -606,7 +608,7 @@ function submitCaptureForm (map_center, map_zoom)
 	{
 		capture_map_center = map_center;
 		capture_map_zoom = map_zoom;
-		if(iframeDoc.getElementById('ccg_nam').value == "" || iframeDoc.getElementById('ccg_sur').value == "" || iframeDoc.getElementById('ccg_mob').value == "" || iframeDoc.getElementById('prob_mun').value == "" || iframeDoc.getElementById('category').value == "" || iframeDoc.getElementById('sub_category').value == "")
+		if(iframeDoc.getElementById('ccg_nam').value == "" || iframeDoc.getElementById('ccg_sur').value == "" || iframeDoc.getElementById('ccg_mob').value == "" || iframeDoc.getElementById('precinct').value == "" || iframeDoc.getElementById('category').value == "" || iframeDoc.getElementById('sub_category').value == "")
 			{
 				alert("WARNING ...\n\nPlease complete all the fields in the form ...");
 				return;
