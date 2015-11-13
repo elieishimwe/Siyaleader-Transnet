@@ -1,24 +1,24 @@
 // (C) Copyright 2015 - Rupert Meyer <rupert@cooluma.co.za> - All Rights Reserved
 
 $(document).ready(function(){
-	$("#prob_category").change(function(){
-	setCaptureBorder(document.getElementById('prob_category').options[document.getElementById('prob_category').selectedIndex].id);
+	$("#category").change(function(){
+	setCaptureBorder(document.getElementById('category').options[document.getElementById('category').selectedIndex].id);
 	$.ajax({ dataType: "json",url:"ajax/getCategories.php?Action=getSubCats&Category=" +$(this).val()+ "", success: function(result){
-		$('#prob_subcategory').empty();
-		$('#prob_sub_sub_category').empty();
-		if(result != "") $('#prob_subcategory').append("<option value='0'>Please select ...</option><BR>");
+		$('#sub_category').empty();
+		$('#sub_sub_category').empty();
+		if(result != "") $('#sub_category').append("<option value='0'>Please select ...</option><BR>");
 		$.each(result, function(element, element) {
-			$('#prob_subcategory').append("<option value="+ element +">" + element + "</option><BR>");
+			$('#sub_category').append("<option value="+ element +">" + element + "</option><BR>");
 			});
 		}});
 	});
 
-	$("#prob_subcategory").change(function(){
+	$("#sub_category").change(function(){
 	$.ajax({ dataType: "json",url:"ajax/getCategories.php?Action=getSubSubCats&subCategory=" +$(this).val()+ "", success: function(result){
-		$('#prob_sub_sub_category').empty();
-		if(result != "") $('#prob_sub_sub_category').append("<option value='0'>Please select ...</option><BR>");
+		$('#sub_sub_category').empty();
+		if(result != "") $('#sub_sub_category').append("<option value='0'>Please select ...</option><BR>");
 		$.each(result, function(element, element) {
-			$('#prob_sub_sub_category').append("<option value="+ element +">" + element + "</option><BR>");
+			$('#sub_sub_category').append("<option value="+ element +">" + element + "</option><BR>");
 			});
 		}});
 	});
@@ -606,7 +606,7 @@ function submitCaptureForm (map_center, map_zoom)
 	{
 		capture_map_center = map_center;
 		capture_map_zoom = map_zoom;
-		if(iframeDoc.getElementById('ccg_nam').value == "" || iframeDoc.getElementById('ccg_sur').value == "" || iframeDoc.getElementById('ccg_mob').value == "" || iframeDoc.getElementById('prob_mun').value == "" || iframeDoc.getElementById('prob_category').value == "" || iframeDoc.getElementById('prob_subcategory').value == "")
+		if(iframeDoc.getElementById('ccg_nam').value == "" || iframeDoc.getElementById('ccg_sur').value == "" || iframeDoc.getElementById('ccg_mob').value == "" || iframeDoc.getElementById('prob_mun').value == "" || iframeDoc.getElementById('category').value == "" || iframeDoc.getElementById('sub_category').value == "")
 			{
 				alert("WARNING ...\n\nPlease complete all the fields in the form ...");
 				return;

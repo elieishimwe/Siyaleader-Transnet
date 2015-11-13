@@ -1,17 +1,99 @@
 <?php
 
 if(isset($_POST['ACTION']))  {  $ACTION = $_POST['ACTION'];  }  else if(isset($_GET['ACTION']))  {  $ACTION = $_GET['ACTION'];  } else  {  $ACTION = "";  }
-
 if(isset($_POST['ccg_nam']))  {  $ccg_nam = $_POST['ccg_nam'];  }  else if(isset($_GET['ccg_nam']))  {  $ccg_nam = $_GET['ccg_nam'];  } else  {  $ccg_nam = "";  }
 if(isset($_POST['ccg_sur']))  {  $ccg_sur = $_POST['ccg_sur'];  }  else if(isset($_GET['ccg_sur']))  {  $ccg_sur = $_GET['ccg_sur'];  } else  {  $ccg_sur = "";  }
 if(isset($_POST['ccg_mob']))  {  $ccg_mob = $_POST['ccg_mob'];  }  else if(isset($_GET['ccg_mob']))  {  $ccg_mob = $_GET['ccg_mob'];  } else  {  $ccg_mob = "";  }
 if(isset($_POST['prob_mun']))  {  $prob_mun = $_POST['prob_mun'];  }  else if(isset($_GET['prob_mun']))  {  $prob_mun = $_GET['prob_mun'];  } else  {  $prob_mun = "";  }
-if(isset($_POST['prob_category']))  {  $prob_category = $_POST['prob_category'];  }  else if(isset($_GET['prob_category']))  {  $prob_category = $_GET['prob_category'];  } else  {  $prob_category = "";  }
-if(isset($_POST['prob_subcategory']))  {  $prob_subcategory = $_POST['prob_subcategory'];  }  else if(isset($_GET['prob_subcategory']))  {  $prob_subcategory = $_GET['prob_subcategory'];  } else  {  $prob_subcategory = "";  }
-if(isset($_POST['prob_sub_sub_category']))  {  $prob_sub_sub_category = $_POST['prob_sub_sub_category'];  }  else if(isset($_GET['prob_sub_sub_category']))  {  $prob_sub_sub_category = $_GET['prob_sub_sub_category'];  } else  {  $prob_sub_sub_category = "";  }
-if(isset($_POST['prob_priority']))  {  $prob_priority = $_POST['prob_priority'];  }  else if(isset($_GET['prob_priority']))  {  $prob_priority = $_GET['prob_priority'];  } else  {  $prob_priority = "";  }
-if(isset($_POST['prob_exp']))  {  $prob_exp = $_POST['prob_exp'];  }  else if(isset($_GET['prob_exp']))  {  $prob_exp = $_GET['prob_exp'];  } else  {  $prob_exp = "";  }
-if(isset($_POST['GPS']))  {  $GPS = $_POST['GPS'];  }  else if(isset($_GET['GPS']))  {  $GPS = $_GET['GPS'];  } else  {  $GPS = "";  }
+
+
+if(isset($_POST['category']))  {
+
+	$category = $_POST['category'];
+
+}  else if(isset($_GET['category']))  {
+
+	$category = $_GET['category'];
+
+ } else  {
+
+ 	$category = "";
+}
+
+
+
+if(isset($_POST['sub_category']))  {
+
+	$sub_category = $_POST['sub_category'];
+
+}  else if(isset($_GET['sub_category']))  {
+
+	$sub_category = $_GET['sub_category'];
+
+} else  {
+
+	$sub_category = "";
+}
+
+
+if(isset($_POST['sub_sub_category']))  {
+
+	$sub_sub_category = $_POST['sub_sub_category'];
+
+}  else if(isset($_GET['sub_sub_category']))  {
+
+	$sub_sub_category = $_GET['sub_sub_category'];
+
+} else  {
+
+	$sub_sub_category = "";
+}
+
+
+
+if(isset($_POST['priority']))  {
+
+	$priority = $_POST['priority'];
+
+}  else if(isset($_GET['priority']))  {
+
+	$priority = $_GET['priority'];
+
+} else  {
+
+	$priority = "";
+}
+
+
+
+if(isset($_POST['description']))  {
+
+	$description = $_POST['description'];
+
+}  else if(isset($_GET['description']))  {
+
+	$description = $_GET['description'];
+
+} else  {
+
+	$description = "";
+
+}
+
+
+if(isset($_POST['GPS']))  {
+
+	$GPS = $_POST['GPS'];
+
+}  else if(isset($_GET['GPS']))  {
+
+	$GPS = $_GET['GPS'];
+
+} else  {
+
+	$GPS = "";
+
+}
 
 
 //$connectionID = mysqli_connect('localhost', 'www',null, 'siyaleader_dbnports_live') or die ("Unable to connect to database.");
@@ -126,14 +208,14 @@ function toSentenceCase (val)
 		</tr><tr style="font: 11pt 'Arial';color:#ffffff">
 
 			<td valign=middle>
-				<select class="formField" id="prob_category" name="prob_category">
+				<select class="formField" id="category" name="category">
 					<option id="#ffffff" value=""> Please select ...
 <?php
 					$catSql = "select * from categories order by name asc";
 					$catResult = mysqli_query($connectionID, $catSql) or die ("Couldn't query categories DB ... ...");
 					while($row = mysqli_fetch_row($catResult))
 						{
-							echo "<option id='" .$row[5]. "' value='" .$row[0]. "'> " .$row[2];
+							echo "<option id='" .$row[0]. "' value='" .$row[0]. "'> " .$row[2];
 						}
 ?>
 				</select>
@@ -141,18 +223,18 @@ function toSentenceCase (val)
 		</tr><tr style="font: 11pt 'Arial';color:#ffffff">
 
 			<td valign=middle>
-				<select class="formField" id="prob_subcategory" name="prob_subcategory">
+				<select class="formField" id="sub_category" name="sub_category">
 				</select>
 			</td>
 		</tr><tr style="font: 11pt 'Arial';color:#ffffff">
 
 			<td valign=middle>
-				<select class="formField" id="prob_sub_sub_category" name="prob_sub_sub_category">
+				<select class="formField" id="sub_sub_category" name="sub_sub_category">
 				</select>
 			</td>
 		</tr><tr style="font: 11pt 'Arial';color:#ffffff">
 			<td valign=middle>
-			 	<textarea name="prob_exp" class="formField" wrap="physical" style="resize:none;height:100px;text-align:left" placeholder="Case details ..." onchange="this.value=toSentenceCase(this.value)"></textarea>
+			 	<textarea name="description" class="formField" wrap="physical" style="resize:none;height:100px;text-align:left" placeholder="Case details ..." onchange="this.value=toSentenceCase(this.value)"></textarea>
 			</td>
 		</tr><tr style="font: 11pt 'Arial';color:#ffffff">
 			<td valign=middle>
@@ -168,7 +250,7 @@ function toSentenceCase (val)
 		</tr>
 	</table>
 
-	<input type=hidden name="prob_priority" id="prob_priority" value="Urgent">
+	<input type=hidden name="priority" id="priority" value="1">
 	<input type=hidden name="severity" id="severity" value="5">
 </form>
 
@@ -184,36 +266,57 @@ function toSentenceCase (val)
 if($ACTION == "SUBMITCASE")
 {
 
-	$sql = "insert into `siyaleader_dbnports_live`.`ccg_rap` (`ccg_nam`, `ccg_sur`, `ccg_mob`, `prob_mun`, `prob_category`, `prob_subcategory`, `prop_sub_sub_category`, `prob_priority`, `prob_exp`, `GPS`, `submit_date`, `created_at`)  values ('$ccg_nam', '$ccg_sur', '$ccg_mob', '$prob_mun', '$prob_category', '$prob_subcategory', '$prob_sub_sub_category', '$prob_priority', '$prob_exp', '$GPS',now(),now())";
+	$sql = "
+				INSERT
+					INTO
+						`cases`
+								(
 
-	$result = mysqli_query($connectionID, $sql) or die ("Couldn't insert into problems table ... ...");
+									`category`,
+									`sub_category`,
+									`sub_sub_category`,
+									`priority`,
+									`description`
+
+								)  values (
+
+											'$category',
+											'$sub_category',
+											'$sub_sub_category',
+											'$priority',
+											'$description'
+
+								)
+            ";
+
+	$result    = mysqli_query($connectionID, $sql) or die ("Couldn't insert into problems table ... ...");
 	$newCaseId = mysqli_insert_id($connectionID);
 
 	// $sql = "select Position from siyaleader_dbnports_live.users where cellphone = '$ccg_mob'";
 
-	$pos_sql = "select name from `siyaleader_dbnports_live`.`positions` where `id` in (select position from `siyaleader_dbnports_live`.`users` where `cellphone` = '$ccg_mob')";
+	//$pos_sql = "select name from `siyaleader_dbnports_live`.`positions` where `id` in (select position from `siyaleader_dbnports_live`.`users` where `cellphone` = '$ccg_mob')";
 // echo $pos_sql;
-	$pos_result = mysqli_query($connectionID, $pos_sql) or die ("Couldn't query users table ... ...");
+	/*$pos_result = mysqli_query($connectionID, $pos_sql) or die ("Couldn't query users table ... ...");
 	if($row = mysqli_fetch_row($pos_result))
 			{
 				$Position = $row[0];
 			}
 	 else 	{
 				$Position = "Unregistered";
-			}
+			}*/
 
-	if($prob_category == "Maintenance (Civil)")  {  $imageCategory = "mc";   $infoBoxBorder = "#ffff00";   }
-	if($prob_category == "Maintenance (Electrical)")  {  $imageCategory = "me";   $infoBoxBorder = "#ff33a6";  }
-	if($prob_category == "Maintenance (Mechanical)")  {  $imageCategory = "ma";   $infoBoxBorder = "#fe940b";  }
-	if($prob_category == "Maintenance (Marine)")  {  $imageCategory = "mm";   $infoBoxBorder = "#333dc7";  }
-	if($prob_category == "House Keeping")  {  $imageCategory = "hk";   $infoBoxBorder = "#00ee00";  }
-	if($prob_category == "Traffic Management")  {  $imageCategory = "tr";  $infoBoxBorder = "#0a0c28";  }
-	if($prob_category == "Environment")  {  $imageCategory = "en";   $infoBoxBorder = "#009000";  }
-	if($prob_category == "Health")  {  $imageCategory = "he";   $infoBoxBorder = "#0df1ff";  }
-	if($prob_category == "Port Operations Centre")  {  $imageCategory = "po";   $infoBoxBorder = "#e1e1e1";  }
-	if($prob_category == "Property")  {  $imageCategory = "pr";   $infoBoxBorder = "#999999";  }
-	if($prob_category == "Safety-Risk-Fire")  {  $imageCategory = "sr";   $infoBoxBorder = "#ff0000";  }
-	if($prob_category == "Security")  {  $imageCategory = "se";   $infoBoxBorder = "#8a1ec7";  }
+	if($category == "Maintenance (Civil)")  {  $imageCategory = "mc";   $infoBoxBorder = "#ffff00";   }
+	if($category == "Maintenance (Electrical)")  {  $imageCategory = "me";   $infoBoxBorder = "#ff33a6";  }
+	if($category == "Maintenance (Mechanical)")  {  $imageCategory = "ma";   $infoBoxBorder = "#fe940b";  }
+	if($category == "Maintenance (Marine)")  {  $imageCategory = "mm";   $infoBoxBorder = "#333dc7";  }
+	if($category == "House Keeping")  {  $imageCategory = "hk";   $infoBoxBorder = "#00ee00";  }
+	if($category == "Traffic Management")  {  $imageCategory = "tr";  $infoBoxBorder = "#0a0c28";  }
+	if($category == "Environment")  {  $imageCategory = "en";   $infoBoxBorder = "#009000";  }
+	if($category == "Health")  {  $imageCategory = "he";   $infoBoxBorder = "#0df1ff";  }
+	if($category == "Port Operations Centre")  {  $imageCategory = "po";   $infoBoxBorder = "#e1e1e1";  }
+	if($category == "Property")  {  $imageCategory = "pr";   $infoBoxBorder = "#999999";  }
+	if($category == "Safety-Risk-Fire")  {  $imageCategory = "sr";   $infoBoxBorder = "#ff0000";  }
+	if($category == "Security")  {  $imageCategory = "se";   $infoBoxBorder = "#8a1ec7";  }
 
 	$newMarkerImage = "markers/" .$imageCategory. "_pen.png";
 ?>
