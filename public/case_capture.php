@@ -1,11 +1,18 @@
 <?php
 
+
+
+//$connectionID = mysqli_connect('localhost', 'www',null, 'siyaleader_dbnports_live') or die ("Unable to connect to database.");
+
+ $connectionID = mysqli_connect('localhost', 'root','elie', 'port') or die ("Unable to connect to database.");
+
+
 if(isset($_POST['ACTION']))  {  $ACTION = $_POST['ACTION'];  }  else if(isset($_GET['ACTION']))  {  $ACTION = $_GET['ACTION'];  } else  {  $ACTION = "";  }
 if(isset($_POST['ccg_nam']))  {  $ccg_nam = $_POST['ccg_nam'];  }  else if(isset($_GET['ccg_nam']))  {  $ccg_nam = $_GET['ccg_nam'];  } else  {  $ccg_nam = "";  }
 if(isset($_POST['ccg_sur']))  {  $ccg_sur = $_POST['ccg_sur'];  }  else if(isset($_GET['ccg_sur']))  {  $ccg_sur = $_GET['ccg_sur'];  } else  {  $ccg_sur = "";  }
 if(isset($_POST['ccg_mob']))  {  $ccg_mob = $_POST['ccg_mob'];  }  else if(isset($_GET['ccg_mob']))  {  $ccg_mob = $_GET['ccg_mob'];  } else  {  $ccg_mob = "";  }
 
-
+$status = "Pending";
 
 if(isset($_POST['userId']))  {
 
@@ -19,7 +26,7 @@ if(isset($_POST['userId']))  {
 					WHERE
 						`id` = '{$user}'
 				  ";
-	$deptResult = mysqli_query($connectionID, $deptSql) or die ("Couldn't query department DB ... ...");
+	$deptResult = mysqli_query($connectionID, $deptSql) or die ("Couldn't User DB ... ...");
 
 	while($rowDepartment = mysqli_fetch_row($deptResult)) {
 
@@ -71,6 +78,26 @@ if(isset($_POST['precinct']))  {
 if(isset($_POST['category']))  {
 
 	$category = $_POST['category'];
+
+
+	$catSql   = "
+					SELECT
+						`name`
+					FROM
+						`categories`
+					WHERE
+						`id` = '{$category}'
+				  ";
+	$catResult = mysqli_query($connectionID, $catSql) or die ("Couldn't query category DB ... ...");
+
+	while($rowCategory = mysqli_fetch_row($catResult)) {
+
+	  $categoryName = $rowCategory[0];
+
+	}
+
+
+
 
 }  else if(isset($_GET['category']))  {
 
@@ -161,10 +188,6 @@ if(isset($_POST['GPS']))  {
 
 }
 
-
-//$connectionID = mysqli_connect('localhost', 'www',null, 'siyaleader_dbnports_live') or die ("Unable to connect to database.");
-
- $connectionID = mysqli_connect('localhost', 'root','elie', 'port') or die ("Unable to connect to database.");
 
 
 if($ACTION == "")
@@ -356,7 +379,8 @@ if($ACTION == "SUBMITCASE")
 									`gps_lat`,
 									`created_at`,
 									`user`,
-									`department`
+									`department`,
+									`status`
 
 								)  values (
 
@@ -370,7 +394,8 @@ if($ACTION == "SUBMITCASE")
 									'$gps_lat',
 									 NOW(),
 									 '$user',
-									 '$department'
+									 '$department',
+									 '$status'
 
 								)
             ";
@@ -391,18 +416,18 @@ if($ACTION == "SUBMITCASE")
 				$Position = "Unregistered";
 			}*/
 
-	if($category == "Maintenance (Civil)")  {  $imageCategory = "mc";   $infoBoxBorder = "#ffff00";   }
-	if($category == "Maintenance (Electrical)")  {  $imageCategory = "me";   $infoBoxBorder = "#ff33a6";  }
-	if($category == "Maintenance (Mechanical)")  {  $imageCategory = "ma";   $infoBoxBorder = "#fe940b";  }
-	if($category == "Maintenance (Marine)")  {  $imageCategory = "mm";   $infoBoxBorder = "#333dc7";  }
-	if($category == "House Keeping")  {  $imageCategory = "hk";   $infoBoxBorder = "#00ee00";  }
-	if($category == "Traffic Management")  {  $imageCategory = "tr";  $infoBoxBorder = "#0a0c28";  }
-	if($category == "Environment")  {  $imageCategory = "en";   $infoBoxBorder = "#009000";  }
-	if($category == "Health")  {  $imageCategory = "he";   $infoBoxBorder = "#0df1ff";  }
-	if($category == "Port Operations Centre")  {  $imageCategory = "po";   $infoBoxBorder = "#e1e1e1";  }
-	if($category == "Property")  {  $imageCategory = "pr";   $infoBoxBorder = "#999999";  }
-	if($category == "Safety-Risk-Fire")  {  $imageCategory = "sr";   $infoBoxBorder = "#ff0000";  }
-	if($category == "Security")  {  $imageCategory = "se";   $infoBoxBorder = "#8a1ec7";  }
+	if($categoryName == "Maintenance (Civil)")  {  $imageCategory = "mc";   $infoBoxBorder = "#ffff00";   }
+	if($categoryName == "Maintenance (Electrical)")  {  $imageCategory = "me";   $infoBoxBorder = "#ff33a6";  }
+	if($categoryName == "Maintenance (Mechanical)")  {  $imageCategory = "ma";   $infoBoxBorder = "#fe940b";  }
+	if($categoryName == "Maintenance (Marine)")  {  $imageCategory = "mm";   $infoBoxBorder = "#333dc7";  }
+	if($categoryName == "House Keeping")  {  $imageCategory = "hk";   $infoBoxBorder = "#00ee00";  }
+	if($categoryName == "Traffic Management")  {  $imageCategory = "tr";  $infoBoxBorder = "#0a0c28";  }
+	if($categoryName == "Environment")  {  $imageCategory = "en";   $infoBoxBorder = "#009000";  }
+	if($categoryName == "Health")  {  $imageCategory = "he";   $infoBoxBorder = "#0df1ff";  }
+	if($categoryName == "Port Operations Centre")  {  $imageCategory = "po";   $infoBoxBorder = "#e1e1e1";  }
+	if($categoryName == "Property")  {  $imageCategory = "pr";   $infoBoxBorder = "#999999";  }
+	if($categoryName == "Safety-Risk-Fire")  {  $imageCategory = "sr";   $infoBoxBorder = "#ff0000";  }
+	if($categoryName == "Security")  {  $imageCategory = "se";   $infoBoxBorder = "#8a1ec7";  }
 
 	$newMarkerImage = "markers/" .$imageCategory. "_pen.png";
 ?>
@@ -416,18 +441,18 @@ if($ACTION == "SUBMITCASE")
 var boxContent = "<div style='width:250px;height:200px;overflow-y:auto;overflow-x:hidden'>";
 boxContent += "<table border=0 style='color:#ffd40e;width:235px' cellpadding=2 cellspacing=0>";
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Case No :</B></td><td align='left'><?php echo $newCaseId; ?></td></tr>";
-boxContent += "<tr><td align='left' valign='top' nowrap><B>GPS :</B></td><td align='left'><?php echo $GPS; ?></td></tr>"; // GPS coll
+boxContent += "<tr><td align='left' valign='top' nowrap><B>GPS :</B></td><td align='left'><?php echo $_POST['GPS']; ?></td></tr>"; // GPS coll
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Submitted :</B></td><td align='left'><?php echo date('Y-m-d H:i:s'); ?></td></tr>"; // submit_date coll
-boxContent += "<tr><td align='left' valign='top' nowrap><B>Priority :</B></td><td align='left'><?php echo $prob_priority; ?></td></tr>"; // prob_priority coll
-boxContent += "<tr><td align='left' valign='top' nowrap><B>Category :</B></td><td align='left'><?php echo $prob_category; ?></td></tr>"; // prob_category coll
+boxContent += "<tr><td align='left' valign='top' nowrap><B>Priority :</B></td><td align='left'><?php echo $priority; ?></td></tr>"; // prob_priority coll
+boxContent += "<tr><td align='left' valign='top' nowrap><B>Category :</B></td><td align='left'><?php echo $category; ?></td></tr>"; // prob_category coll
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Status :</B></td><td align='left'>Pending</td></tr>"; // status coll
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Province :</B></td><td align='left'>KZN</td></tr>"; // Province coll
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Port :</B></td><td align='left'>Durban</td></tr>"; // District coll
-boxContent += "<tr><td align='left' valign='top' nowrap><B>Precinct :</B></td><td align='left'><?php echo $prob_mun; ?></td></tr>";  // Municipality coll
+boxContent += "<tr><td align='left' valign='top' nowrap><B>Precinct :</B></td><td align='left'><?php echo $precinct; ?></td></tr>";  // Municipality coll
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Reporter :</B></td><td align='left'><?php echo $ccg_nam. ' ' .$ccg_sur; ?></td></tr>";  // ccg_nam + ccg_sur
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Position :</B></td><td align='left'><?php echo $Position; ?></td></tr>";  // ccg_pos
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Contact No :</B></td><td align='left'><?php echo $ccg_mob; ?></td></tr>";  // ccg_mob
-boxContent += "<tr><td align='left' valign='top' nowrap><B>Description :</B></td><td align='left'><?php echo $prob_exp; ?></td></tr>";  // prob_exp
+boxContent += "<tr><td align='left' valign='top' nowrap><B>Description :</B></td><td align='left'><?php echo $description; ?></td></tr>";  // prob_exp
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Last Activity :</B></td><td align='left'><?php echo date('Y-m-d H:i:s'); ?></td></tr>";  // Last person to have interacted on CMC
 boxContent += "</table>";
 boxContent += "</div>";
@@ -443,7 +468,7 @@ boxContent += "</tr></table>";
 </script>
 
 </head>
-<body ONLOAD="parent.captureSuccess('<?php echo $newCaseId; ?>','<?php echo $newMarkerImage; ?>','<?php echo $GPS; ?>','<?php echo $infoBoxBorder; ?>','<?php echo $imageCategory; ?>',boxContent);location='case_capture.php';" TEXT="#ffffff" LINK="#ffffff" VLINK="#ffffff" ALINK="#ffffff" style="margin:0;overflow:hidden;margin-bottom:0;margin-left:0;margin-right:0;margin-top:0">
+<body ONLOAD="parent.captureSuccess('<?php echo $newCaseId; ?>','<?php echo $newMarkerImage; ?>','<?php echo $_POST['GPS']; ?>','<?php echo $infoBoxBorder; ?>','<?php echo $imageCategory; ?>',boxContent);location='case_capture.php';" TEXT="#ffffff" LINK="#ffffff" VLINK="#ffffff" ALINK="#ffffff" style="margin:0;overflow:hidden;margin-bottom:0;margin-left:0;margin-right:0;margin-top:0">
 
 <!-- ONLOAD="location='case_capture.php'" -->
 

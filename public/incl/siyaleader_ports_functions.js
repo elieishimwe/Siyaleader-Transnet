@@ -626,15 +626,61 @@ function submitCaptureForm (map_center, map_zoom)
 		document.getElementById('ruSure').className="animated bounceIn";
 	}
 
-function captureSuccess ()
+
+function captureSuccess (newCaseId,newMarkerImage,newMarkerCoords,infoBoxBorder,imageCategory,boxContent)
 	{
-		// alert(capture_map_center + " " + capture_map_zoom);
-		setTimeout(initialize, 4000);
-		setTimeout(function() { map.panTo(capture_map_center); }, 5000);
-		setTimeout(function() { map.setZoom(capture_map_zoom); }, 6000);
 
 
+	//	alert(newCaseId + "," + newMarkerImage + "," + newMarkerCoords + "," + infoBoxBorder + "\n\n" +boxContent);
+		var image = newMarkerImage;
+		eval("var co_ords_" + newCaseId + " = new google.maps.LatLng(" + newMarkerCoords + ")");
+
+		var boxText = document.createElement("div");
+			boxText.style.cssText = "border:2px solid " + infoBoxBorder + ";  margin-top: 0px; background: #1c1c1c; padding: 3px; box-shadow:4px 4px 4px #000000";
+			boxText.innerHTML = boxContent;
+
+			var infoBoxOptions = {
+		 		content: boxText
+				,disableAutoPan: false
+				,maxWidth: 0
+				,pixelOffset: new google.maps.Size(-134, 0)
+				,zIndex: null
+				,boxStyle: {
+			  		opacity: 1
+			  		,width: "268px"
+				 	}
+				,closeBoxMargin: "3px 3px 3px 3px"
+				,closeBoxURL: "images/closeX.png"
+				,infoBoxClearance: new google.maps.Size(1, 1)
+				,isHidden: false
+				,pane: "floatPane"
+				,enableEventPropagation: false
+				};
+
+				eval("var ib_" + newCaseId + " = new InfoBox(infoBoxOptions)");
+
+				eval("infoBoxArray.push(ib_" + newCaseId + ")");
+
+		eval("marker_" + newCaseId + " = new google.maps.Marker({ position: co_ords_" + newCaseId + ", map: map, icon: image, title:'Case Number: " + newCaseId + "',draggable:true })");
+
+		markerNew.setMap(null);
+		eval("marker_" + newCaseId + ".setAnimation(google.maps.Animation.BOUNCE)");
+		setTimeout("marker_" + newCaseId + ".setAnimation(null)", 3000);
+
+		eval("co_ords.push(co_ords_" + newCaseId + ")");
+
+		eval("markers.push(marker_" + newCaseId + ")");
+
+	//	eval("oms.addMarker(marker_" + newCaseId + ")");
+
+		eval(imageCategory + "Array.push(marker_" + newCaseId + ")");
+		eval(imageCategory + "PenArray.push(marker_" + newCaseId + ")");
+		eval("google.maps.event.addListener(marker_" + newCaseId + ", 'click', function() {  ib_" + newCaseId + ".open(map, marker_" + newCaseId + ");  })");
 	}
+
+
+
+
 
 function askConfirm (element,source)
 	{
