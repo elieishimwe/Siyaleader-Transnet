@@ -1,6 +1,9 @@
 // (C) Copyright 2015 - Rupert Meyer <rupert@cooluma.co.za> - All Rights Reserved
 
 $(document).ready(function(){
+
+	$("#addresses").tokenInput("getContacts");
+
 	$("#category").change(function(){
 	setCaptureBorder(document.getElementById('category').options[document.getElementById('category').selectedIndex].id);
 	$.ajax({ dataType: "json",url:"ajax/getCategories.php?Action=getSubCats&Category=" +$(this).val()+ "", success: function(result){

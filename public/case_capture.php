@@ -269,7 +269,16 @@ function toSentenceCase (val)
 			<td valign=top align=center nowrap style="font: 11pt 'Arial';color:#FFFFFF">
 				GPS COORDINATES<BR><input class="GPSField" type="text" id="GPS" name="GPS" title="GPS Coordinates" onfocus="this.blur()">
 			</td>
-		</tr><tr style="font: 11pt 'Arial';color:#ffffff">
+		</tr>
+
+		<tr style="font: 11pt 'Arial';color:#ffffff">
+
+			<td valign=middle>
+				<input type=text class="formField" id="ccg_mob" name="ccg_mob" style="text-align:center" placeholder="Reporter's Contact Number" onkeyup="checkInput(this)">
+			</td>
+		</tr>
+
+		<tr style="font: 11pt 'Arial';color:#ffffff">
 
 			<td valign=middle>
 				<input type=text class="formField" id="ccg_nam" name="ccg_nam" style="text-align:center" placeholder="Reporter's First Name" onchange="this.value = this.value.toTitleCase()">
@@ -279,12 +288,9 @@ function toSentenceCase (val)
 			<td valign=middle>
 				<input type=text class="formField" id="ccg_sur" name="ccg_sur" style="text-align:center" placeholder="Reporter's Surname" onchange="this.value = this.value.toTitleCase()">
 			</td>
-		</tr><tr style="font: 11pt 'Arial';color:#ffffff">
+		</tr>
 
-			<td valign=middle>
-				<input type=text class="formField" id="ccg_mob" name="ccg_mob" style="text-align:center" placeholder="Reporter's Contact Number" onkeyup="checkInput(this)">
-			</td>
-		</tr><tr style="font: 11pt 'Arial';color:#ffffff">
+		<tr style="font: 11pt 'Arial';color:#ffffff">
 
 			<td valign=middle>
 				<select class="formField" id="precinct" name="precinct">
