@@ -102,6 +102,8 @@ document.write("<div id='mapcontainer' style='height:100%;width:100%'>");
 $(document).ready(function(){
 
    var userID = $("#userID",window.parent.document).val();
+   $("#userID").val(userID);
+
 
 });
 
@@ -1134,7 +1136,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </div>
 
 <div id="caseCapture" style="opacity:0.9;padding:6px;border-radius:3px;position:absolute;right:10px;top:31px;background:#1c1c1c;align:center;z-index:11;display:none;box-shadow:4px 4px 4px #000000">
-
+    <input id="userID" type="hidden"/>
     <table border=0 cellpadding=0 cellspacing=0>
         <tr>
             <td colspan=2>

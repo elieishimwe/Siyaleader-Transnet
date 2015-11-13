@@ -6,6 +6,22 @@ if(isset($_POST['ccg_sur']))  {  $ccg_sur = $_POST['ccg_sur'];  }  else if(isset
 if(isset($_POST['ccg_mob']))  {  $ccg_mob = $_POST['ccg_mob'];  }  else if(isset($_GET['ccg_mob']))  {  $ccg_mob = $_GET['ccg_mob'];  } else  {  $ccg_mob = "";  }
 
 
+
+if(isset($_POST['userId']))  {
+
+	$user = $_POST['userId'];
+
+}  else if(isset($_GET['userId']))  {
+
+	$user = $_GET['userId'];
+
+ } else  {
+
+ 	$user = "";
+
+ }
+
+
 if(isset($_POST['precinct']))  {
 
 	$precinct = $_POST['precinct'];
@@ -134,6 +150,12 @@ if($ACTION == "")
 <script type="text/javascript" src="incl/siyaleader_ports_functions.js"></script>
 <script language=javascript>
 
+$(document).ready(function(){
+	var userID = $("#userID",window.parent.document).val();
+	$("#userId").val(userID);
+
+})
+
 String.prototype.toTitleCase = function(){
 var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|vs?\.?|via)$/i;
 return this.replace(/[A-Za-z0-9\u00C0-\u00FF]+[^\s-]*/g, function(match, index, title){
@@ -153,13 +175,13 @@ return match.charAt(0).toUpperCase() + match.substr(1);
 };
 
 function checkInput(ob)
-			{
-							var invalidChars = /[^0-9]/gi
-								 if(invalidChars.test(ob.value))
-												{
-        										ob.value = ob.value.replace(invalidChars,"");
-  										}
-			}
+{
+	var invalidChars = /[^0-9]/gi
+		 if(invalidChars.test(ob.value))
+						{
+						ob.value = ob.value.replace(invalidChars,"");
+					}
+}
 
 function toSentenceCase (val)
 		{
@@ -184,8 +206,7 @@ function toSentenceCase (val)
 <center>
 <form id="captureForm" action="case_capture.php" method="post" style="margin:0px;padding:0px;">
 <input type=hidden name=ACTION value="SUBMITCASE">
-
-
+<input type="hidden" name="userId" id="userId">
 
 <table id="captureContainer" border=0 cellpadding=4 cellspacing=0 style="font: 11pt 'Arial';color:#ffffff;border-collapse:collapse;border:1px solid #ffffff">
 		<tr>
@@ -297,7 +318,8 @@ if($ACTION == "SUBMITCASE")
 									`precinct`,
 									`gps_lng`,
 									`gps_lat`,
-									`created_at`
+									`created_at`,
+									`user`
 
 								)  values (
 
@@ -309,7 +331,8 @@ if($ACTION == "SUBMITCASE")
 									'$precinct',
 									'$gps_lng',
 									'$gps_lat',
-									 NOW()
+									 NOW(),
+									 '$user'
 
 								)
             ";
