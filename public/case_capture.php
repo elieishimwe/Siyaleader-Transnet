@@ -202,7 +202,9 @@ if($ACTION == "")
 <link rel="stylesheet" type="text/css" href="incl/animate.css">
 <link rel="stylesheet" type="text/css" href="incl/siyaleader_ports.css">
 <link rel="stylesheet" href="incl/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/token-input.css" >
 <script type="text/javascript" src="incl/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.tokeninput.js"></script>
 <script type="text/javascript" src="incl/siyaleader_ports_functions.js"></script>
 <script language=javascript>
 
@@ -274,19 +276,26 @@ function toSentenceCase (val)
 		<tr style="font: 11pt 'Arial';color:#ffffff">
 
 			<td valign=middle>
-				<input type=text class="formField" id="ccg_mob" name="ccg_mob" style="text-align:center" placeholder="Reporter's Contact Number" onkeyup="checkInput(this)">
+				<input type=text class="formField" id="cellphone" name="cellphone" style="text-align:center" placeholder="Reporter's Contact Number" onkeyup="checkInput(this)">
 			</td>
 		</tr>
 
 		<tr style="font: 11pt 'Arial';color:#ffffff">
 
 			<td valign=middle>
-				<input type=text class="formField" id="ccg_nam" name="ccg_nam" style="text-align:center" placeholder="Reporter's First Name" onchange="this.value = this.value.toTitleCase()">
+				<input type=text class="formField" id="cell" name="cell" style="text-align:center" placeholder="Reporter's Contact Number" onkeyup="checkInput(this)" disabled>
+			</td>
+		</tr>
+
+		<tr style="font: 11pt 'Arial';color:#ffffff">
+
+			<td valign=middle>
+				<input type=text class="formField" id="name" name="name" style="text-align:center" placeholder="Reporter's First Name" onchange="this.value = this.value.toTitleCase()" disabled>
 			</td>
 		</tr><tr style="font: 11pt 'Arial';color:#ffffff">
 
 			<td valign=middle>
-				<input type=text class="formField" id="ccg_sur" name="ccg_sur" style="text-align:center" placeholder="Reporter's Surname" onchange="this.value = this.value.toTitleCase()">
+				<input type=text class="formField" id="surname" name="surname" style="text-align:center" placeholder="Reporter's Surname" onchange="this.value = this.value.toTitleCase()" disabled>
 			</td>
 		</tr>
 

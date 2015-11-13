@@ -2,7 +2,7 @@
 
 $(document).ready(function(){
 
-	$("#addresses").tokenInput("getContacts");
+	$("#cellphone").tokenInput("getContacts");
 
 	$("#category").change(function(){
 	setCaptureBorder(document.getElementById('category').options[document.getElementById('category').selectedIndex].id);
