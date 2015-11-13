@@ -200,9 +200,9 @@ if($ACTION == "")
 <title>Siyaleader Ports Case Capture</title>
 <meta charset="utf-8" / http-equiv="X-UA-Compatible" content="IE=edge" />
 <link rel="stylesheet" type="text/css" href="incl/animate.css">
+<link rel="stylesheet" type="text/css" href="css/token-input.css" >
 <link rel="stylesheet" type="text/css" href="incl/siyaleader_ports.css">
 <link rel="stylesheet" href="incl/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="css/token-input.css" >
 <script type="text/javascript" src="incl/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.tokeninput.js"></script>
 <script type="text/javascript" src="incl/siyaleader_ports_functions.js"></script>
@@ -265,6 +265,7 @@ function toSentenceCase (val)
 <form id="captureForm" action="case_capture.php" method="post" style="margin:0px;padding:0px;">
 <input type=hidden name=ACTION value="SUBMITCASE">
 <input type="hidden" name="userId" id="userId">
+<input type="hidden" name="repID" id="repID">
 
 <table id="captureContainer" border=0 cellpadding=4 cellspacing=0 style="font: 11pt 'Arial';color:#ffffff;border-collapse:collapse;border:1px solid #ffffff">
 		<tr>
@@ -275,7 +276,7 @@ function toSentenceCase (val)
 
 		<tr style="font: 11pt 'Arial';color:#ffffff">
 
-			<td valign=middle>
+			<td valign=middle width="150px">
 				<input type=text class="formField" id="cellphone" name="cellphone" style="text-align:center" placeholder="Reporter's Contact Number" onkeyup="checkInput(this)">
 			</td>
 		</tr>

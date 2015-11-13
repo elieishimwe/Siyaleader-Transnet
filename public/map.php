@@ -10,8 +10,8 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" >
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="incl/animate.css">
-    <link rel="stylesheet" type="text/css" href="incl/siyaleader_ports.css">
     <link rel="stylesheet" type="text/css" href="css/token-input.css" >
+    <link rel="stylesheet" type="text/css" href="incl/siyaleader_ports.css">
     <link rel="stylesheet" type="text/css" href="incl/siyaleader_ports.css">
     <link rel="stylesheet" href="incl/font-awesome.min.css">
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwXS96_uM6y-6ZJZhSJGE87pO-qxpDp-Q&libraries=geometry,places"></script>

@@ -78,7 +78,14 @@ class AddressBookController extends Controller
         {
 
            foreach ($contacts as $contact) {
-           $data[]= array("name"=>"{$contact->FirstName} {$contact->Surname} <{$contact->email}","id" =>"{$contact->email}");
+           $data[]= array(
+                                "name"          => "{$contact->FirstName} {$contact->Surname} <{$contact->email}",
+                                "id"            => "{$contact->email}",
+                                "cellphone"     => "{$contact->cellphone}",
+                                "firstname"     => "{$contact->FirstName}",
+                                "userID"        => "{$contact->id}",
+                                "surname"       => "{$contact->Surname}"
+                        );
            }
 
 
@@ -92,7 +99,14 @@ class AddressBookController extends Controller
             ->get();
 
            foreach ($contacts as $contact) {
-           $data[] = array("name"=>"{$contact->name} {$contact->surname} <{$contact->username} < {$contact->position}","id" =>"{$contact->username}");
+           $data[] = array(
+                                "name"          => "{$contact->name} {$contact->surname} <{$contact->username} < {$contact->position}",
+                                "id"            => "{$contact->username}",
+                                "cellphone"     => "{$contact->cellphone}",
+                                "firstname"     => "{$contact->name}",
+                                "userID"        => "{$contact->id}",
+                                "surname"       => "{$contact->surname}"
+                           );
            }
 
         }
