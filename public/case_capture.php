@@ -11,9 +11,42 @@ if(isset($_POST['userId']))  {
 
 	$user = $_POST['userId'];
 
+	$deptSql    = "
+					SELECT
+						`department`
+					FROM
+						`users`
+					WHERE
+						`id` = '{$user}'
+				  ";
+	$deptResult = mysqli_query($connectionID, $deptSql) or die ("Couldn't query department DB ... ...");
+
+	while($rowDepartment = mysqli_fetch_row($deptResult)) {
+
+	  $department = $rowDepartment[0];
+
+	}
+
+
 }  else if(isset($_GET['userId']))  {
 
 	$user = $_GET['userId'];
+
+	$deptSql    = "
+					SELECT
+						`department`
+					FROM
+						`users`
+					WHERE
+						`id` = '{$user}'
+				  ";
+	$deptResult = mysqli_query($connectionID, $deptSql) or die ("Couldn't query department DB ... ...");
+
+	while($rowDepartment = mysqli_fetch_row($deptResult)) {
+
+	  $department = $rowDepartment[0];
+
+	}
 
  } else  {
 
@@ -237,9 +270,9 @@ function toSentenceCase (val)
 					$precSql = "select id, name from municipalities order by name asc";
 					$precResult = mysqli_query($connectionID, $precSql) or die ("Couldn't query precinct/municipalities DB ... ...");
 					while($row = mysqli_fetch_row($precResult))
-						{
-							echo "<option value='" .$row[0]. "'> " .$row[1];
-						}
+					{
+					  echo "<option value='" .$row[0]. "'> " .$row[1];
+					}
 ?>
 				</select>
 			</td>
@@ -304,6 +337,9 @@ function toSentenceCase (val)
 if($ACTION == "SUBMITCASE")
 {
 
+
+
+
 	$sql = "
 				INSERT
 					INTO
@@ -319,7 +355,8 @@ if($ACTION == "SUBMITCASE")
 									`gps_lng`,
 									`gps_lat`,
 									`created_at`,
-									`user`
+									`user`,
+									`department`
 
 								)  values (
 
@@ -332,7 +369,8 @@ if($ACTION == "SUBMITCASE")
 									'$gps_lng',
 									'$gps_lat',
 									 NOW(),
-									 '$user'
+									 '$user',
+									 '$department'
 
 								)
             ";
