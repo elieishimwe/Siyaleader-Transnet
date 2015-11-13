@@ -1151,8 +1151,6 @@
       $('#modalCase').modal('hide');
       $('#modalAddCaseFilesModal').modal('toggle');
 
-
-
     }
 
     function launchRequestCaseClosureModal()

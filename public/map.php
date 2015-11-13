@@ -23,7 +23,7 @@
 
 
 </head>
-<body bgcolor="#1c1c1c" onload="" TEXT="#C0C0C0" LINK="#ffffff" VLINK="#ffffff" ALINK="#ffffff" style="margin:0;overflow:hidden;margin-bottom:0;margin-left:0;margin-right:0;margin-top:0">
+<body bgcolor="#1c1c1c" onload="resetControllers();captureIframe=document.getElementById('newCaseCapture');iframeDoc=captureIframe.contentDocument || captureIframe.contentWindow.document;" TEXT="#C0C0C0" LINK="#ffffff" VLINK="#ffffff" ALINK="#ffffff" style="margin:0;overflow:hidden;margin-bottom:0;margin-left:0;margin-right:0;margin-top:0">
 
     <table cellpadding=0 cellspacing=0 style="width:100%;height:100%;border-collapse: collapse; border: 0px solid #1c1c1c">
 
@@ -99,6 +99,12 @@ document.write("<tr height=" + mapWindowHeight + ">");
 document.write("<td height=" + mapWindowHeight + ">");
 document.write("<div id='mapcontainer' style='height:100%;width:100%'>");
 
+$(document).ready(function(){
+
+   var userID = $("#userID",window.parent.document).val();
+
+});
+
 function initialize() {
 
 
@@ -167,9 +173,9 @@ function initialize() {
 
 <?php
 
-    $connectionID = mysqli_connect('localhost', 'www',null, 'siyaleader_dbnports_live') or die ("Unable to connect to database.");
+    //$connectionID = mysqli_connect('localhost', 'www',null, 'siyaleader_dbnports_live') or die ("Unable to connect to database.");
 
-    //$connectionID = mysqli_connect('localhost', 'root','elie', 'port') or die ("Unable to connect to database.");
+    $connectionID = mysqli_connect('localhost', 'root','elie', 'port') or die ("Unable to connect to database.");
     $sql          = "
                         SELECT
                             *
@@ -613,6 +619,7 @@ map = new google.maps.Map(document.getElementById('mapcontainer'), options);
 //End of Initialize Function
 
 google.maps.event.addDomListener(window, 'load', initialize);
+
 
 
 </script>

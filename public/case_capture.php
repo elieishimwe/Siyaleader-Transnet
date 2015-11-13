@@ -114,7 +114,7 @@ function toSentenceCase (val)
 				<select class="formField" id="prob_mun" name="prob_mun">
 					<option id="#ffffff" value=""> Please select ...
 <?php
-					$precSql = "select id, name from siyaleader_dbnports_live.municipalities order by name asc";
+					$precSql = "select id, name from municipalities order by name asc";
 					$precResult = mysqli_query($connectionID, $precSql) or die ("Couldn't query precinct/municipalities DB ... ...");
 					while($row = mysqli_fetch_row($precResult))
 						{
@@ -129,7 +129,7 @@ function toSentenceCase (val)
 				<select class="formField" id="prob_category" name="prob_category">
 					<option id="#ffffff" value=""> Please select ...
 <?php
-					$catSql = "select * from siyaleader_dbnports_live.categories order by name asc";
+					$catSql = "select * from categories order by name asc";
 					$catResult = mysqli_query($connectionID, $catSql) or die ("Couldn't query categories DB ... ...");
 					while($row = mysqli_fetch_row($catResult))
 						{
