@@ -245,27 +245,53 @@ while($row = mysqli_fetch_row($result)) {
             $Category = 0;
         }
 
-        $PhotoURL     = "http://41.216.130.6:8080/siyaleader-dbnports-mobileApp-api/port_backend/public/".$row[11];
-        $ReporterID   = $row[17];
-        $reporterSql  = "  SELECT
-                                `id`,
-                                `name`,
-                                `surname`,
-                                `position`,
-                                `cellphone`
-                            FROM
-                                    `users`
-                            WHERE
+        $PhotoURL      = "http://41.216.130.6:8080/siyaleader-dbnports-mobileApp-api/port_backend/public/".$row[11];
+        $ReporterID    = $row[17];
+        $isAddressbook = $row[15];
 
-                                `id` = '$ReporterID'
-                        ";
+        if ($isAddressbook == 0) {
+
+            $reporterSql  = "  SELECT
+                        `id`,
+                        `name`,
+                        `surname`,
+                        `position`,
+                        `cellphone`
+                    FROM
+                            `users`
+                    WHERE
+
+                        `id` = '$ReporterID'
+                ";
+
+        } else {
+
+
+
+            $reporterSql  = "  SELECT
+                        `id`,
+                        `FirstName`,
+                        `Surname`,
+                        `email`,
+                        `cellphone`
+                    FROM
+                            `addressbook`
+                    WHERE
+
+                        `id` = '$ReporterID'
+            ";
+
+
+
+        }
+
         $reporterResult    = mysqli_query($connectionID, $reporterSql) or die ("Couldn't query case users table ... ...");
 
         if($rowU = mysqli_fetch_row($reporterResult)){
 
             $Reporter   = $rowU[1]." ".$rowU[2];
             $Mobile     = $rowU[4];
-            $PositionId = $rowU[3];
+            $PositionId = ($isAddressbook == 0)?$rowU[3] : 1;
 
             $posSql         = "  SELECT `name` FROM `positions` WHERE `id` = {$PositionId} ";
             $positionResult = mysqli_query($connectionID, $posSql) or die ("Couldn't query case users table ... ...");
