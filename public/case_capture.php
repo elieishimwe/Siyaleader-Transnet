@@ -469,7 +469,6 @@ else {
 								)
             ";
 
-      var_dump($sqlt);
 
     $res       = mysqli_query($connectionID, $sqlt) or die ("Couldn't insert into Addressbook table ... ...");
 	$repID     = mysqli_insert_id($connectionID);
@@ -570,9 +569,9 @@ boxContent += "<tr><td align='left' valign='top' nowrap><B>Status :</B></td><td 
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Province :</B></td><td align='left'>KZN</td></tr>"; // Province coll
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Port :</B></td><td align='left'>Durban</td></tr>"; // District coll
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Precinct :</B></td><td align='left'><?php echo $precinct; ?></td></tr>";  // Municipality coll
-boxContent += "<tr><td align='left' valign='top' nowrap><B>Reporter :</B></td><td align='left'><?php echo $ccg_nam. ' ' .$ccg_sur; ?></td></tr>";  // ccg_nam + ccg_sur
+boxContent += "<tr><td align='left' valign='top' nowrap><B>Reporter :</B></td><td align='left'><?php echo $name. ' ' .$ccg_sur; ?></td></tr>";  // ccg_nam + ccg_sur
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Position :</B></td><td align='left'><?php echo $Position; ?></td></tr>";  // ccg_pos
-boxContent += "<tr><td align='left' valign='top' nowrap><B>Contact No :</B></td><td align='left'><?php echo $ccg_mob; ?></td></tr>";  // ccg_mob
+boxContent += "<tr><td align='left' valign='top' nowrap><B>Contact No :</B></td><td align='left'><?php echo $cellphone; ?></td></tr>";  // ccg_mob
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Description :</B></td><td align='left'><?php echo $description; ?></td></tr>";  // prob_exp
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Last Activity :</B></td><td align='left'><?php echo date('Y-m-d H:i:s'); ?></td></tr>";  // Last person to have interacted on CMC
 boxContent += "</table>";
