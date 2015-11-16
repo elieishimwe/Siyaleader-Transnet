@@ -1,11 +1,6 @@
 <?php
 
-
-
-$connectionID = mysqli_connect('localhost', 'www',null, 'siyaleader_dbnports_live') or die ("Unable to connect to database.");
-
- //$connectionID = mysqli_connect('localhost', 'root','elie', 'port') or die ("Unable to connect to database.");
-
+include 'config.php';
 
 if(isset($_POST['ACTION']))  {  $ACTION = $_POST['ACTION'];  }  else if(isset($_GET['ACTION']))  {  $ACTION = $_GET['ACTION'];  } else  {  $ACTION = "";  }
 
