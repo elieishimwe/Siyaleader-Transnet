@@ -14,7 +14,6 @@ $(document).ready(function(){
               if (results.length == 0)
               {
 
-              	alert(results.length);
                   $("#cell").removeAttr("disabled");
                   $("#name").removeAttr("disabled");
                   $("#surname").removeAttr("disabled");
@@ -30,73 +29,34 @@ $(document).ready(function(){
                     $("#cell").attr("disabled","disabled");
                     $("#name").attr("disabled","disabled");
                     $("#surname").attr("disabled","disabled");
-
                     $("#error_cellphone").html("");
-                    $("#error_title").html("");
-                    $("#error_language").html("");
-                    $("#error_province").html("");
-
-
-
+                    $("#error_name").html("");
+                    $("#error_surname").html("");
                     $("#cell").val(results.cellphone);
                     $("#name").val(results.firstname);
                     $("#surname").val(results.surname);
                     $("#repID").val(results.userID);
+                    $("#addressbook").val(results.addressbook);
 
 
 
                 }
                 else {
 
-                  $("#caseReportCaseForm #cellphone").val('');
-                  $("#caseReportCaseForm #name").val('');
-                  $("#caseReportCaseForm #surname").val('');
-                  $("#caseReportCaseForm #id_number").val('');
-                  $("#caseReportCaseForm #language").val('');
-                  $("#caseReportCaseForm #province").val('');
-                  $("#caseReportCaseForm #district").val('');
-                  $("#caseReportCaseForm #municipality").val('');
-                  $("#caseReportCaseForm #house_number").val('');
-                  $("#caseReportCaseForm #ward").val('');
-                  $("#caseReportCaseForm #area").val('');
-                  $("#caseReportCaseForm #hseHolderId").val('');
-                  $("#caseReportCaseForm #title").val('');
-                  $("#caseReportCaseForm #position").val('');
-                  $("#caseReportCaseForm #priority").val('');
-                  $("#caseReportCaseForm #gender").val('');
-                  $("#caseReportCaseForm #dob").val('');
+                  $("#cellphone").val('');
+                  $("#cell").val('');
+                  $("#name").val('');
+                  $("#surname").val('');
+                  $("#repID").val('');
+                  $("#addressbook").val('');
                   $("#error_cellphone").html("");
-                  $("#error_title").html("");
-                  $("#error_language").html("");
-                  $("#error_province").html("");
-                  $("#error_district").html("");
-                  $("#error_municipality").html("");
-                  $("#error_ward").html("");
                   $("#error_name").html("");
                   $("#error_surname").html("");
-                  $("#error_id_number").html("");
-                  $("#error_position").html("");
-                  $("#error_priority").html("");
-                  $("#error_gender").html("");
-                  $("#error_dob").html("");
 
+                  $("#cell").removeAttr("disabled");
+                  $("#name").removeAttr("disabled");
+                  $("#surname").removeAttr("disabled");
 
-                  $("#caseReportCaseForm #cellphone").removeAttr("disabled");
-                  $("#caseReportCaseForm #name").removeAttr("disabled");
-                  $("#caseReportCaseForm #surname").removeAttr("disabled");
-                  $("#caseReportCaseForm #id_number").removeAttr("disabled");
-                  $("#caseReportCaseForm #language").removeAttr("disabled");
-                  $("#caseReportCaseForm #province").removeAttr("disabled");
-                  $("#caseReportCaseForm #house_number").removeAttr("disabled");
-                  $("#caseReportCaseForm #district").removeAttr("disabled");
-                  $("#caseReportCaseForm #municipality").removeAttr("disabled");
-                  $("#caseReportCaseForm #ward").removeAttr("disabled");
-                  $("#caseReportCaseForm #area").removeAttr("disabled");
-                  $("#caseReportCaseForm #title").removeAttr("disabled");
-                  $("#caseReportCaseForm #position").removeAttr("disabled");
-                  $("#caseReportCaseForm #priority").removeAttr("disabled");
-                  $("#caseReportCaseForm #gender").removeAttr("disabled");
-                  $("#caseReportCaseForm #dob").removeAttr("disabled");
 
 
                 }
@@ -107,53 +67,19 @@ $(document).ready(function(){
     },
      onDelete: function (item) {
 
-                  $("#caseReportCaseForm #cellphone").val('');
-                  $("#caseReportCaseForm #name").val('');
-                  $("#caseReportCaseForm #surname").val('');
-                  $("#caseReportCaseForm #id_number").val('');
-                  $("#caseReportCaseForm #language").val('');
-                  $("#caseReportCaseForm #province").val('');
-                  $("#caseReportCaseForm #district").val('');
-                  $("#caseReportCaseForm #municipality").val('');
-                  $("#caseReportCaseForm #house_number").val('');
-                  $("#caseReportCaseForm #ward").val('');
-                  $("#caseReportCaseForm #area").val('');
-                  $("#caseReportCaseForm #title").val('');
-                  $("#caseReportCaseForm #position").val('');
-                  $("#caseReportCaseForm #priority").val('');
-                  $("#caseReportCaseForm #gender").val('');
-                  $("#caseReportCaseForm #dob").val('');
-                  $("#caseReportCaseForm #hseHolderId").val('');
-                  $("#caseReportCaseForm #cellphone").removeAttr("disabled");
-                  $("#caseReportCaseForm #name").removeAttr("disabled");
-                  $("#caseReportCaseForm #surname").removeAttr("disabled");
-                  $("#caseReportCaseForm #id_number").removeAttr("disabled");
-                  $("#caseReportCaseForm #language").removeAttr("disabled");
-                  $("#caseReportCaseForm #province").removeAttr("disabled");
-                  $("#caseReportCaseForm #district").removeAttr("disabled");
-                  $("#caseReportCaseForm #municipality").removeAttr("disabled");
-                  $("#caseReportCaseForm #house_number").removeAttr("disabled");
-                  $("#caseReportCaseForm #ward").removeAttr("disabled");
-                  $("#caseReportCaseForm #area").removeAttr("disabled");
-                  $("#caseReportCaseForm #title").removeAttr("disabled");
-                  $("#caseReportCaseForm #position").removeAttr("disabled");
-                  $("#caseReportCaseForm #priority").removeAttr("disabled");
-                  $("#caseReportCaseForm #gender").removeAttr("disabled");
-                  $("#caseReportCaseForm #dob").removeAttr("disabled");
+                  $("#cellphone").val('');
+                  $("#cell").val('');
+                  $("#repID").val('');
+                  $("#name").val('');
+                  $("#surname").val('');
+                  $("#addressbook").val('');
+                  $("#cellphone").removeAttr("disabled");
+                  $("#cell").removeAttr("disabled");
+                  $("#surname").removeAttr("disabled");
+                  $("#name").removeAttr("disabled");
                   $("#error_cellphone").html("");
-                  $("#error_title").html("");
-                  $("#error_language").html("");
-                  $("#error_province").html("");
-                  $("#error_district").html("");
-                  $("#error_municipality").html("");
-                  $("#error_ward").html("");
                   $("#error_name").html("");
                   $("#error_surname").html("");
-                  $("#error_id_number").html("");
-                  $("#error_position").html("");
-                  $("#error_priority").html("");
-                  $("#error_gender").html("");
-                  $("#error_dob").html("");
 
     }
   });
@@ -803,7 +729,7 @@ function submitCaptureForm (map_center, map_zoom)
 	{
 		capture_map_center = map_center;
 		capture_map_zoom = map_zoom;
-		if(iframeDoc.getElementById('ccg_nam').value == "" || iframeDoc.getElementById('ccg_sur').value == "" || iframeDoc.getElementById('ccg_mob').value == "" || iframeDoc.getElementById('precinct').value == "" || iframeDoc.getElementById('category').value == "" || iframeDoc.getElementById('sub_category').value == "")
+		if(iframeDoc.getElementById('name').value == "" || iframeDoc.getElementById('surname').value == "" || iframeDoc.getElementById('cell').value == "" || iframeDoc.getElementById('category').value == "" || iframeDoc.getElementById('sub_category').value == "")
 			{
 				alert("WARNING ...\n\nPlease complete all the fields in the form ...");
 				return;

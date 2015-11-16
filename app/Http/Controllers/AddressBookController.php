@@ -84,7 +84,8 @@ class AddressBookController extends Controller
                                 "cellphone"     => "{$contact->cellphone}",
                                 "firstname"     => "{$contact->FirstName}",
                                 "userID"        => "{$contact->id}",
-                                "surname"       => "{$contact->Surname}"
+                                "surname"       => "{$contact->Surname}",
+                                "addressbook"   => "1"
                         );
            }
 
@@ -95,7 +96,7 @@ class AddressBookController extends Controller
             $contacts     = \DB::table('users')
             ->join('positions','users.position','=','positions.id')
             ->whereRaw("CONCAT(`users`.`name`, ' ', `users`.`surname`, ' ', `users`.`email`,`positions`.`name`) LIKE '%{$searchString}%'")
-            ->select(array('users.name as name','users.surname as surname','users.username as username','users.cellphone as cellphone','positions.name as position'))
+            ->select(array('users.name as name','users.id','users.surname as surname','users.username as username','users.cellphone as cellphone','positions.name as position'))
             ->get();
 
            foreach ($contacts as $contact) {
@@ -105,7 +106,8 @@ class AddressBookController extends Controller
                                 "cellphone"     => "{$contact->cellphone}",
                                 "firstname"     => "{$contact->name}",
                                 "userID"        => "{$contact->id}",
-                                "surname"       => "{$contact->surname}"
+                                "surname"       => "{$contact->surname}",
+                                "addressbok"    => "0"
                            );
            }
 

@@ -2,15 +2,73 @@
 
 
 
-//$connectionID = mysqli_connect('localhost', 'www',null, 'siyaleader_dbnports_live') or die ("Unable to connect to database.");
+$connectionID = mysqli_connect('localhost', 'www',null, 'siyaleader_dbnports_live') or die ("Unable to connect to database.");
 
- $connectionID = mysqli_connect('localhost', 'root','elie', 'port') or die ("Unable to connect to database.");
+ //$connectionID = mysqli_connect('localhost', 'root','elie', 'port') or die ("Unable to connect to database.");
 
 
 if(isset($_POST['ACTION']))  {  $ACTION = $_POST['ACTION'];  }  else if(isset($_GET['ACTION']))  {  $ACTION = $_GET['ACTION'];  } else  {  $ACTION = "";  }
-if(isset($_POST['ccg_nam']))  {  $ccg_nam = $_POST['ccg_nam'];  }  else if(isset($_GET['ccg_nam']))  {  $ccg_nam = $_GET['ccg_nam'];  } else  {  $ccg_nam = "";  }
-if(isset($_POST['ccg_sur']))  {  $ccg_sur = $_POST['ccg_sur'];  }  else if(isset($_GET['ccg_sur']))  {  $ccg_sur = $_GET['ccg_sur'];  } else  {  $ccg_sur = "";  }
-if(isset($_POST['ccg_mob']))  {  $ccg_mob = $_POST['ccg_mob'];  }  else if(isset($_GET['ccg_mob']))  {  $ccg_mob = $_GET['ccg_mob'];  } else  {  $ccg_mob = "";  }
+
+
+if(isset($_POST['name']))  {
+
+	$name  = $_POST['name'];
+
+}  else if(isset($_GET['name']))  {
+
+	$name = $_GET['name'];
+
+} else  {
+
+	$name = "";
+
+}
+
+if(isset($_POST['surname']))  {
+
+	$surname  = $_POST['surname'];
+
+}  else if(isset($_GET['surname']))  {
+
+	$surname = $_GET['surname'];
+
+} else  {
+
+	$surname = "";
+
+}
+
+
+if(isset($_POST['cell']))  {
+
+	$cellphone  = $_POST['cell'];
+
+}  else if(isset($_GET['cell']))  {
+
+	$cellphone = $_GET['cell'];
+
+} else  {
+
+	$cellphone = "";
+
+}
+
+if(isset($_POST['addressbook']))  {
+
+	$addressbook  = $_POST['addressbook'];
+
+}  else if(isset($_GET['addressbook']))  {
+
+	$addressbook = $_GET['addressbook'];
+
+} else  {
+
+	$addressbook = "";
+
+}
+
+
+
 
 $status = "Pending";
 
@@ -266,6 +324,7 @@ function toSentenceCase (val)
 <input type=hidden name=ACTION value="SUBMITCASE">
 <input type="hidden" name="userId" id="userId">
 <input type="hidden" name="repID" id="repID">
+<input type="hidden" name="addressbook" id="addressbook">
 
 <table id="captureContainer" border=0 cellpadding=4 cellspacing=0 style="font: 11pt 'Arial';color:#ffffff;border-collapse:collapse;border:1px solid #ffffff">
 		<tr>
@@ -376,6 +435,53 @@ function toSentenceCase (val)
 if($ACTION == "SUBMITCASE")
 {
 
+	$repID  = $_POST['repID'];
+
+if ($repID > 0) {
+
+
+}
+else {
+
+
+	$addressbook = 1;
+	$email       = $cellphone."@siyaleader.net";
+
+
+	$sqlt = "
+				INSERT
+					INTO
+						`addressbook`
+								(
+									`email`,
+									`user`,
+									`cellphone`,
+									`FirstName`,
+									`Surname`,
+									`active`,
+									`created_at`
+
+								)  values (
+
+									'$email',
+									'$user',
+									'$cellphone',
+									'$name',
+									'$surname',
+									'1',
+									 NOW()
+
+								)
+            ";
+
+      var_dump($sqlt);
+
+    $res       = mysqli_query($connectionID, $sqlt) or die ("Couldn't insert into Addressbook table ... ...");
+	$repID     = mysqli_insert_id($connectionID);
+
+
+}
+
 
 
 
@@ -396,7 +502,9 @@ if($ACTION == "SUBMITCASE")
 									`created_at`,
 									`user`,
 									`department`,
-									`status`
+									`status`,
+									`reporter`,
+									`addressbook`
 
 								)  values (
 
@@ -411,7 +519,9 @@ if($ACTION == "SUBMITCASE")
 									 NOW(),
 									 '$user',
 									 '$department',
-									 '$status'
+									 '$status',
+									 '$repID',
+									 '$addressbook'
 
 								)
             ";
