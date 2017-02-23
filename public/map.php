@@ -245,7 +245,7 @@ while($row = mysqli_fetch_row($result)) {
             $Category = 0;
         }
 
-        $PhotoURL      = "http://41.216.130.6:8080/siyaleader-dbnports-mobileApp-api/port_backend/public/".$row[11];
+        $PhotoURL      = "http://154.0.164.72:8080/siyaleader-dbnports-mobileApp-api/port_backend/public/".$row[11];
         $ReporterID    = $row[17];
         $isAddressbook = $row[15];
 
@@ -504,9 +504,7 @@ boxContent += "<tr><td align='left' valign='top' nowrap><B>Position :</B></td><t
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Contact No :</B></td><td align='left'><?php echo $Mobile; ?></td></tr>";  // ccg_mob
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Description :</B></td><td align='left'><?php echo $Description; ?></td></tr>";  // prob_exp
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Last Activity :</B></td><td align='left'><?php echo $LastActivity; ?></td></tr>";  // Last person to have interacted on CMC
-boxContent += "<tr><td align='left' valign='top' nowrap><B>Author Date :</B></td><td align='left'><?php echo $AuthDate; ?></td></tr>";  // Last person to have interacted on CMC
-boxContent += "<tr><td align='left' valign='top' nowrap><B>Author :</B></td><td align='left'><?php echo $Author; ?></td></tr>";  // Last person to have interacted on CMC
-boxContent += "<tr><td align='left' valign='top' nowrap><B>Note :</B></td><td align='left'><?php echo $Note; ?></td></tr>";  // Last person to have interacted on CMC
+
 boxContent += "</table>";
 boxContent += "</div>";
 boxContent += "<table width=100% height=50 border=0 cellpadding=0 cellspacing=0><tr>";
@@ -645,7 +643,7 @@ var kmzLayer = new google.maps.KmlLayer('http://41.216.130.6:8080/siyaleader/doc
 kmzLayer.setMap(map);
 
 
-map = new google.maps.Map(document.getElementById('mapcontainer'), options);
+//map = new google.maps.Map(document.getElementById('mapcontainer'), options);
 
 
 }
