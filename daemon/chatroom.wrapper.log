@@ -1,0 +1,157 @@
+2015-10-07 15:30:20 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2015-10-07 15:30:20 - Started 5884
+2015-10-07 15:38:16 - Stopping chatroom.exe
+2015-10-07 15:38:16 - ProcessKill 5884
+2015-10-07 15:38:16 - Finished chatroom.exe
+2015-10-07 15:40:19 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2015-10-07 15:40:19 - Started 584
+2015-10-08 00:01:41 - Stopping chatroom.exe
+2015-10-08 00:01:41 - ProcessKill 584
+2015-10-08 00:01:42 - Finished chatroom.exe
+2015-10-08 00:03:38 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2015-10-08 00:03:39 - Started 2056
+2015-10-09 00:01:41 - Stopping chatroom.exe
+2015-10-09 00:01:41 - ProcessKill 2056
+2015-10-09 00:01:41 - Finished chatroom.exe
+2015-10-09 00:03:36 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2015-10-09 00:03:38 - Started 1924
+2015-10-10 00:01:47 - Stopping chatroom.exe
+2015-10-10 00:01:47 - ProcessKill 1924
+2015-10-10 00:01:47 - Finished chatroom.exe
+2015-10-10 00:03:45 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2015-10-10 00:03:50 - Started 340
+2015-10-11 00:01:41 - Stopping chatroom.exe
+2015-10-11 00:01:41 - ProcessKill 340
+2015-10-11 00:01:42 - Finished chatroom.exe
+2015-10-11 00:03:42 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2015-10-11 00:03:47 - Started 980
+2015-10-12 00:01:42 - Stopping chatroom.exe
+2015-10-12 00:01:42 - ProcessKill 980
+2015-10-12 00:01:43 - Finished chatroom.exe
+2015-10-12 00:03:40 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2015-10-12 00:03:40 - Started 1892
+2015-10-13 00:01:46 - Stopping chatroom.exe
+2015-10-13 00:01:46 - ProcessKill 1892
+2015-10-13 00:01:46 - Finished chatroom.exe
+2015-10-13 00:03:39 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2015-10-13 00:03:41 - Started 800
+2015-10-13 13:11:44 - Stopping chatroom.exe
+2015-10-13 13:11:44 - ProcessKill 800
+2015-10-13 13:11:44 - Finished chatroom.exe
+2015-10-13 13:14:37 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2015-10-13 13:14:41 - Started 340
+2015-10-14 00:01:42 - Stopping chatroom.exe
+2015-10-14 00:01:42 - ProcessKill 340
+2015-10-14 00:01:42 - Finished chatroom.exe
+2015-10-14 00:03:45 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2015-10-14 00:03:51 - Started 976
+2015-10-15 00:01:41 - Stopping chatroom.exe
+2015-10-15 00:01:41 - ProcessKill 976
+2015-10-15 00:01:41 - Finished chatroom.exe
+2015-10-15 00:03:38 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2015-10-15 00:03:39 - Started 1808
+2015-10-16 00:01:41 - Stopping chatroom.exe
+2015-10-16 00:01:41 - ProcessKill 1808
+2015-10-16 00:01:41 - Finished chatroom.exe
+2015-10-16 00:03:37 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2015-10-16 00:03:37 - Started 1796
+2015-10-25 10:34:47 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2015-10-25 10:34:48 - Started 1828
+2015-11-09 13:42:18 - Stopping chatroom.exe
+2015-11-09 13:42:19 - ProcessKill 1828
+2015-11-09 13:42:19 - Finished chatroom.exe
+2015-11-09 13:45:02 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2015-11-09 13:45:02 - Started 1768
+2015-12-10 12:16:34 - Stopping chatroom.exe
+2015-12-10 12:16:35 - Finished chatroom.exe
+2015-12-10 12:19:49 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2015-12-10 12:19:51 - Started 636
+2016-01-07 12:51:35 - Stopping chatroom.exe
+2016-01-07 12:51:35 - Finished chatroom.exe
+2016-01-07 12:54:03 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-01-07 12:54:03 - Started 1892
+2016-01-26 15:21:23 - Stopping chatroom.exe
+2016-01-26 15:21:24 - ProcessKill 1892
+2016-01-26 15:21:24 - Finished chatroom.exe
+2016-01-26 15:24:39 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-01-26 15:24:39 - Started 1868
+2016-04-10 10:36:57 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-04-10 10:36:59 - Started 1852
+2016-05-04 09:19:29 - Stopping chatroom.exe
+2016-05-04 09:19:29 - ProcessKill 1852
+2016-05-04 09:19:51 - Finished chatroom.exe
+2016-05-04 09:22:20 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-05-04 09:22:20 - Started 1992
+2016-06-03 11:18:28 - Stopping chatroom.exe
+2016-06-03 11:18:33 - Finished chatroom.exe
+2016-06-03 11:21:05 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-06-03 11:21:05 - Started 1776
+2016-06-27 10:36:44 - Stopping chatroom.exe
+2016-06-27 10:36:44 - ProcessKill 1776
+2016-06-27 10:36:45 - Finished chatroom.exe
+2016-06-27 10:39:20 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-06-27 10:39:20 - Started 1812
+2016-07-25 09:56:51 - Stopping chatroom.exe
+2016-07-25 09:56:51 - Finished chatroom.exe
+2016-07-25 09:59:16 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-07-25 09:59:17 - Started 1804
+2016-08-09 11:08:03 - Stopping chatroom.exe
+2016-08-09 11:08:03 - ProcessKill 1804
+2016-08-09 11:08:03 - Finished chatroom.exe
+2016-08-09 11:10:59 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-08-09 11:10:59 - Started 1848
+2016-08-09 11:36:53 - Stopping chatroom.exe
+2016-08-09 11:36:53 - ProcessKill 1848
+2016-08-09 11:36:53 - Finished chatroom.exe
+2016-08-09 11:38:52 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-08-09 11:38:52 - Started 1764
+2016-08-09 21:01:00 - Stopping chatroom.exe
+2016-08-09 21:01:00 - ProcessKill 1764
+2016-08-09 21:01:00 - Finished chatroom.exe
+2016-08-09 21:08:11 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-08-09 21:08:12 - Started 1836
+2016-08-09 21:16:58 - Stopping chatroom.exe
+2016-08-09 21:16:58 - ProcessKill 1836
+2016-08-09 21:17:00 - Finished chatroom.exe
+2016-08-09 21:19:18 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-08-09 21:19:18 - Started 1796
+2016-08-20 10:11:19 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-08-20 10:11:19 - Started 1880
+2016-09-26 11:48:20 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-09-26 11:48:22 - Started 1852
+2016-09-27 13:25:56 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-09-27 13:25:56 - Started 2020
+2016-10-12 16:04:22 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-10-12 16:04:23 - Started 1852
+2016-10-27 09:04:58 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-10-27 09:04:58 - Started 2028
+2016-11-14 15:18:41 - Stopping chatroom.exe
+2016-11-14 15:18:41 - ProcessKill 2028
+2016-11-14 15:18:42 - Finished chatroom.exe
+2016-11-14 15:21:58 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-11-14 15:21:58 - Started 1856
+2016-11-15 16:05:07 - Stopping chatroom.exe
+2016-11-15 16:05:07 - ProcessKill 1856
+2016-11-15 16:05:07 - Finished chatroom.exe
+2016-11-15 16:07:28 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-11-15 16:07:46 - Started 808
+2016-11-17 09:28:48 - Stopping chatroom.exe
+2016-11-17 09:28:49 - ProcessKill 808
+2016-11-17 09:28:49 - Finished chatroom.exe
+2016-11-17 09:30:59 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-11-17 09:31:00 - Started 712
+2016-11-17 14:09:31 - Stopping chatroom.exe
+2016-11-17 14:09:31 - ProcessKill 712
+2016-11-17 14:09:31 - Finished chatroom.exe
+2016-11-17 14:11:44 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-11-17 14:11:44 - Started 1824
+2016-11-24 12:36:15 - Stopping chatroom.exe
+2016-11-24 12:36:22 - ProcessKill 1824
+2016-11-24 12:36:22 - Finished chatroom.exe
+2016-11-24 12:38:58 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-11-24 12:39:02 - Started 808
+2016-12-01 09:25:33 - Stopping chatroom.exe
+2016-12-01 09:25:34 - ProcessKill 808
+2016-12-01 09:25:35 - Finished chatroom.exe
+2016-12-01 09:28:02 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\CoolUMA\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js" -f "c:\wamp\www\siyaleader-dbnports\registration\socket.js" -l "chatroom" -g 0.25 -w 1 -r 3 -a n
+2016-12-01 09:28:05 - Started 2044

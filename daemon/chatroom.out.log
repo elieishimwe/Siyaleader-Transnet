@@ -1,0 +1,556 @@
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"power":"10"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"power":"10"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"power":"10"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"power":"10"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"power":"10"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"power":"10"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"power":"10"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"power":"10"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"power":"10"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"power":"10"}}}
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"power":"10"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"power":"10"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"power":"10"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"power":"10"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"power":"10"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"power":"10"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"power":"10"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"power":"10"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"power":"10"}}}
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hello","author":"Elie Ishimwe"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"helli","author":"Elie Ishimwe"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"helli yourself\r\n","author":"Rupert Meyer"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"coll","author":"Elie Ishimwe"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"helli yourself","author":"Rupert Meyer"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"","author":"Rupert Meyer"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"wtf?","author":"Rupert Meyer"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"test","author":"Njabulo Mthethwa","dest":"0"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"test\r\n","author":"Njabulo Mthethwa","dest":"0"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"test","author":"Njabulo Mthethwa","dest":"0"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"test","author":"Njabulo Mthethwa","dest":"1"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hello","author":"Elie Ishimwe","dest":"135"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Elie Ishimwe","dest":"0"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"he","author":"Elie Ishimwe","dest":"135"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Elie Ishimwe","dest":"135"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"h","author":"Elie Ishimwe","dest":"0"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hello","author":"Elie Ishimwe","dest":"0"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Elie Ishimwe","dest":"135"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Elie Ishimwe","dest":"135"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"sdcsdc","author":"Elie Ishimwe","dest":"135"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"sdcsd","author":"Elie Ishimwe","dest":"135"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"dfvdf","author":"Eliana Ishimwe","dest":"0"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"how are u","author":"Elie Ishimwe","dest":"135"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"I am okay","author":"Eliana Ishimwe","dest":"0"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"Hello","author":"Elie Ishimwe","dest":"135"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Eliana Ishimwe","dest":"0"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"how are u","author":"Elie Ishimwe","dest":"135"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"I am okay and u","author":"Eliana Ishimwe","dest":"0"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"I am good","author":"Elie Ishimwe","dest":"135"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"how it happing here","author":"Eliana Ishimwe","dest":"0"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"bye","author":"Elie Ishimwe","dest":"135"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"bye","author":"Elie Ishimwe","dest":"135"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"okay","author":"Elie Ishimwe","dest":"135"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"Hello","author":"Elie Ishimwe","dest":"2"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hello","author":"Elie Ishimwe","dest":"135"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Eliana Ishimwe","dest":"1"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"how are u","author":"Eliana Ishimwe","dest":"1"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"i am okay","author":"Elie Ishimwe","dest":"0"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"how was your day","author":"Elie Ishimwe","dest":"0"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"great","author":"Elie Ishimwe","dest":"0"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"okay then","author":"Eliana Ishimwe","dest":"1"}}}
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hello","author":"Elie Ishimwe","dest":"135"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"h","author":"Elie Ishimwe","dest":"7"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hello","author":"Elie Ishimwe","dest":"7"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hey","author":"Richard Hall","dest":"0"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"Hey Steven","author":"Richard Hall","dest":"21"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hows the system working for you","author":"Richard Hall","dest":"21"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"let me know","author":"Richard Hall","dest":"21"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"","author":"Richard Hall","dest":"1"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Elie Ishimwe","dest":"2","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"howzit","author":"Njabulo Mthethwa","dest":"0","origin":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Elie Ishimwe","dest":"7","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Elie Ishimwe","dest":"135","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Eliana Ishimwe","dest":"0","origin":135}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Eliana Ishimwe","dest":"1","origin":135}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Elie Ishimwe","dest":"135","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hello","author":"Elie Ishimwe","dest":"135","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Eliana Ishimwe","dest":"0","origin":135}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Elie Ishimwe","dest":"135","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hello","author":"Eliana Ishimwe","dest":"0","origin":135}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Elie Ishimwe","dest":"135","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hello","author":"Eliana Ishimwe","dest":"0","origin":135}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hello","author":"Eliana Ishimwe","dest":"0","origin":135}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Elie Ishimwe","dest":"135","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Richard Hall","dest":"1","origin":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hello","author":"Elie Ishimwe","dest":"0","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"he","author":"Elie Ishimwe","dest":"7","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hello","author":"Elie Ishimwe","dest":"7","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"Hi","author":"Elie Ishimwe","dest":"135","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"Hi","author":"Eliana Ishimwe","dest":"1","origin":135}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"How are u","author":"Elie Ishimwe","dest":"135","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"I am good and u","author":"Eliana Ishimwe","dest":"1","origin":135}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Elie Ishimwe","dest":"21","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hello","author":"Eliana Ishimwe","dest":"1","origin":135}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"are u still there","author":"Eliana Ishimwe","dest":"1","origin":135}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"yes","author":"Elie Ishimwe","dest":"135","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"thank u","author":"Eliana Ishimwe","dest":"1","origin":135}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Elie Ishimwe","dest":"2","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"s","author":"Eliana Ishimwe","dest":"1","origin":135}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"s","author":"Eliana Ishimwe","dest":"1","origin":135}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"ss","author":"Elie Ishimwe","dest":"135","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hu","author":"Eliana Ishimwe","dest":"1","origin":135}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hello","author":"Elie Ishimwe","dest":"135","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"","author":"Elie Ishimwe","dest":"7","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"","author":"Elie Ishimwe","dest":"7","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Eliana Ishimwe","dest":"1","origin":135}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Eliana Ishimwe","dest":"1","origin":135}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Eliana Ishimwe","dest":"1","origin":135}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hello","author":"Elie Ishimwe","dest":"135","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"how are u","author":"Eliana Ishimwe","dest":"1","origin":135}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"i am okay","author":"Elie Ishimwe","dest":"135","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"how is the system","author":"Eliana Ishimwe","dest":"1","origin":135}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"very powerful","author":"Elie Ishimwe","dest":"135","origin":1}}}
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"","author":"Rupert Meyer","dest":"0","origin":13}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"","author":"Rupert Meyer","dest":"0","origin":13}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"Oi Rich ... Have you bought the beers yet?","author":"Rupert Meyer","dest":"7","origin":13}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"lksnvks","author":"Richard Hall","dest":"13","origin":7}}}
+Listening on Port 3000
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"How is it bro?","author":"Elie Ishimwe","dest":"2","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"working Hard?","author":"Richard Hall","dest":"2","origin":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"Hey Njabulo ","author":"Richard Hall","dest":"0","origin":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"can you read this","author":"Richard Hall","dest":"0","origin":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hey Njabulo","author":"Richard Hall","dest":"2","origin":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"ing","author":"Richard Hall","dest":"2","origin":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"Are you recieving these mails","author":"Richard Hall","dest":"2","origin":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"Once you in we can chat","author":"Richard Hall","dest":"2","origin":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"have you recieved","author":"Richard Hall","dest":"2","origin":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"Hi ","author":"Richard Hall","dest":"2","origin":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi","author":"Njabulo Mthethwa","dest":"7","origin":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hi ","author":"Njabulo Mthethwa","dest":"1","origin":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"hello","author":"Elie Ishimwe","dest":"2","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"message":"how is it going ","author":"Elie Ishimwe","dest":"2","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi","author":"Elie Ishimwe","dest":"7","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"13"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":null}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":null}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"13"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"13"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":null}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"2"}}}
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":null}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":null}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi","author":"Elie Ishimwe","dest":"135","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"13"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"1"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":null}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":null}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Is this feature fully funtional?","author":"Njabulo Mthethwa","dest":"0","origin":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":13}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":13}}}
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi","author":"Ashveen Mangaroo","dest":"0","origin":64}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi","author":"Ashveen Mangaroo","dest":"39","origin":64}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"7"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"1"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"1"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"1"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Good Morning \r\n","author":"Elie Ishimwe","dest":"7","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":135}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"1"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"1"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"1"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"1"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"1"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"1"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"1"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"135"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"135"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":135}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"1"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"135"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"13"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Hello","author":"Elie Ishimwe","dest":"2","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"How is it going there by the port?","author":"Elie Ishimwe","dest":"2","origin":1}}}
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Hi Najulo","author":"Richard Hall","dest":"2","origin":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Please give me a CALL WHEN YOU DONE","author":"Richard Hall","dest":"2","origin":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"HI rISTHA","author":"Richard Hall","dest":"63","origin":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hey are you in the office?","author":"Nontokozo Gumede","dest":"2","origin":3}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"i need help","author":"Nontokozo Gumede","dest":"2","origin":3}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"let me know when you back ","author":"Nontokozo Gumede","dest":"2","origin":3}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hey","author":"Njabulo Mthethwa","dest":"3","origin":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"7"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"13"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"7"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"57"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"2"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"1"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"7"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"2"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"132"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"75"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"7"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"test","author":"Njabulo Mthethwa","dest":"1","origin":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi","author":"Richard Hall","dest":"13","origin":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi\r\n","author":"Richard Hall","dest":"13","origin":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi\r\n\r\n","author":"Richard Hall","dest":"13","origin":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Howzit Rich","author":"Rupert Meyer","dest":"7","origin":13}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":13}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":13}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Hello Elie","author":"Rupert Meyer","dest":"1","origin":13}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hello","author":"Elie Ishimwe","dest":"13","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"how are","author":"Elie Ishimwe","dest":"13","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"21"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"2"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"7"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"test","author":"Shakoor Sheik   ","dest":"2","origin":143}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":132}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"13"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"2"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":75}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":75}}}
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"assignCases","caseID":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"assignCases","caseID":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"assignCases","caseID":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"assignCases","caseID":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"assignCases","caseID":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"assignCases","caseID":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"assignCases","caseID":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"assignCases","caseID":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"assignCases","caseID":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"assignCases","caseID":3}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"assignCases","caseID":3}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"assignCases","caseID":3}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"assignCases","caseID":2}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"assignCases","caseID":3}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hey Neil Nonto here","author":"Nontokozo Gumede","dest":"12","origin":3}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"57"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noUnreadprivatemsg","dest":"1"}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"assignCases","caseID":4}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"assignCases","caseID":5}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"assignCases","caseID":6}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi","author":"Slie Shabane","dest":"12","origin":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi","author":"Slie Shabane","dest":"1","origin":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"","author":"Slie Shabane","dest":"1","origin":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi","author":"Elie Ishimwe","dest":"17","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"what are u doing","author":"Elie Ishimwe","dest":"17","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"why is it duplicating what im writing?","author":"Slie Shabane","dest":"1","origin":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"where about","author":"Elie Ishimwe","dest":"17","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"read our conversation, i only wrote 1 hi","author":"Slie Shabane","dest":"1","origin":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"oh I see","author":"Elie Ishimwe","dest":"17","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"thanks for this. its really helping","author":"Slie Shabane","dest":"1","origin":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"This feature is not yeat operational","author":"Elie Ishimwe","dest":"17","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"stilll a lot of bugs","author":"Elie Ishimwe","dest":"17","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"lol where are the icons","author":"Slie Shabane","dest":"1","origin":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"lol ayt cool","author":"Slie Shabane","dest":"1","origin":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"this is new version of watsup","author":"Elie Ishimwe","dest":"17","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"lool cool","author":"Slie Shabane","dest":"1","origin":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"marret","author":"Slie Shabane","dest":"16","origin":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"yuioopo","author":"Richard Hall","dest":"1","origin":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi. i'm trying to capture KZN districts but i cant because they don't have Acronym. ","author":"Slie Shabane","dest":"1","origin":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"","author":"Slie Shabane","dest":"1","origin":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"","author":"Slie Shabane","dest":"1","origin":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hello","author":"Elie Ishimwe","dest":"17","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi, i'm trying to capture the KZN District from they system but i can't because they want acronym of which they don't have","author":"Slie Shabane","dest":"1","origin":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"jst type district name as acronym","author":"Elie Ishimwe","dest":"17","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"it will be fine","author":"Elie Ishimwe","dest":"17","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"as well","author":"Elie Ishimwe","dest":"17","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"lk durban as district","author":"Elie Ishimwe","dest":"17","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"durban as acronym","author":"Elie Ishimwe","dest":"17","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"do u get me?","author":"Elie Ishimwe","dest":"17","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"assignCases","caseID":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"userID":9,"type":"assignCases","caseID":8}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"userID":9,"type":"assignCases","caseID":9}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"userID":9,"type":"assignCases","caseID":10}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"userID":9,"type":"assignCases","caseID":11}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"thanks Elie i can now login","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"you welcome","author":"Elie Ishimwe","dest":"16","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"One problem...the Districts do not have abbreviations(acronym) but i will create one if that's okay","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"One problem...the Districts do not have abbreviations(acronym) but i will create one if that's okay\r\n","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"One problem...the Districts do not have abbreviations(acronym) but i will create one if that's okay\r\n","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"One problem...the Districts do not have abbreviations(acronym) but i will create one if that's okay\r\n","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"One problem...the Districts do not have abbreviations(acronym) but i will create one if that's okay\r\n","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"One problem...the Districts do not have abbreviations(acronym) but i will create one if that's okay\r\n","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"jst create one","author":"Elie Ishimwe","dest":"16","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"or enter district name as acronym","author":"Elie Ishimwe","dest":"16","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"as well","author":"Elie Ishimwe","dest":"16","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"okay thanks","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"i have a problem. when i capture the municipalities under a certain District the municipalities are being captured to all the districts ","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"I will check it","author":"Elie Ishimwe","dest":"16","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"if you not busy please check. but i will report it as a case, as they said we should","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"give me 5 minutes","author":"Elie Ishimwe","dest":"16","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"userID":9,"type":"assignCases","caseID":12}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Fixed Jst Carry on","author":"Elie Ishimwe","dest":"16","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"okay thanks","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"welcome","author":"Elie Ishimwe","dest":"16","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"can u please clean Zululand also cause Zululand and eThekwini are still not fixed. but i will carry on with the other Districts","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Morning Rupert, i've been trying  to send an e-mail but my  e-mails are not working","author":"Lethokuhle Msweli","dest":"10","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":12}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi","author":"Lethokuhle Msweli","dest":"12","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"unjani?","author":"Njabulo Mthethwa","dest":"16","origin":12}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"i'm hungry. u??","author":"Lethokuhle Msweli","dest":"12","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":12}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Hi Lethokuhle.","author":"Njabulo Mthethwa","dest":"16","origin":12}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hello","author":"Lethokuhle Msweli","dest":"12","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Could you please assist by reminding me how to Add a new contact on the address book.","author":"Njabulo Mthethwa","dest":"16","origin":12}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":10}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"could u please again DELETE categories under Department of Labour","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"userID":9,"type":"assignCases","caseID":26}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":12}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"test","author":"Njabulo Mthethwa","dest":"11","origin":12}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi Elie, could you please delete all categories under Department of Home Affairs and Health","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"please let me know when you have done it.","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Hello","author":"Elie Ishimwe","dest":"16","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"It is done","author":"Elie Ishimwe","dest":"16","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"okay thank you","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"u welcome","author":"Elie Ishimwe","dest":"16","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":12}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Hello","author":"Elie Ishimwe","dest":"16","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"In future dont put a dot at end of words","author":"Elie Ishimwe","dest":"16","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"leave it out","author":"Elie Ishimwe","dest":"16","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":12}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"sorry it didnt want to save. okay","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi. have you seen the reported case?","author":"Lethokuhle Msweli","dest":"12","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"it is cool","author":"Elie Ishimwe","dest":"16","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":12}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Hi Lethokuhle.","author":"Njabulo Mthethwa","dest":"16","origin":12}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"should i remove all the dots??","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":12}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hifnuh","author":"Njabulo Mthethwa","dest":"16","origin":12}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi","author":"Lethokuhle Msweli","dest":"12","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Goodmorning Elie","author":"Slie Shabane","dest":"1","origin":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"userID":9,"type":"assignCases","caseID":41}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"mrng Elie","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"i can't open a case using Github, could you please help","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"good day Rupert,","author":"Lethokuhle Msweli","dest":"10","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"i cant open a case on Github can u please assist?","author":"Lethokuhle Msweli","dest":"10","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Sorry Mallety ... In a meeting ... Please drop me an email and I'll assist later","author":"Rupert Meyer","dest":"16","origin":10}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"okay but my e-mails are not going due to the network","author":"Lethokuhle Msweli","dest":"10","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Ok ... we will probably have to get together ... Look for the Issues link in each repository ... I'll find out when you's are coming this way again and plan a refresher course ... GitHub has changed a little","author":"Rupert Meyer","dest":"16","origin":10}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"okay. ","author":"Lethokuhle Msweli","dest":"10","origin":16}}}
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"ngangena eyntweni nami ngingundayi madoda ","author":"Sandile Msomi","dest":"16","origin":25}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"where is the logout botton, cnt see it.","author":"Slie Shabane","dest":"16","origin":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"dnt wory got!!!!!!!!!!!!!!","author":"Slie Shabane","dest":"16","origin":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"okay great","author":"Lethokuhle Msweli","dest":"17","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"help!","author":"Njabulo Mthethwa","dest":"16","origin":12}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Sure Malumza","author":"Sandile Msomi","dest":"12","origin":25}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Amen","author":"Sandile Msomi","dest":"16","origin":25}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hello","author":"Lethokuhle Msweli","dest":"25","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"unjani we loh ?","author":"Sandile Msomi","dest":"16","origin":25}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Asante (Siyabonga )","author":"Sandile Msomi","dest":"16","origin":25}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"u welcome","author":"Lethokuhle Msweli","dest":"25","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"sawa ","author":"Sandile Msomi","dest":"16","origin":25}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"sawa (alright)","author":"Sandile Msomi","dest":"16","origin":25}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":17}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"angizeli angizeli","author":"Sandile Msomi","dest":"16","origin":25}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"","author":"Sandile Msomi","dest":"16","origin":25}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hahaha shame sorry","author":"Lethokuhle Msweli","dest":"25","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"mina ngibhorekile, futhi nje kuyabanda lana","author":"Lethokuhle Msweli","dest":"25","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"userID":9,"type":"assignCases","caseID":47}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi","author":"Lethokuhle Msweli","dest":"9","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"","author":"Lethokuhle Msweli","dest":"9","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"i have proble...the case does not want to upload it says there was a problem in uploading on an image but i didn't upload a picture","author":"Lethokuhle Msweli","dest":"9","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"i have a problem","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"what is the problem?","author":"Elie Ishimwe","dest":"16","origin":1}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"i'm coming to you","author":"Lethokuhle Msweli","dest":"1","origin":16}}}
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":1}}}
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi","author":"Lethokuhle Msweli","dest":"25","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"","author":"Lethokuhle Msweli","dest":"25","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi","author":"Lethokuhle Msweli","dest":"25","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"unjani","author":"Lethokuhle Msweli","dest":"25","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"yah mzala","author":"Sandile Msomi","dest":"16","origin":25}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"k'hamba kanjani","author":"Lethokuhle Msweli","dest":"25","origin":16}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"","author":"Sandile Msomi","dest":"16","origin":25}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"","author":"Sandile Msomi","dest":"16","origin":25}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"l","author":"Sandile Msomi","dest":"16","origin":25}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi","author":"Musuvaho Hangi","dest":"0","origin":281}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi","author":"Musuvaho Hangi","dest":"11","origin":281}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi rupper ","author":"Musuvaho Hangi","dest":"10","origin":281}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"any user from siyaleader has the right to create user and add position? on the system ","author":"Musuvaho Hangi","dest":"10","origin":281}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"","author":"Musuvaho Hangi","dest":"10","origin":281}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"","author":"Musuvaho Hangi","dest":"10","origin":281}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":7}}}
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":12}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":12}}}
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi","author":"Rupert Meyer","dest":"0","origin":10}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi\r\n","author":"Rupert Meyer","dest":"0","origin":10}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hi\r\n\r\n","author":"Rupert Meyer","dest":"0","origin":10}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"test","author":"Rupert Meyer","dest":"0","origin":10}}}
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":25}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":25}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Hello Dave ... Have you managed to find the docket for the Siyaleader project yet?","author":"Rupert Meyer","dest":"0","origin":10}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"","author":"Rupert Meyer","dest":"0","origin":10}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"","author":"Richard Hall","dest":"0","origin":11}}}
+Listening on Port 3000
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":13}}}
+Listening on Port 3000
+Listening on Port 3000
+Listening on Port 3000
+Listening on Port 3000
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"xdrgdgfgsfgd","author":"Rupert Meyer","dest":"0","origin":10}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"","author":"Richard Hall","dest":"0","origin":11}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"hey ","author":"Rupert Meyer","dest":"0","origin":10}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"","author":"Rupert Meyer","dest":"0","origin":10}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"what up ","author":"Rupert Meyer","dest":"0","origin":10}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"","author":"Rupert Meyer","dest":"0","origin":10}}}
+Listening on Port 3000
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":10}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"","author":"Hercules Erasmus","dest":"0","origin":26}}}
+Listening on Port 3000
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Hello Peter","author":"Hercules Erasmus","dest":"0","origin":26}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"chat","message":"Hello Peter","author":"Hercules Erasmus","dest":"0","origin":26}}}
+Listening on Port 3000
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":13}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":13}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":13}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":13}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":13}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":13}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":13}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":13}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":13}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":13}}}
+Listening on Port 3000
+Listening on Port 3000
+Listening on Port 3000
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":7}}}
+Message Recieved: {"event":"App\\Events\\MyEventNameHere","data":{"data":{"type":"noreadprivatemsg","dest":7}}}
+Listening on Port 3000

@@ -312,7 +312,7 @@ function toSentenceCase (val)
 </script>
 </head>
 
-<body ONLOAD="setCaptureBorder('#ffffff');document.getElementById('captureForm').reset();document.getElementById('ccg_nam').focus;" TEXT="#ffffff" LINK="#ffffff" VLINK="#ffffff" ALINK="#ffffff" style="margin:0;overflow:hidden;margin-bottom:0;margin-left:0;margin-right:0;margin-top:0">
+<body ONLOAD="setCaptureBorder('#ffffff');document.getElementById('captureForm').reset()" TEXT="#ffffff" LINK="#ffffff" VLINK="#ffffff" ALINK="#ffffff" style="margin:0;overflow:hidden;margin-bottom:0;margin-left:0;margin-right:0;margin-top:0">
 
 <center>
 <form id="captureForm" action="case_capture.php" method="post" style="margin:0px;padding:0px;">
@@ -569,7 +569,7 @@ boxContent += "<tr><td align='left' valign='top' nowrap><B>Status :</B></td><td 
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Province :</B></td><td align='left'>KZN</td></tr>"; // Province coll
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Port :</B></td><td align='left'>Durban</td></tr>"; // District coll
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Precinct :</B></td><td align='left'><?php echo $precinct; ?></td></tr>";  // Municipality coll
-boxContent += "<tr><td align='left' valign='top' nowrap><B>Reporter :</B></td><td align='left'><?php echo $name. ' ' .$ccg_sur; ?></td></tr>";  // ccg_nam + ccg_sur
+boxContent += "<tr><td align='left' valign='top' nowrap><B>Reporter :</B></td><td align='left'><?php echo $name . ' ' .$ccg_sur; ?></td></tr>";  // ccg_nam + ccg_sur
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Position :</B></td><td align='left'><?php echo $Position; ?></td></tr>";  // ccg_pos
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Contact No :</B></td><td align='left'><?php echo $cellphone; ?></td></tr>";  // ccg_mob
 boxContent += "<tr><td align='left' valign='top' nowrap><B>Description :</B></td><td align='left'><?php echo $description; ?></td></tr>";  // prob_exp
@@ -588,12 +588,11 @@ boxContent += "</tr></table>";
 </script>
 
 </head>
-<body ONLOAD="parent.captureSuccess('<?php echo $newCaseId; ?>','<?php echo $newMarkerImage; ?>','<?php echo $_POST['GPS']; ?>','<?php echo $infoBoxBorder; ?>','<?php echo $imageCategory; ?>',boxContent);location='case_capture.php';" TEXT="#ffffff" LINK="#ffffff" VLINK="#ffffff" ALINK="#ffffff" style="margin:0;overflow:hidden;margin-bottom:0;margin-left:0;margin-right:0;margin-top:0">
+<body ONLOAD="parent.captureSuccess('<?php echo $newCaseId; ?>','<?php echo $newMarkerImage; ?>','<?php echo $GPS; ?>','<?php echo $infoBoxBorder; ?>','<?php echo $imageCategory; ?>',boxContent);location='case_capture.php';" TEXT="#ffffff" LINK="#ffffff" VLINK="#ffffff" ALINK="#ffffff" style="margin:0;overflow:hidden;margin-bottom:0;margin-left:0;margin-right:0;margin-top:0">
 
 <!-- ONLOAD="location='case_capture.php'" -->
 
 </body>
-
 </html>
 
 

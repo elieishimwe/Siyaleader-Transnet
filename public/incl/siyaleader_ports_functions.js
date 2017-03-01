@@ -251,7 +251,7 @@ function showPhoto (photo,ibBorder)
 		  photoPath = photo;
 		}
 		else {
-		  photoPath = "http://41.216.130.6:8080/siyaleader-dbnports-mobileApp-api/port_backend/public/noimage.png";
+		  photoPath = "http://154.0.164.72:8080/siyaleader-dbnports-mobileApp-api/port_backend/public/noimage.png";
 		}
 		document.all.thePhoto.src = photoPath;
 //		document.all.thePhoto.style = "border-top:1px solid " + ibBorder + "";

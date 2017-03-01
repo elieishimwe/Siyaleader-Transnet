@@ -9,13 +9,22 @@ use App\Http\Requests\DepartmentRequest;
 use App\Http\Controllers\Controller;
 use App\Department;
 
+
+
 class DepartmentController extends Controller
 {
+	
+	
+	
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
+	 
+	 
+	 
+	 
     public function index()
     {
         $departments = Department::select(array('id','name','created_at'));

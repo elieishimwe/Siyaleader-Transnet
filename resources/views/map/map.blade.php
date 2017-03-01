@@ -86,7 +86,7 @@ function receiveMessage(event)
 
 var strUrl = event.origin;
 
-if ( strUrl.indexOf("http://41.216.130.6:8080") >= 0 || strUrl.indexOf("http://localhost:8000") >= 0)
+if ( strUrl.indexOf("http://154.0.164.72:8080") >= 0 || strUrl.indexOf("http://localhost:8000") >= 0)
 
      launchCaseModal(event.data,'1');
 

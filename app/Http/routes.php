@@ -31,6 +31,16 @@ use App\Message;
 |
 */
 
+
+ Route::group(array('prefix' => 'api/v1'), function() {
+    Route::get('authapi', 'AuthController@index');
+
+
+});
+
+
+
+
 Route::get('home', ['middleware' => 'auth', 'uses' => 'HomeController@index']);
 
 
